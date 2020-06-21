@@ -1,14 +1,12 @@
 #![windows_subsystem = "windows"]
 #[warn(improper_ctypes)]
 // extern crate libloading as lib;
-use std::ffi::CString;
+use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
-// #[feature(libc)]
 extern crate libc;
 use libc::{c_long, intptr_t, uintptr_t};
-use std::ffi::CStr;
-use std::mem::size_of;
+use std::mem::{size_of, transmute};
 
 // libloading = "0.6.2"
 
@@ -81,35 +79,32 @@ extern "system" fn do_event_callback_proc(
     println!("do_event_callback_proc=({}, {}, {})", f, args, arg_count);
     unsafe {
         match arg_count {
-            0 => std::mem::transmute::<uintptr_t, fn()>(f)(),
-            1 => std::mem::transmute::<uintptr_t, fn(uintptr_t)>(f)(get_param_of(0, args)),
-            2 => std::mem::transmute::<uintptr_t, fn(uintptr_t, uintptr_t)>(f)(
+            0 => transmute::<uintptr_t, fn()>(f)(),
+            1 => transmute::<uintptr_t, fn(uintptr_t)>(f)(get_param_of(0, args)),
+            2 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
             ),
-            3 => std::mem::transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t)>(f)(
+            3 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
             ),
-            4 => {
-                std::mem::transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t)>(f)(
-                    get_param_of(0, args),
-                    get_param_of(1, args),
-                    get_param_of(2, args),
-                    get_param_of(3, args),
-                )
-            }
-            5 => std::mem::transmute::<
-                uintptr_t,
-                fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t),
-            >(f)(
+            4 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
                 get_param_of(3, args),
-                get_param_of(4, args),
             ),
+            5 => {
+                transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t)>(f)(
+                    get_param_of(0, args),
+                    get_param_of(1, args),
+                    get_param_of(2, args),
+                    get_param_of(3, args),
+                    get_param_of(4, args),
+                )
+            }
             // 最多12个参数，这里只是演示，所以只实现5个参数的，多的自己实现吧
             // 6=>,
             // 7=>,
@@ -124,11 +119,15 @@ extern "system" fn do_event_callback_proc(
     return 0;
 }
 
+fn ShowMessage(s: &str) {
+    unsafe {
+        DShowMessage(CString::new(s).unwrap().as_ptr());
+    }
+}
+
 // 按钮1单击事件
 fn on_btn_click(_sender: uintptr_t) {
-    unsafe {
-        DShowMessage(CString::new("Hello Rust!").unwrap().as_ptr());
-    }
+    ShowMessage("Hello, Rust!");
 }
 
 fn on_drop_file_event(_sender: uintptr_t, file_names: uintptr_t, len: intptr_t) {
