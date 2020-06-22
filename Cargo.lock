@@ -7,6 +7,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9457b06509d27052635f90d6466700c65095fdf75409b3fbdd903e988b886f49"
 
 [[package]]
+name = "liblcl"
+version = "0.1.0"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "libloading"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -20,6 +27,7 @@ name = "untitled3"
 version = "0.1.0"
 dependencies = [
  "libc",
+ "liblcl",
  "libloading",
 ]
 
