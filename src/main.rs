@@ -59,6 +59,9 @@ extern "system" {
     fn DGetStringArrOf(ptr: uintptr_t, index: intptr_t) -> *const c_char;
 
     //
+    fn ResFormLoadFromFile(file_name: *const c_char, root: uintptr_t);
+
+    //
     fn DShowMessage(msg: *const c_char);
     fn SetEventCallback(
         callback: extern "system" fn(f: uintptr_t, args: uintptr_t, arg_count: c_long) -> uintptr_t,
@@ -160,8 +163,13 @@ fn main() {
         Icon_LoadFromFile(icon, CString::new("applogo.ico").unwrap().as_ptr());
         // 创建一个form
         let form = Application_CreateForm(app, false);
+
+        // ResFormLoadFromFile(CString::new("./Form1.gfm").unwrap().as_ptr(), form);
+
+        // 动态创建
         // 设置form位置为屏幕中心
         Form_SetPosition(form, TPosition::PoScreenCenter);
+
         // 设置form标题
         Form_SetCaption(
             form,
