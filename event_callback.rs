@@ -1,51 +1,41 @@
-use libc::{c_long, intptr_t, uintptr_t};
 use std::mem::{size_of, transmute};
 
 // 根据索引获取参数
-unsafe fn get_param_of(index: uintptr_t, ptr: uintptr_t) -> uintptr_t {
-    return *((ptr + index * size_of::<uintptr_t>()) as *const uintptr_t);
+unsafe fn get_param_of(index: usize, ptr: usize) -> usize {
+    return *((ptr + index * size_of::<usize>()) as *const usize);
 }
 
 // 回调函数
-pub extern "system" fn do_event_callback_proc(
-    f: uintptr_t,
-    args: uintptr_t,
-    arg_count: c_long,
-) -> uintptr_t {
+pub extern "system" fn do_event_callback_proc(f: usize, args: usize, arg_count: i32) -> usize {
     println!("do_event_callback_proc=({}, {}, {})", f, args, arg_count);
     unsafe {
         match arg_count {
-            0 => transmute::<uintptr_t, fn()>(f)(),
-            1 => transmute::<uintptr_t, fn(uintptr_t)>(f)(get_param_of(0, args)),
-            2 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t)>(f)(
+            0 => transmute::<usize, fn()>(f)(),
+            1 => transmute::<usize, fn(usize)>(f)(get_param_of(0, args)),
+            2 => transmute::<usize, fn(usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
             ),
-            3 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t)>(f)(
+            3 => transmute::<usize, fn(usize, usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
             ),
-            4 => transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t)>(f)(
+            4 => transmute::<usize, fn(usize, usize, usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
                 get_param_of(3, args),
             ),
-            5 => {
-                transmute::<uintptr_t, fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t)>(f)(
-                    get_param_of(0, args),
-                    get_param_of(1, args),
-                    get_param_of(2, args),
-                    get_param_of(3, args),
-                    get_param_of(4, args),
-                )
-            }
+            5 => transmute::<usize, fn(usize, usize, usize, usize, usize)>(f)(
+                get_param_of(0, args),
+                get_param_of(1, args),
+                get_param_of(2, args),
+                get_param_of(3, args),
+                get_param_of(4, args),
+            ),
             // 最多12个参数，这里只是演示，所以只实现5个参数的，多的自己实现吧
-            6 => transmute::<
-                uintptr_t,
-                fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t),
-            >(f)(
+            6 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
@@ -53,10 +43,7 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(4, args),
                 get_param_of(5, args),
             ),
-            7 => transmute::<
-                uintptr_t,
-                fn(uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t, uintptr_t),
-            >(f)(
+            7 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
@@ -65,19 +52,7 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(5, args),
                 get_param_of(6, args),
             ),
-            8 => transmute::<
-                uintptr_t,
-                fn(
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                ),
-            >(f)(
+            8 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize, usize, usize)>(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
                 get_param_of(2, args),
@@ -88,18 +63,8 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(7, args),
             ),
             9 => transmute::<
-                uintptr_t,
-                fn(
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                ),
+                usize,
+                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize),
             >(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
@@ -112,19 +77,8 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(8, args),
             ),
             10 => transmute::<
-                uintptr_t,
-                fn(
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                ),
+                usize,
+                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize, usize),
             >(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
@@ -138,20 +92,8 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(9, args),
             ),
             11 => transmute::<
-                uintptr_t,
-                fn(
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                ),
+                usize,
+                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize, usize, usize),
             >(f)(
                 get_param_of(0, args),
                 get_param_of(1, args),
@@ -166,20 +108,20 @@ pub extern "system" fn do_event_callback_proc(
                 get_param_of(10, args),
             ),
             12 => transmute::<
-                uintptr_t,
+                usize,
                 fn(
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
-                    uintptr_t,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
+                    usize,
                 ),
             >(f)(
                 get_param_of(0, args),

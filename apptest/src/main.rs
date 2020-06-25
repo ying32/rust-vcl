@@ -3,18 +3,17 @@
 // extern crate libloading as lib;
 use std::ffi::{CStr, CString};
 
-use libc::{c_long, intptr_t, uintptr_t};
 use rustvcl::enums::*;
 use rustvcl::funcs::*;
 use rustvcl::imports::*;
 use rustvcl::vcl::*;
 
 // 按钮1单击事件
-fn on_btn_click(_sender: uintptr_t) {
+fn on_btn_click(_sender: usize) {
     ShowMessage("Hello, Rust!");
 }
 
-fn on_drop_file_event(_sender: uintptr_t, file_names: uintptr_t, len: intptr_t) {
+fn on_drop_file_event(_sender: usize, file_names: usize, len: isize) {
     println!("{}, {}, {}", _sender, file_names, len);
     unsafe {
         for i in 0..len {
@@ -41,7 +40,7 @@ fn main() {
     form.SetOnDropFiles(on_drop_file_event);
     form.SetOnClick(on_btn_click);
 
-    // let btn = TButton::new(form);
+    let btn = TButton::new(TComponent::new_from_instance(form.Instance()));
     // btn.SetParent(form);
     // btn.SetLeft(10);
     // btn.SetTop(50);

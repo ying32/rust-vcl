@@ -1,19 +1,45 @@
 use crate::enums::*;
 use crate::imports::*;
 use crate::types::*;
-use libc::{c_long, intptr_t, uintptr_t};
+
 use std::ffi::CString;
 
 pub struct TObject {
-    instance: uintptr_t,
+    instance: usize,
+}
+
+pub struct TComponent {
+    instance: usize,
+}
+
+impl TComponent {
+    pub fn new(owner: &TComponent) -> Self {
+        TComponent { instance: 0 }
+    }
+
+    pub fn new_from_instance(inst: usize) -> Self {
+        TComponent { instance: inst }
+    }
+
+    pub fn Instance(&self) -> usize {
+        return self.instance;
+    }
+}
+
+pub struct TControl {
+    instance: usize,
+}
+
+pub struct TWinControl {
+    instance: usize,
 }
 
 pub struct TIcon {
-    instance: uintptr_t,
+    instance: usize,
 }
 
 impl TIcon {
-    pub fn new_instance(inst: uintptr_t) -> Self {
+    pub fn new_from_instance(inst: usize) -> Self {
         TIcon { instance: inst }
     }
 
@@ -22,23 +48,31 @@ impl TIcon {
             Icon_LoadFromFile(self.instance, CString::new(file_name).unwrap().as_ptr());
         }
     }
+
+    pub fn Instance(&self) -> usize {
+        return self.instance;
+    }
 }
 
 // --------------------------
 
 pub struct TForm {
-    instance: uintptr_t,
+    instance: usize,
 }
 
 impl TForm {
-    // pub fn new(owner: uintptr_t) -> Self {
-    //     TForm {
-    //         instance: unsafe { Form_Create(owner) },
-    //     }
-    // }
+    pub fn new(owner: TComponent) -> Self {
+        TForm {
+            instance: unsafe { Form_Create(owner.instance) },
+        }
+    }
 
-    pub fn new_instance(inst: uintptr_t) -> Self {
+    pub fn new_from_instance(inst: usize) -> Self {
         TForm { instance: inst }
+    }
+
+    pub fn Instance(&self) -> usize {
+        return self.instance;
     }
 
     pub fn SetCaption(&self, str: &str) {
@@ -71,7 +105,7 @@ impl TForm {
 //-------------------
 
 pub struct TApplication {
-    instance: uintptr_t,
+    instance: usize,
 }
 
 impl TApplication {
@@ -80,6 +114,10 @@ impl TApplication {
         TApplication {
             instance: unsafe { Application_Instance() },
         }
+    }
+
+    pub fn Instance(&self) -> usize {
+        return self.instance;
     }
 
     pub fn Initialize(&self) {
@@ -107,28 +145,32 @@ impl TApplication {
     }
 
     pub fn CreateForm(&self) -> TForm {
-        TForm::new_instance(unsafe { Application_CreateForm(self.instance, false) })
+        TForm::new_from_instance(unsafe { Application_CreateForm(self.instance, false) })
     }
 
     pub fn Icon(&self) -> TIcon {
-        TIcon::new_instance(unsafe { Application_GetIcon(self.instance) })
+        TIcon::new_from_instance(unsafe { Application_GetIcon(self.instance) })
     }
 }
 
 //--------------
 
 pub struct TButton {
-    instance: uintptr_t,
+    instance: usize,
 }
 
 impl TButton {
-    pub fn new(owner: uintptr_t) -> Self {
+    pub fn new(owner: TComponent) -> Self {
         TButton {
-            instance: unsafe { Button_Create(owner) },
+            instance: unsafe { Button_Create(owner.instance) },
         }
     }
 
-    pub fn SetParent(&self, parent: uintptr_t) {
+    pub fn Instance(&self) -> usize {
+        return self.instance;
+    }
+
+    pub fn SetParent(&self, parent: usize) {
         unsafe {
             Button_SetParent(self.instance, parent);
         }

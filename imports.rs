@@ -4,49 +4,50 @@ use std::os::raw::c_char;
 use crate::enums::*;
 use crate::event_callback::do_event_callback_proc;
 use crate::types::*;
-use libc::{c_long, intptr_t, uintptr_t};
+
 use std::mem::{size_of, transmute};
 
 // MSVC 编译器，静态加载
 #[link(name = "liblcl")]
 extern "system" {
 
-    pub fn Application_Instance() -> uintptr_t;
-    pub fn Application_Initialize(obj: uintptr_t);
-    pub fn Application_SetTitle(obj: uintptr_t, val: *const c_char);
-    pub fn Application_SetMainFormOnTaskBar(obj: uintptr_t, val: bool);
-    pub fn Application_CreateForm(obj: uintptr_t, init_scale: bool) -> uintptr_t;
-    pub fn Application_Run(obj: uintptr_t);
-    pub fn Form_SetPosition(obj: uintptr_t, val: TPosition);
-    pub fn Form_SetCaption(obj: uintptr_t, val: *const c_char);
-    pub fn Application_GetIcon(obj: uintptr_t) -> uintptr_t;
-    pub fn Icon_LoadFromFile(obj: uintptr_t, file_name: *const c_char);
+    pub fn Application_Instance() -> usize;
+    pub fn Application_Initialize(obj: usize);
+    pub fn Application_SetTitle(obj: usize, val: *const c_char);
+    pub fn Application_SetMainFormOnTaskBar(obj: usize, val: bool);
+    pub fn Application_CreateForm(obj: usize, init_scale: bool) -> usize;
+    pub fn Application_Run(obj: usize);
+    pub fn Form_SetPosition(obj: usize, val: TPosition);
+    pub fn Form_SetCaption(obj: usize, val: *const c_char);
+    pub fn Application_GetIcon(obj: usize) -> usize;
+    pub fn Icon_LoadFromFile(obj: usize, file_name: *const c_char);
 
     //TButton
-    pub fn Button_Create(owner: uintptr_t) -> uintptr_t;
-    pub fn Button_SetCaption(obj: uintptr_t, val: *const c_char);
-    pub fn Button_SetParent(obj: uintptr_t, parent: uintptr_t);
-    pub fn Button_SetOnClick(obj: uintptr_t, event_id: TNotifyEvent);
-    pub fn Button_SetLeft(obj: uintptr_t, val: i32);
-    pub fn Button_SetTop(obj: uintptr_t, val: i32);
+    pub fn Button_Create(owner: usize) -> usize;
+    pub fn Button_SetCaption(obj: usize, val: *const c_char);
+    pub fn Button_SetParent(obj: usize, parent: usize);
+    pub fn Button_SetOnClick(obj: usize, event_id: TNotifyEvent);
+    pub fn Button_SetLeft(obj: usize, val: i32);
+    pub fn Button_SetTop(obj: usize, val: i32);
 
-    pub fn Object_ToString(obj: uintptr_t) -> *const c_char;
+    pub fn Object_ToString(obj: usize) -> *const c_char;
 
-    pub fn Icon_SetHandle(obj: uintptr_t, hints: uintptr_t, name: *const c_char);
+    pub fn Icon_SetHandle(obj: usize, hints: usize, name: *const c_char);
 
-    pub fn Form_SetAllowDropFiles(obj: uintptr_t, allow: bool);
-    pub fn Form_SetOnDropFiles(obj: uintptr_t, event: TDropFilesEvent);
-    pub fn Form_SetOnClick(obj: uintptr_t, event: TNotifyEvent);
+    pub fn Form_SetAllowDropFiles(obj: usize, allow: bool);
+    pub fn Form_SetOnDropFiles(obj: usize, event: TDropFilesEvent);
+    pub fn Form_SetOnClick(obj: usize, event: TNotifyEvent);
+    pub fn Form_Create(owner: usize) -> usize;
 
-    pub fn DGetStringArrOf(ptr: uintptr_t, index: intptr_t) -> *const c_char;
+    pub fn DGetStringArrOf(ptr: usize, index: isize) -> *const c_char;
 
     //
-    pub fn ResFormLoadFromFile(file_name: *const c_char, root: uintptr_t);
+    pub fn ResFormLoadFromFile(file_name: *const c_char, root: usize);
 
     //
     pub fn DShowMessage(msg: *const c_char);
     fn SetEventCallback(
-        callback: extern "system" fn(f: uintptr_t, args: uintptr_t, arg_count: c_long) -> uintptr_t,
+        callback: extern "system" fn(f: usize, args: usize, arg_count: i32) -> usize,
     );
 }
 
