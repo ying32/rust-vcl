@@ -1,3 +1,5 @@
+#![warn(non_upper_case_globals)]
+#[warn(non_snake_case)]
 use crate::enums::*;
 use crate::imports::*;
 use crate::types::*;
@@ -135,7 +137,9 @@ pub struct TApplication {
 }
 
 impl TApplication {
-    pub fn new() -> Self {
+    // 不公开这个，新建一个app实例，并初始化事件的东西
+    // 全局静态
+    fn new() -> Self {
         init_lib_lcl();
         TApplication {
             instance: unsafe { Application_Instance() },
@@ -225,4 +229,9 @@ impl TButton {
             Button_SetOnClick(self.instance, event);
         }
     }
+}
+
+//------------------------------------全局---------------------------------------------------------
+lazy_static! {
+    pub static ref Application: TApplication = TApplication::new();
 }

@@ -14,6 +14,7 @@ path = "lib.rs"
 
 [dependencies]
 libc = "0.2.0"
+lazy_static="1.4.0"
 
 #[[example]]
 #name = ""

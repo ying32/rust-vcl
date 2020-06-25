@@ -1,11 +1,11 @@
-use std::ffi::{CStr, CString};
+#![warn(improper_ctypes)]
+
+// use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
 use crate::enums::*;
 use crate::event_callback::do_event_callback_proc;
 use crate::types::*;
-
-use std::mem::{size_of, transmute};
 
 // MSVC 编译器，静态加载
 #[link(name = "liblcl")]

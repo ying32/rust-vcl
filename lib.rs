@@ -1,8 +1,9 @@
-#[macro_use]
 extern crate libc;
+#[macro_use]
+extern crate lazy_static;
 
 pub mod enums;
-pub mod funcs;
+pub mod fns;
 pub mod imports;
 pub mod types;
 
