@@ -2,13 +2,12 @@
 #[warn(improper_ctypes)]
 // extern crate libloading as lib;
 use std::ffi::{CStr, CString};
-// use std::os::raw::c_char;
 
 use libc::{c_long, intptr_t, uintptr_t};
-use liblcl::enums::*;
-use liblcl::funcs::*;
-use liblcl::imports::*;
-use liblcl::vcl::*;
+use rustvcl::enums::*;
+use rustvcl::funcs::*;
+use rustvcl::imports::*;
+use rustvcl::vcl::*;
 
 // 按钮1单击事件
 fn on_btn_click(_sender: uintptr_t) {
@@ -40,6 +39,7 @@ fn main() {
     form.SetPosition(TPosition::PoScreenCenter);
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(on_drop_file_event);
+    form.SetOnClick(on_btn_click);
 
     // let btn = TButton::new(form);
     // btn.SetParent(form);

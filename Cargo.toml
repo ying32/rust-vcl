@@ -1,5 +1,5 @@
 [package]
-name = "liblcl"
+name = "rustvcl"
 version = "0.1.0"
 authors = ["不在乎y(ying32)"]
 edition = "2018"

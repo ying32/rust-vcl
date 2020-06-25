@@ -36,6 +36,7 @@ extern "system" {
 
     pub fn Form_SetAllowDropFiles(obj: uintptr_t, allow: bool);
     pub fn Form_SetOnDropFiles(obj: uintptr_t, event: TDropFilesEvent);
+    pub fn Form_SetOnClick(obj: uintptr_t, event: TNotifyEvent);
 
     pub fn DGetStringArrOf(ptr: uintptr_t, index: intptr_t) -> *const c_char;
 

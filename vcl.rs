@@ -60,6 +60,12 @@ impl TForm {
             Form_SetOnDropFiles(self.instance, event);
         }
     }
+
+    pub fn SetOnClick(&self, event: TNotifyEvent) {
+        unsafe {
+            Form_SetOnClick(self.instance, event);
+        }
+    }
 }
 
 //-------------------
