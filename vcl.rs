@@ -8,13 +8,17 @@ pub struct TObject {
     instance: usize,
 }
 
+//------------------------------------------------
+
 pub struct TComponent {
     instance: usize,
 }
 
 impl TComponent {
-    pub fn new(owner: &TComponent) -> Self {
-        TComponent { instance: 0 }
+    pub fn new(owner: TComponent) -> Self {
+        TComponent {
+            instance: owner.instance,
+        }
     }
 
     pub fn new_from_instance(inst: usize) -> Self {
@@ -26,13 +30,35 @@ impl TComponent {
     }
 }
 
+//------------------------------------------------
+
 pub struct TControl {
     instance: usize,
 }
 
+//------------------------------------------------
+
 pub struct TWinControl {
     instance: usize,
 }
+
+impl TWinControl {
+    pub fn new(owner: TComponent) -> Self {
+        TWinControl {
+            instance: owner.instance,
+        }
+    }
+
+    pub fn new_from_instance(inst: usize) -> Self {
+        TWinControl { instance: inst }
+    }
+
+    pub fn Instance(&self) -> usize {
+        return self.instance;
+    }
+}
+
+//------------------------------------------------
 
 pub struct TIcon {
     instance: usize,
@@ -170,9 +196,9 @@ impl TButton {
         return self.instance;
     }
 
-    pub fn SetParent(&self, parent: usize) {
+    pub fn SetParent(&self, parent: TWinControl) {
         unsafe {
-            Button_SetParent(self.instance, parent);
+            Button_SetParent(self.instance, parent.instance);
         }
     }
 

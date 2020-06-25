@@ -38,14 +38,15 @@ fn main() {
     form.SetPosition(TPosition::PoScreenCenter);
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(on_drop_file_event);
-    form.SetOnClick(on_btn_click);
+    // form.SetOnClick(on_btn_click);
 
+    // 这里因为不会写，所以就这样弄下
     let btn = TButton::new(TComponent::new_from_instance(form.Instance()));
-    // btn.SetParent(form);
-    // btn.SetLeft(10);
-    // btn.SetTop(50);
-    // btn.SetCaption("button1");
-    // btn.SetOnClick(on_btn_click);
+    btn.SetParent(TWinControl::new_from_instance(form.Instance()));
+    btn.SetLeft(10);
+    btn.SetTop(50);
+    btn.SetCaption("button1");
+    btn.SetOnClick(on_btn_click);
 
     app.Run();
 
