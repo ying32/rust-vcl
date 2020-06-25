@@ -4,7 +4,9 @@ use crate::types::*;
 use libc::{c_long, intptr_t, uintptr_t};
 use std::ffi::CString;
 
-pub trait IObject {}
+pub struct TObject {
+    instance: uintptr_t,
+}
 
 pub struct TIcon {
     instance: uintptr_t,
