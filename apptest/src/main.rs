@@ -21,6 +21,7 @@ fn on_drop_file_event(_sender: usize, file_names: usize, len: isize) {
 
 fn main() {
     // 乱写的，也不知道是不是这样写
+    // 这里因为不会写，所以就这样弄下
 
     Application.SetMainFormOnTaskBar(true);
     Application.SetTitle("LCL App");
@@ -33,8 +34,6 @@ fn main() {
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(on_drop_file_event);
     // form.SetOnClick(on_btn_click);
-
-    // 这里因为不会写，所以就这样弄下
 
     let btn = TButton::new(&form);
     btn.SetParent(&form);
