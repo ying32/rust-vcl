@@ -8,7 +8,22 @@ use crate::types::*;
 
 use std::ffi::CString;
 
+pub trait IObject {
+    fn Instance(&self) -> usize;
+}
+
+pub trait IComponent {
+    fn Name<'a>(&self) -> &str;
+}
+
+//-------------------------------------------
 pub struct TObject(usize);
+
+impl IObject for TObject {
+    fn Instance(&self) -> usize {
+        unimplemented!()
+    }
+}
 
 pub struct TMouse(usize);
 
@@ -44,9 +59,17 @@ impl TComponent {
     pub fn new_from_instance(inst: usize) -> Self {
         TComponent { 0: inst }
     }
+}
 
-    pub fn Instance(&self) -> usize {
+impl IObject for TComponent {
+    fn Instance(&self) -> usize {
         return self.0;
+    }
+}
+
+impl IComponent for TComponent {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
     }
 }
 
@@ -54,6 +77,17 @@ impl TComponent {
 
 pub struct TControl(usize);
 
+impl IObject for TControl {
+    fn Instance(&self) -> usize {
+        return self.0;
+    }
+}
+
+impl IComponent for TControl {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
+    }
+}
 //------------------------------------------------
 
 pub struct TWinControl(usize);
@@ -66,12 +100,19 @@ impl TWinControl {
     pub fn new_from_instance(inst: usize) -> Self {
         TWinControl { 0: inst }
     }
+}
 
-    pub fn Instance(&self) -> usize {
+impl IObject for TWinControl {
+    fn Instance(&self) -> usize {
         return self.0;
     }
 }
 
+impl IComponent for TWinControl {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
+    }
+}
 //------------------------------------------------
 
 pub struct TIcon(usize);
@@ -86,8 +127,10 @@ impl TIcon {
             Icon_LoadFromFile(self.0, CString::new(file_name).unwrap().as_ptr());
         }
     }
+}
 
-    pub fn Instance(&self) -> usize {
+impl IObject for TIcon {
+    fn Instance(&self) -> usize {
         return self.0;
     }
 }
@@ -105,10 +148,6 @@ impl TForm {
 
     pub fn new_from_instance(inst: usize) -> Self {
         TForm { 0: inst }
-    }
-
-    pub fn Instance(&self) -> usize {
-        return self.0;
     }
 
     pub fn SetCaption(&self, str: &str) {
@@ -138,6 +177,18 @@ impl TForm {
     }
 }
 
+impl IObject for TForm {
+    fn Instance(&self) -> usize {
+        return self.0;
+    }
+}
+
+impl IComponent for TForm {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
+    }
+}
+
 //-------------------
 
 pub struct TApplication(usize);
@@ -150,10 +201,6 @@ impl TApplication {
         TApplication {
             0: unsafe { Application_Instance() },
         }
-    }
-
-    pub fn Instance(&self) -> usize {
-        return self.0;
     }
 
     pub fn Initialize(&self) {
@@ -189,19 +236,27 @@ impl TApplication {
     }
 }
 
+impl IObject for TApplication {
+    fn Instance(&self) -> usize {
+        return self.0;
+    }
+}
+
+impl IComponent for TApplication {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
+    }
+}
+
 //--------------
 
 pub struct TButton(usize);
 
 impl TButton {
-    pub fn new(owner: TComponent) -> Self {
+    pub fn new(owner: &IComponent) -> Self {
         TButton {
-            0: unsafe { Button_Create(owner.0) },
+            0: unsafe { Button_Create(0) },
         }
-    }
-
-    pub fn Instance(&self) -> usize {
-        return self.0;
     }
 
     pub fn SetParent(&self, parent: TWinControl) {
@@ -232,6 +287,18 @@ impl TButton {
         unsafe {
             Button_SetOnClick(self.0, event);
         }
+    }
+}
+
+impl IObject for TButton {
+    fn Instance(&self) -> usize {
+        return self.0;
+    }
+}
+
+impl IComponent for TButton {
+    fn Name<'a>(&self) -> &str {
+        unimplemented!()
     }
 }
 
