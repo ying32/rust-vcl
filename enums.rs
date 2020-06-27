@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 #[repr(C)]
 pub enum TPosition {
     PoDesigned,        // use bounds from the designer (read from stream)

@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 use crate::imports::*;
 use std::borrow::Cow;
 use std::ffi::{CStr, CString};

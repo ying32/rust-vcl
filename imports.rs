@@ -1,5 +1,5 @@
-#![warn(improper_ctypes)]
-
+#![allow(non_snake_case)]
+#![allow(improper_ctypes)]
 // use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 

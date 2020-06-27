@@ -1,5 +1,7 @@
-#![warn(non_upper_case_globals)]
-#[warn(non_snake_case)]
+#![allow(non_upper_case_globals)]
+#![allow(non_snake_case)]
+#![allow(dead_code)]
+
 use crate::enums::*;
 use crate::imports::*;
 use crate::types::*;
