@@ -6,7 +6,6 @@ pub mod enums;
 pub mod fns;
 pub mod imports;
 pub mod types;
-
 pub mod vcl;
 
-mod event_callback;
+mod callbacks;

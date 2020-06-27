@@ -6,7 +6,7 @@ unsafe fn get_param_of(index: usize, ptr: usize) -> usize {
 }
 
 // 回调函数
-pub extern "system" fn do_event_callback_proc(f: usize, args: usize, arg_count: i32) -> usize {
+pub extern "system" fn do_event_callback(f: usize, args: usize, arg_count: i32) -> usize {
     println!("do_event_callback_proc=({}, {}, {})", f, args, arg_count);
     unsafe {
         match arg_count {
@@ -140,5 +140,15 @@ pub extern "system" fn do_event_callback_proc(f: usize, args: usize, arg_count: 
             _ => println!("none"),
         }
     }
+    return 0;
+}
+
+// 消息回调
+pub extern "system" fn do_message_callback(_f: usize, _msg: usize) -> usize {
+    return 0;
+}
+
+// 线程同步回调
+pub extern "system" fn do_thread_sync_callback() -> usize {
     return 0;
 }

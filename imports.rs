@@ -3,8 +3,8 @@
 // use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
+use crate::callbacks::{do_event_callback, do_message_callback, do_thread_sync_callback};
 use crate::enums::*;
-use crate::event_callback::do_event_callback_proc;
 use crate::types::*;
 
 // MSVC 编译器，静态加载
@@ -49,11 +49,15 @@ extern "system" {
     fn SetEventCallback(
         callback: extern "system" fn(f: usize, args: usize, arg_count: i32) -> usize,
     );
+    fn SetMessageCallback(callback: extern "system" fn(f: usize, msg: usize) -> usize) -> usize;
+    fn SetThreadSyncCallback(callback: extern "system" fn() -> usize) -> usize;
 }
 
 pub fn init_lib_lcl() {
     unsafe {
         // 基本事件回调
-        SetEventCallback(do_event_callback_proc);
+        SetEventCallback(do_event_callback);
+        SetMessageCallback(do_message_callback);
+        SetThreadSyncCallback(do_thread_sync_callback);
     }
 }
