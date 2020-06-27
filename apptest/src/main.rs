@@ -19,46 +19,7 @@ fn on_drop_file_event(_sender: usize, file_names: usize, len: isize) {
     }
 }
 
-// trait MyTestInterface {
-//     fn hello(&self);
-// }
-//
-// struct MyTest(usize);
-//
-// impl MyTest {
-//     fn new() -> Self {
-//         MyTest { 0: 1 }
-//     }
-// }
-//
-// struct MyOwnerTest(usize);
-//
-// impl MyOwnerTest {
-//     fn new() -> Self {
-//         MyOwnerTest { 0: 2 }
-//     }
-// }
-//
-// impl MyTestInterface for MyTest {
-//     fn hello(&self) {
-//         println!("hello MyTest {}", self.0);
-//     }
-// }
-//
-// impl MyTestInterface for MyOwnerTest {
-//     fn hello(&self) {
-//         println!("hello MyOwnerTest {}", self.0);
-//     }
-// }
-//
-// fn TestFunc(a: &MyTestInterface) {
-//     a.hello();
-// }
-
 fn main() {
-    // let abc = MyTest::new();
-    // let abc2 = MyOwnerTest::new();
-    // TestFunc(&abc2);
     // 乱写的，也不知道是不是这样写
 
     Application.SetMainFormOnTaskBar(true);
@@ -76,7 +37,7 @@ fn main() {
     // 这里因为不会写，所以就这样弄下
 
     let btn = TButton::new(&form);
-    btn.SetParent(TWinControl::new_from_instance(form.Instance()));
+    btn.SetParent(&form);
     btn.SetLeft(10);
     btn.SetTop(50);
     btn.SetCaption("button1");

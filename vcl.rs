@@ -12,9 +12,13 @@ pub trait IObject {
     fn Instance(&self) -> usize;
 }
 
-pub trait IComponent {
+pub trait IComponent: IObject {
     fn Name<'a>(&self) -> &str;
 }
+
+pub trait IControl: IComponent {}
+
+pub trait IWinControl: IControl {}
 
 //-------------------------------------------
 pub struct TObject(usize);
@@ -52,8 +56,10 @@ pub struct TClipboard(usize);
 pub struct TComponent(usize);
 
 impl TComponent {
-    pub fn new(owner: TComponent) -> Self {
-        TComponent { 0: owner.0 }
+    pub fn new(owner: &dyn IComponent) -> Self {
+        TComponent {
+            0: owner.Instance(),
+        }
     }
 
     pub fn new_from_instance(inst: usize) -> Self {
@@ -93,8 +99,10 @@ impl IComponent for TControl {
 pub struct TWinControl(usize);
 
 impl TWinControl {
-    pub fn new(owner: TComponent) -> Self {
-        TWinControl { 0: owner.0 }
+    pub fn new(owner: &dyn IComponent) -> Self {
+        TWinControl {
+            0: owner.Instance(),
+        }
     }
 
     pub fn new_from_instance(inst: usize) -> Self {
@@ -189,6 +197,10 @@ impl IComponent for TForm {
     }
 }
 
+impl IControl for TForm {}
+
+impl IWinControl for TForm {}
+
 //-------------------
 
 pub struct TApplication(usize);
@@ -253,15 +265,15 @@ impl IComponent for TApplication {
 pub struct TButton(usize);
 
 impl TButton {
-    pub fn new(owner: &IComponent) -> Self {
+    pub fn new(owner: &dyn IComponent) -> Self {
         TButton {
-            0: unsafe { Button_Create(0) },
+            0: unsafe { Button_Create(owner.Instance()) },
         }
     }
 
-    pub fn SetParent(&self, parent: TWinControl) {
+    pub fn SetParent(&self, parent: &dyn IWinControl) {
         unsafe {
-            Button_SetParent(self.0, parent.0);
+            Button_SetParent(self.0, parent.Instance());
         }
     }
 
@@ -302,6 +314,9 @@ impl IComponent for TButton {
     }
 }
 
+impl IControl for TButton {}
+
+impl IWinControl for TButton {}
 //------------------------------------全局---------------------------------------------------------
 lazy_static! {
     pub static ref Application: TApplication = TApplication::new();
