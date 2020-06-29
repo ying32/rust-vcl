@@ -32,7 +32,7 @@ fn main() {
 
     let form = Application.CreateForm();
     form.SetCaption("你好，Rust！ - Hello Rust!");
-    form.SetPosition(TPosition::PoScreenCenter);
+    form.SetPosition(TPosition::poScreenCenter);
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(on_drop_file_event);
     // form.SetOnClick(on_btn_click);
