@@ -1,5 +1,7 @@
 #![windows_subsystem = "windows"]
 
+// #[cfg(target_os = "windows")]
+
 use rustvcl::enums::*;
 use rustvcl::fns::*;
 
