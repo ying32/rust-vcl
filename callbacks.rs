@@ -9,7 +9,7 @@ unsafe fn get_param_of(index: usize, ptr: usize) -> usize {
 
 pub extern "system" fn do_event_callback(f: usize, args: usize, arg_count: i32) -> usize {
     macro_rules! tt {
-        ($x:tt) => {
+        ($x:expr) => {
             usize
         };
     }
@@ -18,7 +18,7 @@ pub extern "system" fn do_event_callback(f: usize, args: usize, arg_count: i32) 
         () => {
             transmute::<usize, fn()>(f)()
         };
-        ($($arg:tt),*) => {
+        ($($arg:expr),*) => {
             transmute::<usize, fn( $( tt!($arg)),*)>(f)( $(get_param_of($arg, args)),* )
         };
     }
