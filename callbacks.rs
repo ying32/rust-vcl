@@ -6,137 +6,38 @@ unsafe fn get_param_of(index: usize, ptr: usize) -> usize {
 }
 
 // 回调函数
+
 pub extern "system" fn do_event_callback(f: usize, args: usize, arg_count: i32) -> usize {
+    macro_rules! tt {
+        ($x:tt) => {
+            usize
+        };
+    }
+
+    macro_rules! sys_call {
+        () => {
+            transmute::<usize, fn()>(f)()
+        };
+        ($($arg:tt),*) => {
+            transmute::<usize, fn( $( tt!($arg)),*)>(f)( $(get_param_of($arg, args)),* )
+        };
+    }
     println!("do_event_callback_proc=({}, {}, {})", f, args, arg_count);
     unsafe {
         match arg_count {
-            0 => transmute::<usize, fn()>(f)(),
-            1 => transmute::<usize, fn(usize)>(f)(get_param_of(0, args)),
-            2 => transmute::<usize, fn(usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-            ),
-            3 => transmute::<usize, fn(usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-            ),
-            4 => transmute::<usize, fn(usize, usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-            ),
-            5 => transmute::<usize, fn(usize, usize, usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-            ),
-            // 最多12个参数，这里只是演示，所以只实现5个参数的，多的自己实现吧
-            6 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-            ),
-            7 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-            ),
-            8 => transmute::<usize, fn(usize, usize, usize, usize, usize, usize, usize, usize)>(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-                get_param_of(7, args),
-            ),
-            9 => transmute::<
-                usize,
-                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize),
-            >(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-                get_param_of(7, args),
-                get_param_of(8, args),
-            ),
-            10 => transmute::<
-                usize,
-                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize, usize),
-            >(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-                get_param_of(7, args),
-                get_param_of(8, args),
-                get_param_of(9, args),
-            ),
-            11 => transmute::<
-                usize,
-                fn(usize, usize, usize, usize, usize, usize, usize, usize, usize, usize, usize),
-            >(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-                get_param_of(7, args),
-                get_param_of(8, args),
-                get_param_of(9, args),
-                get_param_of(10, args),
-            ),
-            12 => transmute::<
-                usize,
-                fn(
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                    usize,
-                ),
-            >(f)(
-                get_param_of(0, args),
-                get_param_of(1, args),
-                get_param_of(2, args),
-                get_param_of(3, args),
-                get_param_of(4, args),
-                get_param_of(5, args),
-                get_param_of(6, args),
-                get_param_of(7, args),
-                get_param_of(8, args),
-                get_param_of(9, args),
-                get_param_of(10, args),
-                get_param_of(11, args),
-            ),
+            0 => sys_call!(),
+            1 => sys_call!(0),
+            2 => sys_call!(0, 1),
+            3 => sys_call!(0, 1, 2),
+            4 => sys_call!(0, 1, 2, 3),
+            5 => sys_call!(0, 1, 2, 3, 4),
+            6 => sys_call!(0, 1, 2, 3, 4, 5),
+            7 => sys_call!(0, 1, 2, 3, 4, 5, 6),
+            8 => sys_call!(0, 1, 2, 3, 4, 5, 6, 7),
+            9 => sys_call!(0, 1, 2, 3, 4, 5, 6, 7, 8),
+            10 => sys_call!(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+            11 => sys_call!(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+            12 => sys_call!(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
             _ => println!("none"),
         }
     }
