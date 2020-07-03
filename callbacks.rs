@@ -1,6 +1,7 @@
 use std::mem::{size_of, transmute};
 
 // 根据索引获取参数
+#[inline]
 unsafe fn get_param_of(index: usize, ptr: usize) -> usize {
     return *((ptr + index * size_of::<usize>()) as *const usize);
 }
