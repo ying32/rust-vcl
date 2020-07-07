@@ -2,10 +2,10 @@
 
 // #[cfg(target_os = "windows")]
 
-use rustvcl::enums::*;
-use rustvcl::fns::*;
+use rust_vcl::enums::*;
+use rust_vcl::fns::*;
 
-use rustvcl::vcl::*;
+use rust_vcl::vcl::*;
 
 // 按钮1单击事件
 fn on_btn_click(_sender: usize) {

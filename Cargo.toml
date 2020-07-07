@@ -1,5 +1,5 @@
 [package]
-name = "rustvcl"
+name = "rust_vcl"
 version = "0.1.0"
 authors = ["不在乎y"]
 license = "Apache-2.0"
