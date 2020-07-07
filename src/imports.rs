@@ -3,7 +3,7 @@
 // use std::ffi::{CStr, CString};
 use std::os::raw::c_char;
 
-use crate::callbacks::{do_event_callback, do_message_callback, do_thread_sync_callback};
+use crate::callbacks::*;
 use crate::enums::*;
 use crate::types::*;
 
