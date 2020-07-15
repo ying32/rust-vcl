@@ -10,12 +10,17 @@ categories = ["gui"]
 repository = "https://github.com/ying32/rust-vcl"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+build = "src/build.rs"
+
 [lib]
 path = "src/lib.rs"
 
 [dependencies]
 libc = "0.2.0"
 lazy_static="1.4.0"
+
+[build-dependencies]
+dunce = "0.1.1"
 
 #[[example]]
 #name = ""

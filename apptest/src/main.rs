@@ -9,7 +9,7 @@ use rust_vcl::vcl::*;
 
 // 按钮1单击事件
 fn on_btn_click(_sender: usize) {
-    ShowMessage("Hello, Rust!");
+    ShowMessage("Hello, Rust! 你好，世界！");
 }
 
 fn on_drop_file_event(_sender: usize, file_names: usize, len: isize) {
