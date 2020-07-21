@@ -1441,7 +1441,7 @@ pub enum TGridOption {
     goDontScrollPartCell, // clicking partially visible cells will not scroll
     goCellHints, // show individual cell hints
     goTruncCellHints, // show cell hints if cell text is too long
-    goCellEllipsis, // show &#34;...&#34; if cell text is too long
+    goCellEllipsis, // show "..." if cell text is too long
     goAutoAddRowsSkipContentCheck, // BB Also add a row (if AutoAddRows in Options) if last row is empty
     goRowHighlight, // Highlight the current Row
 }
@@ -1849,7 +1849,7 @@ pub enum TChildControlResizeStyle {
 #[repr(C)]
 pub enum TControlChildrenLayout {
     cclNone,
-    cclLeftToRightThenTopToBottom, // if BiDiMode &lt;&gt; bdLeftToRight then it becomes RightToLeft
+    cclLeftToRightThenTopToBottom, // if BiDiMode <> bdLeftToRight then it becomes RightToLeft
     cclTopToBottomThenLeftToRight,
 }
 
