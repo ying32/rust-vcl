@@ -16,24 +16,24 @@ use std::os::raw::c_char;
 
 #[repr(C)]
 pub struct TPoint {
-    x: i32,
-    y: i32,
+    pub x: i32,
+    pub y: i32,
 }
 
 
 #[repr(C)]
 pub struct TRect {
-    left: i32,
-    top: i32,
-    right: i32,
-    bottom: i32,
+    pub left: i32,
+    pub top: i32,
+    pub right: i32,
+    pub bottom: i32,
 }
 
 
 #[repr(C)]
 pub struct TSize {
-    cx: i32,
-    cy: i32,
+    pub cx: i32,
+    pub cy: i32,
 }
 
 pub type HWND = usize;
@@ -71,36 +71,36 @@ pub type TSet = u32;
 
 #[repr(C)]
 pub struct TMsg {
-    hwnd: HWND,
-    message: u32,
-    wParam: usize,
-    lParam: usize,
-    time: u32,
-    pt: TPoint,
+    pub hwnd: HWND,
+    pub message: u32,
+    pub wParam: usize,
+    pub lParam: usize,
+    pub time: u32,
+    pub pt: TPoint,
 }
 
 
 #[repr(C)]
 pub struct TCursorInfo {
-    cbSize: u32,
-    flags: u32,
-    hCursor: HCURSOR,
-    ptScreenPos: TPoint,
+    pub cbSize: u32,
+    pub flags: u32,
+    pub hCursor: HCURSOR,
+    pub ptScreenPos: TPoint,
 }
 
 
 #[repr(C)]
 pub struct TWndClass {
-    style: u32,
-    lpfnWndProc: usize,
-    cbClsExtra: i32,
-    cbWndExtra: i32,
-    hInstance: usize,
-    hIcon: HICON,
-    hCursor: HCURSOR,
-    hbrBackground: HBRUSH,
-    lpszMenuName: LPCWSTR,
-    lpszClassName: LPCWSTR,
+    pub style: u32,
+    pub lpfnWndProc: usize,
+    pub cbClsExtra: i32,
+    pub cbWndExtra: i32,
+    pub hInstance: usize,
+    pub hIcon: HICON,
+    pub hCursor: HCURSOR,
+    pub hbrBackground: HBRUSH,
+    pub lpszMenuName: LPCWSTR,
+    pub lpszClassName: LPCWSTR,
 }
 
 pub type TModalResult = i32;
@@ -122,8 +122,8 @@ pub type TThreadID = usize;
 
 #[repr(C)]
 pub struct TGridCoord {
-    x: i32,
-    y: i32,
+    pub x: i32,
+    pub y: i32,
 }
 
 pub type TCustomData = usize;
@@ -132,51 +132,51 @@ pub type IObjectArray = usize;
 
 #[repr(C)]
 pub struct TSysLocale {
-    defaultLCID: i32,
-    priLangID: i32,
-    subLangID: i32,
-    farEast: bool,
-    middleEast: bool,
+    pub defaultLCID: i32,
+    pub priLangID: i32,
+    pub subLangID: i32,
+    pub farEast: bool,
+    pub middleEast: bool,
 }
 
 
 #[repr(C)]
 pub struct TSmallPoint {
-    x: i16,
-    y: i16,
+    pub x: i16,
+    pub y: i16,
 }
 
 
 #[repr(C)]
 pub struct TGUID {
-    d1: u32,
-    d2: u16,
-    d3: u16,
-    d4: [u8;8],
+    pub d1: u32,
+    pub d2: u16,
+    pub d3: u16,
+    pub d4: [u8;8],
 }
 
 
 #[repr(C)]
 pub struct TLibResource {
-    name: *const c_char,
-    ptr: usize,
+    pub name: *const c_char,
+    pub ptr: usize,
 }
 
 
 #[repr(C)]
 pub struct TResItem {
-    name: usize,
-    value: usize,
+    pub name: usize,
+    pub value: usize,
 }
 
 pub type TConstraintSize = i32;
 
 #[repr(C)]
 pub struct TAlignInfo {
-    alignList: usize,
-    controlIndex: i32,
-    align: TAlign,
-    scratch: i32,
+    pub alignList: usize,
+    pub controlIndex: i32,
+    pub align: TAlign,
+    pub scratch: i32,
 }
 
 
@@ -1960,54 +1960,54 @@ struct TDWordFiller {
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
 pub struct TWMKey {
-      msg: u32,
+      pub msg: u32,
       msgFiller: TDWordFiller,
-      charCode: [u16;2],
+      pub charCode: [u16;2],
       charCodeUnusedFiller: TDWordFiller,
-      keyData: u32,
+      pub keyData: u32,
       keyDataFiller: TDWordFiller,
-      result: usize,
+      pub result: usize,
 }
 
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
 struct TDWordFiller {
-      filler: [u8;4],
+      pub filler: [u8;4],
 }
 
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
 pub struct TWMKey {
-      msg: u32,
+      pub msg: u32,
       msgFiller: TDWordFiller,
-      charCode: [u16;2],
+      pub charCode: [u16;2],
       charCodeUnusedFiller: TDWordFiller,
-      keyData: u32,
+      pub keyData: u32,
       keyDataFiller: TDWordFiller,
-      result: usize,
+      pub result: usize,
 }
 
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
 pub struct TMessage {
-      msg: u32,
-      wParam: WPARAM,
-      lParam: LPARAM,
-      result: LRESULT,
+      pub msg: u32,
+      pub wParam: WPARAM,
+      pub lParam: LPARAM,
+      pub result: LRESULT,
 }
 
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
 pub struct TMessage {
-      msg: u32,
+      pub msg: u32,
       _UnusedMsg: u32,
-      wParam: WPARAM,
-      lParam: LPARAM,
-      result: LRESULT,
+      pub wParam: WPARAM,
+      pub lParam: LPARAM,
+      pub result: LRESULT,
 }
 
 #[cfg(target_os = "linux")]
@@ -2023,106 +2023,106 @@ pub type MyNSWindow = usize;
 
 
 
-// fn (sender: pointer)
+// fn (sender: usize)
 pub type TNotifyEvent = fn(usize);
 
-// fn (sender: pointer, button: TUDBtnType)
+// fn (sender: usize, button: TUDBtnType)
 pub type TUDClickEvent = fn(usize, TUDBtnType);
 
-// fn (sender: pointer, *mut action: TCloseAction)
+// fn (sender: usize, *mut action: TCloseAction)
 pub type TCloseEvent = fn(usize, *mut TCloseAction);
 
-// fn (sender: pointer, *mut canClose: bool)
+// fn (sender: usize, *mut canClose: bool)
 pub type TCloseQueryEvent = fn(usize, *mut bool);
 
-// fn (sender: pointer, *mut source: pointer, rebuild: bool)
+// fn (sender: usize, *mut source: usize, rebuild: bool)
 pub type TMenuChangeEvent = fn(usize, *mut usize, bool);
 
-// fn (sender: pointer, link: *const c_char, linkType: TSysLinkType)
+// fn (sender: usize, link: *const c_char, linkType: TSysLinkType)
 pub type TSysLinkEvent = fn(usize, *const c_char, TSysLinkType);
 
-// fn (sender: pointer, *mut e: pointer)
+// fn (sender: usize, *mut e: usize)
 pub type TExceptionEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut key: Char, shift: TShiftState)
+// fn (sender: usize, *mut key: Char, shift: TShiftState)
 pub type TKeyEvent = fn(usize, *mut Char, TShiftState);
 
-// fn (sender: pointer, *mut key: Char)
+// fn (sender: usize, *mut key: Char)
 pub type TKeyPressEvent = fn(usize, *mut Char);
 
-// fn (sender: pointer, button: TMouseButton, shift: TShiftState, x: i32, y: i32)
+// fn (sender: usize, button: TMouseButton, shift: TShiftState, x: i32, y: i32)
 pub type TMouseEvent = fn(usize, TMouseButton, TShiftState, i32, i32);
 
-// fn (sender: pointer, shift: TShiftState, x: i32, y: i32)
+// fn (sender: usize, shift: TShiftState, x: i32, y: i32)
 pub type TMouseMoveEvent = fn(usize, TShiftState, i32, i32);
 
-// fn (sender: pointer, shift: TShiftState, wheelDelta: i32, x: i32, y: i32, *mut handled: bool)
+// fn (sender: usize, shift: TShiftState, wheelDelta: i32, x: i32, y: i32, *mut handled: bool)
 pub type TMouseWheelEvent = fn(usize, TShiftState, i32, i32, i32, *mut bool);
 
-// fn (control: pointer, index: i32, *mut aRect: TRect, state: TOwnerDrawState)
+// fn (control: usize, index: i32, *mut aRect: TRect, state: TOwnerDrawState)
 pub type TDrawItemEvent = fn(usize, i32, *mut TRect, TOwnerDrawState);
 
-// fn (sender: pointer, *mut aCanvas: pointer, *mut aRect: TRect, selected: bool)
+// fn (sender: usize, *mut aCanvas: usize, *mut aRect: TRect, selected: bool)
 pub type TMenuDrawItemEvent = fn(usize, *mut usize, *mut TRect, bool);
 
-// fn (sender: pointer, *mut column: pointer)
+// fn (sender: usize, *mut column: usize)
 pub type TLVColumnClickEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut column: pointer, *mut point: TPoint)
+// fn (sender: usize, *mut column: usize, *mut point: TPoint)
 pub type TLVColumnRClickEvent = fn(usize, *mut usize, *mut TPoint);
 
-// fn (sender: pointer, *mut item: pointer, selected: bool)
+// fn (sender: usize, *mut item: usize, selected: bool)
 pub type TLVSelectItemEvent = fn(usize, *mut usize, bool);
 
-// fn (sender: pointer, *mut item: pointer)
+// fn (sender: usize, *mut item: usize)
 pub type TLVCheckedItemEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut item1: pointer, *mut item2: pointer, data: i32, *mut compare: i32)
+// fn (sender: usize, *mut item1: usize, *mut item2: usize, data: i32, *mut compare: i32)
 pub type TLVCompareEvent = fn(usize, *mut usize, *mut usize, i32, *mut i32);
 
-// fn (sender: pointer, *mut item: pointer, change: TItemChange)
+// fn (sender: usize, *mut item: usize, change: TItemChange)
 pub type TLVChangeEvent = fn(usize, *mut usize, TItemChange);
 
-// fn (sender: pointer, *mut item: pointer)
+// fn (sender: usize, *mut item: usize)
 pub type TLVNotifyEvent = fn(usize, *mut usize);
 
-// fn (*mut sender: pointer, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TLVAdvancedCustomDrawEvent = fn(*mut usize, *mut TRect, TCustomDrawStage, *mut bool);
 
-// fn (*mut sender: pointer, *mut item: pointer, state: TCustomDrawState, Stage: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut item: usize, state: TCustomDrawState, Stage: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TLVAdvancedCustomDrawItemEvent = fn(*mut usize, *mut usize, TCustomDrawState, TCustomDrawStage, *mut bool);
 
-// fn (*mut sender: pointer, *mut item: pointer, subItem: i32, state: TCustomDrawState, stage: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut item: usize, subItem: i32, state: TCustomDrawState, stage: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TLVAdvancedCustomDrawSubItemEvent = fn(*mut usize, *mut usize, i32, TCustomDrawState, TCustomDrawStage, *mut bool);
 
-// fn (sender: pointer, *mut node1: pointer, *mut node2: pointer, data: i32, *mut compare: i32)
+// fn (sender: usize, *mut node1: usize, *mut node2: usize, data: i32, *mut compare: i32)
 pub type TTVCompareEvent = fn(usize, *mut usize, *mut usize, i32, *mut i32);
 
-// fn (sender: pointer, *mut node: pointer)
+// fn (sender: usize, *mut node: usize)
 pub type TTVExpandedEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut node: pointer)
+// fn (sender: usize, *mut node: usize)
 pub type TTVChangedEvent = fn(usize, *mut usize);
 
-// fn (*mut sender: pointer, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TTVAdvancedCustomDrawEvent = fn(*mut usize, *mut TRect, TCustomDrawStage, *mut bool);
 
-// fn (*mut sender: pointer, *mut node: pointer, state: TCustomDrawState, stage: TCustomDrawStage, *mut paintImages: bool, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut node: usize, state: TCustomDrawState, stage: TCustomDrawStage, *mut paintImages: bool, *mut defaultDraw: bool)
 pub type TTVAdvancedCustomDrawItemEvent = fn(*mut usize, *mut usize, TCustomDrawState, TCustomDrawStage, *mut bool, *mut bool);
 
-// fn (sender: pointer, tabIndex: i32, *mut imageIndex: i32)
+// fn (sender: usize, tabIndex: i32, *mut imageIndex: i32)
 pub type TTabGetImageEvent = fn(usize, i32, *mut i32);
 
-// fn (*mut sender: pointer, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut aRect: TRect, stage: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TTBAdvancedCustomDrawEvent = fn(*mut usize, *mut TRect, TCustomDrawStage, *mut bool);
 
 // fn ()
 pub type TThreadProc = fn();
 
-// fn (sender: pointer, aFileNames: usize, len: isize)
+// fn (sender: usize, aFileNames: usize, len: isize)
 pub type TDropFilesEvent = fn(usize, usize, isize);
 
-// fn (sender: pointer, *mut minWidth: i32, *mut minHeight: i32, *mut maxWidth: i32, *mut maxHeight: i32)
+// fn (sender: usize, *mut minWidth: i32, *mut minHeight: i32, *mut maxWidth: i32, *mut maxHeight: i32)
 pub type TConstrainedResizeEvent = fn(usize, *mut i32, *mut i32, *mut i32, *mut i32);
 
 // fn (command: u16, data: THelpEventData, *mut callhelp: bool, *mut result: bool)
@@ -2131,207 +2131,207 @@ pub type THelpEvent = fn(u16, THelpEventData, *mut bool, *mut bool);
 // fn (*mut msg: TWMKey, *mut handled: bool)
 pub type TShortCutEvent = fn(*mut TWMKey, *mut bool);
 
-// fn (sender: pointer, *mut mousePos: TPoint, *mut handled: bool)
+// fn (sender: usize, *mut mousePos: TPoint, *mut handled: bool)
 pub type TContextPopupEvent = fn(usize, *mut TPoint, *mut bool);
 
-// fn (sender: pointer, source: pointer, x: i32, y: i32, state: TDragState, *mut accept: bool)
+// fn (sender: usize, source: usize, x: i32, y: i32, state: TDragState, *mut accept: bool)
 pub type TDragOverEvent = fn(usize, usize, i32, i32, TDragState, *mut bool);
 
-// fn (sender: pointer, source: pointer, x: i32, y: i32)
+// fn (sender: usize, source: usize, x: i32, y: i32)
 pub type TDragDropEvent = fn(usize, usize, i32, i32);
 
-// fn (sender: pointer, target: pointer, x: i32, y: i32)
+// fn (sender: usize, target: usize, x: i32, y: i32)
 pub type TEndDragEvent = fn(usize, usize, i32, i32);
 
-// fn (sender: pointer, *mut source: pointer, x: i32, y: i32)
+// fn (sender: usize, *mut source: usize, x: i32, y: i32)
 pub type TDockDropEvent = fn(usize, *mut usize, i32, i32);
 
-// fn (sender: pointer, *mut source: pointer, x: i32, y: i32, state: TDragState, *mut accept: bool)
+// fn (sender: usize, *mut source: usize, x: i32, y: i32, state: TDragState, *mut accept: bool)
 pub type TDockOverEvent = fn(usize, *mut usize, i32, i32, TDragState, *mut bool);
 
-// fn (sender: pointer, *mut client: pointer, *mut newTarget: pointer, *mut allow: bool)
+// fn (sender: usize, *mut client: usize, *mut newTarget: usize, *mut allow: bool)
 pub type TUnDockEvent = fn(usize, *mut usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut dragObject: pointer)
+// fn (sender: usize, *mut dragObject: usize)
 pub type TStartDockEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut dockClient: pointer, *mut influenceRect: TRect, *mut mousePos: TPoint, *mut canDock: bool)
+// fn (sender: usize, *mut dockClient: usize, *mut influenceRect: TRect, *mut mousePos: TPoint, *mut canDock: bool)
 pub type TGetSiteInfoEvent = fn(usize, *mut usize, *mut TRect, *mut TPoint, *mut bool);
 
-// fn (sender: pointer, shift: TShiftState, *mut mousePos: TPoint, *mut handled: bool)
+// fn (sender: usize, shift: TShiftState, *mut mousePos: TPoint, *mut handled: bool)
 pub type TMouseWheelUpDownEvent = fn(usize, TShiftState, *mut TPoint, *mut bool);
 
-// fn (sender: pointer, isColumn: bool, sIndex: i32, tIndex: i32)
+// fn (sender: usize, isColumn: bool, sIndex: i32, tIndex: i32)
 pub type TGridOperationEvent = fn(usize, bool, i32, i32);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, *mut aRect: TRect, state: TGridDrawState)
+// fn (sender: usize, aCol: i32, aRow: i32, *mut aRect: TRect, state: TGridDrawState)
 pub type TDrawCellEvent = fn(usize, i32, i32, *mut TRect, TGridDrawState);
 
-// fn (sender: pointer, aCol: i32, aRow: i32)
+// fn (sender: usize, aCol: i32, aRow: i32)
 pub type TFixedCellClickEvent = fn(usize, i32, i32);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, *mut value: *const c_char)
+// fn (sender: usize, aCol: i32, aRow: i32, *mut value: *const c_char)
 pub type TGetEditEvent = fn(usize, i32, i32, *mut *const c_char);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, *mut canSelect: bool)
+// fn (sender: usize, aCol: i32, aRow: i32, *mut canSelect: bool)
 pub type TSelectCellEvent = fn(usize, i32, i32, *mut bool);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, value: *const c_char)
+// fn (sender: usize, aCol: i32, aRow: i32, value: *const c_char)
 pub type TSetEditEvent = fn(usize, i32, i32, *const c_char);
 
-// fn (*mut headerControl: pointer, *mut section: pointer, *mut aRect: TRect, pressed: bool)
+// fn (*mut headerControl: usize, *mut section: usize, *mut aRect: TRect, pressed: bool)
 pub type TDrawSectionEvent = fn(*mut usize, *mut usize, *mut TRect, bool);
 
-// fn (*mut headerControl: pointer, *mut section: pointer)
+// fn (*mut headerControl: usize, *mut section: usize)
 pub type TSectionNotifyEvent = fn(*mut usize, *mut usize);
 
-// fn (*mut headerControl: pointer, *mut section: pointer, width: i32, state: TSectionTrackState)
+// fn (*mut headerControl: usize, *mut section: usize, width: i32, state: TSectionTrackState)
 pub type TSectionTrackEvent = fn(*mut usize, *mut usize, i32, TSectionTrackState);
 
-// fn (sender: pointer, *mut fromSection: pointer, *mut toSection: pointer, *mut allowDrag: bool)
+// fn (sender: usize, *mut fromSection: usize, *mut toSection: usize, *mut allowDrag: bool)
 pub type TSectionDragEvent = fn(usize, *mut usize, *mut usize, *mut bool);
 
-// fn (*mut headerControl: pointer, *mut section: pointer)
+// fn (*mut headerControl: usize, *mut section: usize)
 pub type TCustomSectionNotifyEvent = fn(*mut usize, *mut usize);
 
-// fn (sender: pointer, button: TMouseButton, shift: TShiftState, x: i32, y: i32, hitTest: i32, *mut mouseActivate: TMouseActivate)
+// fn (sender: usize, button: TMouseButton, shift: TShiftState, x: i32, y: i32, hitTest: i32, *mut mouseActivate: TMouseActivate)
 pub type TMouseActivateEvent = fn(usize, TMouseButton, TShiftState, i32, i32, i32, *mut TMouseActivate);
 
-// fn (*mut control: pointer, index: i32, *mut data: *const c_char)
+// fn (*mut control: usize, index: i32, *mut data: *const c_char)
 pub type TLBGetDataEvent = fn(*mut usize, i32, *mut *const c_char);
 
-// fn (*mut control: pointer, index: i32, dataObject: pointer)
+// fn (*mut control: usize, index: i32, dataObject: usize)
 pub type TLBGetDataObjectEvent = fn(*mut usize, i32, usize);
 
-// fn (*mut control: pointer, findString: *const c_char, result: i32)
+// fn (*mut control: usize, findString: *const c_char, result: i32)
 pub type TLBFindDataEvent = fn(*mut usize, *const c_char, i32);
 
-// fn (*mut control: pointer, index: i32, *mut height: i32)
+// fn (*mut control: usize, index: i32, *mut height: i32)
 pub type TMeasureItemEvent = fn(*mut usize, i32, *mut i32);
 
-// fn (sender: pointer, *mut item: pointer, change: TItemChange, *mut allowChange: bool)
+// fn (sender: usize, *mut item: usize, change: TItemChange, *mut allowChange: bool)
 pub type TLVChangingEvent = fn(usize, *mut usize, TItemChange, *mut bool);
 
-// fn (sender: pointer, *mut item: pointer)
+// fn (sender: usize, *mut item: usize)
 pub type TLVOwnerDataEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, find: TItemFind, findString: *const c_char, *mut findPosition: TPoint, findData: TCustomData, startIndex: i32, direction: TSearchDirection, warp: bool, *mut index: i32)
+// fn (sender: usize, find: TItemFind, findString: *const c_char, *mut findPosition: TPoint, findData: TCustomData, startIndex: i32, direction: TSearchDirection, warp: bool, *mut index: i32)
 pub type TLVOwnerDataFindEvent = fn(usize, TItemFind, *const c_char, *mut TPoint, TCustomData, i32, TSearchDirection, bool, *mut i32);
 
-// fn (sender: pointer, *mut item: pointer)
+// fn (sender: usize, *mut item: usize)
 pub type TLVDeletedEvent = fn(usize, *mut usize);
 
-// fn (sender: pointer, *mut item: pointer, *mut allowEdit: bool)
+// fn (sender: usize, *mut item: usize, *mut allowEdit: bool)
 pub type TLVEditingEvent = fn(usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut item: pointer, *mut s: *const c_char)
+// fn (sender: usize, *mut item: usize, *mut s: *const c_char)
 pub type TLVEditedEvent = fn(usize, *mut usize, *mut *const c_char);
 
-// fn (sender: pointer, *mut aCanvas: pointer, *mut width: i32, *mut height: i32)
+// fn (sender: usize, *mut aCanvas: usize, *mut width: i32, *mut height: i32)
 pub type TMenuMeasureItemEvent = fn(usize, *mut usize, *mut i32, *mut i32);
 
-// fn (sender: pointer, *mut allowChange: bool)
+// fn (sender: usize, *mut allowChange: bool)
 pub type TTabChangingEvent = fn(usize, *mut bool);
 
-// fn (sender: pointer, *mut node: pointer, *mut allowChange: bool)
+// fn (sender: usize, *mut node: usize, *mut allowChange: bool)
 pub type TTVChangingEvent = fn(usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut node: pointer, *mut allowCollapse: bool)
+// fn (sender: usize, *mut node: usize, *mut allowCollapse: bool)
 pub type TTVCollapsingEvent = fn(usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut node: pointer, *mut s: *const c_char)
+// fn (sender: usize, *mut node: usize, *mut s: *const c_char)
 pub type TTVEditedEvent = fn(usize, *mut usize, *mut *const c_char);
 
-// fn (sender: pointer, *mut node: pointer, *mut allowEdit: bool)
+// fn (sender: usize, *mut node: usize, *mut allowEdit: bool)
 pub type TTVEditingEvent = fn(usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut node: pointer, *mut allowExpansion: bool)
+// fn (sender: usize, *mut node: usize, *mut allowExpansion: bool)
 pub type TTVExpandingEvent = fn(usize, *mut usize, *mut bool);
 
-// fn (sender: pointer, *mut node: pointer, *mut hint: *const c_char)
+// fn (sender: usize, *mut node: usize, *mut hint: *const c_char)
 pub type TTVHintEvent = fn(usize, *mut usize, *mut *const c_char);
 
-// fn (sender: pointer, *mut allowChange: bool)
+// fn (sender: usize, *mut allowChange: bool)
 pub type TUDChangingEvent = fn(usize, *mut bool);
 
-// fn (sender: pointer, winErrorCode: u32, errorDescription: *const c_char, *mut handled: bool)
+// fn (sender: usize, winErrorCode: u32, errorDescription: *const c_char, *mut handled: bool)
 pub type TCreatingListErrorEvent = fn(usize, u32, *const c_char, *mut bool);
 
-// fn (*mut sender: pointer, *mut aRect: TRect, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut aRect: TRect, *mut defaultDraw: bool)
 pub type TLVCustomDrawEvent = fn(*mut usize, *mut TRect, *mut bool);
 
-// fn (*mut sender: pointer, *mut item: pointer, state: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut item: usize, state: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TLVCustomDrawItemEvent = fn(*mut usize, *mut usize, TCustomDrawStage, *mut bool);
 
-// fn (*mut sender: pointer, *mut item: pointer, subItem: i32, state: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut item: usize, subItem: i32, state: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TLVCustomDrawSubItemEvent = fn(*mut usize, *mut usize, i32, TCustomDrawStage, *mut bool);
 
-// fn (*mut sender: pointer, *mut item: pointer, *mut rect: TRect, state: TOwnerDrawState)
+// fn (*mut sender: usize, *mut item: usize, *mut rect: TRect, state: TOwnerDrawState)
 pub type TLVDrawItemEvent = fn(*mut usize, *mut usize, *mut TRect, TOwnerDrawState);
 
-// fn (sender: pointer, startIndex: i32, endIndex: i32)
+// fn (sender: usize, startIndex: i32, endIndex: i32)
 pub type TLVDataHintEvent = fn(usize, i32, i32);
 
 pub type TLVOwnerDataHintEvent = TLVDataHintEvent;
 
-// fn (*mut sender: pointer, *mut aRect: TRect, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut aRect: TRect, *mut defaultDraw: bool)
 pub type TTVCustomDrawEvent = fn(*mut usize, *mut TRect, *mut bool);
 
-// fn (*mut sender: pointer, *mut node: pointer, state: TCustomDrawStage, *mut defaultDraw: bool)
+// fn (*mut sender: usize, *mut node: usize, state: TCustomDrawStage, *mut defaultDraw: bool)
 pub type TTVCustomDrawItemEvent = fn(*mut usize, *mut usize, TCustomDrawStage, *mut bool);
 
 // fn (*mut msg: TMessage)
 pub type TWndProcEvent = fn(*mut TMessage);
 
-// fn (sender: pointer, text: *const c_char)
+// fn (sender: usize, text: *const c_char)
 pub type TWebTitleChangeEvent = fn(usize, *const c_char);
 
-// fn (sender: pointer, funcName: *const c_char, args: *const c_char, *mut retVal: *const c_char)
+// fn (sender: usize, funcName: *const c_char, args: *const c_char, *mut retVal: *const c_char)
 pub type TWebJSExternalEvent = fn(usize, *const c_char, *const c_char, *mut *const c_char);
 
-// fn (sender: pointer, modalResult: TModalResult, *mut canClose: bool)
+// fn (sender: usize, modalResult: TModalResult, *mut canClose: bool)
 pub type TTaskDlgClickEvent = fn(usize, TModalResult, *mut bool);
 
-// fn (sender: pointer, tickCount: u32, *mut reset: bool)
+// fn (sender: usize, tickCount: u32, *mut reset: bool)
 pub type TTaskDlgTimerEvent = fn(usize, u32, *mut bool);
 
-// fn (*mut sender: pointer, *mut control: pointer, *mut newLeft: i32, *mut newTop: i32, *mut newWidth: i32, *mut newHeight: i32, *mut alignRect: TRect, alignInfo: TAlignInfo)
+// fn (*mut sender: usize, *mut control: usize, *mut newLeft: i32, *mut newTop: i32, *mut newWidth: i32, *mut newHeight: i32, *mut alignRect: TRect, alignInfo: TAlignInfo)
 pub type TAlignPositionEvent = fn(*mut usize, *mut usize, *mut i32, *mut i32, *mut i32, *mut i32, *mut TRect, TAlignInfo);
 
-// fn (sender: pointer, index: i32)
+// fn (sender: usize, index: i32)
 pub type TCheckGroupClicked = fn(usize, i32);
 
-// fn (sender: pointer, aCol: i32, aRow: i32)
+// fn (sender: usize, aCol: i32, aRow: i32)
 pub type TOnSelectEvent = fn(usize, i32, i32);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, aState: TCheckBoxState)
+// fn (sender: usize, aCol: i32, aRow: i32, aState: TCheckBoxState)
 pub type TToggledCheckboxEvent = fn(usize, i32, i32, TCheckBoxState);
 
-// fn (sender: pointer, ACol: i32, ARow: i32, BCol: i32, BRow: i32, *mut result: i32)
+// fn (sender: usize, ACol: i32, ARow: i32, BCol: i32, BRow: i32, *mut result: i32)
 pub type TOnCompareCells = fn(usize, i32, i32, i32, i32, *mut i32);
 
-// fn (sender: pointer, ACol: i32, ARow: i32, *mut hintText: *const c_char)
+// fn (sender: usize, ACol: i32, ARow: i32, *mut hintText: *const c_char)
 pub type TGetCellHintEvent = fn(usize, i32, i32, *mut *const c_char);
 
-// fn (sender: pointer, ACol: i32, ARow: i32, *mut value: TCheckBoxState)
+// fn (sender: usize, ACol: i32, ARow: i32, *mut value: TCheckBoxState)
 pub type TGetCheckboxStateEvent = fn(usize, i32, i32, *mut TCheckBoxState);
 
-// fn (sender: pointer, ACol: i32, ARow: i32, Value: TCheckBoxState)
+// fn (sender: usize, ACol: i32, ARow: i32, Value: TCheckBoxState)
 pub type TSetCheckboxStateEvent = fn(usize, i32, i32, TCheckBoxState);
 
-// fn (sender: pointer, isColumn: bool, index: i32)
+// fn (sender: usize, isColumn: bool, index: i32)
 pub type THdrEvent = fn(usize, bool, i32);
 
-// fn (sender: pointer, isColumn: bool, aIndex: i32, aSize: i32)
+// fn (sender: usize, isColumn: bool, aIndex: i32, aSize: i32)
 pub type THeaderSizingEvent = fn(usize, bool, i32, i32);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, *mut editor: pointer)
+// fn (sender: usize, aCol: i32, aRow: i32, *mut editor: usize)
 pub type TSelectEditorEvent = fn(usize, i32, i32, *mut usize);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, CheckedState: TCheckBoxState, *mut aBitmap: pointer)
+// fn (sender: usize, aCol: i32, aRow: i32, CheckedState: TCheckBoxState, *mut aBitmap: usize)
 pub type TUserCheckBoxBitmapEvent = fn(usize, i32, i32, TCheckBoxState, *mut usize);
 
-// fn (sender: pointer, aCol: i32, aRow: i32, oldValue: *const c_char, *mut newValue: *const c_char)
+// fn (sender: usize, aCol: i32, aRow: i32, oldValue: *const c_char, *mut newValue: *const c_char)
 pub type TValidateEntryEvent = fn(usize, i32, i32, *const c_char, *mut *const c_char);
 
 
