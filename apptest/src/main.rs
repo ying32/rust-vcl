@@ -9,8 +9,10 @@ use rust_vcl::types::*;
 use rust_vcl::vcl::*;
 
 // 按钮1单击事件
-fn onBtnClick(_sender: usize) {
+fn onBtnClick(sender: usize) {
     ShowMessage("Hello, Rust! 你好，世界！");
+    let btn = TButton::As(sender);
+    println!("caption: {:?}", btn.Caption());
 }
 
 fn onDropFile(_sender: usize, fileNames: usize, len: isize) {

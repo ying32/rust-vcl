@@ -173,6 +173,10 @@ impl TObject {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TObject { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -234,6 +238,10 @@ impl TComponent {
               0: unsafe { Component_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TComponent { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -359,6 +367,10 @@ impl TControl {
               0: unsafe { Control_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TControl { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -817,6 +829,10 @@ impl TWinControl {
               0: unsafe { WinControl_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TWinControl { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -1456,6 +1472,10 @@ impl TMainMenu {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMainMenu { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -1622,6 +1642,10 @@ impl TPopupMenu {
               0: unsafe { PopupMenu_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPopupMenu { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -1821,6 +1845,10 @@ impl TMemo {
               0: unsafe { Memo_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TMemo { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -2789,6 +2817,10 @@ impl TCheckBox {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCheckBox { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -3608,6 +3640,10 @@ impl TRadioButton {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TRadioButton { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -4411,6 +4447,10 @@ impl TGroupBox {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TGroupBox { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -5210,6 +5250,10 @@ impl TLabel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TLabel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -5870,6 +5914,10 @@ impl TListBox {
               0: unsafe { ListBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TListBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -6809,6 +6857,10 @@ impl TComboBox {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TComboBox { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -7742,6 +7794,10 @@ impl TPanel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TPanel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -8609,6 +8665,10 @@ impl TImage {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TImage { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -9240,6 +9300,10 @@ impl TLinkLabel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TLinkLabel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -9843,6 +9907,10 @@ impl TSpeedButton {
               0: unsafe { SpeedButton_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TSpeedButton { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -10491,6 +10559,10 @@ impl TSplitter {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TSplitter { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -10990,6 +11062,10 @@ impl TRadioGroup {
               0: unsafe { RadioGroup_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TRadioGroup { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -11756,6 +11832,10 @@ impl TStaticText {
               0: unsafe { StaticText_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TStaticText { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -12574,6 +12654,10 @@ impl TColorBox {
               0: unsafe { ColorBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TColorBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -13481,6 +13565,10 @@ impl TColorListBox {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TColorListBox { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -14362,6 +14450,10 @@ impl TTrayIcon {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTrayIcon { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -14582,6 +14674,10 @@ impl TOpenDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TOpenDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -14777,6 +14873,10 @@ impl TSaveDialog {
               0: unsafe { SaveDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TSaveDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -14976,6 +15076,10 @@ impl TColorDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TColorDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -15116,6 +15220,10 @@ impl TFontDialog {
               0: unsafe { FontDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TFontDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -15269,6 +15377,10 @@ impl TPrintDialog {
               0: unsafe { PrintDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPrintDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -15477,6 +15589,10 @@ impl TOpenPictureDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TOpenPictureDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -15672,6 +15788,10 @@ impl TSavePictureDialog {
               0: unsafe { SavePictureDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TSavePictureDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -15871,6 +15991,10 @@ impl TSelectDirectoryDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TSelectDirectoryDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -16066,6 +16190,10 @@ impl TRichEdit {
               0: unsafe { RichEdit_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TRichEdit { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -17083,6 +17211,10 @@ impl TTrackBar {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTrackBar { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -17903,6 +18035,10 @@ impl TImageList {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TImageList { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -18191,6 +18327,10 @@ impl TUpDown {
               0: unsafe { UpDown_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TUpDown { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -18935,6 +19075,10 @@ impl TProgressBar {
               0: unsafe { ProgressBar_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TProgressBar { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -19731,6 +19875,10 @@ impl TDateTimePicker {
               0: unsafe { DateTimePicker_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TDateTimePicker { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -20532,6 +20680,10 @@ impl TMonthCalendar {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMonthCalendar { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -21297,6 +21449,10 @@ impl TListView {
               0: unsafe { ListView_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TListView { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -22554,6 +22710,10 @@ impl TTreeView {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTreeView { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -23776,6 +23936,10 @@ impl TStatusBar {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TStatusBar { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -24615,6 +24779,10 @@ impl TToolBar {
               0: unsafe { ToolBar_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TToolBar { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -25552,6 +25720,10 @@ impl TBitBtn {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TBitBtn { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -26382,6 +26554,10 @@ impl TIcon {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TIcon { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -26547,6 +26723,10 @@ impl TBitmap {
               0: unsafe { Bitmap_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TBitmap { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -26779,6 +26959,10 @@ impl TMemoryStream {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMemoryStream { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -26896,6 +27080,10 @@ impl TFont {
               0: unsafe { Font_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TFont { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -27063,6 +27251,10 @@ impl TStrings {
               0: unsafe { Strings_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TStrings { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -27281,6 +27473,10 @@ impl TStringList {
               0: unsafe { StringList_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TStringList { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -27517,6 +27713,10 @@ impl TBrush {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TBrush { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -27625,6 +27825,10 @@ impl TPen {
               0: unsafe { Pen_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPen { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -27740,6 +27944,10 @@ impl TMenuItem {
               0: unsafe { MenuItem_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TMenuItem { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -28024,6 +28232,10 @@ impl TPicture {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TPicture { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -28156,6 +28368,10 @@ impl TListColumns {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TListColumns { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -28284,6 +28500,10 @@ impl TListItems {
               0: unsafe { ListItems_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TListItems { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -28415,6 +28635,10 @@ impl TTreeNodes {
               0: unsafe { TreeNodes_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TTreeNodes { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -28608,6 +28832,10 @@ impl TListItem {
               0: unsafe { ListItem_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TListItem { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -28832,6 +29060,10 @@ impl TTreeNode {
               0: unsafe { TreeNode_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TTreeNode { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -29087,6 +29319,10 @@ impl TPageControl {
               0: unsafe { PageControl_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPageControl { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -29950,6 +30186,10 @@ impl TTabSheet {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTabSheet { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -30734,6 +30974,10 @@ impl TButton {
               0: unsafe { Button_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TButton { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -31529,6 +31773,10 @@ impl TEdit {
               0: unsafe { Edit_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TEdit { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -32474,6 +32722,10 @@ impl TScreen {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TScreen { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -32721,6 +32973,10 @@ impl TMouse {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMouse { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -32806,6 +33062,10 @@ impl TListColumn {
               0: unsafe { ListColumn_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TListColumn { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -32978,6 +33238,10 @@ impl TCollectionItem {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCollectionItem { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -33074,6 +33338,10 @@ impl TStatusPanels {
               0: unsafe { StatusPanels_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TStatusPanels { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -33214,6 +33482,10 @@ impl TStatusPanel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TStatusPanel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -33350,6 +33622,10 @@ impl TSpinEdit {
               0: unsafe { SpinEdit_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TSpinEdit { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -34235,6 +34511,10 @@ impl TMiniWebview {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMiniWebview { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -34920,6 +35200,10 @@ impl TCanvas {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCanvas { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -35175,6 +35459,10 @@ impl TApplication {
               0: unsafe { Application_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TApplication { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -35552,6 +35840,10 @@ impl TGraphic {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TGraphic { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -35693,6 +35985,10 @@ impl TPngImage {
               0: unsafe { PngImage_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPngImage { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -35847,6 +36143,10 @@ impl TJPEGImage {
               0: unsafe { JPEGImage_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TJPEGImage { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -36019,6 +36319,10 @@ impl TGIFImage {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TGIFImage { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -36170,6 +36474,10 @@ impl TActionList {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TActionList { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -36309,6 +36617,10 @@ impl TAction {
               0: unsafe { Action_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TAction { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -36523,6 +36835,10 @@ impl TToolButton {
               0: unsafe { ToolButton_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TToolButton { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -37177,6 +37493,10 @@ impl TIniFile {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TIniFile { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -37326,6 +37646,10 @@ impl TRegistry {
               0: unsafe { Registry_Create(AAccess) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TRegistry { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -37559,6 +37883,10 @@ impl TClipboard {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TClipboard { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -37677,6 +38005,10 @@ impl TMonitor {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TMonitor { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -37778,6 +38110,10 @@ impl TPaintBox {
               0: unsafe { PaintBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPaintBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -38359,6 +38695,10 @@ impl TTimer {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTimer { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -38497,6 +38837,10 @@ impl TList {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TList { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -38617,6 +38961,10 @@ impl TForm {
               0: unsafe { Form_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TForm { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -40038,6 +40386,10 @@ impl TScrollBar {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TScrollBar { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -40808,6 +41160,10 @@ impl TMaskEdit {
               0: unsafe { MaskEdit_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TMaskEdit { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -41757,6 +42113,10 @@ impl TShape {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TShape { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -42309,6 +42669,10 @@ impl TBevel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TBevel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -42789,6 +43153,10 @@ impl TScrollBox {
               0: unsafe { ScrollBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TScrollBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -43642,6 +44010,10 @@ impl TCheckListBox {
               0: unsafe { CheckListBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TCheckListBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -44593,6 +44965,10 @@ impl TGauge {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TGauge { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -45167,6 +45543,10 @@ impl TImageButton {
               0: unsafe { ImageButton_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TImageButton { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -45792,6 +46172,10 @@ impl TFindDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TFindDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -45972,6 +46356,10 @@ impl TReplaceDialog {
               0: unsafe { ReplaceDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TReplaceDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -46168,6 +46556,10 @@ impl TPrinterSetupDialog {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TPrinterSetupDialog { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -46300,6 +46692,10 @@ impl TPageSetupDialog {
               0: unsafe { PageSetupDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPageSetupDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -46496,6 +46892,10 @@ impl TDragObject {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TDragObject { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -46605,6 +47005,10 @@ impl TDragDockObject {
               0: unsafe { DragDockObject_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TDragDockObject { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -46762,6 +47166,10 @@ impl TStringGrid {
               0: unsafe { StringGrid_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TStringGrid { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -48313,6 +48721,10 @@ impl TDrawGrid {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TDrawGrid { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -49329,6 +49741,10 @@ impl TValueListEditor {
               0: unsafe { ValueListEditor_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TValueListEditor { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -50372,6 +50788,10 @@ impl THeaderControl {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          THeaderControl { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -51164,6 +51584,10 @@ impl THeaderSection {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          THeaderSection { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -51318,6 +51742,10 @@ impl THeaderSections {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          THeaderSections { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -51453,6 +51881,10 @@ impl TLabeledEdit {
               0: unsafe { LabeledEdit_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TLabeledEdit { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -52409,6 +52841,10 @@ impl TBoundLabel {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TBoundLabel { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -52998,6 +53434,10 @@ impl TFlowPanel {
               0: unsafe { FlowPanel_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TFlowPanel { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -53873,6 +54313,10 @@ impl TCoolBar {
               0: unsafe { CoolBar_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TCoolBar { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -54779,6 +55223,10 @@ impl TCoolBands {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCoolBands { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -54914,6 +55362,10 @@ impl TCoolBand {
               0: unsafe { CoolBand_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TCoolBand { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -55152,6 +55604,10 @@ impl TCollection {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCollection { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -55280,6 +55736,10 @@ impl TPrinter {
               0: unsafe { Printer_Create() },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TPrinter { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -55440,6 +55900,10 @@ impl TTaskDialog {
               0: unsafe { TaskDialog_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TTaskDialog { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -55837,6 +56301,10 @@ impl TTaskDialogButtonItem {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTaskDialogButtonItem { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -55957,6 +56425,10 @@ impl TTaskDialogRadioButtonItem {
               0: unsafe { TaskDialogRadioButtonItem_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TTaskDialogRadioButtonItem { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -56081,6 +56553,10 @@ impl TTaskDialogBaseButtonItem {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TTaskDialogBaseButtonItem { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -56201,6 +56677,10 @@ impl TComboBoxEx {
               0: unsafe { ComboBoxEx_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TComboBoxEx { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
@@ -57363,6 +57843,10 @@ impl TFrame {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TFrame { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -58400,6 +58884,10 @@ impl TXButton {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TXButton { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -59407,6 +59895,10 @@ impl TCheckGroup {
           }
       }
 
+      pub fn As(inst: usize) -> Self {
+          TCheckGroup { 0: inst, 1: false }
+      }
+
       pub fn Free(&mut self) {
           unsafe {
               if self.0 > 0 {
@@ -60263,6 +60755,10 @@ impl TToggleBox {
               0: unsafe { ToggleBox_Create(AOwner.Instance()) },
               1: true,
           }
+      }
+
+      pub fn As(inst: usize) -> Self {
+          TToggleBox { 0: inst, 1: false }
       }
 
       pub fn Free(&mut self) {
