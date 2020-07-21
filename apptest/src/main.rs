@@ -2,9 +2,8 @@
 
 // #[cfg(target_os = "windows")]
 
-use rust_vcl::enums::*;
 use rust_vcl::fns::*;
-
+use rust_vcl::types::*;
 use rust_vcl::vcl::*;
 
 // 按钮1单击事件
