@@ -6,5 +6,3 @@ pub mod fns;
 pub mod imports;
 pub mod types;
 pub mod vcl;
-
-mod callbacks;

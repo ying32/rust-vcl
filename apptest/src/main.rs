@@ -1,4 +1,6 @@
 #![windows_subsystem = "windows"]
+#![allow(non_snake_case)]
+#![allow(dead_code)]
 
 // #[cfg(target_os = "windows")]
 
@@ -7,16 +9,15 @@ use rust_vcl::types::*;
 use rust_vcl::vcl::*;
 
 // 按钮1单击事件
-fn on_btn_click(_sender: usize) {
+fn onBtnClick(_sender: usize) {
     ShowMessage("Hello, Rust! 你好，世界！");
 }
 
-fn on_drop_file_event(_sender: usize, file_names: usize, len: isize) {
-    println!("{}, {}, {}", _sender, file_names, len);
-
+fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
+    println!("{}, {}, {}", _sender, fileNames, len);
     for i in 0..len {
-        let file_name = GetStringArrOf(file_names, i);
-        println!("{}: {:?}", i, &file_name);
+        let fileName = GetFPStringArrayMember(fileNames, i);
+        println!("{}: {:?}", i, &fileName);
     }
 }
 
@@ -33,15 +34,19 @@ fn main() {
     form.SetCaption("你好，Rust！ - Hello Rust!");
     form.SetPosition(TPosition::poScreenCenter);
     form.SetAllowDropFiles(true);
-    form.SetOnDropFiles(on_drop_file_event);
-    // form.SetOnClick(on_btn_click);
+    form.SetOnDropFiles(onDropFile);
+    // form.SetOnClick(onBtnClick);
+
+    // 测试自动drop
+    // let ico = TIcon::new();
+    //println!("{:?}", ico.ClassName());
 
     let btn = TButton::new(&form);
     btn.SetParent(&form);
     btn.SetLeft(10);
     btn.SetTop(50);
     btn.SetCaption("button1");
-    btn.SetOnClick(on_btn_click);
+    btn.SetOnClick(onBtnClick);
 
     Application.Run();
 }

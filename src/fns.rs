@@ -11,7 +11,7 @@ pub fn ShowMessage(s: &str) {
     }
 }
 
-pub fn GetStringArrOf<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
+pub fn GetFPStringArrayMember<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
     unsafe {
         return CStr::from_ptr(DGetStringArrOf(ptr, index)).to_string_lossy();
     }
