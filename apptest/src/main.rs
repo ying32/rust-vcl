@@ -23,6 +23,14 @@ fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
     }
 }
 
+fn onFormMouseMove(_sender: usize, _shift: TShiftState, _x: i32, _y: i32) {
+    // let form = TForm::As(sender);
+    // let mut pos = TPoint { x: 0, y: 0 };
+    // Mouse.CursorPos(&mut pos);
+    // let pos = Mouse.CursorPos();
+    // println!("x={}, y={}, sx={}, sy={}", x, y, pos.x, pos.y);
+}
+
 fn main() {
     // 乱写的，也不知道是不是这样写
     // 这里因为不会写，所以就这样弄下
@@ -37,6 +45,7 @@ fn main() {
     form.SetPosition(TPosition::poScreenCenter);
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(onDropFile);
+    form.SetOnMouseMove(onFormMouseMove);
     // form.SetOnClick(onBtnClick);
 
     // 测试自动drop
