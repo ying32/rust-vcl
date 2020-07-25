@@ -36,14 +36,14 @@ macro_rules! impl_IWinControl {
 }
 
 #[macro_export]
-macro_rules! callProc1 {
+macro_rules! method_Call_1 {
     ($fnName: ident, $($arg:expr),*) => {
         unsafe { $fnName($($arg),* )}
     };
 }
 
 #[macro_export]
-macro_rules! callProc2 {
+macro_rules! method_Call_2 {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           $class {
               0: unsafe {$fnName($($arg),* )}, 1: false,
@@ -52,7 +52,7 @@ macro_rules! callProc2 {
 }
 
 #[macro_export]
-macro_rules! macro_proc_Create {
+macro_rules! method_Create {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           return $class {
               0: unsafe { $fnName($($arg),* ) } , 1: true,

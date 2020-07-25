@@ -1,12 +1,9 @@
-# rvcl
+# rust-vcl
+
 rust GUI test
 
-测试调用liblcl.dll，目前的绑定代码是使用工具自动生成的。
+测试调用liblcl.dll，代码由 [Rust模板](https://github.com/ying32/liblcl/tree/master/Tools/genBind/rust/tpl) 生成。
 
 **本人并不会rust，没具体看过语法什么的，一边写一边学的，写的东西难免有错。。。**    
-
-# 欢迎有能力的且对这个感兴趣的可以联系我一起探讨完成。
-
-
 
 

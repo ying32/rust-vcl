@@ -3,9 +3,9 @@ extern crate libc;
 extern crate lazy_static;
 
 pub mod fns;
-pub mod imports;
+pub mod lclapi;
 pub mod types;
 
 #[macro_use]
-mod vcl_macros;
+mod macros;
 pub mod vcl;
