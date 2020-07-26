@@ -23,6 +23,7 @@ pub trait IComponent: IObject {}
 pub trait IControl: IComponent {}
 pub trait IWinControl: IControl {}
 pub trait IStrings: IObject {}
+pub trait IStream: IObject {}
 
 
 /* 先定义所有的类 */
@@ -71,6 +72,7 @@ pub struct TToolBar(usize, bool);
 pub struct TBitBtn(usize, bool);
 pub struct TIcon(usize, bool);
 pub struct TBitmap(usize, bool);
+pub struct TStream(usize, bool);
 pub struct TMemoryStream(usize, bool);
 pub struct TFont(usize, bool);
 pub struct TStrings(usize, bool);
@@ -20937,7 +20939,7 @@ impl TTreeView {
           method_Call_1!(TreeView_LoadFromFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(TreeView_LoadFromStream, self.0, stream.Instance());
       }
 
@@ -20945,7 +20947,7 @@ impl TTreeView {
           method_Call_1!(TreeView_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(TreeView_SaveToStream, self.0, stream.Instance());
       }
 
@@ -24485,11 +24487,11 @@ impl TIcon {
           return method_Call_1!(Icon_HandleAllocated, self.0);
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Icon_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Icon_SaveToStream, self.0, stream.Instance());
       }
 
@@ -24637,11 +24639,11 @@ impl TBitmap {
           return method_Call_1!(Bitmap_HandleAllocated, self.0);
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Bitmap_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Bitmap_SaveToStream, self.0, stream.Instance());
       }
 
@@ -24824,6 +24826,12 @@ impl TBitmap {
 impl_IObject!(TBitmap);
 impl_Drop_method!(TBitmap);
 
+impl TStream {
+}
+
+impl_IObject!(TStream);
+impl_IStream!(TStream);
+
 impl TMemoryStream {
       pub fn new() -> Self {
         method_Create!(TMemoryStream, MemoryStream_Create, );
@@ -24837,7 +24845,7 @@ impl TMemoryStream {
           method_Call_1!(MemoryStream_Clear, self.0);
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(MemoryStream_LoadFromStream, self.0, stream.Instance());
       }
 
@@ -24852,7 +24860,7 @@ impl TMemoryStream {
           return result;
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(MemoryStream_SaveToStream, self.0, stream.Instance());
       }
 
@@ -24860,38 +24868,38 @@ impl TMemoryStream {
           method_Call_1!(MemoryStream_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn CopyFrom(&self, source: &dyn IObject, count: i64) -> i64  {
+	  pub fn CopyFrom(&self, source: &dyn IStream, count: i64) -> i64  {
           let mut result = 0 as i64;
           let mut ps2 = count;
           method_Call_1!(MemoryStream_CopyFrom, self.0, source.Instance(), &mut ps2, &mut result);
           return result;
       }
 
-	  pub fn ClassType(&self) -> TClass {
+	  pub fn ClassType(&self) -> TClass  {
           return method_Call_1!(MemoryStream_ClassType, self.0);
       }
 
-	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
+	  pub fn ClassName<'a>(&self) -> Cow<'a, str>  {
           return to_RustString!(method_Call_1!(MemoryStream_ClassName, self.0));
       }
 
-	  pub fn InstanceSize(&self) -> i32 {
+	  pub fn InstanceSize(&self) -> i32  {
           return method_Call_1!(MemoryStream_InstanceSize, self.0);
       }
 
-	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
+	  pub fn InheritsFrom(&self, aClass: TClass) -> bool  {
           return method_Call_1!(MemoryStream_InheritsFrom, self.0, aClass);
       }
 
-	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
+	  pub fn Equals(&self, obj: &dyn IObject) -> bool  {
           return method_Call_1!(MemoryStream_Equals, self.0, obj.Instance());
       }
 
-	  pub fn GetHashCode(&self) -> i32 {
+	  pub fn GetHashCode(&self) -> i32  {
           return method_Call_1!(MemoryStream_GetHashCode, self.0);
       }
 
-	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
+	  pub fn ToString<'a>(&self) -> Cow<'a, str>  {
           return to_RustString!(method_Call_1!(MemoryStream_ToString, self.0));
       }
 
@@ -24932,6 +24940,7 @@ impl TMemoryStream {
 }
 
 impl_IObject!(TMemoryStream);
+impl_IStream!(TMemoryStream);
 impl_Drop_method!(TMemoryStream);
 
 impl TFont {
@@ -25151,7 +25160,7 @@ impl TStrings {
           method_Call_1!(Strings_LoadFromFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Strings_LoadFromStream, self.0, stream.Instance());
       }
 
@@ -25163,7 +25172,7 @@ impl TStrings {
           method_Call_1!(Strings_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Strings_SaveToStream, self.0, stream.Instance());
       }
 
@@ -25348,7 +25357,7 @@ impl TStringList {
           method_Call_1!(StringList_LoadFromFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject) {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream) {
           method_Call_1!(StringList_LoadFromStream, self.0, stream.Instance());
       }
 
@@ -25360,7 +25369,7 @@ impl TStringList {
           method_Call_1!(StringList_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject) {
+	  pub fn SaveToStream(&self, stream: &dyn IStream) {
           method_Call_1!(StringList_SaveToStream, self.0, stream.Instance());
       }
 
@@ -25490,6 +25499,7 @@ impl TStringList {
 
 impl_IObject!(TStringList);
 impl_IStrings!(TStringList);
+impl_Drop_method!(TStringList);
 
 impl TBrush {
       pub fn new() -> Self {
@@ -25940,11 +25950,11 @@ impl TPicture {
           method_Call_1!(Picture_SaveToFile, self.0, to_CString!(filename));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Picture_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Picture_SaveToStream, self.0, stream.Instance());
       }
 
@@ -32741,11 +32751,11 @@ impl TGraphic {
           method_Call_1!(Graphic_SaveToFile, self.0, to_CString!(filename));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Graphic_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(Graphic_SaveToStream, self.0, stream.Instance());
       }
 
@@ -32857,11 +32867,11 @@ impl TPngImage {
           method_Call_1!(PngImage_Assign, self.0, source.Instance());
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(PngImage_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(PngImage_SaveToStream, self.0, stream.Instance());
       }
 
@@ -32989,11 +32999,11 @@ impl TJPEGImage {
           method_Call_1!(JPEGImage_Assign, self.0, source.Instance());
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(JPEGImage_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(JPEGImage_SaveToStream, self.0, stream.Instance());
       }
 
@@ -33133,11 +33143,11 @@ impl TGIFImage {
 
 	  impl_Free_method!(GIFImage_Free);
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IStream)  {
           method_Call_1!(GIFImage_SaveToStream, self.0, stream.Instance());
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IStream)  {
           method_Call_1!(GIFImage_LoadFromStream, self.0, stream.Instance());
       }
 

@@ -6162,6 +6162,8 @@ extern "system" {
   pub fn Bitmap_EndUpdate(AObj: usize, AStreamIsValid: bool);
   pub fn Bitmap_LoadFromDevice(AObj: usize, ADc: HDC);
 
+  // ----------------- TStream ----------------------
+
   // ----------------- TMemoryStream ----------------------
   pub fn MemoryStream_Create() -> usize;
   pub fn MemoryStream_Free(AObj: usize);

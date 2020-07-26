@@ -43,6 +43,13 @@ macro_rules! impl_IStrings {
 }
 
 #[macro_export]
+macro_rules! impl_IStream {
+    ($class: ident) => {
+        impl IStream for $class {}
+    };
+}
+
+#[macro_export]
 macro_rules! method_Call_1 {
     ($fnName: ident, $($arg:expr),*) => {
         unsafe { $fnName($($arg),* )}
