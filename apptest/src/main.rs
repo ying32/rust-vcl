@@ -38,16 +38,25 @@ fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
 }
 
 fn onFormMouseMove(_sender: usize, _shift: TShiftState, _x: i32, _y: i32) {
+    if InSet(_shift, TShiftStateEnum::ssCtrl as u8) {
+        println!("ctrl");
+    }
     // let form = TForm::As(_sender);
     // let pos = Mouse.CursorPos();
     // println!("x={}, y={}, sx={}, sy={}", _x, _y, pos.x, pos.y);
 }
 
-fn main() {
+fn test() {
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:?}", GUIDToString(&guid));
     println!("{:?}", LibAbout());
+
+    // let abc = TGridRect::Empty();
+}
+
+fn main() {
+    test();
 
     Application.SetMainFormOnTaskBar(true);
     Application.SetTitle("LCL App");
