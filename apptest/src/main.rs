@@ -15,6 +15,20 @@ fn onBtnClick(sender: usize) {
     println!("caption: {:?}", btn.Caption());
 }
 
+fn onBtn2Click(_sender: usize) {
+    //TStrings是虚方法类，当参数类型为TStrings要用TStringList传入，非TComponent实现了drop方法，所以Free不是必须的
+    let list = TStringList::new();
+    list.Add("Item1");
+    list.Add("Item2");
+    list.Add("Item3");
+    let idx = InputCombo(
+        "caption",
+        "Prompt                          ", // aPrompt参数决定显示的窗口宽度
+        &list,
+    );
+    println!("select index: {}", idx);
+}
+
 fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
     println!("{}, {}, {}", _sender, fileNames, len);
     for i in 0..len {
@@ -30,11 +44,10 @@ fn onFormMouseMove(_sender: usize, _shift: TShiftState, _x: i32, _y: i32) {
 }
 
 fn main() {
-    // 乱写的，也不知道是不是这样写
-    // 这里因为不会写，所以就这样弄下
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:?}", GUIDToString(&guid));
+    println!("{:?}", LibAbout());
 
     Application.SetMainFormOnTaskBar(true);
     Application.SetTitle("LCL App");
@@ -59,6 +72,14 @@ fn main() {
     btn.SetTop(50);
     btn.SetCaption("button1");
     btn.SetOnClick(onBtnClick);
+
+    let btn2 = TButton::new(&form);
+    btn2.SetParent(&form);
+    btn2.SetLeft(10);
+    btn2.SetTop(btn.Top() + btn.Height() + 10);
+    btn2.SetWidth(120);
+    btn2.SetCaption("InputCombo");
+    btn2.SetOnClick(onBtn2Click);
 
     Application.Run();
 }

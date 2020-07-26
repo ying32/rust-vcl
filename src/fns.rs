@@ -11,7 +11,7 @@ use lclapi;
 use std::borrow::Cow;
 use std::ffi::{CStr, CString};
 use types::*;
-use vcl::{TControl, TWinControl, IObject, IComponent, TStrings};
+use vcl::{TControl, TWinControl, IObject, IComponent, IStrings};
 
 pub fn GetFPStringArrayMember<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
     return to_RustString!(lclapi::DGetStringArrOf(ptr, index));
@@ -158,11 +158,11 @@ pub fn PasswordBox<'a>(aCaption: &str, aPrompt: &str) -> Cow<'a, str> {
     unsafe { return to_RustString!(lclapi::DPasswordBox(to_CString!(aCaption), to_CString!(aPrompt)))}
 }
 
-pub fn InputCombo(aCaption: &str, aPrompt: &str, aList: &TStrings) -> i32 {
+pub fn InputCombo(aCaption: &str, aPrompt: &str, aList: &dyn IStrings) -> i32 {
     unsafe { return lclapi::DInputCombo(to_CString!(aCaption), to_CString!(aPrompt), aList.Instance())}
 }
 
-pub fn InputComboEx<'a>(aCaption: &str, aPrompt: &str, aList: &TStrings, allowCustomText: bool) -> Cow<'a, str> {
+pub fn InputComboEx<'a>(aCaption: &str, aPrompt: &str, aList: &dyn IStrings, allowCustomText: bool) -> Cow<'a, str> {
     unsafe { return to_RustString!(lclapi::DInputComboEx(to_CString!(aCaption), to_CString!(aPrompt), aList.Instance(), allowCustomText))}
 }
 

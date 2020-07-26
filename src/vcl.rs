@@ -22,6 +22,7 @@ pub trait IObject {
 pub trait IComponent: IObject {}
 pub trait IControl: IComponent {}
 pub trait IWinControl: IControl {}
+pub trait IStrings: IObject {}
 
 
 /* 先定义所有的类 */
@@ -2011,7 +2012,7 @@ impl TMemo {
           return method_Call_2!(TStrings, Memo_GetLines, self.0);
       }
 
-	  pub fn SetLines(&self, aValue: &TStrings)  {
+	  pub fn SetLines(&self, aValue: &dyn IStrings)  {
           method_Call_1!(Memo_SetLines, self.0, aValue.Instance());
       }
 
@@ -5831,7 +5832,7 @@ impl TListBox {
           return method_Call_2!(TStrings, ListBox_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ListBox_SetItems, self.0, aValue.Instance());
       }
 
@@ -6860,7 +6861,7 @@ impl TComboBox {
           return method_Call_2!(TStrings, ComboBox_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ComboBox_SetItems, self.0, aValue.Instance());
       }
 
@@ -10543,7 +10544,7 @@ impl TRadioGroup {
           return method_Call_2!(TStrings, RadioGroup_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(RadioGroup_SetItems, self.0, aValue.Instance());
       }
 
@@ -12225,7 +12226,7 @@ impl TColorBox {
           return method_Call_2!(TStrings, ColorBox_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ColorBox_SetItems, self.0, aValue.Instance());
       }
 
@@ -13045,7 +13046,7 @@ impl TColorListBox {
           return method_Call_2!(TStrings, ColorListBox_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ColorListBox_SetItems, self.0, aValue.Instance());
       }
 
@@ -15218,7 +15219,7 @@ impl TRichEdit {
           return method_Call_2!(TStrings, RichEdit_GetLines, self.0);
       }
 
-	  pub fn SetLines(&self, aValue: &TStrings)  {
+	  pub fn SetLines(&self, aValue: &dyn IStrings)  {
           method_Call_1!(RichEdit_SetLines, self.0, aValue.Instance());
       }
 
@@ -25122,7 +25123,7 @@ impl TStrings {
           method_Call_1!(Strings_EndUpdate, self.0);
       }
 
-	  pub fn Equals(&self, strings: &TStrings) -> bool  {
+	  pub fn Equals(&self, strings: &dyn IStrings) -> bool  {
           return method_Call_1!(Strings_Equals, self.0, strings.Instance());
       }
 
@@ -25275,6 +25276,7 @@ impl TStrings {
 }
 
 impl_IObject!(TStrings);
+impl_IStrings!(TStrings);
 impl_Drop_method!(TStrings);
 
 impl TStringList {
@@ -25286,83 +25288,83 @@ impl TStringList {
 
 	  impl_Free_method!(StringList_Free);
 
-	  pub fn Add(&self, s: &str) -> i32  {
+	  pub fn Add(&self, s: &str) -> i32 {
           return method_Call_1!(StringList_Add, self.0, to_CString!(s));
       }
 
-	  pub fn AddObject(&self, s: &str, aObject: &dyn IObject) -> i32  {
+	  pub fn AddObject(&self, s: &str, aObject: &dyn IObject) -> i32 {
           return method_Call_1!(StringList_AddObject, self.0, to_CString!(s), aObject.Instance());
       }
 
-	  pub fn Assign(&self, source: &dyn IObject)  {
+	  pub fn Assign(&self, source: &dyn IObject) {
           method_Call_1!(StringList_Assign, self.0, source.Instance());
       }
 
-	  pub fn Clear(&self)  {
+	  pub fn Clear(&self) {
           method_Call_1!(StringList_Clear, self.0);
       }
 
-	  pub fn Delete(&self, index: i32)  {
+	  pub fn Delete(&self, index: i32) {
           method_Call_1!(StringList_Delete, self.0, index);
       }
 
-	  pub fn IndexOf(&self, s: &str) -> i32  {
+	  pub fn IndexOf(&self, s: &str) -> i32 {
           return method_Call_1!(StringList_IndexOf, self.0, to_CString!(s));
       }
 
-	  pub fn Insert(&self, index: i32, s: &str)  {
+	  pub fn Insert(&self, index: i32, s: &str) {
           method_Call_1!(StringList_Insert, self.0, index, to_CString!(s));
       }
 
-	  pub fn InsertObject(&self, index: i32, s: &str, aObject: &dyn IObject)  {
+	  pub fn InsertObject(&self, index: i32, s: &str, aObject: &dyn IObject) {
           method_Call_1!(StringList_InsertObject, self.0, index, to_CString!(s), aObject.Instance());
       }
 
-	  pub fn Append(&self, s: &str)  {
+	  pub fn Append(&self, s: &str) {
           method_Call_1!(StringList_Append, self.0, to_CString!(s));
       }
 
-	  pub fn BeginUpdate(&self)  {
+	  pub fn BeginUpdate(&self) {
           method_Call_1!(StringList_BeginUpdate, self.0);
       }
 
-	  pub fn EndUpdate(&self)  {
+	  pub fn EndUpdate(&self) {
           method_Call_1!(StringList_EndUpdate, self.0);
       }
 
-	  pub fn Equals(&self, strings: &TStrings) -> bool  {
+	  pub fn Equals(&self, strings: &dyn IStrings) -> bool  {
           return method_Call_1!(StringList_Equals, self.0, strings.Instance());
       }
 
-	  pub fn IndexOfName(&self, name: &str) -> i32  {
+	  pub fn IndexOfName(&self, name: &str) -> i32 {
           return method_Call_1!(StringList_IndexOfName, self.0, to_CString!(name));
       }
 
-	  pub fn IndexOfObject(&self, aObject: &dyn IObject) -> i32  {
+	  pub fn IndexOfObject(&self, aObject: &dyn IObject) -> i32 {
           return method_Call_1!(StringList_IndexOfObject, self.0, aObject.Instance());
       }
 
-	  pub fn LoadFromFile(&self, fileName: &str)  {
+	  pub fn LoadFromFile(&self, fileName: &str) {
           method_Call_1!(StringList_LoadFromFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn LoadFromStream(&self, stream: &dyn IObject)  {
+	  pub fn LoadFromStream(&self, stream: &dyn IObject) {
           method_Call_1!(StringList_LoadFromStream, self.0, stream.Instance());
       }
 
-	  pub fn Move(&self, curIndex: i32, newIndex: i32)  {
+	  pub fn Move(&self, curIndex: i32, newIndex: i32) {
           method_Call_1!(StringList_Move, self.0, curIndex, newIndex);
       }
 
-	  pub fn SaveToFile(&self, fileName: &str)  {
+	  pub fn SaveToFile(&self, fileName: &str) {
           method_Call_1!(StringList_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
+	  pub fn SaveToStream(&self, stream: &dyn IObject) {
           method_Call_1!(StringList_SaveToStream, self.0, stream.Instance());
       }
 
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
           return to_RustString!(method_Call_1!(StringList_GetNamePath, self.0));
       }
 
@@ -25487,7 +25489,7 @@ impl TStringList {
 }
 
 impl_IObject!(TStringList);
-impl_Drop_method!(TStringList);
+impl_IStrings!(TStringList);
 
 impl TBrush {
       pub fn new() -> Self {
@@ -26528,7 +26530,7 @@ impl TListItem {
           return method_Call_2!(TStrings, ListItem_GetSubItems, self.0);
       }
 
-	  pub fn SetSubItems(&self, aValue: &TStrings)  {
+	  pub fn SetSubItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ListItem_SetSubItems, self.0, aValue.Instance());
       }
 
@@ -34194,11 +34196,11 @@ impl TIniFile {
           method_Call_1!(IniFile_WriteString, self.0, to_CString!(section), to_CString!(ident), to_CString!(value));
       }
 
-	  pub fn ReadSections(&self, strings: &TStrings)  {
+	  pub fn ReadSections(&self, strings: &dyn IStrings)  {
           method_Call_1!(IniFile_ReadSections, self.0, strings.Instance());
       }
 
-	  pub fn ReadSectionValues(&self, section: &str, strings: &TStrings)  {
+	  pub fn ReadSectionValues(&self, section: &str, strings: &dyn IStrings)  {
           method_Call_1!(IniFile_ReadSectionValues, self.0, to_CString!(section), strings.Instance());
       }
 
@@ -40538,7 +40540,7 @@ impl TCheckListBox {
           return method_Call_2!(TStrings, CheckListBox_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(CheckListBox_SetItems, self.0, aValue.Instance());
       }
 
@@ -44448,7 +44450,7 @@ impl TStringGrid {
           return method_Call_2!(TStrings, StringGrid_GetCols, self.0, index);
       }
 
-	  pub fn SetCols(&self, index: i32, aValue: &TStrings)  {
+	  pub fn SetCols(&self, index: i32, aValue: &dyn IStrings)  {
           method_Call_1!(StringGrid_SetCols, self.0, index, aValue.Instance());
       }
 
@@ -44464,7 +44466,7 @@ impl TStringGrid {
           return method_Call_2!(TStrings, StringGrid_GetRows, self.0, index);
       }
 
-	  pub fn SetRows(&self, index: i32, aValue: &TStrings)  {
+	  pub fn SetRows(&self, index: i32, aValue: &dyn IStrings)  {
           method_Call_1!(StringGrid_SetRows, self.0, index, aValue.Instance());
       }
 
@@ -45958,7 +45960,7 @@ impl TValueListEditor {
           return method_Call_2!(TStrings, ValueListEditor_GetStrings, self.0);
       }
 
-	  pub fn SetStrings(&self, aValue: &TStrings)  {
+	  pub fn SetStrings(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ValueListEditor_SetStrings, self.0, aValue.Instance());
       }
 
@@ -52279,7 +52281,7 @@ impl TComboBoxEx {
           return method_Call_2!(TStrings, ComboBoxEx_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(ComboBoxEx_SetItems, self.0, aValue.Instance());
       }
 
@@ -55045,7 +55047,7 @@ impl TCheckGroup {
           return method_Call_2!(TStrings, CheckGroup_GetItems, self.0);
       }
 
-	  pub fn SetItems(&self, aValue: &TStrings)  {
+	  pub fn SetItems(&self, aValue: &dyn IStrings)  {
           method_Call_1!(CheckGroup_SetItems, self.0, aValue.Instance());
       }
 
@@ -56493,7 +56495,7 @@ impl TGridColumn {
           return method_Call_2!(TStrings, GridColumn_GetPickList, self.0);
       }
 
-	  pub fn SetPickList(&self, aValue: &TStrings)  {
+	  pub fn SetPickList(&self, aValue: &dyn IStrings)  {
           method_Call_1!(GridColumn_SetPickList, self.0, aValue.Instance());
       }
 

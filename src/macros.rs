@@ -36,6 +36,13 @@ macro_rules! impl_IWinControl {
 }
 
 #[macro_export]
+macro_rules! impl_IStrings {
+    ($class: ident) => {
+        impl IStrings for $class {}
+    };
+}
+
+#[macro_export]
 macro_rules! method_Call_1 {
     ($fnName: ident, $($arg:expr),*) => {
         unsafe { $fnName($($arg),* )}
