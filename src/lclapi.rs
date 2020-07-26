@@ -10,7 +10,7 @@
 use std::os::raw::c_char;
 use std::mem::{size_of, transmute};
 
-use crate::types::*;
+use types::*;
 
 // MSVC 编译器，静态加载
 #[link(name = "liblcl")]

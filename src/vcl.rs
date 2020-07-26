@@ -9,8 +9,8 @@
 #![allow(dead_code)]
 #![allow(unused_unsafe)]
 
-use crate::lclapi::*;
-use crate::types::*;
+use lclapi::*;
+use types::*;
 
 use std::borrow::Cow;
 use std::ffi::{CStr, CString};
@@ -320,12 +320,16 @@ impl TControl {
           method_Call_1!(Control_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint)  {
-          method_Call_1!(Control_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Control_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint)  {
-          method_Call_1!(Control_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Control_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool  {
@@ -356,12 +360,16 @@ impl TControl {
           method_Call_1!(Control_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint)  {
-          method_Call_1!(Control_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Control_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint)  {
-          method_Call_1!(Control_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Control_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self)  {
@@ -496,8 +504,10 @@ impl TControl {
           method_Call_1!(Control_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Control_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Control_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -512,12 +522,16 @@ impl TControl {
           method_Call_1!(Control_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Control_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Control_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Control_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Control_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -805,12 +819,16 @@ impl TWinControl {
           method_Call_1!(WinControl_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(WinControl_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(WinControl_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(WinControl_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(WinControl_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -833,12 +851,16 @@ impl TWinControl {
           method_Call_1!(WinControl_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(WinControl_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(WinControl_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(WinControl_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(WinControl_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -1049,8 +1071,10 @@ impl TWinControl {
           method_Call_1!(WinControl_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(WinControl_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(WinControl_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -1065,12 +1089,16 @@ impl TWinControl {
           method_Call_1!(WinControl_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(WinControl_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(WinControl_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(WinControl_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(WinControl_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -1503,8 +1531,10 @@ impl TPopupMenu {
           method_Call_1!(PopupMenu_SetPopupComponent, self.0, aValue.Instance());
       }
 
-	  pub fn PopupPoint(&self, result: *mut TPoint)  {
-          method_Call_1!(PopupMenu_GetPopupPoint, self.0, result);
+	  pub fn PopupPoint(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PopupMenu_GetPopupPoint, self.0, &mut result);
+          return result;
       }
 
 	  pub fn Alignment(&self) -> TPopupAlignment  {
@@ -1715,12 +1745,16 @@ impl TMemo {
           method_Call_1!(Memo_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Memo_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Memo_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -1743,12 +1777,16 @@ impl TMemo {
           method_Call_1!(Memo_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Memo_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Memo_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -2151,8 +2189,10 @@ impl TMemo {
           method_Call_1!(Memo_SetOnMouseUp, self.0, aEventId);
       }
 
-	  pub fn CaretPos(&self, result: *mut TPoint)  {
-          method_Call_1!(Memo_GetCaretPos, self.0, result);
+	  pub fn CaretPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_GetCaretPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetCaretPos(&self, aValue: *mut TPoint)  {
@@ -2271,8 +2311,10 @@ impl TMemo {
           method_Call_1!(Memo_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Memo_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Memo_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -2287,12 +2329,16 @@ impl TMemo {
           method_Call_1!(Memo_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Memo_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Memo_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Memo_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -2573,12 +2619,16 @@ impl TCheckBox {
           method_Call_1!(CheckBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -2601,12 +2651,16 @@ impl TCheckBox {
           method_Call_1!(CheckBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -3017,8 +3071,10 @@ impl TCheckBox {
           method_Call_1!(CheckBox_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -3033,12 +3089,16 @@ impl TCheckBox {
           method_Call_1!(CheckBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(CheckBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -3319,12 +3379,16 @@ impl TRadioButton {
           method_Call_1!(RadioButton_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RadioButton_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioButton_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RadioButton_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioButton_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -3347,12 +3411,16 @@ impl TRadioButton {
           method_Call_1!(RadioButton_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RadioButton_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioButton_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RadioButton_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioButton_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -3747,8 +3815,10 @@ impl TRadioButton {
           method_Call_1!(RadioButton_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(RadioButton_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RadioButton_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -3763,12 +3833,16 @@ impl TRadioButton {
           method_Call_1!(RadioButton_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(RadioButton_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioButton_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(RadioButton_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RadioButton_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -4049,12 +4123,16 @@ impl TGroupBox {
           method_Call_1!(GroupBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(GroupBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(GroupBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(GroupBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(GroupBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -4077,12 +4155,16 @@ impl TGroupBox {
           method_Call_1!(GroupBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(GroupBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(GroupBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(GroupBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(GroupBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -4473,8 +4555,10 @@ impl TGroupBox {
           method_Call_1!(GroupBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(GroupBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(GroupBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -4489,12 +4573,16 @@ impl TGroupBox {
           method_Call_1!(GroupBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(GroupBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(GroupBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(GroupBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(GroupBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -4699,12 +4787,16 @@ impl TLabel {
           method_Call_1!(Label_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Label_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Label_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Label_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Label_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -4735,12 +4827,16 @@ impl TLabel {
           method_Call_1!(Label_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Label_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Label_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Label_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Label_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -5091,8 +5187,10 @@ impl TLabel {
           method_Call_1!(Label_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Label_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Label_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -5107,12 +5205,16 @@ impl TLabel {
           method_Call_1!(Label_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Label_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Label_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Label_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Label_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -5316,8 +5418,10 @@ impl TListBox {
           return method_Call_1!(ListBox_ItemAtPos, self.0, pos, existing);
       }
 
-	  pub fn ItemRect(&self, index: i32, result: *mut TRect)  {
-          method_Call_1!(ListBox_ItemRect, self.0, index, result);
+	  pub fn ItemRect(&self, index: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListBox_ItemRect, self.0, index, &mut result);
+          return result;
       }
 
 	  pub fn SelectAll(&self)  {
@@ -5404,12 +5508,16 @@ impl TListBox {
           method_Call_1!(ListBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ListBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ListBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -5432,12 +5540,16 @@ impl TListBox {
           method_Call_1!(ListBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ListBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ListBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -5924,8 +6036,10 @@ impl TListBox {
           method_Call_1!(ListBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ListBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -5940,12 +6054,16 @@ impl TListBox {
           method_Call_1!(ListBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ListBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ListBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -6254,12 +6372,16 @@ impl TComboBox {
           method_Call_1!(ComboBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ComboBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ComboBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -6282,12 +6404,16 @@ impl TComboBox {
           method_Call_1!(ComboBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ComboBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ComboBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -6786,8 +6912,10 @@ impl TComboBox {
           method_Call_1!(ComboBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ComboBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ComboBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -6802,12 +6930,16 @@ impl TComboBox {
           method_Call_1!(ComboBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ComboBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ComboBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ComboBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -7088,12 +7220,16 @@ impl TPanel {
           method_Call_1!(Panel_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Panel_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Panel_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Panel_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Panel_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -7116,12 +7252,16 @@ impl TPanel {
           method_Call_1!(Panel_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Panel_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Panel_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Panel_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Panel_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -7580,8 +7720,10 @@ impl TPanel {
           method_Call_1!(Panel_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Panel_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Panel_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -7596,12 +7738,16 @@ impl TPanel {
           method_Call_1!(Panel_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Panel_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Panel_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Panel_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Panel_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -7806,12 +7952,16 @@ impl TImage {
           method_Call_1!(Image_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Image_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Image_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Image_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Image_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -7842,12 +7992,16 @@ impl TImage {
           method_Call_1!(Image_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Image_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Image_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Image_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Image_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -8170,8 +8324,10 @@ impl TImage {
           method_Call_1!(Image_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Image_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Image_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -8186,12 +8342,16 @@ impl TImage {
           method_Call_1!(Image_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Image_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Image_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Image_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Image_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -8395,12 +8555,16 @@ impl TLinkLabel {
           method_Call_1!(LinkLabel_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(LinkLabel_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LinkLabel_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(LinkLabel_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LinkLabel_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -8423,12 +8587,16 @@ impl TLinkLabel {
           method_Call_1!(LinkLabel_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(LinkLabel_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LinkLabel_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(LinkLabel_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LinkLabel_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -8727,8 +8895,10 @@ impl TLinkLabel {
           method_Call_1!(LinkLabel_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(LinkLabel_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(LinkLabel_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -8743,12 +8913,16 @@ impl TLinkLabel {
           method_Call_1!(LinkLabel_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(LinkLabel_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LinkLabel_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(LinkLabel_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(LinkLabel_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -8933,12 +9107,16 @@ impl TSpeedButton {
           method_Call_1!(SpeedButton_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(SpeedButton_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpeedButton_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(SpeedButton_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpeedButton_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -8969,12 +9147,16 @@ impl TSpeedButton {
           method_Call_1!(SpeedButton_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(SpeedButton_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpeedButton_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(SpeedButton_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpeedButton_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -9305,8 +9487,10 @@ impl TSpeedButton {
           method_Call_1!(SpeedButton_SetOnMouseUp, self.0, aEventId);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(SpeedButton_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(SpeedButton_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -9321,12 +9505,16 @@ impl TSpeedButton {
           method_Call_1!(SpeedButton_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(SpeedButton_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpeedButton_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(SpeedButton_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(SpeedButton_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -9514,12 +9702,16 @@ impl TSplitter {
           method_Call_1!(Splitter_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Splitter_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Splitter_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Splitter_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Splitter_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -9550,12 +9742,16 @@ impl TSplitter {
           method_Call_1!(Splitter_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Splitter_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Splitter_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Splitter_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Splitter_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -9762,8 +9958,10 @@ impl TSplitter {
           method_Call_1!(Splitter_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Splitter_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Splitter_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -9778,12 +9976,16 @@ impl TSplitter {
           method_Call_1!(Splitter_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Splitter_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Splitter_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Splitter_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Splitter_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -10039,12 +10241,16 @@ impl TRadioGroup {
           method_Call_1!(RadioGroup_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RadioGroup_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioGroup_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RadioGroup_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioGroup_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -10067,12 +10273,16 @@ impl TRadioGroup {
           method_Call_1!(RadioGroup_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RadioGroup_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioGroup_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RadioGroup_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioGroup_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -10427,8 +10637,10 @@ impl TRadioGroup {
           method_Call_1!(RadioGroup_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(RadioGroup_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RadioGroup_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -10443,12 +10655,16 @@ impl TRadioGroup {
           method_Call_1!(RadioGroup_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(RadioGroup_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RadioGroup_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(RadioGroup_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RadioGroup_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -10729,12 +10945,16 @@ impl TStaticText {
           method_Call_1!(StaticText_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StaticText_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StaticText_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StaticText_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StaticText_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -10757,12 +10977,16 @@ impl TStaticText {
           method_Call_1!(StaticText_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StaticText_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StaticText_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StaticText_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StaticText_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -11169,8 +11393,10 @@ impl TStaticText {
           method_Call_1!(StaticText_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(StaticText_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StaticText_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -11185,12 +11411,16 @@ impl TStaticText {
           method_Call_1!(StaticText_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(StaticText_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StaticText_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(StaticText_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StaticText_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -11491,12 +11721,16 @@ impl TColorBox {
           method_Call_1!(ColorBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ColorBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ColorBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -11519,12 +11753,16 @@ impl TColorBox {
           method_Call_1!(ColorBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ColorBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ColorBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -11987,8 +12225,10 @@ impl TColorBox {
           method_Call_1!(ColorBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ColorBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ColorBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -12003,12 +12243,16 @@ impl TColorBox {
           method_Call_1!(ColorBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ColorBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ColorBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ColorBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -12237,8 +12481,10 @@ impl TColorListBox {
           return method_Call_1!(ColorListBox_ItemAtPos, self.0, pos, existing);
       }
 
-	  pub fn ItemRect(&self, index: i32, result: *mut TRect)  {
-          method_Call_1!(ColorListBox_ItemRect, self.0, index, result);
+	  pub fn ItemRect(&self, index: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ColorListBox_ItemRect, self.0, index, &mut result);
+          return result;
       }
 
 	  pub fn SelectAll(&self)  {
@@ -12325,12 +12571,16 @@ impl TColorListBox {
           method_Call_1!(ColorListBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ColorListBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorListBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ColorListBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorListBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -12353,12 +12603,16 @@ impl TColorListBox {
           method_Call_1!(ColorListBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ColorListBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorListBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ColorListBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorListBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -12789,8 +13043,10 @@ impl TColorListBox {
           method_Call_1!(ColorListBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ColorListBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ColorListBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -12805,12 +13061,16 @@ impl TColorListBox {
           method_Call_1!(ColorListBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ColorListBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ColorListBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ColorListBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ColorListBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -14615,12 +14875,16 @@ impl TRichEdit {
           method_Call_1!(RichEdit_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RichEdit_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RichEdit_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -14643,12 +14907,16 @@ impl TRichEdit {
           method_Call_1!(RichEdit_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(RichEdit_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(RichEdit_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -15075,8 +15343,10 @@ impl TRichEdit {
           return method_Call_2!(TParaAttributes, RichEdit_GetParagraph, self.0);
       }
 
-	  pub fn CaretPos(&self, result: *mut TPoint)  {
-          method_Call_1!(RichEdit_GetCaretPos, self.0, result);
+	  pub fn CaretPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_GetCaretPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetCaretPos(&self, aValue: *mut TPoint)  {
@@ -15211,8 +15481,10 @@ impl TRichEdit {
           method_Call_1!(RichEdit_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(RichEdit_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RichEdit_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -15227,12 +15499,16 @@ impl TRichEdit {
           method_Call_1!(RichEdit_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(RichEdit_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(RichEdit_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(RichEdit_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(RichEdit_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -15517,12 +15793,16 @@ impl TTrackBar {
           method_Call_1!(TrackBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TrackBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TrackBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TrackBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TrackBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -15545,12 +15825,16 @@ impl TTrackBar {
           method_Call_1!(TrackBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TrackBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TrackBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TrackBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TrackBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -15961,8 +16245,10 @@ impl TTrackBar {
           method_Call_1!(TrackBar_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(TrackBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TrackBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -15977,12 +16263,16 @@ impl TTrackBar {
           method_Call_1!(TrackBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(TrackBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TrackBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(TrackBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TrackBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -16183,8 +16473,10 @@ impl TImageList {
 
 	  impl_Free_method!(ImageList_Free);
 
-	  pub fn GetHotSpot(&self, result: *mut TPoint)  {
-          method_Call_1!(ImageList_GetHotSpot, self.0, result);
+	  pub fn GetHotSpot(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageList_GetHotSpot, self.0, &mut result);
+          return result;
       }
 
 	  pub fn HideDragImage(&self)  {
@@ -16531,12 +16823,16 @@ impl TUpDown {
           method_Call_1!(UpDown_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(UpDown_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(UpDown_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(UpDown_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(UpDown_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -16559,12 +16855,16 @@ impl TUpDown {
           method_Call_1!(UpDown_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(UpDown_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(UpDown_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(UpDown_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(UpDown_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -16911,8 +17211,10 @@ impl TUpDown {
           method_Call_1!(UpDown_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(UpDown_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(UpDown_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -16927,12 +17229,16 @@ impl TUpDown {
           method_Call_1!(UpDown_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(UpDown_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(UpDown_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(UpDown_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(UpDown_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -17213,12 +17519,16 @@ impl TProgressBar {
           method_Call_1!(ProgressBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ProgressBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ProgressBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ProgressBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ProgressBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -17241,12 +17551,16 @@ impl TProgressBar {
           method_Call_1!(ProgressBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ProgressBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ProgressBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ProgressBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ProgressBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -17637,8 +17951,10 @@ impl TProgressBar {
           method_Call_1!(ProgressBar_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ProgressBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ProgressBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -17653,12 +17969,16 @@ impl TProgressBar {
           method_Call_1!(ProgressBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ProgressBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ProgressBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ProgressBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ProgressBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -17931,12 +18251,16 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(DateTimePicker_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DateTimePicker_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(DateTimePicker_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DateTimePicker_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -17959,12 +18283,16 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(DateTimePicker_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DateTimePicker_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(DateTimePicker_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DateTimePicker_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -18355,8 +18683,10 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(DateTimePicker_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DateTimePicker_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -18371,12 +18701,16 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(DateTimePicker_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DateTimePicker_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(DateTimePicker_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DateTimePicker_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -18657,12 +18991,16 @@ impl TMonthCalendar {
           method_Call_1!(MonthCalendar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MonthCalendar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MonthCalendar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MonthCalendar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MonthCalendar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -18685,12 +19023,16 @@ impl TMonthCalendar {
           method_Call_1!(MonthCalendar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MonthCalendar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MonthCalendar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MonthCalendar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MonthCalendar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -19049,8 +19391,10 @@ impl TMonthCalendar {
           method_Call_1!(MonthCalendar_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(MonthCalendar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MonthCalendar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -19065,12 +19409,16 @@ impl TMonthCalendar {
           method_Call_1!(MonthCalendar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(MonthCalendar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MonthCalendar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(MonthCalendar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MonthCalendar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -19383,12 +19731,16 @@ impl TListView {
           method_Call_1!(ListView_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ListView_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListView_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ListView_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListView_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -19411,12 +19763,16 @@ impl TListView {
           method_Call_1!(ListView_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ListView_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListView_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ListView_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListView_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -20191,8 +20547,10 @@ impl TListView {
           method_Call_1!(ListView_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ListView_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListView_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -20207,12 +20565,16 @@ impl TListView {
           method_Call_1!(ListView_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ListView_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListView_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ListView_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListView_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -20541,12 +20903,16 @@ impl TTreeView {
           method_Call_1!(TreeView_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TreeView_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TreeView_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TreeView_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TreeView_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -20569,12 +20935,16 @@ impl TTreeView {
           method_Call_1!(TreeView_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TreeView_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TreeView_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TreeView_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TreeView_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -21313,8 +21683,10 @@ impl TTreeView {
           method_Call_1!(TreeView_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(TreeView_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TreeView_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -21329,12 +21701,16 @@ impl TTreeView {
           method_Call_1!(TreeView_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(TreeView_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TreeView_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(TreeView_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TreeView_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -21619,12 +21995,16 @@ impl TStatusBar {
           method_Call_1!(StatusBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StatusBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StatusBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StatusBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StatusBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -21647,12 +22027,16 @@ impl TStatusBar {
           method_Call_1!(StatusBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StatusBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StatusBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StatusBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StatusBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -22079,8 +22463,10 @@ impl TStatusBar {
           method_Call_1!(StatusBar_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(StatusBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StatusBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -22095,12 +22481,16 @@ impl TStatusBar {
           method_Call_1!(StatusBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(StatusBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StatusBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(StatusBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StatusBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -22381,12 +22771,16 @@ impl TToolBar {
           method_Call_1!(ToolBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToolBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToolBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -22409,12 +22803,16 @@ impl TToolBar {
           method_Call_1!(ToolBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToolBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToolBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -22933,8 +23331,10 @@ impl TToolBar {
           method_Call_1!(ToolBar_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToolBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToolBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -22949,12 +23349,16 @@ impl TToolBar {
           method_Call_1!(ToolBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ToolBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToolBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToolBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -23235,12 +23639,16 @@ impl TBitBtn {
           method_Call_1!(BitBtn_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(BitBtn_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BitBtn_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(BitBtn_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BitBtn_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -23263,12 +23671,16 @@ impl TBitBtn {
           method_Call_1!(BitBtn_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(BitBtn_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BitBtn_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(BitBtn_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BitBtn_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -23683,8 +24095,10 @@ impl TBitBtn {
           method_Call_1!(BitBtn_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(BitBtn_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(BitBtn_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -23699,12 +24113,16 @@ impl TBitBtn {
           method_Call_1!(BitBtn_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(BitBtn_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BitBtn_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(BitBtn_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(BitBtn_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -24273,8 +24691,10 @@ impl TMemoryStream {
           method_Call_1!(MemoryStream_LoadFromFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn Seek(&self, offset: *mut i64, origin: TSeekOrigin, result: *mut i64)  {
-          method_Call_1!(MemoryStream_Seek, self.0, offset, origin, result);
+	  pub fn Seek(&self, offset: *mut i64, origin: TSeekOrigin) -> i64  {
+          let mut result = 0 as i64;
+          method_Call_1!(MemoryStream_Seek, self.0, offset, origin, &mut result);
+          return result;
       }
 
 	  pub fn SaveToStream(&self, stream: &dyn IObject)  {
@@ -24285,8 +24705,10 @@ impl TMemoryStream {
           method_Call_1!(MemoryStream_SaveToFile, self.0, to_CString!(fileName));
       }
 
-	  pub fn CopyFrom(&self, source: &dyn IObject, count: *mut i64, result: *mut i64)  {
-          method_Call_1!(MemoryStream_CopyFrom, self.0, source.Instance(), count, result);
+	  pub fn CopyFrom(&self, source: &dyn IObject, count: *mut i64) -> i64  {
+          let mut result = 0 as i64;
+          method_Call_1!(MemoryStream_CopyFrom, self.0, source.Instance(), count, &mut result);
+          return result;
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -24321,16 +24743,20 @@ impl TMemoryStream {
           return method_Call_1!(MemoryStream_GetMemory, self.0);
       }
 
-	  pub fn Position(&self, result: *mut i64)  {
-          method_Call_1!(MemoryStream_GetPosition, self.0, result);
+	  pub fn Position(&self) -> i64  {
+          let mut result = 0 as i64;
+          method_Call_1!(MemoryStream_GetPosition, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetPosition(&self, aValue: *mut i64)  {
           method_Call_1!(MemoryStream_SetPosition, self.0, aValue);
       }
 
-	  pub fn Size(&self, result: *mut i64)  {
-          method_Call_1!(MemoryStream_GetSize, self.0, result);
+	  pub fn Size(&self) -> i64  {
+          let mut result = 0 as i64;
+          method_Call_1!(MemoryStream_GetSize, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetSize(&self, aValue: *mut i64)  {
@@ -25781,8 +26207,10 @@ impl TListItem {
 
 	  impl_Free_method!(ListItem_Free);
 
-	  pub fn DisplayRectSubItem(&self, subItem: i32, code: TDisplayCode, result: *mut TRect)  {
-          method_Call_1!(ListItem_DisplayRectSubItem, self.0, subItem, code, result);
+	  pub fn DisplayRectSubItem(&self, subItem: i32, code: TDisplayCode) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListItem_DisplayRectSubItem, self.0, subItem, code, &mut result);
+          return result;
       }
 
 	  pub fn Assign(&self, source: &dyn IObject)  {
@@ -25793,8 +26221,10 @@ impl TListItem {
           method_Call_1!(ListItem_Delete, self.0);
       }
 
-	  pub fn DisplayRect(&self, code: TDisplayCode, result: *mut TRect)  {
-          method_Call_1!(ListItem_DisplayRect, self.0, code, result);
+	  pub fn DisplayRect(&self, code: TDisplayCode) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ListItem_DisplayRect, self.0, code, &mut result);
+          return result;
       }
 
 	  pub fn EditCaption(&self) -> bool  {
@@ -25913,8 +26343,10 @@ impl TListItem {
           return method_Call_2!(TListItems, ListItem_GetOwner, self.0);
       }
 
-	  pub fn Position(&self, result: *mut TPoint)  {
-          method_Call_1!(ListItem_GetPosition, self.0, result);
+	  pub fn Position(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ListItem_GetPosition, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetPosition(&self, aValue: *mut TPoint)  {
@@ -25989,8 +26421,10 @@ impl TTreeNode {
           method_Call_1!(TreeNode_Delete, self.0);
       }
 
-	  pub fn DisplayRect(&self, textOnly: bool, result: *mut TRect)  {
-          method_Call_1!(TreeNode_DisplayRect, self.0, textOnly, result);
+	  pub fn DisplayRect(&self, textOnly: bool) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TreeNode_DisplayRect, self.0, textOnly, &mut result);
+          return result;
       }
 
 	  pub fn EditText(&self) -> bool  {
@@ -26205,8 +26639,10 @@ impl TPageControl {
           method_Call_1!(PageControl_SelectNextPage, self.0, goForward, checkTabVisible);
       }
 
-	  pub fn TabRect(&self, index: i32, result: *mut TRect)  {
-          method_Call_1!(PageControl_TabRect, self.0, index, result);
+	  pub fn TabRect(&self, index: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(PageControl_TabRect, self.0, index, &mut result);
+          return result;
       }
 
 	  pub fn CanFocus(&self) -> bool {
@@ -26289,12 +26725,16 @@ impl TPageControl {
           method_Call_1!(PageControl_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(PageControl_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PageControl_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(PageControl_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PageControl_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -26317,12 +26757,16 @@ impl TPageControl {
           method_Call_1!(PageControl_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(PageControl_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PageControl_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(PageControl_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PageControl_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -26757,8 +27201,10 @@ impl TPageControl {
           method_Call_1!(PageControl_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(PageControl_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(PageControl_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -26773,12 +27219,16 @@ impl TPageControl {
           method_Call_1!(PageControl_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(PageControl_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PageControl_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(PageControl_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(PageControl_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -27063,12 +27513,16 @@ impl TTabSheet {
           method_Call_1!(TabSheet_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TabSheet_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TabSheet_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TabSheet_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TabSheet_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -27091,12 +27545,16 @@ impl TTabSheet {
           method_Call_1!(TabSheet_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(TabSheet_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TabSheet_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(TabSheet_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TabSheet_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -27503,8 +27961,10 @@ impl TTabSheet {
           method_Call_1!(TabSheet_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(TabSheet_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TabSheet_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -27519,12 +27979,16 @@ impl TTabSheet {
           method_Call_1!(TabSheet_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(TabSheet_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(TabSheet_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(TabSheet_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(TabSheet_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -27777,12 +28241,16 @@ impl TButton {
           method_Call_1!(Button_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Button_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Button_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Button_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Button_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -27805,12 +28273,16 @@ impl TButton {
           method_Call_1!(Button_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Button_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Button_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Button_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Button_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -28193,8 +28665,10 @@ impl TButton {
           method_Call_1!(Button_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Button_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Button_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -28209,12 +28683,16 @@ impl TButton {
           method_Call_1!(Button_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Button_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Button_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Button_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Button_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -28523,12 +29001,16 @@ impl TEdit {
           method_Call_1!(Edit_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Edit_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Edit_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Edit_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Edit_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -28551,12 +29033,16 @@ impl TEdit {
           method_Call_1!(Edit_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Edit_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Edit_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Edit_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Edit_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -29063,8 +29549,10 @@ impl TEdit {
           method_Call_1!(Edit_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Edit_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Edit_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -29079,12 +29567,16 @@ impl TEdit {
           method_Call_1!(Edit_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Edit_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Edit_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Edit_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Edit_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -29357,8 +29849,10 @@ impl TScreen {
           return method_Call_1!(Screen_GetMonitorCount, self.0);
       }
 
-	  pub fn DesktopRect(&self, result: *mut TRect)  {
-          method_Call_1!(Screen_GetDesktopRect, self.0, result);
+	  pub fn DesktopRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Screen_GetDesktopRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn DesktopHeight(&self) -> i32  {
@@ -29377,8 +29871,10 @@ impl TScreen {
           return method_Call_1!(Screen_GetDesktopWidth, self.0);
       }
 
-	  pub fn WorkAreaRect(&self, result: *mut TRect)  {
-          method_Call_1!(Screen_GetWorkAreaRect, self.0, result);
+	  pub fn WorkAreaRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Screen_GetWorkAreaRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn WorkAreaHeight(&self) -> i32  {
@@ -29525,8 +30021,10 @@ impl TMouse {
           method_Call_1!(Mouse_SetCapture, self.0, aValue);
       }
 
-	  pub fn CursorPos(&self, result: *mut TPoint)  {
-          method_Call_1!(Mouse_GetCursorPos, self.0, result);
+	  pub fn CursorPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Mouse_GetCursorPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetCursorPos(&self, aValue: *mut TPoint)  {
@@ -30109,12 +30607,16 @@ impl TSpinEdit {
           method_Call_1!(SpinEdit_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(SpinEdit_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpinEdit_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(SpinEdit_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpinEdit_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -30137,12 +30639,16 @@ impl TSpinEdit {
           method_Call_1!(SpinEdit_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(SpinEdit_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpinEdit_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(SpinEdit_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpinEdit_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -30589,8 +31095,10 @@ impl TSpinEdit {
           method_Call_1!(SpinEdit_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(SpinEdit_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(SpinEdit_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -30605,12 +31113,16 @@ impl TSpinEdit {
           method_Call_1!(SpinEdit_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(SpinEdit_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(SpinEdit_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(SpinEdit_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(SpinEdit_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -30931,12 +31443,16 @@ impl TMiniWebview {
           method_Call_1!(MiniWebview_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MiniWebview_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MiniWebview_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MiniWebview_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MiniWebview_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -30955,12 +31471,16 @@ impl TMiniWebview {
           return method_Call_1!(MiniWebview_Perform, self.0, msg, wParam, lParam);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MiniWebview_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MiniWebview_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MiniWebview_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MiniWebview_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -31199,8 +31719,10 @@ impl TMiniWebview {
           method_Call_1!(MiniWebview_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(MiniWebview_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MiniWebview_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -31215,12 +31737,16 @@ impl TMiniWebview {
           method_Call_1!(MiniWebview_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(MiniWebview_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MiniWebview_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(MiniWebview_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MiniWebview_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -31481,8 +32007,10 @@ impl TCanvas {
           method_Call_1!(Canvas_RoundRect, self.0, x1, y1, x2, y2, x3, y3);
       }
 
-	  pub fn TextExtent(&self, text: &str, result: *mut TSize)  {
-          method_Call_1!(Canvas_TextExtent, self.0, to_CString!(text), result);
+	  pub fn TextExtent(&self, text: &str) -> TSize  {
+          let mut result = TSize::Empty();
+          method_Call_1!(Canvas_TextExtent, self.0, to_CString!(text), &mut result);
+          return result;
       }
 
 	  pub fn TextOut(&self, x: i32, y: i32, text: &str)  {
@@ -32862,12 +33390,16 @@ impl TToolButton {
           method_Call_1!(ToolButton_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToolButton_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolButton_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToolButton_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolButton_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -32898,12 +33430,16 @@ impl TToolButton {
           method_Call_1!(ToolButton_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToolButton_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolButton_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToolButton_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolButton_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -33246,8 +33782,10 @@ impl TToolButton {
           method_Call_1!(ToolButton_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToolButton_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToolButton_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -33262,12 +33800,16 @@ impl TToolButton {
           method_Call_1!(ToolButton_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ToolButton_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToolButton_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToolButton_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToolButton_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -33499,8 +34041,10 @@ impl TIniFile {
           return method_Call_1!(IniFile_ReadDateTime, self.0, to_CString!(section), to_CString!(name), default);
       }
 
-	  pub fn ReadFloat(&self, section: &str, name: &str, default: *mut f64, result: *mut f64)  {
-          method_Call_1!(IniFile_ReadFloat, self.0, to_CString!(section), to_CString!(name), default, result);
+	  pub fn ReadFloat(&self, section: &str, name: &str, default: *mut f64) -> f64  {
+          let mut result = 0 as f64;
+          method_Call_1!(IniFile_ReadFloat, self.0, to_CString!(section), to_CString!(name), default, &mut result);
+          return result;
       }
 
 	  pub fn ReadTime(&self, section: &str, name: &str, default: u32) -> u32  {
@@ -33627,8 +34171,10 @@ impl TRegistry {
           return method_Call_1!(Registry_ReadDateTime, self.0, to_CString!(name));
       }
 
-	  pub fn ReadFloat(&self, name: &str, result: *mut f64)  {
-          method_Call_1!(Registry_ReadFloat, self.0, to_CString!(name), result);
+	  pub fn ReadFloat(&self, name: &str) -> f64  {
+          let mut result = 0 as f64;
+          method_Call_1!(Registry_ReadFloat, self.0, to_CString!(name), &mut result);
+          return result;
       }
 
 	  pub fn ReadInteger(&self, name: &str) -> i32  {
@@ -33935,12 +34481,16 @@ impl TMonitor {
           return method_Call_1!(Monitor_GetWidth, self.0);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Monitor_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Monitor_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
-	  pub fn WorkareaRect(&self, result: *mut TRect)  {
-          method_Call_1!(Monitor_GetWorkareaRect, self.0, result);
+	  pub fn WorkareaRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Monitor_GetWorkareaRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn Primary(&self) -> bool  {
@@ -33971,12 +34521,16 @@ impl TPaintBox {
           method_Call_1!(PaintBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(PaintBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PaintBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(PaintBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PaintBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -34007,12 +34561,16 @@ impl TPaintBox {
           method_Call_1!(PaintBox_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(PaintBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PaintBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(PaintBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PaintBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -34283,8 +34841,10 @@ impl TPaintBox {
           method_Call_1!(PaintBox_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(PaintBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(PaintBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -34299,12 +34859,16 @@ impl TPaintBox {
           method_Call_1!(PaintBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(PaintBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PaintBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(PaintBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(PaintBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -34808,12 +35372,16 @@ impl TForm {
           method_Call_1!(Form_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Form_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Form_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Form_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Form_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -34832,12 +35400,16 @@ impl TForm {
           method_Call_1!(Form_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Form_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Form_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Form_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Form_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -35488,20 +36060,26 @@ impl TForm {
           method_Call_1!(Form_SetTabStop, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Form_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Form_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
           method_Call_1!(Form_SetBoundsRect, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Form_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Form_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Form_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Form_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ControlState(&self) -> TControlState  {
@@ -36090,12 +36668,16 @@ impl TScrollBar {
           method_Call_1!(ScrollBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ScrollBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ScrollBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -36118,12 +36700,16 @@ impl TScrollBar {
           method_Call_1!(ScrollBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ScrollBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ScrollBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -36486,8 +37072,10 @@ impl TScrollBar {
           method_Call_1!(ScrollBar_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ScrollBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ScrollBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -36502,12 +37090,16 @@ impl TScrollBar {
           method_Call_1!(ScrollBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ScrollBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ScrollBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ScrollBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -36824,12 +37416,16 @@ impl TMaskEdit {
           method_Call_1!(MaskEdit_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MaskEdit_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MaskEdit_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MaskEdit_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MaskEdit_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -36852,12 +37448,16 @@ impl TMaskEdit {
           method_Call_1!(MaskEdit_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(MaskEdit_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MaskEdit_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(MaskEdit_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MaskEdit_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -37360,8 +37960,10 @@ impl TMaskEdit {
           method_Call_1!(MaskEdit_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(MaskEdit_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MaskEdit_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -37376,12 +37978,16 @@ impl TMaskEdit {
           method_Call_1!(MaskEdit_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(MaskEdit_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(MaskEdit_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(MaskEdit_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(MaskEdit_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -37586,12 +38192,16 @@ impl TShape {
           method_Call_1!(Shape_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Shape_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Shape_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Shape_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Shape_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -37622,12 +38232,16 @@ impl TShape {
           method_Call_1!(Shape_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Shape_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Shape_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Shape_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Shape_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -37874,8 +38488,10 @@ impl TShape {
           method_Call_1!(Shape_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Shape_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Shape_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -37890,12 +38506,16 @@ impl TShape {
           method_Call_1!(Shape_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Shape_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Shape_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Shape_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Shape_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -38083,12 +38703,16 @@ impl TBevel {
           method_Call_1!(Bevel_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Bevel_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Bevel_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Bevel_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Bevel_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -38119,12 +38743,16 @@ impl TBevel {
           method_Call_1!(Bevel_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Bevel_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Bevel_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Bevel_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Bevel_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -38307,8 +38935,10 @@ impl TBevel {
           method_Call_1!(Bevel_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Bevel_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Bevel_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -38323,12 +38953,16 @@ impl TBevel {
           method_Call_1!(Bevel_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Bevel_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Bevel_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Bevel_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Bevel_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -38596,12 +39230,16 @@ impl TScrollBox {
           method_Call_1!(ScrollBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ScrollBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ScrollBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -38624,12 +39262,16 @@ impl TScrollBox {
           method_Call_1!(ScrollBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ScrollBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ScrollBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -39064,8 +39706,10 @@ impl TScrollBox {
           method_Call_1!(ScrollBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ScrollBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ScrollBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -39080,12 +39724,16 @@ impl TScrollBox {
           method_Call_1!(ScrollBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ScrollBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ScrollBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ScrollBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ScrollBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -39310,8 +39958,10 @@ impl TCheckListBox {
           return method_Call_1!(CheckListBox_ItemAtPos, self.0, pos, existing);
       }
 
-	  pub fn ItemRect(&self, index: i32, result: *mut TRect)  {
-          method_Call_1!(CheckListBox_ItemRect, self.0, index, result);
+	  pub fn ItemRect(&self, index: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckListBox_ItemRect, self.0, index, &mut result);
+          return result;
       }
 
 	  pub fn SelectAll(&self)  {
@@ -39398,12 +40048,16 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckListBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckListBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckListBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckListBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -39426,12 +40080,16 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckListBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckListBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckListBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckListBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -39894,8 +40552,10 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckListBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckListBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -39910,12 +40570,16 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(CheckListBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckListBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckListBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckListBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -40164,12 +40828,16 @@ impl TGauge {
           method_Call_1!(Gauge_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Gauge_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Gauge_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Gauge_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Gauge_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -40200,12 +40868,16 @@ impl TGauge {
           method_Call_1!(Gauge_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Gauge_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Gauge_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Gauge_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Gauge_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -40472,8 +41144,10 @@ impl TGauge {
           method_Call_1!(Gauge_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Gauge_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Gauge_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -40488,12 +41162,16 @@ impl TGauge {
           method_Call_1!(Gauge_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Gauge_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Gauge_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Gauge_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Gauge_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -40685,12 +41363,16 @@ impl TImageButton {
           method_Call_1!(ImageButton_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ImageButton_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageButton_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ImageButton_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageButton_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -40721,12 +41403,16 @@ impl TImageButton {
           method_Call_1!(ImageButton_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ImageButton_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageButton_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ImageButton_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageButton_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -41037,8 +41723,10 @@ impl TImageButton {
           method_Call_1!(ImageButton_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ImageButton_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ImageButton_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -41053,12 +41741,16 @@ impl TImageButton {
           method_Call_1!(ImageButton_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ImageButton_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ImageButton_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ImageButton_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ImageButton_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -41302,8 +41994,10 @@ impl TFindDialog {
           method_Call_1!(FindDialog_SetLeft, self.0, aValue);
       }
 
-	  pub fn Position(&self, result: *mut TPoint)  {
-          method_Call_1!(FindDialog_GetPosition, self.0, result);
+	  pub fn Position(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FindDialog_GetPosition, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetPosition(&self, aValue: *mut TPoint)  {
@@ -41474,8 +42168,10 @@ impl TReplaceDialog {
           method_Call_1!(ReplaceDialog_SetLeft, self.0, aValue);
       }
 
-	  pub fn Position(&self, result: *mut TPoint)  {
-          method_Call_1!(ReplaceDialog_GetPosition, self.0, result);
+	  pub fn Position(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ReplaceDialog_GetPosition, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetPosition(&self, aValue: *mut TPoint)  {
@@ -41906,8 +42602,10 @@ impl TDragObject {
           method_Call_1!(DragObject_SetAlwaysShowDragImages, self.0, aValue);
       }
 
-	  pub fn DragPos(&self, result: *mut TPoint)  {
-          method_Call_1!(DragObject_GetDragPos, self.0, result);
+	  pub fn DragPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DragObject_GetDragPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetDragPos(&self, aValue: *mut TPoint)  {
@@ -41922,8 +42620,10 @@ impl TDragObject {
           method_Call_1!(DragObject_SetDragTarget, self.0, aValue);
       }
 
-	  pub fn DragTargetPos(&self, result: *mut TPoint)  {
-          method_Call_1!(DragObject_GetDragTargetPos, self.0, result);
+	  pub fn DragTargetPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DragObject_GetDragTargetPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetDragTargetPos(&self, aValue: *mut TPoint)  {
@@ -41990,8 +42690,10 @@ impl TDragDockObject {
           return to_RustString!(method_Call_1!(DragDockObject_ToString, self.0));
       }
 
-	  pub fn DockRect(&self, result: *mut TRect)  {
-          method_Call_1!(DragDockObject_GetDockRect, self.0, result);
+	  pub fn DockRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DragDockObject_GetDockRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetDockRect(&self, aValue: *mut TRect)  {
@@ -42006,8 +42708,10 @@ impl TDragDockObject {
           return method_Call_2!(TControl, DragDockObject_GetDropOnControl, self.0);
       }
 
-	  pub fn EraseDockRect(&self, result: *mut TRect)  {
-          method_Call_1!(DragDockObject_GetEraseDockRect, self.0, result);
+	  pub fn EraseDockRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DragDockObject_GetEraseDockRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetEraseDockRect(&self, aValue: *mut TRect)  {
@@ -42038,8 +42742,10 @@ impl TDragDockObject {
           method_Call_1!(DragDockObject_SetAlwaysShowDragImages, self.0, aValue);
       }
 
-	  pub fn DragPos(&self, result: *mut TPoint)  {
-          method_Call_1!(DragDockObject_GetDragPos, self.0, result);
+	  pub fn DragPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DragDockObject_GetDragPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetDragPos(&self, aValue: *mut TPoint)  {
@@ -42054,8 +42760,10 @@ impl TDragDockObject {
           method_Call_1!(DragDockObject_SetDragTarget, self.0, aValue);
       }
 
-	  pub fn DragTargetPos(&self, result: *mut TPoint)  {
-          method_Call_1!(DragDockObject_GetDragTargetPos, self.0, result);
+	  pub fn DragTargetPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DragDockObject_GetDragTargetPos, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetDragTargetPos(&self, aValue: *mut TPoint)  {
@@ -42138,8 +42846,10 @@ impl TStringGrid {
           method_Call_1!(StringGrid_AutoAdjustColumns, self.0);
       }
 
-	  pub fn CellRect(&self, aCol: i32, aRow: i32, result: *mut TRect)  {
-          method_Call_1!(StringGrid_CellRect, self.0, aCol, aRow, result);
+	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StringGrid_CellRect, self.0, aCol, aRow, &mut result);
+          return result;
       }
 
 	  pub fn CellToGridZone(&self, aCol: i32, aRow: i32) -> TGridZone  {
@@ -42194,16 +42904,22 @@ impl TStringGrid {
           return method_Call_1!(StringGrid_IsFixedCellVisible, self.0, aCol, aRow);
       }
 
-	  pub fn MouseCoord(&self, x: i32, y: i32, result: *mut TGridCoord)  {
-          method_Call_1!(StringGrid_MouseCoord, self.0, x, y, result);
+	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
+          let mut result = TGridCoord::Empty();
+          method_Call_1!(StringGrid_MouseCoord, self.0, x, y, &mut result);
+          return result;
       }
 
-	  pub fn MouseToCell(&self, mouse: *mut TPoint, result: *mut TPoint)  {
-          method_Call_1!(StringGrid_MouseToCell, self.0, mouse, result);
+	  pub fn MouseToCell(&self, mouse: *mut TPoint) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_MouseToCell, self.0, mouse, &mut result);
+          return result;
       }
 
-	  pub fn MouseToLogcell(&self, mouse: *mut TPoint, result: *mut TPoint)  {
-          method_Call_1!(StringGrid_MouseToLogcell, self.0, mouse, result);
+	  pub fn MouseToLogcell(&self, mouse: *mut TPoint) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_MouseToLogcell, self.0, mouse, &mut result);
+          return result;
       }
 
 	  pub fn MouseToGridZone(&self, x: i32, y: i32) -> TGridZone  {
@@ -42290,12 +43006,16 @@ impl TStringGrid {
           method_Call_1!(StringGrid_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StringGrid_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StringGrid_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -42318,12 +43038,16 @@ impl TStringGrid {
           method_Call_1!(StringGrid_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(StringGrid_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(StringGrid_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -43162,8 +43886,10 @@ impl TStringGrid {
           method_Call_1!(StringGrid_SetLeftCol, self.0, aValue);
       }
 
-	  pub fn Selection(&self, result: *mut TGridRect)  {
-          method_Call_1!(StringGrid_GetSelection, self.0, result);
+	  pub fn Selection(&self) -> TGridRect  {
+          let mut result = TGridRect::Empty();
+          method_Call_1!(StringGrid_GetSelection, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetSelection(&self, aValue: *mut TGridRect)  {
@@ -43254,8 +43980,10 @@ impl TStringGrid {
           method_Call_1!(StringGrid_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(StringGrid_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StringGrid_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -43270,12 +43998,16 @@ impl TStringGrid {
           method_Call_1!(StringGrid_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(StringGrid_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(StringGrid_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(StringGrid_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(StringGrid_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -43528,16 +44260,20 @@ impl TDrawGrid {
 
 	  impl_Free_method!(DrawGrid_Free);
 
-	  pub fn CellRect(&self, aCol: i32, aRow: i32, result: *mut TRect)  {
-          method_Call_1!(DrawGrid_CellRect, self.0, aCol, aRow, result);
+	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DrawGrid_CellRect, self.0, aCol, aRow, &mut result);
+          return result;
       }
 
 	  pub fn MouseToCell(&self, x: i32, y: i32, aCol: *mut i32, aRow: *mut i32)  {
           method_Call_1!(DrawGrid_MouseToCell, self.0, x, y, aCol, aRow);
       }
 
-	  pub fn MouseCoord(&self, x: i32, y: i32, result: *mut TGridCoord)  {
-          method_Call_1!(DrawGrid_MouseCoord, self.0, x, y, result);
+	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
+          let mut result = TGridCoord::Empty();
+          method_Call_1!(DrawGrid_MouseCoord, self.0, x, y, &mut result);
+          return result;
       }
 
 	  pub fn CanFocus(&self) -> bool {
@@ -43620,12 +44356,16 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(DrawGrid_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DrawGrid_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(DrawGrid_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DrawGrid_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -43648,12 +44388,16 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(DrawGrid_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DrawGrid_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(DrawGrid_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DrawGrid_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -44140,8 +44884,10 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_SetLeftCol, self.0, aValue);
       }
 
-	  pub fn Selection(&self, result: *mut TGridRect)  {
-          method_Call_1!(DrawGrid_GetSelection, self.0, result);
+	  pub fn Selection(&self) -> TGridRect  {
+          let mut result = TGridRect::Empty();
+          method_Call_1!(DrawGrid_GetSelection, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetSelection(&self, aValue: *mut TGridRect)  {
@@ -44232,8 +44978,10 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(DrawGrid_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DrawGrid_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -44248,12 +44996,16 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(DrawGrid_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(DrawGrid_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(DrawGrid_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(DrawGrid_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -44478,16 +45230,20 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_Refresh, self.0);
       }
 
-	  pub fn CellRect(&self, aCol: i32, aRow: i32, result: *mut TRect)  {
-          method_Call_1!(ValueListEditor_CellRect, self.0, aCol, aRow, result);
+	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ValueListEditor_CellRect, self.0, aCol, aRow, &mut result);
+          return result;
       }
 
 	  pub fn MouseToCell(&self, x: i32, y: i32, aCol: *mut i32, aRow: *mut i32)  {
           method_Call_1!(ValueListEditor_MouseToCell, self.0, x, y, aCol, aRow);
       }
 
-	  pub fn MouseCoord(&self, x: i32, y: i32, result: *mut TGridCoord)  {
-          method_Call_1!(ValueListEditor_MouseCoord, self.0, x, y, result);
+	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
+          let mut result = TGridCoord::Empty();
+          method_Call_1!(ValueListEditor_MouseCoord, self.0, x, y, &mut result);
+          return result;
       }
 
 	  pub fn CanFocus(&self) -> bool {
@@ -44570,12 +45326,16 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ValueListEditor_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ValueListEditor_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ValueListEditor_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ValueListEditor_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -44594,12 +45354,16 @@ impl TValueListEditor {
           return method_Call_1!(ValueListEditor_Perform, self.0, msg, wParam, lParam);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ValueListEditor_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ValueListEditor_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ValueListEditor_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ValueListEditor_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -45086,8 +45850,10 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_SetLeftCol, self.0, aValue);
       }
 
-	  pub fn Selection(&self, result: *mut TGridRect)  {
-          method_Call_1!(ValueListEditor_GetSelection, self.0, result);
+	  pub fn Selection(&self) -> TGridRect  {
+          let mut result = TGridRect::Empty();
+          method_Call_1!(ValueListEditor_GetSelection, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetSelection(&self, aValue: *mut TGridRect)  {
@@ -45178,8 +45944,10 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ValueListEditor_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ValueListEditor_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -45194,12 +45962,16 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ValueListEditor_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ValueListEditor_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ValueListEditor_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ValueListEditor_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -45512,12 +46284,16 @@ impl THeaderControl {
           method_Call_1!(HeaderControl_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(HeaderControl_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(HeaderControl_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(HeaderControl_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(HeaderControl_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -45540,12 +46316,16 @@ impl THeaderControl {
           method_Call_1!(HeaderControl_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(HeaderControl_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(HeaderControl_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(HeaderControl_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(HeaderControl_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -45920,8 +46700,10 @@ impl THeaderControl {
           method_Call_1!(HeaderControl_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(HeaderControl_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(HeaderControl_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -45936,12 +46718,16 @@ impl THeaderControl {
           method_Call_1!(HeaderControl_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(HeaderControl_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(HeaderControl_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(HeaderControl_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(HeaderControl_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -46482,12 +47268,16 @@ impl TLabeledEdit {
           method_Call_1!(LabeledEdit_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(LabeledEdit_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LabeledEdit_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(LabeledEdit_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LabeledEdit_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -46510,12 +47300,16 @@ impl TLabeledEdit {
           method_Call_1!(LabeledEdit_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(LabeledEdit_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LabeledEdit_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(LabeledEdit_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LabeledEdit_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -47030,8 +47824,10 @@ impl TLabeledEdit {
           method_Call_1!(LabeledEdit_SetAlign, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(LabeledEdit_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(LabeledEdit_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -47046,12 +47842,16 @@ impl TLabeledEdit {
           method_Call_1!(LabeledEdit_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(LabeledEdit_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(LabeledEdit_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(LabeledEdit_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(LabeledEdit_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -47256,12 +48056,16 @@ impl TBoundLabel {
           method_Call_1!(BoundLabel_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(BoundLabel_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BoundLabel_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(BoundLabel_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BoundLabel_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -47292,12 +48096,16 @@ impl TBoundLabel {
           method_Call_1!(BoundLabel_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(BoundLabel_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BoundLabel_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(BoundLabel_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BoundLabel_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -47596,8 +48404,10 @@ impl TBoundLabel {
           method_Call_1!(BoundLabel_SetAnchors, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(BoundLabel_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(BoundLabel_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -47612,12 +48422,16 @@ impl TBoundLabel {
           method_Call_1!(BoundLabel_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(BoundLabel_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(BoundLabel_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(BoundLabel_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(BoundLabel_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -47873,12 +48687,16 @@ impl TFlowPanel {
           method_Call_1!(FlowPanel_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(FlowPanel_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FlowPanel_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(FlowPanel_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FlowPanel_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -47901,12 +48719,16 @@ impl TFlowPanel {
           method_Call_1!(FlowPanel_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(FlowPanel_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FlowPanel_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(FlowPanel_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FlowPanel_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -48365,8 +49187,10 @@ impl TFlowPanel {
           method_Call_1!(FlowPanel_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(FlowPanel_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(FlowPanel_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -48381,12 +49205,16 @@ impl TFlowPanel {
           method_Call_1!(FlowPanel_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(FlowPanel_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(FlowPanel_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(FlowPanel_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(FlowPanel_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -48663,12 +49491,16 @@ impl TCoolBar {
           method_Call_1!(CoolBar_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CoolBar_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CoolBar_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CoolBar_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CoolBar_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -48691,12 +49523,16 @@ impl TCoolBar {
           method_Call_1!(CoolBar_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CoolBar_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CoolBar_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CoolBar_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CoolBar_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -49187,8 +50023,10 @@ impl TCoolBar {
           method_Call_1!(CoolBar_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(CoolBar_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CoolBar_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -49203,12 +50041,16 @@ impl TCoolBar {
           method_Call_1!(CoolBar_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(CoolBar_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CoolBar_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(CoolBar_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CoolBar_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -50680,12 +51522,16 @@ impl TComboBoxEx {
           method_Call_1!(ComboBoxEx_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ComboBoxEx_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBoxEx_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ComboBoxEx_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBoxEx_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -50708,12 +51554,16 @@ impl TComboBoxEx {
           method_Call_1!(ComboBoxEx_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ComboBoxEx_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBoxEx_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ComboBoxEx_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBoxEx_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -51208,8 +52058,10 @@ impl TComboBoxEx {
           method_Call_1!(ComboBoxEx_SetUseDockManager, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ComboBoxEx_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ComboBoxEx_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -51224,12 +52076,16 @@ impl TComboBoxEx {
           method_Call_1!(ComboBoxEx_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ComboBoxEx_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ComboBoxEx_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ComboBoxEx_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ComboBoxEx_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -51708,12 +52564,16 @@ impl TFrame {
           method_Call_1!(Frame_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Frame_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Frame_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Frame_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Frame_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -51736,12 +52596,16 @@ impl TFrame {
           method_Call_1!(Frame_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(Frame_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Frame_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(Frame_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Frame_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -52172,8 +53036,10 @@ impl TFrame {
           method_Call_1!(Frame_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(Frame_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Frame_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -52188,12 +53054,16 @@ impl TFrame {
           method_Call_1!(Frame_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(Frame_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Frame_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(Frame_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Frame_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -52576,12 +53446,16 @@ impl TXButton {
           method_Call_1!(XButton_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(XButton_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(XButton_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(XButton_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(XButton_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -52612,12 +53486,16 @@ impl TXButton {
           method_Call_1!(XButton_Repaint, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(XButton_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(XButton_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(XButton_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(XButton_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -52932,8 +53810,10 @@ impl TXButton {
           method_Call_1!(XButton_SetOnMouseUp, self.0, aEventId);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(XButton_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(XButton_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -52948,12 +53828,16 @@ impl TXButton {
           method_Call_1!(XButton_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(XButton_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(XButton_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(XButton_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(XButton_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {
@@ -53578,12 +54462,16 @@ impl TCheckGroup {
           method_Call_1!(CheckGroup_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckGroup_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckGroup_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckGroup_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckGroup_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -53606,12 +54494,16 @@ impl TCheckGroup {
           method_Call_1!(CheckGroup_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(CheckGroup_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckGroup_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(CheckGroup_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckGroup_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -54054,20 +54946,26 @@ impl TCheckGroup {
           method_Call_1!(CheckGroup_SetAction, self.0, aValue.Instance());
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckGroup_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckGroup_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
           method_Call_1!(CheckGroup_SetBoundsRect, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(CheckGroup_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(CheckGroup_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(CheckGroup_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(CheckGroup_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ControlState(&self) -> TControlState  {
@@ -54356,12 +55254,16 @@ impl TToggleBox {
           method_Call_1!(ToggleBox_BringToFront, self.0);
       }
 
-	  pub fn ClientToScreen(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToggleBox_ClientToScreen, self.0, point, result);
+	  pub fn ClientToScreen(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToggleBox_ClientToScreen, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToggleBox_ClientToParent, self.0, point, aParent.Instance(), result);
+	  pub fn ClientToParent(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToggleBox_ClientToParent, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn Dragging(&self) -> bool {
@@ -54384,12 +55286,16 @@ impl TToggleBox {
           method_Call_1!(ToggleBox_Refresh, self.0);
       }
 
-	  pub fn ScreenToClient(&self, point: *mut TPoint, result: *mut TPoint) {
-          method_Call_1!(ToggleBox_ScreenToClient, self.0, point, result);
+	  pub fn ScreenToClient(&self, point: *mut TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToggleBox_ScreenToClient, self.0, point, &mut result);
+          return result;
       }
 
-	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl, result: *mut TPoint) {
-          method_Call_1!(ToggleBox_ParentToClient, self.0, point, aParent.Instance(), result);
+	  pub fn ParentToClient(&self, point: *mut TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToggleBox_ParentToClient, self.0, point, aParent.Instance(), &mut result);
+          return result;
       }
 
 	  pub fn SendToBack(&self) {
@@ -54796,8 +55702,10 @@ impl TToggleBox {
           method_Call_1!(ToggleBox_SetBiDiMode, self.0, aValue);
       }
 
-	  pub fn BoundsRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToggleBox_GetBoundsRect, self.0, result);
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToggleBox_GetBoundsRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn SetBoundsRect(&self, aValue: *mut TRect)  {
@@ -54812,12 +55720,16 @@ impl TToggleBox {
           method_Call_1!(ToggleBox_SetClientHeight, self.0, aValue);
       }
 
-	  pub fn ClientOrigin(&self, result: *mut TPoint)  {
-          method_Call_1!(ToggleBox_GetClientOrigin, self.0, result);
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(ToggleBox_GetClientOrigin, self.0, &mut result);
+          return result;
       }
 
-	  pub fn ClientRect(&self, result: *mut TRect)  {
-          method_Call_1!(ToggleBox_GetClientRect, self.0, result);
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(ToggleBox_GetClientRect, self.0, &mut result);
+          return result;
       }
 
 	  pub fn ClientWidth(&self) -> i32  {

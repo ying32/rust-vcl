@@ -24,16 +24,17 @@ fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
 }
 
 fn onFormMouseMove(_sender: usize, _shift: TShiftState, _x: i32, _y: i32) {
-    // let form = TForm::As(sender);
-    // let mut pos = TPoint { x: 0, y: 0 };
-    // Mouse.CursorPos(&mut pos);
+    // let form = TForm::As(_sender);
     // let pos = Mouse.CursorPos();
-    // println!("x={}, y={}, sx={}, sy={}", x, y, pos.x, pos.y);
+    // println!("x={}, y={}, sx={}, sy={}", _x, _y, pos.x, pos.y);
 }
 
 fn main() {
     // 乱写的，也不知道是不是这样写
     // 这里因为不会写，所以就这样弄下
+    let guid = CreateGUID();
+    println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
+    println!("{:?}", GUIDToString(&guid));
 
     Application.SetMainFormOnTaskBar(true);
     Application.SetTitle("LCL App");
