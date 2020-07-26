@@ -1734,6 +1734,7 @@ extern "system" {
   pub fn ComboBox_SetOnDragDrop(AObj: usize, AEventId: TDragDropEvent);
   pub fn ComboBox_SetOnDragOver(AObj: usize, AEventId: TDragOverEvent);
   pub fn ComboBox_SetOnDrawItem(AObj: usize, AEventId: TDrawItemEvent);
+  pub fn ComboBox_SetOnDropDown(AObj: usize, AEventId: TNotifyEvent);
   pub fn ComboBox_SetOnEndDrag(AObj: usize, AEventId: TEndDragEvent);
   pub fn ComboBox_SetOnEnter(AObj: usize, AEventId: TNotifyEvent);
   pub fn ComboBox_SetOnExit(AObj: usize, AEventId: TNotifyEvent);
@@ -3036,6 +3037,7 @@ extern "system" {
   pub fn ColorBox_SetOnContextPopup(AObj: usize, AEventId: TContextPopupEvent);
   pub fn ColorBox_SetOnDragDrop(AObj: usize, AEventId: TDragDropEvent);
   pub fn ColorBox_SetOnDragOver(AObj: usize, AEventId: TDragOverEvent);
+  pub fn ColorBox_SetOnDropDown(AObj: usize, AEventId: TNotifyEvent);
   pub fn ColorBox_SetOnEndDrag(AObj: usize, AEventId: TEndDragEvent);
   pub fn ColorBox_SetOnEnter(AObj: usize, AEventId: TNotifyEvent);
   pub fn ColorBox_SetOnExit(AObj: usize, AEventId: TNotifyEvent);
@@ -4658,6 +4660,7 @@ extern "system" {
   pub fn DateTimePicker_SetOnClick(AObj: usize, AEventId: TNotifyEvent);
   pub fn DateTimePicker_SetOnChange(AObj: usize, AEventId: TNotifyEvent);
   pub fn DateTimePicker_SetOnContextPopup(AObj: usize, AEventId: TContextPopupEvent);
+  pub fn DateTimePicker_SetOnDropDown(AObj: usize, AEventId: TNotifyEvent);
   pub fn DateTimePicker_SetOnEnter(AObj: usize, AEventId: TNotifyEvent);
   pub fn DateTimePicker_SetOnExit(AObj: usize, AEventId: TNotifyEvent);
   pub fn DateTimePicker_SetOnKeyDown(AObj: usize, AEventId: TKeyEvent);
@@ -12929,6 +12932,7 @@ extern "system" {
   pub fn ComboBoxEx_SetOnDblClick(AObj: usize, AEventId: TNotifyEvent);
   pub fn ComboBoxEx_SetOnDragDrop(AObj: usize, AEventId: TDragDropEvent);
   pub fn ComboBoxEx_SetOnDragOver(AObj: usize, AEventId: TDragOverEvent);
+  pub fn ComboBoxEx_SetOnDropDown(AObj: usize, AEventId: TNotifyEvent);
   pub fn ComboBoxEx_SetOnEndDock(AObj: usize, AEventId: TEndDragEvent);
   pub fn ComboBoxEx_SetOnEndDrag(AObj: usize, AEventId: TEndDragEvent);
   pub fn ComboBoxEx_SetOnEnter(AObj: usize, AEventId: TNotifyEvent);
