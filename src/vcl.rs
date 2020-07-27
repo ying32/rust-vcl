@@ -18288,6 +18288,18 @@ impl TDateTimePicker {
 
 	  impl_Free_method!(DateTimePicker_Free);
 
+	  pub fn DateIsNull(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_DateIsNull, self.0);
+      }
+
+	  pub fn SelectDate(&self)  {
+          method_Call_1!(DateTimePicker_SelectDate, self.0);
+      }
+
+	  pub fn SelectTime(&self)  {
+          method_Call_1!(DateTimePicker_SelectTime, self.0);
+      }
+
 	  pub fn CanFocus(&self) -> bool {
           return method_Call_1!(DateTimePicker_CanFocus, self.0);
       }
@@ -18501,16 +18513,168 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_AnchorClient, self.0, aSpace);
       }
 
+	  pub fn ArrowShape(&self) -> TArrowShape  {
+          return method_Call_1!(DateTimePicker_GetArrowShape, self.0);
+      }
+
+	  pub fn SetArrowShape(&self, aValue: TArrowShape)  {
+          method_Call_1!(DateTimePicker_SetArrowShape, self.0, aValue);
+      }
+
+	  pub fn AutoAdvance(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetAutoAdvance, self.0);
+      }
+
+	  pub fn SetAutoAdvance(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetAutoAdvance, self.0, aValue);
+      }
+
+	  pub fn AutoButtonSize(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetAutoButtonSize, self.0);
+      }
+
+	  pub fn SetAutoButtonSize(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetAutoButtonSize, self.0, aValue);
+      }
+
+	  pub fn Cascade(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetCascade, self.0);
+      }
+
+	  pub fn SetCascade(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetCascade, self.0, aValue);
+      }
+
+	  pub fn CenturyFrom(&self) -> u16  {
+          return method_Call_1!(DateTimePicker_GetCenturyFrom, self.0);
+      }
+
+	  pub fn SetCenturyFrom(&self, aValue: u16)  {
+          method_Call_1!(DateTimePicker_SetCenturyFrom, self.0, aValue);
+      }
+
+	  pub fn DateDisplayOrder(&self) -> TDateDisplayOrder  {
+          return method_Call_1!(DateTimePicker_GetDateDisplayOrder, self.0);
+      }
+
+	  pub fn SetDateDisplayOrder(&self, aValue: TDateDisplayOrder)  {
+          method_Call_1!(DateTimePicker_SetDateDisplayOrder, self.0, aValue);
+      }
+
+	  pub fn DateSeparator<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(DateTimePicker_GetDateSeparator, self.0));
+      }
+
+	  pub fn SetDateSeparator(&self, aValue: &str)  {
+          method_Call_1!(DateTimePicker_SetDateSeparator, self.0, to_CString!(aValue));
+      }
+
+	  pub fn LeadingZeros(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetLeadingZeros, self.0);
+      }
+
+	  pub fn SetLeadingZeros(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetLeadingZeros, self.0, aValue);
+      }
+
+	  pub fn MonthNames<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(DateTimePicker_GetMonthNames, self.0));
+      }
+
+	  pub fn SetMonthNames(&self, aValue: &str)  {
+          method_Call_1!(DateTimePicker_SetMonthNames, self.0, to_CString!(aValue));
+      }
+
+	  pub fn ShowMonthNames(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetShowMonthNames, self.0);
+      }
+
+	  pub fn SetShowMonthNames(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetShowMonthNames, self.0, aValue);
+      }
+
+	  pub fn NullInputAllowed(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetNullInputAllowed, self.0);
+      }
+
+	  pub fn SetNullInputAllowed(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetNullInputAllowed, self.0, aValue);
+      }
+
+	  pub fn Options(&self) -> TDateTimePickerOptions  {
+          return method_Call_1!(DateTimePicker_GetOptions, self.0);
+      }
+
+	  pub fn SetOptions(&self, aValue: TDateTimePickerOptions)  {
+          method_Call_1!(DateTimePicker_SetOptions, self.0, aValue);
+      }
+
+	  pub fn ShowCheckBox(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetShowCheckBox, self.0);
+      }
+
+	  pub fn SetShowCheckBox(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetShowCheckBox, self.0, aValue);
+      }
+
+	  pub fn ReadOnly(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetReadOnly, self.0);
+      }
+
+	  pub fn SetReadOnly(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetReadOnly, self.0, aValue);
+      }
+
+	  pub fn TextForNullDate<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(DateTimePicker_GetTextForNullDate, self.0));
+      }
+
+	  pub fn SetTextForNullDate(&self, aValue: &str)  {
+          method_Call_1!(DateTimePicker_SetTextForNullDate, self.0, to_CString!(aValue));
+      }
+
+	  pub fn TimeDisplay(&self) -> TTimeDisplay  {
+          return method_Call_1!(DateTimePicker_GetTimeDisplay, self.0);
+      }
+
+	  pub fn SetTimeDisplay(&self, aValue: TTimeDisplay)  {
+          method_Call_1!(DateTimePicker_SetTimeDisplay, self.0, aValue);
+      }
+
+	  pub fn TimeSeparator<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(DateTimePicker_GetTimeSeparator, self.0));
+      }
+
+	  pub fn SetTimeSeparator(&self, aValue: &str)  {
+          method_Call_1!(DateTimePicker_SetTimeSeparator, self.0, to_CString!(aValue));
+      }
+
+	  pub fn TrailingSeparator(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetTrailingSeparator, self.0);
+      }
+
+	  pub fn SetTrailingSeparator(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetTrailingSeparator, self.0, aValue);
+      }
+
+	  pub fn UseDefaultSeparators(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetUseDefaultSeparators, self.0);
+      }
+
+	  pub fn SetUseDefaultSeparators(&self, aValue: bool)  {
+          method_Call_1!(DateTimePicker_SetUseDefaultSeparators, self.0, aValue);
+      }
+
+	  pub fn DroppedDown(&self) -> bool  {
+          return method_Call_1!(DateTimePicker_GetDroppedDown, self.0);
+      }
+
 	  pub fn DateTime(&self) -> u32  {
           return method_Call_1!(DateTimePicker_GetDateTime, self.0);
       }
 
 	  pub fn SetDateTime(&self, aValue: u32)  {
           method_Call_1!(DateTimePicker_SetDateTime, self.0, aValue);
-      }
-
-	  pub fn DroppedDown(&self) -> bool  {
-          return method_Call_1!(DateTimePicker_GetDroppedDown, self.0);
       }
 
 	  pub fn Align(&self) -> TAlign  {
@@ -19248,6 +19412,14 @@ impl TMonthCalendar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) {
           method_Call_1!(MonthCalendar_AnchorClient, self.0, aSpace);
+      }
+
+	  pub fn DateTime(&self) -> u32  {
+          return method_Call_1!(MonthCalendar_GetDateTime, self.0);
+      }
+
+	  pub fn SetDateTime(&self, aValue: u32)  {
+          method_Call_1!(MonthCalendar_SetDateTime, self.0, aValue);
       }
 
 	  pub fn Align(&self) -> TAlign  {
@@ -35487,6 +35659,10 @@ impl TForm {
       impl_As_method!(TForm);
 
 	  impl_Free_method!(Form_Free);
+
+	  pub fn Cascade(&self)  {
+          method_Call_1!(Form_Cascade, self.0);
+      }
 
 	  pub fn Close(&self)  {
           method_Call_1!(Form_Close, self.0);

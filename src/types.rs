@@ -1950,6 +1950,72 @@ pub enum TPrefixOption {
     poHeaderClick,
 }
 
+#[repr(C)]
+pub enum TDisplaySetting {
+    dsShowHeadings,
+    dsShowDayNames,
+    dsNoMonthChange,
+    dsShowWeekNumbers,
+    dsStartMonday,
+}
+
+#[repr(C)]
+pub enum TTimeFormat {
+    tf12, // 12 hours format, with am/pm string
+    tf24, // 24 hours format
+}
+
+#[repr(C)]
+pub enum TTimeDisplay {
+    tdHM, // hour and minute
+    tdHMS, // hour Minute and second
+    tdHMSMs, // hour Minute Second and milisecond
+}
+
+#[repr(C)]
+pub enum TArrowShape {
+    asClassicSmaller,
+    asClassicLarger,
+    asModernSmaller,
+    asModernLarger,
+    asYetAnotherShape,
+    asTheme,
+}
+
+#[repr(C)]
+pub enum TDateDisplayOrder {
+    ddoDMY,
+    ddoMDY,
+    ddoYMD,
+    ddoTryDefault,
+}
+
+#[repr(C)]
+pub enum TDateTimePart {
+    dtpDay,
+    dtpMonth,
+    dtpYear,
+    dtpHour,
+    dtpMinute,
+    dtpSecond,
+    dtpMiliSec,
+    dtpAMPM,
+}
+
+// set of TDateTimePart
+pub type TDateTimeParts = TSet;
+
+#[repr(C)]
+pub enum TDateTimePickerOption {
+    dtpoDoChangeOnSetDateTime,
+    dtpoEnabledIfUnchecked,
+    dtpoAutoCheck,
+    dtpoFlatButton,
+}
+
+// set of TDateTimePickerOption
+pub type TDateTimePickerOptions = TSet;
+
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]

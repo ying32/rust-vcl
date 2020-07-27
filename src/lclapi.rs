@@ -6,6 +6,7 @@
 
 #![allow(non_snake_case)]
 #![allow(improper_ctypes)]
+#![allow(dead_code)]
 
 use std::os::raw::c_char;
 use std::mem::{size_of, transmute};
@@ -49,6 +50,7 @@ extern "system" {
   fn SetEventCallback(APtr: usize);
   fn SetMessageCallback(APtr: usize);
   fn SetThreadSyncCallback(APtr: usize);
+  fn SetExceptionHandlerCallback(APtr: usize);
   pub fn DGetStringArrOf(P: usize, AIndex: isize) -> *const c_char;
   pub fn DStrLen(p: *const c_char) -> isize;
   pub fn DMove(Src: usize, Dest: usize, Len: isize);
@@ -4556,6 +4558,9 @@ extern "system" {
   // ----------------- TDateTimePicker ----------------------
   pub fn DateTimePicker_Create(AOwner: usize) -> usize;
   pub fn DateTimePicker_Free(AObj: usize);
+  pub fn DateTimePicker_DateIsNull(AObj: usize) -> bool;
+  pub fn DateTimePicker_SelectDate(AObj: usize);
+  pub fn DateTimePicker_SelectTime(AObj: usize);
   pub fn DateTimePicker_CanFocus(AObj: usize) -> bool;
   pub fn DateTimePicker_ContainsControl(AObj: usize, Control: usize) -> bool;
   pub fn DateTimePicker_ControlAtPos(AObj: usize, Pos: *mut TPoint, AllowDisabled: bool, AllowWinControls: bool) -> usize;
@@ -4606,9 +4611,47 @@ extern "system" {
   pub fn DateTimePicker_AnchorVerticalCenterTo(AObj: usize, ASibling: usize);
   pub fn DateTimePicker_AnchorAsAlign(AObj: usize, ATheAlign: TAlign, ASpace: i32);
   pub fn DateTimePicker_AnchorClient(AObj: usize, ASpace: i32);
+  pub fn DateTimePicker_GetArrowShape(AObj: usize) -> TArrowShape;
+  pub fn DateTimePicker_SetArrowShape(AObj: usize, AValue: TArrowShape);
+  pub fn DateTimePicker_GetAutoAdvance(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetAutoAdvance(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetAutoButtonSize(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetAutoButtonSize(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetCascade(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetCascade(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetCenturyFrom(AObj: usize) -> u16;
+  pub fn DateTimePicker_SetCenturyFrom(AObj: usize, AValue: u16);
+  pub fn DateTimePicker_GetDateDisplayOrder(AObj: usize) -> TDateDisplayOrder;
+  pub fn DateTimePicker_SetDateDisplayOrder(AObj: usize, AValue: TDateDisplayOrder);
+  pub fn DateTimePicker_GetDateSeparator(AObj: usize) -> *const c_char;
+  pub fn DateTimePicker_SetDateSeparator(AObj: usize, AValue: *const c_char);
+  pub fn DateTimePicker_GetLeadingZeros(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetLeadingZeros(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetMonthNames(AObj: usize) -> *const c_char;
+  pub fn DateTimePicker_SetMonthNames(AObj: usize, AValue: *const c_char);
+  pub fn DateTimePicker_GetShowMonthNames(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetShowMonthNames(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetNullInputAllowed(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetNullInputAllowed(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetOptions(AObj: usize) -> TDateTimePickerOptions;
+  pub fn DateTimePicker_SetOptions(AObj: usize, AValue: TDateTimePickerOptions);
+  pub fn DateTimePicker_GetShowCheckBox(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetShowCheckBox(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetReadOnly(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetReadOnly(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetTextForNullDate(AObj: usize) -> *const c_char;
+  pub fn DateTimePicker_SetTextForNullDate(AObj: usize, AValue: *const c_char);
+  pub fn DateTimePicker_GetTimeDisplay(AObj: usize) -> TTimeDisplay;
+  pub fn DateTimePicker_SetTimeDisplay(AObj: usize, AValue: TTimeDisplay);
+  pub fn DateTimePicker_GetTimeSeparator(AObj: usize) -> *const c_char;
+  pub fn DateTimePicker_SetTimeSeparator(AObj: usize, AValue: *const c_char);
+  pub fn DateTimePicker_GetTrailingSeparator(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetTrailingSeparator(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetUseDefaultSeparators(AObj: usize) -> bool;
+  pub fn DateTimePicker_SetUseDefaultSeparators(AObj: usize, AValue: bool);
+  pub fn DateTimePicker_GetDroppedDown(AObj: usize) -> bool;
   pub fn DateTimePicker_GetDateTime(AObj: usize) -> u32;
   pub fn DateTimePicker_SetDateTime(AObj: usize, AValue: u32);
-  pub fn DateTimePicker_GetDroppedDown(AObj: usize) -> bool;
   pub fn DateTimePicker_GetAlign(AObj: usize) -> TAlign;
   pub fn DateTimePicker_SetAlign(AObj: usize, AValue: TAlign);
   pub fn DateTimePicker_GetAnchors(AObj: usize) -> TAnchors;
@@ -4789,6 +4832,8 @@ extern "system" {
   pub fn MonthCalendar_AnchorVerticalCenterTo(AObj: usize, ASibling: usize);
   pub fn MonthCalendar_AnchorAsAlign(AObj: usize, ATheAlign: TAlign, ASpace: i32);
   pub fn MonthCalendar_AnchorClient(AObj: usize, ASpace: i32);
+  pub fn MonthCalendar_GetDateTime(AObj: usize) -> u32;
+  pub fn MonthCalendar_SetDateTime(AObj: usize, AValue: u32);
   pub fn MonthCalendar_GetAlign(AObj: usize) -> TAlign;
   pub fn MonthCalendar_SetAlign(AObj: usize, AValue: TAlign);
   pub fn MonthCalendar_GetAnchors(AObj: usize) -> TAnchors;
@@ -8816,6 +8861,7 @@ extern "system" {
   // ----------------- TForm ----------------------
   pub fn Form_Create(AOwner: usize) -> usize;
   pub fn Form_Free(AObj: usize);
+  pub fn Form_Cascade(AObj: usize);
   pub fn Form_Close(AObj: usize);
   pub fn Form_FocusControl(AObj: usize, Control: usize);
   pub fn Form_Hide(AObj: usize);
