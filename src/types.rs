@@ -2078,8 +2078,8 @@ pub struct TMessage {
 
 #[cfg(target_os = "linux")]
 pub type PGdkWindow = usize;
-#[cfg(target_os = "linux")]
-pub type TXId = usize;
+//#[cfg(target_os = "linux")]
+//pub type TXId = usize;
 #[cfg(target_os = "linux")]
 pub type PGtkFixed = usize;
 
