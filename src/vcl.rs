@@ -308,7 +308,6 @@ impl TComponent {
 
 impl_IObject!(TComponent);
 impl_IComponent!(TComponent);
-impl_Drop_method!(TComponent);
 
 impl TControl {
       pub fn new(aOwner: &dyn IComponent) -> Self {
