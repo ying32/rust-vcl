@@ -4,9 +4,11 @@
 
 ##### 各个平台测试情况
 
-* Windows x64  已测试
-* Linux                待测试
-* macOS             待测试
+| 平台        | 状态   |       |
+| ----------- | ------ | ----- |
+| Windows x64 | 已测试 | Win10 |
+| Linux       | 待测试 |       |
+| macOS       | 待测试 |       |
 
 ----
 
@@ -20,9 +22,11 @@ rust-vcl的代码由 [Rust模板](https://github.com/ying32/liblcl/tree/master/T
 
 ##### Multiple platform test situation
 
-* Windows x64  Tested
-* Linux                To be tested
-* macOS             To be tested
+| Platform        | Status   |       |
+| ----------- | ------ | ----- |
+| Windows x64 | Tested | Win10 |
+| Linux       | To be tested |       |
+| macOS       | To be tested |       |
 
 ----
 
