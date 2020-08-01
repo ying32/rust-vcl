@@ -16,7 +16,7 @@ fn onBtnClick(sender: usize) {
 }
 
 fn onBtn2Click(_sender: usize) {
-    //TStrings是虚方法类，当参数类型为TStrings要用TStringList传入，非TComponent实现了drop方法，所以Free不是必须的
+    //TStrings是抽像类，当参数类型为TStrings要用TStringList传入，非TComponent实现了drop方法，所以Free不是必须的
     let list = TStringList::new();
     list.Add("Item1");
     list.Add("Item2");
