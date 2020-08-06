@@ -76,6 +76,15 @@ fn onFormMouseMove(_sender: usize, shift: TShiftState, _x: i32, _y: i32) {
     // println!("x={}, y={}, sx={}, sy={}", _x, _y, pos.x, pos.y);
 }
 
+fn onFormKeyDown(_sender: usize, key: *mut Char, _shift: TShiftState) {
+    unsafe {
+        println!("key down={}", *key);
+        if *key == vkReturn {
+            ShowMessage("down Enter!");
+        }
+    }
+}
+
 fn test() {
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
@@ -99,6 +108,9 @@ fn main() {
     form.SetAllowDropFiles(true);
     form.SetOnDropFiles(onDropFile);
     form.SetOnMouseMove(onFormMouseMove);
+    form.SetColor(clSkyblue);
+    form.SetKeyPreview(true);
+    form.SetOnKeyDown(onFormKeyDown);
     // form.SetOnClick(onBtnClick);
 
     // 测试自动drop

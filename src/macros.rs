@@ -133,6 +133,9 @@ macro_rules! to_CString {
     };
 }
 
+//-------------------- exports------------------------------------------
+
+// 集合类型的判断，var2表示位数，下标为0
 #[macro_export]
 macro_rules! InSet {
     ($var1:expr, $var2:expr) => {
@@ -140,6 +143,7 @@ macro_rules! InSet {
     };
 }
 
+// 集合加法，arg...中存储为位的索引，下标为0
 #[macro_export]
 macro_rules! Include {
     ($var:expr) => {
@@ -150,6 +154,7 @@ macro_rules! Include {
     };
 }
 
+// 集合减法，arg...中存储为位的索引，下标为0
 #[macro_export]
 macro_rules! Exclude {
     ($var:expr) => {
