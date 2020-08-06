@@ -24,6 +24,7 @@ pub trait IControl: IComponent {}
 pub trait IWinControl: IControl {}
 pub trait IStrings: IObject {}
 pub trait IStream: IObject {}
+pub trait IForm: IWinControl {}
 
 
 /* 先定义所有的类 */
@@ -36674,6 +36675,7 @@ impl_IObject!(TForm);
 impl_IComponent!(TForm);
 impl_IControl!(TForm);
 impl_IWinControl!(TForm);
+impl IForm for TForm {}
 
 impl TParaAttributes {
 	  pub fn Assign(&self, source: &dyn IObject)  {
