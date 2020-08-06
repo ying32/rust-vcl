@@ -3,7 +3,7 @@
 
 // 宏定义
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IObject {
     ($class: ident) => {
         impl IObject for $class {
@@ -14,49 +14,49 @@ macro_rules! impl_IObject {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IComponent {
     ($class: ident) => {
         impl IComponent for $class {}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IControl {
     ($class: ident) => {
         impl IControl for $class {}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IWinControl {
     ($class: ident) => {
         impl IWinControl for $class {}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IStrings {
     ($class: ident) => {
         impl IStrings for $class {}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_IStream {
     ($class: ident) => {
         impl IStream for $class {}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! method_Call_1 {
     ($fnName: ident, $($arg:expr),*) => {
         unsafe { $fnName($($arg),* )}
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! method_Call_2 {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           $class {
@@ -65,7 +65,7 @@ macro_rules! method_Call_2 {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! method_Create {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           return $class {
@@ -74,7 +74,7 @@ macro_rules! method_Create {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_Class_method {
     ($name: ident) => {
         pub fn Class() -> TClass {
@@ -83,7 +83,7 @@ macro_rules! impl_Class_method {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_Free_method {
     ($fnName: ident) => {
         pub fn Free(&mut self) {
@@ -97,7 +97,7 @@ macro_rules! impl_Free_method {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_Drop_method {
     ($class: ident) => {
         impl Drop for $class {
@@ -110,7 +110,7 @@ macro_rules! impl_Drop_method {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! impl_As_method {
     ($class: ident) => {
         pub fn As(inst: usize) -> Self {
@@ -119,14 +119,14 @@ macro_rules! impl_As_method {
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! to_RustString {
     ($name: expr) => {
         unsafe { CStr::from_ptr($name).to_string_lossy() }
     };
 }
 
-#[macro_export]
+#[macro_use]
 macro_rules! to_CString {
     ($name: expr) => {
         CString::new($name).unwrap().as_ptr()
