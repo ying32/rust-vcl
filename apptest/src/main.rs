@@ -3,6 +3,8 @@
 #![allow(dead_code)]
 
 // #[cfg(target_os = "windows")]
+#[macro_use]
+extern crate rust_vcl;
 
 use rust_vcl::fns::*;
 use rust_vcl::types::*;
@@ -29,6 +31,34 @@ fn onBtn2Click(_sender: usize) {
     println!("select index: {}", idx);
 }
 
+fn onBtn3Click(_sender: usize) {
+    // 集合测试
+    // 加法
+    let val1 = Include!(0, 1, 2, 3); // result=14
+    println!("val1={}", val1);
+    // 减法
+    let val2 = Exclude!(val1, 2); // result=10
+    println!("val2={}", val2);
+
+    println!("2 in set={}", InSet!(val2, 2));
+    println!("3 in set={}", InSet!(val2, 3));
+
+    ShowMessage("消息");
+    if MessageDlg(
+        "消息",
+        TMsgDlgType::mtConfirmation,
+        Include!(0, TMsgDlgBtn::mbYes, TMsgDlgBtn::mbNo),
+        0,
+    ) == mrYes
+    {
+        ShowMessage("你点击了“是")
+    }
+    // windows consts
+    // if Application.MessageBox("消息", "标题", MB_OKCANCEL | MB_ICONINFORMATION) == idOK  {
+    //     ShowMessage("你点击了“是")
+    // }
+}
+
 fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
     println!("{}, {}, {}", _sender, fileNames, len);
     for i in 0..len {
@@ -37,8 +67,8 @@ fn onDropFile(_sender: usize, fileNames: usize, len: isize) {
     }
 }
 
-fn onFormMouseMove(_sender: usize, _shift: TShiftState, _x: i32, _y: i32) {
-    if InSet(_shift, TShiftStateEnum::ssCtrl as u8) {
+fn onFormMouseMove(_sender: usize, shift: TShiftState, _x: i32, _y: i32) {
+    if InSet!(shift, TShiftStateEnum::ssCtrl) {
         println!("ctrl");
     }
     // let form = TForm::As(_sender);
@@ -89,6 +119,13 @@ fn main() {
     btn2.SetWidth(120);
     btn2.SetCaption("InputCombo");
     btn2.SetOnClick(onBtn2Click);
+
+    let btn3 = TButton::new(&form);
+    btn3.SetParent(&form);
+    btn3.SetLeft(10);
+    btn3.SetTop(btn2.Top() + btn2.Height() + 10);
+    btn3.SetCaption("MsgBox");
+    btn3.SetOnClick(onBtn3Click);
 
     Application.Run();
 }

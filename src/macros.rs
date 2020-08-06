@@ -132,3 +132,30 @@ macro_rules! to_CString {
         CString::new($name).unwrap().as_ptr()
     };
 }
+
+#[macro_export]
+macro_rules! InSet {
+    ($var1:expr, $var2:expr) => {
+        ($var1 & (1 << $var2 as u8)) != 0
+    };
+}
+
+#[macro_export]
+macro_rules! Include {
+    ($var:expr) => {
+        $var
+    };
+    ($var:expr, $($arg:expr),*) => {
+        ($var | $( (1 << $arg as u8) )|*)
+    };
+}
+
+#[macro_export]
+macro_rules! Exclude {
+    ($var:expr) => {
+        $var
+    };
+    ($var:expr, $($arg:expr),*) => {
+        ($var & $( (!(1 << $arg as u8)) )&*)
+    };
+}
