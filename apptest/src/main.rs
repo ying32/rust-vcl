@@ -139,5 +139,45 @@ fn main() {
     btn3.SetCaption("MsgBox");
     btn3.SetOnClick(onBtn3Click);
 
+    let btnOpenDialog = TButton::new(&form);
+    btnOpenDialog.SetParent(&form);
+    btnOpenDialog.SetLeft(10);
+    btnOpenDialog.SetTop(btn3.Top() + btn3.Height() + 10);
+    btnOpenDialog.SetWidth(120);
+    btnOpenDialog.SetCaption("Open Dialog");
+    btnOpenDialog.SetOnClick(|_sender: usize| {
+        // 因为这里涉及到Rust的语法规则问题，所以这里只做测试，实际应该全局只创建一次
+        // 不应该每次都创建
+
+        let mut dlg = TOpenDialog::new(&Null());
+        println!("Instance1={}", dlg.Instance());
+        dlg.SetFilter("rust|*rs|other|*.txt;*.c");
+        if dlg.Execute() {
+            println!("fileName={:?}", dlg.FileName());
+        }
+        // 继承自TComponent的如果owner或者parent为Null，需要手动Free。
+        dlg.Free();
+        println!("Instance2={}", dlg.Instance());
+    });
+
+    let btnColorDialog = TButton::new(&form);
+    btnColorDialog.SetParent(&form);
+    btnColorDialog.SetLeft(10);
+    btnColorDialog.SetTop(btnOpenDialog.Top() + btnOpenDialog.Height() + 10);
+    btnColorDialog.SetWidth(150);
+    btnColorDialog.SetCaption("Open Color Dialog");
+    btnColorDialog.SetOnClick(|_sender: usize| {
+        // 因为这里涉及到Rust的语法规则问题，所以这里只做测试，实际应该全局只创建一次
+        // 不应该每次都创建
+        let mut dlg = TColorDialog::new(&Null());
+        if dlg.Execute() {
+            println!("color={}", dlg.Color());
+        }
+        // 继承自TComponent的如果owner或者parent为Null，需要手动Free。
+        dlg.Free();
+    });
+
+    // 写gui的感觉不太方便。唉。。。。
+
     Application.Run();
 }
