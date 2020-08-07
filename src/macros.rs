@@ -60,7 +60,7 @@ macro_rules! method_Call_1 {
 macro_rules! method_Call_2 {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           $class {
-              0: unsafe {$fnName($($arg),* )}, 1: false,
+              0: unsafe {$fnName($($arg),* )}, 1: false, 2: 0,
           }
     };
 }
@@ -69,7 +69,7 @@ macro_rules! method_Call_2 {
 macro_rules! method_Create {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           return $class {
-              0: unsafe { $fnName($($arg),* ) } , 1: true,
+              0: unsafe { $fnName($($arg),* ) } , 1: true, 2: 0,
           }
     };
 }
@@ -114,7 +114,7 @@ macro_rules! impl_Drop_method {
 macro_rules! impl_As_method {
     ($class: ident) => {
         pub fn As(inst: usize) -> Self {
-            $class { 0: inst, 1: false }
+            $class { 0: inst, 1: false, 2: 0, }
         }
     };
 }
@@ -130,6 +130,13 @@ macro_rules! to_RustString {
 macro_rules! to_CString {
     ($name: expr) => {
         CString::new($name).unwrap().as_ptr()
+    };
+}
+
+#[macro_use]
+macro_rules! insert_Id {
+    ($name1: ident, $name2: expr) => {
+        insertMap( unsafe { transmute($name1) },  $name2 ) //unsafe { transmute($name2) } )
     };
 }
 
@@ -162,5 +169,54 @@ macro_rules! Exclude {
     };
     ($var:expr, $($arg:expr),*) => {
         ($var & $( (!(1 << $arg as u8)) )&*)
+    };
+}
+
+#[macro_export]
+macro_rules! ImplISId {
+    ($className:ident) => {
+        impl ISId for $className{
+            fn getSId(&self) -> usize {
+                return unsafe { std::mem::transmute(self) };
+            }
+        }
+    }
+}
+
+#[macro_export]
+macro_rules! ImplForm {
+    ($className:ident) => {
+        impl IObject for $className {
+            fn Instance(&self) -> usize {
+                return self.form.Instance();
+            }
+        }
+
+        impl IComponent for $className {}
+        impl IControl for $className {}
+        impl IWinControl for $className {}
+        impl IForm for $className {}
+
+        impl Drop for $className {
+            fn drop(&mut self) {
+                println!("drop.");
+            }
+        }
+
+        ImplISId!($className);
+    };
+}
+
+// #[macro_export]
+// macro_rules! getSId {
+//     ($var: expr) => {
+//         unsafe { transmute($var) }
+//     };
+// }
+
+#[macro_export]
+macro_rules! NewObject {
+    ($class: ident, $obj: ident) => {
+        $class::new(&$obj)
     };
 }
