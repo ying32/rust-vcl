@@ -1418,8 +1418,8 @@ impl TMainMenu {
           method_Call_1!(MainMenu_SetOwnerDraw, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TMenuChangeEvent<T>)  {
-          method_Call_1!(MainMenu_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TMenuChangeEvent<T>)  {
+          method_Call_1!(MainMenu_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Handle(&self) -> HMENU  {
@@ -1588,8 +1588,8 @@ impl TPopupMenu {
           method_Call_1!(PopupMenu_SetOwnerDraw, self.0, aValue);
       }
 
-	  pub fn SetOnPopup<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PopupMenu_SetOnPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnPopup<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PopupMenu_SetOnPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Handle(&self) -> HMENU  {
@@ -2145,72 +2145,72 @@ impl TMemo {
           method_Call_1!(Memo_SetWordWrap, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Memo_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Memo_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Memo_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Memo_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Memo_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Memo_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Memo_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Memo_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Memo_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Memo_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(Memo_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(Memo_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Memo_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Memo_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Memo_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Memo_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Memo_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Memo_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Memo_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Memo_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Memo_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Memo_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn CaretPos(&self) -> TPoint  {
@@ -2776,8 +2776,8 @@ impl TCheckBox {
           method_Call_1!(CheckBox_AnchorClient, self.0, aSpace);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -2988,64 +2988,64 @@ impl TCheckBox {
           method_Call_1!(CheckBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -3541,8 +3541,8 @@ impl TRadioButton {
           method_Call_1!(RadioButton_AnchorClient, self.0, aSpace);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -3737,64 +3737,64 @@ impl TRadioButton {
           method_Call_1!(RadioButton_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(RadioButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(RadioButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -4466,80 +4466,80 @@ impl TGroupBox {
           method_Call_1!(GroupBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(GroupBox_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(GroupBox_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -5174,48 +5174,48 @@ impl TLabel {
           method_Call_1!(Label_SetWordWrap, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Label_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Label_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Label_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Label_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Label_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Label_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Label_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Label_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Label_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Label_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Label_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Label_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Label_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Label_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Label_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Label_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Label_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Label_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Label_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Label_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Label_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Label_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -5933,76 +5933,76 @@ impl TListBox {
           method_Call_1!(ListBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDrawItem<T>(&self, aRoot: usize, aEventId: TDrawItemEvent<T>)  {
-          method_Call_1!(ListBox_SetOnDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDrawItem<T>(&self, aSelfId: usize, aEventId: TDrawItemEvent<T>)  {
+          method_Call_1!(ListBox_SetOnDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMeasureItem<T>(&self, aRoot: usize, aEventId: TMeasureItemEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMeasureItem<T>(&self, aSelfId: usize, aEventId: TMeasureItemEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -6794,76 +6794,76 @@ impl TComboBox {
           method_Call_1!(ComboBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDrawItem<T>(&self, aRoot: usize, aEventId: TDrawItemEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDrawItem<T>(&self, aSelfId: usize, aEventId: TDrawItemEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDropDown<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnDropDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDropDown<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnDropDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMeasureItem<T>(&self, aRoot: usize, aEventId: TMeasureItemEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMeasureItem<T>(&self, aSelfId: usize, aEventId: TMeasureItemEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelect<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBox_SetOnSelect, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelect<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBox_SetOnSelect, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Items(&self) -> TStrings  {
@@ -7659,84 +7659,84 @@ impl TPanel {
           method_Call_1!(Panel_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(Panel_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(Panel_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Panel_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Panel_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(Panel_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(Panel_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Panel_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Panel_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Panel_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Panel_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Panel_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Panel_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Panel_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Panel_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(Panel_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(Panel_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Panel_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Panel_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Panel_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Panel_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Panel_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Panel_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Panel_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Panel_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(Panel_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(Panel_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(Panel_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(Panel_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -8335,44 +8335,44 @@ impl TImage {
           method_Call_1!(Image_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Image_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Image_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Image_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Image_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Image_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Image_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Image_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Image_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Image_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Image_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Image_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Image_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Image_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Image_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Image_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Image_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Image_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Image_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Image_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Image_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -8898,52 +8898,52 @@ impl TLinkLabel {
           method_Call_1!(LinkLabel_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnLinkClick<T>(&self, aRoot: usize, aEventId: TSysLinkEvent<T>)  {
-          method_Call_1!(LinkLabel_SetOnLinkClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnLinkClick<T>(&self, aSelfId: usize, aEventId: TSysLinkEvent<T>)  {
+          method_Call_1!(LinkLabel_SetOnLinkClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn MouseInClient(&self) -> bool  {
@@ -9534,32 +9534,32 @@ impl TSpeedButton {
           method_Call_1!(SpeedButton_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(SpeedButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(SpeedButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
@@ -10001,8 +10001,8 @@ impl TSplitter {
           method_Call_1!(Splitter_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnPaint<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Splitter_SetOnPaint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnPaint<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Splitter_SetOnPaint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Enabled(&self) -> bool  {
@@ -10637,28 +10637,28 @@ impl TRadioGroup {
           method_Call_1!(RadioGroup_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RadioGroup_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RadioGroup_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -11378,48 +11378,48 @@ impl TStaticText {
           method_Call_1!(StaticText_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StaticText_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StaticText_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(StaticText_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(StaticText_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StaticText_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StaticText_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(StaticText_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(StaticText_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(StaticText_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(StaticText_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(StaticText_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(StaticText_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StaticText_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StaticText_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StaticText_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StaticText_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StaticText_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StaticText_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(StaticText_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(StaticText_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StaticText_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StaticText_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -12143,64 +12143,64 @@ impl TColorBox {
           method_Call_1!(ColorBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDropDown<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnDropDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDropDown<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnDropDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelect<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorBox_SetOnSelect, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelect<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorBox_SetOnSelect, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn CharCase(&self) -> TEditCharCase  {
@@ -12979,68 +12979,68 @@ impl TColorListBox {
           method_Call_1!(ColorListBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ColorListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ColorListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -13503,24 +13503,24 @@ impl TTrayIcon {
           method_Call_1!(TrayIcon_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TrayIcon_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TrayIcon_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TrayIcon_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TrayIcon_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(TrayIcon_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(TrayIcon_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TrayIcon_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TrayIcon_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TrayIcon_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TrayIcon_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -13687,12 +13687,12 @@ impl TOpenDialog {
           return method_Call_1!(OpenDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(OpenDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(OpenDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(OpenDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(OpenDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -13859,12 +13859,12 @@ impl TSaveDialog {
           return method_Call_1!(SaveDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SaveDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SaveDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SaveDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SaveDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -13979,12 +13979,12 @@ impl TColorDialog {
           return method_Call_1!(ColorDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ColorDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ColorDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -14107,12 +14107,12 @@ impl TFontDialog {
           return method_Call_1!(FontDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FontDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FontDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FontDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FontDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -14291,12 +14291,12 @@ impl TPrintDialog {
           return method_Call_1!(PrintDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PrintDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PrintDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PrintDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PrintDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -14463,12 +14463,12 @@ impl TOpenPictureDialog {
           return method_Call_1!(OpenPictureDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(OpenPictureDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(OpenPictureDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(OpenPictureDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(OpenPictureDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -14635,12 +14635,12 @@ impl TSavePictureDialog {
           return method_Call_1!(SavePictureDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SavePictureDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SavePictureDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SavePictureDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SavePictureDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -14807,12 +14807,12 @@ impl TSelectDirectoryDialog {
           return method_Call_1!(SelectDirectoryDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SelectDirectoryDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SelectDirectoryDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SelectDirectoryDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SelectDirectoryDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -15352,84 +15352,84 @@ impl TRichEdit {
           method_Call_1!(RichEdit_SetZoom, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(RichEdit_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(RichEdit_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DefAttributes(&self) -> TTextAttributes  {
@@ -16251,44 +16251,44 @@ impl TTrackBar {
           method_Call_1!(TrackBar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(TrackBar_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(TrackBar_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -16757,8 +16757,8 @@ impl TImageList {
           method_Call_1!(ImageList_SetMasked, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ImageList_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ImageList_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ShareImages(&self) -> bool  {
@@ -17214,44 +17214,44 @@ impl TUpDown {
           method_Call_1!(UpDown_SetWrap, self.0, aValue);
       }
 
-	  pub fn SetOnChanging<T>(&self, aRoot: usize, aEventId: TUDChangingEvent<T>)  {
-          method_Call_1!(UpDown_SetOnChanging, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChanging<T>(&self, aSelfId: usize, aEventId: TUDChangingEvent<T>)  {
+          method_Call_1!(UpDown_SetOnChanging, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(UpDown_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(UpDown_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TUDClickEvent<T>)  {
-          method_Call_1!(UpDown_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TUDClickEvent<T>)  {
+          method_Call_1!(UpDown_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(UpDown_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(UpDown_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(UpDown_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(UpDown_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(UpDown_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(UpDown_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(UpDown_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(UpDown_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(UpDown_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(UpDown_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(UpDown_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(UpDown_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(UpDown_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(UpDown_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -17963,48 +17963,48 @@ impl TProgressBar {
           method_Call_1!(ProgressBar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ProgressBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ProgressBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -18876,48 +18876,48 @@ impl TDateTimePicker {
           method_Call_1!(DateTimePicker_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDropDown<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnDropDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDropDown<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnDropDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DateTimePicker_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DateTimePicker_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -19581,64 +19581,64 @@ impl TMonthCalendar {
           method_Call_1!(MonthCalendar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(MonthCalendar_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(MonthCalendar_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -20614,152 +20614,152 @@ impl TListView {
           method_Call_1!(ListView_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAdvancedCustomDraw<T>(&self, aRoot: usize, aEventId: TLVAdvancedCustomDrawEvent<T>)  {
-          method_Call_1!(ListView_SetOnAdvancedCustomDraw, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAdvancedCustomDraw<T>(&self, aSelfId: usize, aEventId: TLVAdvancedCustomDrawEvent<T>)  {
+          method_Call_1!(ListView_SetOnAdvancedCustomDraw, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAdvancedCustomDrawItem<T>(&self, aRoot: usize, aEventId: TLVAdvancedCustomDrawItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnAdvancedCustomDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAdvancedCustomDrawItem<T>(&self, aSelfId: usize, aEventId: TLVAdvancedCustomDrawItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnAdvancedCustomDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAdvancedCustomDrawSubItem<T>(&self, aRoot: usize, aEventId: TLVAdvancedCustomDrawSubItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnAdvancedCustomDrawSubItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAdvancedCustomDrawSubItem<T>(&self, aSelfId: usize, aEventId: TLVAdvancedCustomDrawSubItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnAdvancedCustomDrawSubItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TLVChangeEvent<T>)  {
-          method_Call_1!(ListView_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TLVChangeEvent<T>)  {
+          method_Call_1!(ListView_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnColumnClick<T>(&self, aRoot: usize, aEventId: TLVColumnClickEvent<T>)  {
-          method_Call_1!(ListView_SetOnColumnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColumnClick<T>(&self, aSelfId: usize, aEventId: TLVColumnClickEvent<T>)  {
+          method_Call_1!(ListView_SetOnColumnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCompare<T>(&self, aRoot: usize, aEventId: TLVCompareEvent<T>)  {
-          method_Call_1!(ListView_SetOnCompare, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCompare<T>(&self, aSelfId: usize, aEventId: TLVCompareEvent<T>)  {
+          method_Call_1!(ListView_SetOnCompare, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ListView_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ListView_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCustomDraw<T>(&self, aRoot: usize, aEventId: TLVCustomDrawEvent<T>)  {
-          method_Call_1!(ListView_SetOnCustomDraw, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCustomDraw<T>(&self, aSelfId: usize, aEventId: TLVCustomDrawEvent<T>)  {
+          method_Call_1!(ListView_SetOnCustomDraw, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCustomDrawItem<T>(&self, aRoot: usize, aEventId: TLVCustomDrawItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnCustomDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCustomDrawItem<T>(&self, aSelfId: usize, aEventId: TLVCustomDrawItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnCustomDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCustomDrawSubItem<T>(&self, aRoot: usize, aEventId: TLVCustomDrawSubItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnCustomDrawSubItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCustomDrawSubItem<T>(&self, aSelfId: usize, aEventId: TLVCustomDrawSubItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnCustomDrawSubItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnData<T>(&self, aRoot: usize, aEventId: TLVOwnerDataEvent<T>)  {
-          method_Call_1!(ListView_SetOnData, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnData<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataEvent<T>)  {
+          method_Call_1!(ListView_SetOnData, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDataFind<T>(&self, aRoot: usize, aEventId: TLVOwnerDataFindEvent<T>)  {
-          method_Call_1!(ListView_SetOnDataFind, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDataFind<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataFindEvent<T>)  {
+          method_Call_1!(ListView_SetOnDataFind, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDataHint<T>(&self, aRoot: usize, aEventId: TLVOwnerDataHintEvent<T>)  {
-          method_Call_1!(ListView_SetOnDataHint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDataHint<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataHintEvent<T>)  {
+          method_Call_1!(ListView_SetOnDataHint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDeletion<T>(&self, aRoot: usize, aEventId: TLVDeletedEvent<T>)  {
-          method_Call_1!(ListView_SetOnDeletion, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDeletion<T>(&self, aSelfId: usize, aEventId: TLVDeletedEvent<T>)  {
+          method_Call_1!(ListView_SetOnDeletion, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEdited<T>(&self, aRoot: usize, aEventId: TLVEditedEvent<T>)  {
-          method_Call_1!(ListView_SetOnEdited, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEdited<T>(&self, aSelfId: usize, aEventId: TLVEditedEvent<T>)  {
+          method_Call_1!(ListView_SetOnEdited, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEditing<T>(&self, aRoot: usize, aEventId: TLVEditingEvent<T>)  {
-          method_Call_1!(ListView_SetOnEditing, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEditing<T>(&self, aSelfId: usize, aEventId: TLVEditingEvent<T>)  {
+          method_Call_1!(ListView_SetOnEditing, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ListView_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ListView_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ListView_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ListView_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ListView_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ListView_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ListView_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ListView_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnInsert<T>(&self, aRoot: usize, aEventId: TLVDeletedEvent<T>)  {
-          method_Call_1!(ListView_SetOnInsert, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnInsert<T>(&self, aSelfId: usize, aEventId: TLVDeletedEvent<T>)  {
+          method_Call_1!(ListView_SetOnInsert, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ListView_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ListView_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ListView_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ListView_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ListView_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ListView_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ListView_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ListView_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ListView_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ListView_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ListView_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ListView_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ListView_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ListView_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelectItem<T>(&self, aRoot: usize, aEventId: TLVSelectItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnSelectItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelectItem<T>(&self, aSelfId: usize, aEventId: TLVSelectItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnSelectItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnItemChecked<T>(&self, aRoot: usize, aEventId: TLVCheckedItemEvent<T>)  {
-          method_Call_1!(ListView_SetOnItemChecked, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnItemChecked<T>(&self, aSelfId: usize, aEventId: TLVCheckedItemEvent<T>)  {
+          method_Call_1!(ListView_SetOnItemChecked, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(ListView_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(ListView_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -21775,132 +21775,132 @@ impl TTreeView {
           method_Call_1!(TreeView_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAddition<T>(&self, aRoot: usize, aEventId: TTVExpandedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnAddition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAddition<T>(&self, aSelfId: usize, aEventId: TTVExpandedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnAddition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAdvancedCustomDraw<T>(&self, aRoot: usize, aEventId: TTVAdvancedCustomDrawEvent<T>)  {
-          method_Call_1!(TreeView_SetOnAdvancedCustomDraw, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAdvancedCustomDraw<T>(&self, aSelfId: usize, aEventId: TTVAdvancedCustomDrawEvent<T>)  {
+          method_Call_1!(TreeView_SetOnAdvancedCustomDraw, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAdvancedCustomDrawItem<T>(&self, aRoot: usize, aEventId: TTVAdvancedCustomDrawItemEvent<T>)  {
-          method_Call_1!(TreeView_SetOnAdvancedCustomDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAdvancedCustomDrawItem<T>(&self, aSelfId: usize, aEventId: TTVAdvancedCustomDrawItemEvent<T>)  {
+          method_Call_1!(TreeView_SetOnAdvancedCustomDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TTVChangedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TTVChangedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChanging<T>(&self, aRoot: usize, aEventId: TTVChangingEvent<T>)  {
-          method_Call_1!(TreeView_SetOnChanging, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChanging<T>(&self, aSelfId: usize, aEventId: TTVChangingEvent<T>)  {
+          method_Call_1!(TreeView_SetOnChanging, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCollapsed<T>(&self, aRoot: usize, aEventId: TTVExpandedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnCollapsed, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCollapsed<T>(&self, aSelfId: usize, aEventId: TTVExpandedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnCollapsed, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCollapsing<T>(&self, aRoot: usize, aEventId: TTVCollapsingEvent<T>)  {
-          method_Call_1!(TreeView_SetOnCollapsing, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCollapsing<T>(&self, aSelfId: usize, aEventId: TTVCollapsingEvent<T>)  {
+          method_Call_1!(TreeView_SetOnCollapsing, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCompare<T>(&self, aRoot: usize, aEventId: TTVCompareEvent<T>)  {
-          method_Call_1!(TreeView_SetOnCompare, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCompare<T>(&self, aSelfId: usize, aEventId: TTVCompareEvent<T>)  {
+          method_Call_1!(TreeView_SetOnCompare, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(TreeView_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(TreeView_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCustomDraw<T>(&self, aRoot: usize, aEventId: TTVCustomDrawEvent<T>)  {
-          method_Call_1!(TreeView_SetOnCustomDraw, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCustomDraw<T>(&self, aSelfId: usize, aEventId: TTVCustomDrawEvent<T>)  {
+          method_Call_1!(TreeView_SetOnCustomDraw, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCustomDrawItem<T>(&self, aRoot: usize, aEventId: TTVCustomDrawItemEvent<T>)  {
-          method_Call_1!(TreeView_SetOnCustomDrawItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCustomDrawItem<T>(&self, aSelfId: usize, aEventId: TTVCustomDrawItemEvent<T>)  {
+          method_Call_1!(TreeView_SetOnCustomDrawItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDeletion<T>(&self, aRoot: usize, aEventId: TTVExpandedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnDeletion, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDeletion<T>(&self, aSelfId: usize, aEventId: TTVExpandedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnDeletion, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(TreeView_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(TreeView_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(TreeView_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(TreeView_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEdited<T>(&self, aRoot: usize, aEventId: TTVEditedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnEdited, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEdited<T>(&self, aSelfId: usize, aEventId: TTVEditedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnEdited, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEditing<T>(&self, aRoot: usize, aEventId: TTVEditingEvent<T>)  {
-          method_Call_1!(TreeView_SetOnEditing, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEditing<T>(&self, aSelfId: usize, aEventId: TTVEditingEvent<T>)  {
+          method_Call_1!(TreeView_SetOnEditing, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(TreeView_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(TreeView_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExpanding<T>(&self, aRoot: usize, aEventId: TTVExpandingEvent<T>)  {
-          method_Call_1!(TreeView_SetOnExpanding, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExpanding<T>(&self, aSelfId: usize, aEventId: TTVExpandingEvent<T>)  {
+          method_Call_1!(TreeView_SetOnExpanding, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExpanded<T>(&self, aRoot: usize, aEventId: TTVExpandedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnExpanded, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExpanded<T>(&self, aSelfId: usize, aEventId: TTVExpandedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnExpanded, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSelectedIndex<T>(&self, aRoot: usize, aEventId: TTVExpandedEvent<T>)  {
-          method_Call_1!(TreeView_SetOnGetSelectedIndex, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSelectedIndex<T>(&self, aSelfId: usize, aEventId: TTVExpandedEvent<T>)  {
+          method_Call_1!(TreeView_SetOnGetSelectedIndex, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(TreeView_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(TreeView_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TreeView_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TreeView_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TreeView_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TreeView_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(TreeView_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(TreeView_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TreeView_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TreeView_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Items(&self) -> TTreeNodes  {
@@ -22656,64 +22656,64 @@ impl TStatusBar {
           method_Call_1!(StatusBar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHint<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnHint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHint<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnHint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(StatusBar_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(StatusBar_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -23537,68 +23537,68 @@ impl TToolBar {
           method_Call_1!(ToolBar_SetWrapable, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(ToolBar_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(ToolBar_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -24318,64 +24318,64 @@ impl TBitBtn {
           method_Call_1!(BitBtn_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(BitBtn_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(BitBtn_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -24786,8 +24786,8 @@ impl TIcon {
           method_Call_1!(Icon_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Icon_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Icon_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -24974,8 +24974,8 @@ impl TBitmap {
           method_Call_1!(Bitmap_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Bitmap_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Bitmap_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ScanLine(&self, row: i32) -> usize  {
@@ -25259,8 +25259,8 @@ impl TFont {
           method_Call_1!(Font_SetQuality, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Font_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Font_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -25588,12 +25588,12 @@ impl TStringList {
           method_Call_1!(StringList_SetSorted, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringList_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringList_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChanging<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringList_SetOnChanging, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChanging<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringList_SetOnChanging, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Capacity(&self) -> i32  {
@@ -25757,8 +25757,8 @@ impl TBrush {
           method_Call_1!(Brush_SetStyle, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Brush_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Brush_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -25853,8 +25853,8 @@ impl TPen {
           method_Call_1!(Pen_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Pen_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Pen_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -26057,12 +26057,12 @@ impl TMenuItem {
           method_Call_1!(MenuItem_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MenuItem_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MenuItem_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMeasureItem<T>(&self, aRoot: usize, aEventId: TMenuMeasureItemEvent<T>)  {
-          method_Call_1!(MenuItem_SetOnMeasureItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMeasureItem<T>(&self, aSelfId: usize, aEventId: TMenuMeasureItemEvent<T>)  {
+          method_Call_1!(MenuItem_SetOnMeasureItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -26205,8 +26205,8 @@ impl TPicture {
           return method_Call_1!(Picture_GetWidth, self.0);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Picture_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Picture_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -27424,80 +27424,80 @@ impl TPageControl {
           method_Call_1!(PageControl_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChanging<T>(&self, aRoot: usize, aEventId: TTabChangingEvent<T>)  {
-          method_Call_1!(PageControl_SetOnChanging, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChanging<T>(&self, aSelfId: usize, aEventId: TTabChangingEvent<T>)  {
+          method_Call_1!(PageControl_SetOnChanging, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(PageControl_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(PageControl_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(PageControl_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(PageControl_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(PageControl_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(PageControl_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(PageControl_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(PageControl_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(PageControl_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(PageControl_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(PageControl_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(PageControl_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(PageControl_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(PageControl_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(PageControl_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(PageControl_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(PageControl_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(PageControl_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(PageControl_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(PageControl_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageControl_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageControl_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(PageControl_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(PageControl_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(PageControl_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(PageControl_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -28161,60 +28161,60 @@ impl TTabSheet {
           method_Call_1!(TabSheet_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHide<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnHide, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHide<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnHide, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(TabSheet_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(TabSheet_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -28914,64 +28914,64 @@ impl TButton {
           method_Call_1!(Button_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Button_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Button_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Button_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Button_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Button_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Button_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Button_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Button_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Button_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Button_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Button_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Button_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Button_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Button_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Button_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Button_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(Button_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(Button_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Button_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Button_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Button_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Button_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Button_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Button_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Button_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Button_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Button_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Button_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Button_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Button_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -29751,72 +29751,72 @@ impl TEdit {
           method_Call_1!(Edit_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Edit_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Edit_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Edit_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Edit_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Edit_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Edit_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Edit_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Edit_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Edit_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Edit_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(Edit_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(Edit_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Edit_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Edit_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Edit_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Edit_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Edit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Edit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Edit_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Edit_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Edit_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Edit_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn CanUndo(&self) -> bool  {
@@ -31274,44 +31274,44 @@ impl TSpinEdit {
           method_Call_1!(SpinEdit_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(SpinEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(SpinEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Alignment(&self) -> TAlignment  {
@@ -31987,12 +31987,12 @@ impl TMiniWebview {
           method_Call_1!(MiniWebview_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnTitleChange<T>(&self, aRoot: usize, aEventId: TWebTitleChangeEvent<T>)  {
-          method_Call_1!(MiniWebview_SetOnTitleChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnTitleChange<T>(&self, aSelfId: usize, aEventId: TWebTitleChangeEvent<T>)  {
+          method_Call_1!(MiniWebview_SetOnTitleChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnJSExternal<T>(&self, aRoot: usize, aEventId: TWebJSExternalEvent<T>)  {
-          method_Call_1!(MiniWebview_SetOnJSExternal, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnJSExternal<T>(&self, aSelfId: usize, aEventId: TWebJSExternalEvent<T>)  {
+          method_Call_1!(MiniWebview_SetOnJSExternal, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -32483,12 +32483,12 @@ impl TCanvas {
           method_Call_1!(Canvas_SetPen, self.0, aValue.Instance());
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Canvas_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Canvas_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChanging<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Canvas_SetOnChanging, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChanging<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Canvas_SetOnChanging, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -32814,36 +32814,36 @@ impl TApplication {
           method_Call_1!(Application_SetTitle, self.0, to_CString!(aValue));
       }
 
-	  pub fn SetOnActivate<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Application_SetOnActivate, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnActivate<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Application_SetOnActivate, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDeactivate<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Application_SetOnDeactivate, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDeactivate<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Application_SetOnDeactivate, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnException<T>(&self, aRoot: usize, aEventId: TExceptionEvent<T>)  {
-          method_Call_1!(Application_SetOnException, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnException<T>(&self, aSelfId: usize, aEventId: TExceptionEvent<T>)  {
+          method_Call_1!(Application_SetOnException, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHelp<T>(&self, aRoot: usize, aEventId: THelpEvent<T>)  {
-          method_Call_1!(Application_SetOnHelp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHelp<T>(&self, aSelfId: usize, aEventId: THelpEvent<T>)  {
+          method_Call_1!(Application_SetOnHelp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHint<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Application_SetOnHint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHint<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Application_SetOnHint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMinimize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Application_SetOnMinimize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMinimize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Application_SetOnMinimize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnRestore<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Application_SetOnRestore, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnRestore<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Application_SetOnRestore, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShortCut<T>(&self, aRoot: usize, aEventId: TShortCutEvent<T>)  {
-          method_Call_1!(Application_SetOnShortCut, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShortCut<T>(&self, aSelfId: usize, aEventId: TShortCutEvent<T>)  {
+          method_Call_1!(Application_SetOnShortCut, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Handle(&self) -> HWND  {
@@ -33022,8 +33022,8 @@ impl TGraphic {
           method_Call_1!(Graphic_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Graphic_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Graphic_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -33154,8 +33154,8 @@ impl TPngImage {
           method_Call_1!(PngImage_SetTransparent, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PngImage_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PngImage_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -33302,8 +33302,8 @@ impl TJPEGImage {
           method_Call_1!(JPEGImage_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(JPEGImage_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(JPEGImage_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -33434,8 +33434,8 @@ impl TGIFImage {
           method_Call_1!(GIFImage_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(GIFImage_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(GIFImage_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
       // static class
@@ -33514,8 +33514,8 @@ impl TActionList {
           method_Call_1!(ActionList_SetState, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ActionList_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ActionList_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -33694,12 +33694,12 @@ impl TAction {
           method_Call_1!(Action_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnExecute<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Action_SetOnExecute, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExecute<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Action_SetOnExecute, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUpdate<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Action_SetOnUpdate, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUpdate<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Action_SetOnUpdate, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Index(&self) -> i32  {
@@ -34102,52 +34102,52 @@ impl TToolButton {
           method_Call_1!(ToolButton_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(ToolButton_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(ToolButton_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Align(&self) -> TAlign  {
@@ -35180,48 +35180,48 @@ impl TPaintBox {
           method_Call_1!(PaintBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnPaint<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PaintBox_SetOnPaint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnPaint<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PaintBox_SetOnPaint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -35511,8 +35511,8 @@ impl TTimer {
           method_Call_1!(Timer_SetInterval, self.0, aValue);
       }
 
-	  pub fn SetOnTimer<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Timer_SetOnTimer, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnTimer<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Timer_SetOnTimer, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -35908,8 +35908,8 @@ impl TForm {
           method_Call_1!(Form_SetAllowDropFiles, self.0, aValue);
       }
 
-	  pub fn SetOnDropFiles<T>(&self, aRoot: usize, aEventId: TDropFilesEvent<T>)  {
-          method_Call_1!(Form_SetOnDropFiles, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDropFiles<T>(&self, aSelfId: usize, aEventId: TDropFilesEvent<T>)  {
+          method_Call_1!(Form_SetOnDropFiles, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ShowInTaskBar(&self) -> TShowInTaskbar  {
@@ -36248,132 +36248,132 @@ impl TForm {
           method_Call_1!(Form_SetWindowState, self.0, aValue);
       }
 
-	  pub fn SetOnActivate<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnActivate, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnActivate<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnActivate, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(Form_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(Form_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TCloseEvent<T>)  {
-          method_Call_1!(Form_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TCloseEvent<T>)  {
+          method_Call_1!(Form_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCloseQuery<T>(&self, aRoot: usize, aEventId: TCloseQueryEvent<T>)  {
-          method_Call_1!(Form_SetOnCloseQuery, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCloseQuery<T>(&self, aSelfId: usize, aEventId: TCloseQueryEvent<T>)  {
+          method_Call_1!(Form_SetOnCloseQuery, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Form_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Form_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDeactivate<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnDeactivate, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDeactivate<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnDeactivate, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(Form_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(Form_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Form_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Form_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Form_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Form_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Form_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Form_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(Form_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(Form_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHide<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnHide, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHide<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnHide, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHelp<T>(&self, aRoot: usize, aEventId: THelpEvent<T>)  {
-          method_Call_1!(Form_SetOnHelp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHelp<T>(&self, aSelfId: usize, aEventId: THelpEvent<T>)  {
+          method_Call_1!(Form_SetOnHelp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Form_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Form_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(Form_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(Form_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(Form_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(Form_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(Form_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(Form_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnPaint<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnPaint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnPaint<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnPaint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShortCut<T>(&self, aRoot: usize, aEventId: TShortCutEvent<T>)  {
-          method_Call_1!(Form_SetOnShortCut, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShortCut<T>(&self, aSelfId: usize, aEventId: TShortCutEvent<T>)  {
+          method_Call_1!(Form_SetOnShortCut, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(Form_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(Form_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(Form_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(Form_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -36648,16 +36648,16 @@ impl TForm {
           method_Call_1!(Form_EnabledSystemMenu, self.0, aValue);
       }
 
-	  pub fn SetOnDestroy<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Form_SetOnDestroy, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDestroy<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Form_SetOnDestroy, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnConstrainedResize<T>(&self, aRoot: usize, aEventId: TConstrainedResizeEvent<T>)  {
-          method_Call_1!(Form_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>)  {
+          method_Call_1!(Form_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnWndProc<T>(&self, aRoot: usize, aEventId: TWndProcEvent<T>)  {
-          method_Call_1!(Form_SetOnWndProc, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnWndProc<T>(&self, aSelfId: usize, aEventId: TWndProcEvent<T>)  {
+          method_Call_1!(Form_SetOnWndProc, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ScaleForPPI(&self, aNewPPI: i32)  {
@@ -37386,44 +37386,44 @@ impl TScrollBar {
           method_Call_1!(ScrollBar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ScrollBar_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ScrollBar_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -38199,76 +38199,76 @@ impl TMaskEdit {
           method_Call_1!(MaskEdit_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(MaskEdit_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(MaskEdit_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn IsMasked(&self) -> bool  {
@@ -38863,36 +38863,36 @@ impl TShape {
           method_Call_1!(Shape_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Shape_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Shape_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Shape_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Shape_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Shape_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Shape_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Shape_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Shape_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Shape_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Shape_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Shape_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Shape_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Shape_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Shape_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Shape_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Shape_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -39990,84 +39990,84 @@ impl TScrollBox {
           method_Call_1!(ScrollBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(ScrollBox_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(ScrollBox_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn HorzScrollBar(&self) -> TControlScrollBar  {
@@ -40614,8 +40614,8 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_AnchorClient, self.0, aSpace);
       }
 
-	  pub fn SetOnClickCheck<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnClickCheck, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClickCheck<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnClickCheck, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Align(&self) -> TAlign  {
@@ -40826,72 +40826,72 @@ impl TCheckListBox {
           method_Call_1!(CheckListBox_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMeasureItem<T>(&self, aRoot: usize, aEventId: TMeasureItemEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMeasureItem<T>(&self, aSelfId: usize, aEventId: TMeasureItemEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMeasureItem, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckListBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -42113,52 +42113,52 @@ impl TImageButton {
           method_Call_1!(ImageButton_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ImageButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ImageButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn BiDiMode(&self) -> TBiDiMode  {
@@ -42474,20 +42474,20 @@ impl TFindDialog {
           method_Call_1!(FindDialog_SetOptions, self.0, aValue);
       }
 
-	  pub fn SetOnFind<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FindDialog_SetOnFind, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnFind<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FindDialog_SetOnFind, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Handle(&self) -> HWND  {
           return method_Call_1!(FindDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FindDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FindDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FindDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FindDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -42602,8 +42602,8 @@ impl TReplaceDialog {
           method_Call_1!(ReplaceDialog_SetReplaceText, self.0, to_CString!(aValue));
       }
 
-	  pub fn SetOnReplace<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ReplaceDialog_SetOnReplace, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnReplace<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ReplaceDialog_SetOnReplace, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Left(&self) -> i32  {
@@ -42648,20 +42648,20 @@ impl TReplaceDialog {
           method_Call_1!(ReplaceDialog_SetOptions, self.0, aValue);
       }
 
-	  pub fn SetOnFind<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ReplaceDialog_SetOnFind, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnFind<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ReplaceDialog_SetOnFind, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Handle(&self) -> HWND  {
           return method_Call_1!(ReplaceDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ReplaceDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ReplaceDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ReplaceDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ReplaceDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -42768,12 +42768,12 @@ impl TPrinterSetupDialog {
           return method_Call_1!(PrinterSetupDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PrinterSetupDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PrinterSetupDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PrinterSetupDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PrinterSetupDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -42940,12 +42940,12 @@ impl TPageSetupDialog {
           return method_Call_1!(PageSetupDialog_GetHandle, self.0);
       }
 
-	  pub fn SetOnClose<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageSetupDialog_SetOnClose, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClose<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageSetupDialog_SetOnClose, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnShow<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(PageSetupDialog_SetOnShow, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnShow<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(PageSetupDialog_SetOnShow, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -43700,88 +43700,88 @@ impl TStringGrid {
           return method_Call_1!(StringGrid_GetSortColumn, self.0);
       }
 
-	  pub fn SetOnAfterSelection<T>(&self, aRoot: usize, aEventId: TOnSelectEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnAfterSelection, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAfterSelection<T>(&self, aSelfId: usize, aEventId: TOnSelectEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnAfterSelection, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnBeforeSelection<T>(&self, aRoot: usize, aEventId: TOnSelectEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnBeforeSelection, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnBeforeSelection<T>(&self, aSelfId: usize, aEventId: TOnSelectEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnBeforeSelection, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnButtonClick<T>(&self, aRoot: usize, aEventId: TOnSelectEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnButtonClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnButtonClick<T>(&self, aSelfId: usize, aEventId: TOnSelectEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnButtonClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCheckboxToggled<T>(&self, aRoot: usize, aEventId: TToggledCheckboxEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnCheckboxToggled, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCheckboxToggled<T>(&self, aSelfId: usize, aEventId: TToggledCheckboxEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnCheckboxToggled, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnColRowDeleted<T>(&self, aRoot: usize, aEventId: TGridOperationEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnColRowDeleted, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColRowDeleted<T>(&self, aSelfId: usize, aEventId: TGridOperationEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnColRowDeleted, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnColRowExchanged<T>(&self, aRoot: usize, aEventId: TGridOperationEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnColRowExchanged, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColRowExchanged<T>(&self, aSelfId: usize, aEventId: TGridOperationEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnColRowExchanged, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnColRowInserted<T>(&self, aRoot: usize, aEventId: TGridOperationEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnColRowInserted, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColRowInserted<T>(&self, aSelfId: usize, aEventId: TGridOperationEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnColRowInserted, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnColRowMoved<T>(&self, aRoot: usize, aEventId: TGridOperationEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnColRowMoved, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColRowMoved<T>(&self, aSelfId: usize, aEventId: TGridOperationEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnColRowMoved, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnCompareCells<T>(&self, aRoot: usize, aEventId: TOnCompareCells<T>)  {
-          method_Call_1!(StringGrid_SetOnCompareCells, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnCompareCells<T>(&self, aSelfId: usize, aEventId: TOnCompareCells<T>)  {
+          method_Call_1!(StringGrid_SetOnCompareCells, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEditingDone<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnEditingDone, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEditingDone<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnEditingDone, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetCellHint<T>(&self, aRoot: usize, aEventId: TGetCellHintEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnGetCellHint, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetCellHint<T>(&self, aSelfId: usize, aEventId: TGetCellHintEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnGetCellHint, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetCheckboxState<T>(&self, aRoot: usize, aEventId: TGetCheckboxStateEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnGetCheckboxState, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetCheckboxState<T>(&self, aSelfId: usize, aEventId: TGetCheckboxStateEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnGetCheckboxState, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSetCheckboxState<T>(&self, aRoot: usize, aEventId: TSetCheckboxStateEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnSetCheckboxState, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSetCheckboxState<T>(&self, aSelfId: usize, aEventId: TSetCheckboxStateEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnSetCheckboxState, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHeaderClick<T>(&self, aRoot: usize, aEventId: THdrEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnHeaderClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHeaderClick<T>(&self, aSelfId: usize, aEventId: THdrEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnHeaderClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHeaderSized<T>(&self, aRoot: usize, aEventId: THdrEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnHeaderSized, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHeaderSized<T>(&self, aSelfId: usize, aEventId: THdrEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnHeaderSized, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnHeaderSizing<T>(&self, aRoot: usize, aEventId: THeaderSizingEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnHeaderSizing, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnHeaderSizing<T>(&self, aSelfId: usize, aEventId: THeaderSizingEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnHeaderSizing, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnPickListSelect<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnPickListSelect, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnPickListSelect<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnPickListSelect, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelection<T>(&self, aRoot: usize, aEventId: TOnSelectEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnSelection, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelection<T>(&self, aSelfId: usize, aEventId: TOnSelectEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnSelection, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelectEditor<T>(&self, aRoot: usize, aEventId: TSelectEditorEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnSelectEditor, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelectEditor<T>(&self, aSelfId: usize, aEventId: TSelectEditorEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnSelectEditor, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUserCheckboxBitmap<T>(&self, aRoot: usize, aEventId: TUserCheckBoxBitmapEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnUserCheckboxBitmap, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUserCheckboxBitmap<T>(&self, aSelfId: usize, aEventId: TUserCheckBoxBitmapEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnUserCheckboxBitmap, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnValidateEntry<T>(&self, aRoot: usize, aEventId: TValidateEntryEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnValidateEntry, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnValidateEntry<T>(&self, aSelfId: usize, aEventId: TValidateEntryEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnValidateEntry, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn AlternateColor(&self) -> TColor  {
@@ -44208,108 +44208,108 @@ impl TStringGrid {
           return method_Call_1!(StringGrid_GetVisibleRowCount, self.0);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDrawCell<T>(&self, aRoot: usize, aEventId: TDrawCellEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnDrawCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDrawCell<T>(&self, aSelfId: usize, aEventId: TDrawCellEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnDrawCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditMask<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnGetEditMask, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditMask<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnGetEditMask, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditText<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnGetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditText<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnGetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelectCell<T>(&self, aRoot: usize, aEventId: TSelectCellEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnSelectCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelectCell<T>(&self, aSelfId: usize, aEventId: TSelectCellEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnSelectCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSetEditText<T>(&self, aRoot: usize, aEventId: TSetEditEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnSetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSetEditText<T>(&self, aSelfId: usize, aEventId: TSetEditEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnSetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnTopLeftChanged<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(StringGrid_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnTopLeftChanged<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(StringGrid_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -44943,8 +44943,8 @@ impl TDrawGrid {
           method_Call_1!(DrawGrid_AnchorClient, self.0, aSpace);
       }
 
-	  pub fn SetOnColRowMoved<T>(&self, aRoot: usize, aEventId: TGridOperationEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnColRowMoved, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnColRowMoved<T>(&self, aSelfId: usize, aEventId: TGridOperationEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnColRowMoved, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Align(&self) -> TAlign  {
@@ -45203,108 +45203,108 @@ impl TDrawGrid {
           return method_Call_1!(DrawGrid_GetVisibleRowCount, self.0);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDrawCell<T>(&self, aRoot: usize, aEventId: TDrawCellEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnDrawCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDrawCell<T>(&self, aSelfId: usize, aEventId: TDrawCellEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnDrawCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditMask<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnGetEditMask, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditMask<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnGetEditMask, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditText<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnGetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditText<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnGetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelectCell<T>(&self, aRoot: usize, aEventId: TSelectCellEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnSelectCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelectCell<T>(&self, aSelfId: usize, aEventId: TSelectCellEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnSelectCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSetEditText<T>(&self, aRoot: usize, aEventId: TSetEditEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnSetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSetEditText<T>(&self, aSelfId: usize, aEventId: TSetEditEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnSetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnTopLeftChanged<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(DrawGrid_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnTopLeftChanged<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(DrawGrid_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -46174,108 +46174,108 @@ impl TValueListEditor {
           method_Call_1!(ValueListEditor_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDrawCell<T>(&self, aRoot: usize, aEventId: TDrawCellEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnDrawCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDrawCell<T>(&self, aSelfId: usize, aEventId: TDrawCellEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnDrawCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditMask<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnGetEditMask, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditMask<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnGetEditMask, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetEditText<T>(&self, aRoot: usize, aEventId: TGetEditEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnGetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetEditText<T>(&self, aSelfId: usize, aEventId: TGetEditEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnGetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelectCell<T>(&self, aRoot: usize, aEventId: TSelectCellEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnSelectCell, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelectCell<T>(&self, aSelfId: usize, aEventId: TSelectCellEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnSelectCell, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSetEditText<T>(&self, aRoot: usize, aEventId: TSetEditEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnSetEditText, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSetEditText<T>(&self, aSelfId: usize, aEventId: TSetEditEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnSetEditText, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnTopLeftChanged<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ValueListEditor_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnTopLeftChanged<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ValueListEditor_SetOnTopLeftChanged, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -47025,68 +47025,68 @@ impl THeaderControl {
           method_Call_1!(HeaderControl_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSectionClick<T>(&self, aRoot: usize, aEventId: TSectionNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnSectionClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSectionClick<T>(&self, aSelfId: usize, aEventId: TSectionNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnSectionClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSectionResize<T>(&self, aRoot: usize, aEventId: TSectionNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnSectionResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSectionResize<T>(&self, aSelfId: usize, aEventId: TSectionNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnSectionResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSectionTrack<T>(&self, aRoot: usize, aEventId: TSectionTrackEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnSectionTrack, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSectionTrack<T>(&self, aSelfId: usize, aEventId: TSectionTrackEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnSectionTrack, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSectionDrag<T>(&self, aRoot: usize, aEventId: TSectionDragEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnSectionDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSectionDrag<T>(&self, aSelfId: usize, aEventId: TSectionDragEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnSectionDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSectionEndDrag<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(HeaderControl_SetOnSectionEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSectionEndDrag<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(HeaderControl_SetOnSectionEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -48130,68 +48130,68 @@ impl TLabeledEdit {
           method_Call_1!(LabeledEdit_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(LabeledEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(LabeledEdit_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn CanUndo(&self) -> bool  {
@@ -48814,36 +48814,36 @@ impl TBoundLabel {
           method_Call_1!(BoundLabel_SetWidth, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(BoundLabel_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(BoundLabel_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -49546,84 +49546,84 @@ impl TFlowPanel {
           method_Call_1!(FlowPanel_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(FlowPanel_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(FlowPanel_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -50363,76 +50363,76 @@ impl TCoolBar {
           method_Call_1!(CoolBar_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(CoolBar_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(CoolBar_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn DockClientCount(&self) -> i32  {
@@ -51435,8 +51435,8 @@ impl TTaskDialog {
           method_Call_1!(TaskDialog_SetVerificationText, self.0, to_CString!(aValue));
       }
 
-	  pub fn SetOnButtonClicked<T>(&self, aRoot: usize, aEventId: TTaskDlgClickEvent<T>)  {
-          method_Call_1!(TaskDialog_SetOnButtonClicked, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnButtonClicked<T>(&self, aSelfId: usize, aEventId: TTaskDlgClickEvent<T>)  {
+          method_Call_1!(TaskDialog_SetOnButtonClicked, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Button(&self) -> TTaskDialogButtonItem  {
@@ -52367,72 +52367,72 @@ impl TComboBoxEx {
           method_Call_1!(ComboBoxEx_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDropDown<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnDropDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDropDown<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnDropDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnSelect<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnSelect, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnSelect<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnSelect, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(ComboBoxEx_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(ComboBoxEx_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Images(&self) -> TImageList  {
@@ -53378,96 +53378,96 @@ impl TFrame {
           method_Call_1!(Frame_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnAlignPosition<T>(&self, aRoot: usize, aEventId: TAlignPositionEvent<T>)  {
-          method_Call_1!(Frame_SetOnAlignPosition, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnAlignPosition<T>(&self, aSelfId: usize, aEventId: TAlignPositionEvent<T>)  {
+          method_Call_1!(Frame_SetOnAlignPosition, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnContextPopup<T>(&self, aRoot: usize, aEventId: TContextPopupEvent<T>)  {
-          method_Call_1!(Frame_SetOnContextPopup, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>)  {
+          method_Call_1!(Frame_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDockDrop<T>(&self, aRoot: usize, aEventId: TDockDropEvent<T>)  {
-          method_Call_1!(Frame_SetOnDockDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDockDrop<T>(&self, aSelfId: usize, aEventId: TDockDropEvent<T>)  {
+          method_Call_1!(Frame_SetOnDockDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(Frame_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(Frame_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(Frame_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(Frame_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDock<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Frame_SetOnEndDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDock<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Frame_SetOnEndDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(Frame_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(Frame_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnGetSiteInfo<T>(&self, aRoot: usize, aEventId: TGetSiteInfoEvent<T>)  {
-          method_Call_1!(Frame_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnGetSiteInfo<T>(&self, aSelfId: usize, aEventId: TGetSiteInfoEvent<T>)  {
+          method_Call_1!(Frame_SetOnGetSiteInfo, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(Frame_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(Frame_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(Frame_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(Frame_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnStartDock<T>(&self, aRoot: usize, aEventId: TStartDockEvent<T>)  {
-          method_Call_1!(Frame_SetOnStartDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnStartDock<T>(&self, aSelfId: usize, aEventId: TStartDockEvent<T>)  {
+          method_Call_1!(Frame_SetOnStartDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnUnDock<T>(&self, aRoot: usize, aEventId: TUnDockEvent<T>)  {
-          method_Call_1!(Frame_SetOnUnDock, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnUnDock<T>(&self, aSelfId: usize, aEventId: TUnDockEvent<T>)  {
+          method_Call_1!(Frame_SetOnUnDock, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn HorzScrollBar(&self) -> TControlScrollBar  {
@@ -53893,8 +53893,8 @@ impl TSizeConstraints {
           return to_RustString!(method_Call_1!(SizeConstraints_ToString, self.0));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(SizeConstraints_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(SizeConstraints_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn MaxHeight(&self) -> TConstraintSize  {
@@ -54288,32 +54288,32 @@ impl TXButton {
           method_Call_1!(XButton_SetVisible, self.0, aValue);
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(XButton_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(XButton_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(XButton_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(XButton_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(XButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(XButton_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(XButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(XButton_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(XButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(XButton_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(XButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(XButton_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(XButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(XButton_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
@@ -54662,8 +54662,8 @@ impl TControlBorderSpacing {
           return method_Call_1!(ControlBorderSpacing_GetControlBottom, self.0);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ControlBorderSpacing_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ControlBorderSpacing_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn Left(&self) -> i32  {
@@ -54785,8 +54785,8 @@ impl TControlChildSizing {
           return method_Call_2!(TWinControl, ControlChildSizing_GetControl, self.0);
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ControlChildSizing_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ControlChildSizing_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn LeftRightSpacing(&self) -> i32  {
@@ -55245,84 +55245,84 @@ impl TCheckGroup {
           method_Call_1!(CheckGroup_SetItems, self.0, aValue.Instance());
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDblClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnDblClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnItemClick<T>(&self, aRoot: usize, aEventId: TCheckGroupClicked<T>)  {
-          method_Call_1!(CheckGroup_SetOnItemClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnItemClick<T>(&self, aSelfId: usize, aEventId: TCheckGroupClicked<T>)  {
+          method_Call_1!(CheckGroup_SetOnItemClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyDown<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnKeyDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyPress<T>(&self, aRoot: usize, aEventId: TKeyPressEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnKeyPress, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnKeyUp<T>(&self, aRoot: usize, aEventId: TKeyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnKeyUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnResize<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(CheckGroup_SetOnResize, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnResize<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(CheckGroup_SetOnResize, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ParentFont(&self) -> bool  {
@@ -56018,64 +56018,64 @@ impl TToggleBox {
           method_Call_1!(ToggleBox_SetHint, self.0, to_CString!(aValue));
       }
 
-	  pub fn SetOnChange<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnChange, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnClick<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnClick, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragDrop<T>(&self, aRoot: usize, aEventId: TDragDropEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnDragOver<T>(&self, aRoot: usize, aEventId: TDragOverEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnDragOver, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEndDrag<T>(&self, aRoot: usize, aEventId: TEndDragEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnExit<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnExit, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseDown<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseLeave<T>(&self, aRoot: usize, aEventId: TNotifyEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseMove<T>(&self, aRoot: usize, aEventId: TMouseMoveEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseUp<T>(&self, aRoot: usize, aEventId: TMouseEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheel<T>(&self, aRoot: usize, aEventId: TMouseWheelEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseWheel, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheel<T>(&self, aSelfId: usize, aEventId: TMouseWheelEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseWheel, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelDown<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelDown<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseWheelDown, self.0, insert_Id!(aEventId, aSelfId));
       }
 
-	  pub fn SetOnMouseWheelUp<T>(&self, aRoot: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
-          method_Call_1!(ToggleBox_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aRoot));
+	  pub fn SetOnMouseWheelUp<T>(&self, aSelfId: usize, aEventId: TMouseWheelUpDownEvent<T>)  {
+          method_Call_1!(ToggleBox_SetOnMouseWheelUp, self.0, insert_Id!(aEventId, aSelfId));
       }
 
 	  pub fn ParentDoubleBuffered(&self) -> bool  {
