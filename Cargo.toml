@@ -19,6 +19,10 @@ path = "src/lib.rs"
 libc = "0.2.0"
 lazy_static="1.4.0"
 
+
+[dependencies.vcl_derives]
+path = "./vcl_derives"
+
 [build-dependencies]
 dunce = "0.1.1"
 

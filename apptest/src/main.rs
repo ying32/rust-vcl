@@ -5,17 +5,16 @@
 #[macro_use]
 extern crate rust_vcl;
 
-mod mainform;
 mod form2;
+mod mainform;
 
-use mainform::TMainForm;
-use form2::TForm2;
 use rust_vcl::fns::*;
 use rust_vcl::vcl::*;
 
+use form2::TForm2;
+use mainform::TMainForm;
 
 fn test() {
-  
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:}", GUIDToString(&guid));
@@ -24,18 +23,14 @@ fn test() {
     // let abc = TGridRect::Empty();
 }
 
+#[derive(VclApp)]
 struct TApp {
-   mainForm: TMainForm,
-   form2: TForm2,
+    mainForm: TMainForm,
+    form2: TForm2,
 }
 
-// 有没有隐式实现现的方式？？？
-ImplISId!(TApp);
-
 impl TApp {
-
     fn new() -> Self {
-
         Application.SetMainFormOnTaskBar(true);
         Application.SetTitle("LCL App");
         Application.Initialize();
@@ -50,19 +45,15 @@ impl TApp {
     fn init(&self) {
         self.mainForm.init();
         self.form2.init();
-        self.mainForm.btnOpenForm2.SetOnClick(self.getSId(), Self::onOpenForm2)
-    }
-
-    fn run(&self) {
-        Application.Run();
+        self.mainForm
+            .btnOpenForm2
+            .SetOnClick(self.getSId(), Self::onOpenForm2)
     }
 
     fn onOpenForm2(&self, _sender: usize) {
         self.form2.form.Show();
     }
 }
-
-
 
 fn main() {
     test();

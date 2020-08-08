@@ -5,7 +5,7 @@ use rust_vcl::fns::*;
 use rust_vcl::types::*;
 use rust_vcl::vcl::*;
 
- 
+#[derive(VclForm)]
 pub struct TMainForm {
     btn: TButton,
     btn2: TButton,
@@ -19,10 +19,6 @@ pub struct TMainForm {
     pub btnOpenForm2: TButton,
     form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
 }
-
-ImplForm!(TMainForm);
-
-
 
 impl TMainForm {
     pub fn new() -> Self {
@@ -43,9 +39,8 @@ impl TMainForm {
     }
 
     pub fn init(&self) {
-
         let sid: usize = self.getSId();
- 
+
         // TForm
         self.form.SetCaption("你好，Rust！ - Hello Rust!");
         self.form.SetPosition(TPosition::poScreenCenter);
@@ -57,18 +52,16 @@ impl TMainForm {
         self.form.SetOnKeyDown(sid, Self::onFormKeyDown);
         self.form.SetOnDestroy(sid, Self::onFormDestroy);
 
-
         // form.SetOnClick(onBtnClick);
 
         // 测试自动drop
         // let ico = TIcon::new();
         //println!("{:?}", ico.ClassName());
-        
+
         // TOpenDialog
-        self.dlgOpen.SetFilter("Rust File|*.rs|Other|*.txt;*.c;*.go|All|*.*");
+        self.dlgOpen
+            .SetFilter("Rust File|*.rs|Other|*.txt;*.c;*.go|All|*.*");
         self.dlgOpen.SetTitle("Open File");
-        
-   
 
         // TButton
         self.btn.SetParent(self);
@@ -99,7 +92,8 @@ impl TMainForm {
             .SetTop(self.btn3.Top() + self.btn3.Height() + 10);
         self.btnOpenDialog.SetWidth(120);
         self.btnOpenDialog.SetCaption("Open Dialog");
-        self.btnOpenDialog.SetOnClick(sid, Self::onBtnOpenDialogClick);
+        self.btnOpenDialog
+            .SetOnClick(sid, Self::onBtnOpenDialogClick);
 
         // TButton
         self.btnColorDialog.SetParent(self);
@@ -108,29 +102,35 @@ impl TMainForm {
             .SetTop(self.btnOpenDialog.Top() + self.btnOpenDialog.Height() + 10);
         self.btnColorDialog.SetWidth(150);
         self.btnColorDialog.SetCaption("Open Color Dialog");
-        self.btnColorDialog.SetOnClick(sid, Self::onBtnColorDialogClick);
+        self.btnColorDialog
+            .SetOnClick(sid, Self::onBtnColorDialogClick);
 
         // TEdit
         self.edit1.SetParent(self);
-        self.edit1.SetBounds(10, self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10, 300, 28);
+        self.edit1.SetBounds(
+            10,
+            self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10,
+            300,
+            28,
+        );
         self.edit1.SetOnChange(sid, Self::onEdit1Change);
-
 
         // TMemo
         self.memo1.SetParent(self);
         self.memo1.SetAlign(TAlign::alRight);
         self.memo1.SetWidth(350);
         // 左边相对edit1 + 15距离
-        self.memo1.AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1);
+        self.memo1
+            .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1);
 
         // TButton
         self.btnOpenForm2.SetParent(self);
         self.btnOpenForm2.SetLeft(10);
         self.btnOpenForm2.SetCaption("Open Form2");
         self.btnOpenForm2.SetWidth(120);
-        self.btnOpenForm2.SetTop(self.edit1.Top() + self.edit1.Height() + 10);
+        self.btnOpenForm2
+            .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
         //self.btnOpenForm2.SetOnClick(sid, Self::onOpenForm2Click);
-
     }
 
     // fn onOpenForm2Click(&self, _sender: usize) {
@@ -190,13 +190,13 @@ impl TMainForm {
         // }
     }
 
-    fn onBtnOpenDialogClick(&self, _sender: usize) {     
+    fn onBtnOpenDialogClick(&self, _sender: usize) {
         if self.dlgOpen.Execute() {
             let fileName = self.dlgOpen.FileName();
             println!("fileName={:?}", &fileName);
             self.edit1.SetText(&fileName);
             self.memo1.Lines().LoadFromFile(&fileName);
-         }
+        }
     }
 
     fn onBtnColorDialogClick(&self, _sender: usize) {

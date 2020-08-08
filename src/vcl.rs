@@ -26,8 +26,11 @@ pub trait IWinControl: IControl {}
 pub trait IStrings: IObject {}
 pub trait IStream: IObject {}
 pub trait IForm: IWinControl {}
-pub trait ISId: Sized{
+pub trait ISId{
     fn getSId(&self) -> usize;
+}
+pub trait IApplication {
+    fn run(&self);
 }
 
 

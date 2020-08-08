@@ -114,7 +114,11 @@ macro_rules! impl_Drop_method {
 macro_rules! impl_As_method {
     ($class: ident) => {
         pub fn As(inst: usize) -> Self {
-            $class { 0: inst, 1: false, 2: 0, }
+            $class {
+                0: inst,
+                1: false,
+                2: 0,
+            }
         }
     };
 }
@@ -136,7 +140,7 @@ macro_rules! to_CString {
 #[macro_use]
 macro_rules! insert_Id {
     ($name1: ident, $name2: expr) => {
-        insertMap( unsafe { transmute($name1) },  $name2 ) //unsafe { transmute($name2) } )
+        insertMap(unsafe { transmute($name1) }, $name2) //unsafe { transmute($name2) } )
     };
 }
 
@@ -175,12 +179,23 @@ macro_rules! Exclude {
 #[macro_export]
 macro_rules! ImplISId {
     ($className:ident) => {
-        impl ISId for $className{
+        impl ISId for $className {
             fn getSId(&self) -> usize {
                 return unsafe { std::mem::transmute(self) };
             }
         }
-    }
+    };
+}
+
+#[macro_export]
+macro_rules! ImplIApplication {
+    ($className:ident) => {
+        impl IApplication for $className {
+            fn run(&self) {
+                Application.Run();
+            }
+        }
+    };
 }
 
 #[macro_export]
