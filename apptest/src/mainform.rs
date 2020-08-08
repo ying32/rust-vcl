@@ -53,11 +53,13 @@ impl TMainForm {
             .SetPosition(TPosition::poScreenCenter)
             .SetAllowDropFiles(true)
             .SetOnDropFiles(sid, Self::onDropFile)
-            //.SetOnMouseMove(sid, Self::onFormMouseMove)
+            .SetOnMouseMove(sid, Self::onFormMouseMove)
             .SetColor(clSkyblue)
             .SetKeyPreview(true)
             .SetOnKeyDown(sid, Self::onFormKeyDown)
-            .SetOnDestroy(sid, Self::onFormDestroy);
+            .SetOnDestroy(sid, Self::onFormDestroy)
+            .SetOnMouseDown(sid, Self::onFormMouseDown)
+            .SetOnMouseUp(sid, Self::onFormMouseUp);
 
         // 测试自动drop
         // let ico = TIcon::new();
@@ -184,6 +186,16 @@ impl TMainForm {
         return self;
     }
 
+    fn onFormMouseDown(&self, _sender: usize, button: TMouseButton, _shift: TShiftState, x: i32, y: i32) {
+        println!("Button:{}, X:{} Y:{}", button == TMouseButton::mbLeft, x, y);
+        println!("OnMouseDown");
+    }
+
+    fn onFormMouseUp(&self, _sender: usize, button: TMouseButton, _shift: TShiftState, x: i32, y: i32) {
+        println!("Button:{}, X:{} Y:{}", button == TMouseButton::mbLeft, x, y);
+        println!("OnMouseUp");
+    }
+
     fn onMenuItemClick(&self, sender: usize) {
         let item = TMenuItem::As(sender);
         let name = item.Name();
@@ -280,8 +292,8 @@ impl TMainForm {
             println!("ctrl");
         }
         // let form = TForm::As(_sender);
-        // let pos = Mouse.CursorPos();
-        // println!("x={}, y={}, sx={}, sy={}", _x, _y, pos.x, pos.y);
+        //let pos = Mouse.CursorPos();
+        //println!("pos={:?}", &pos);
     }
 
     fn onFormKeyDown(&self, _sender: usize, key: *mut Char, _shift: TShiftState) {
