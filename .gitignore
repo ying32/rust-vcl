@@ -10,3 +10,10 @@ apptest/Cargo.lock
 **/*.rs.bk
 
 .idea
+Cargo.lock
+.vscode
+*.o
+*.rc
+build-winres.bat
+appres.rc
+*.lib

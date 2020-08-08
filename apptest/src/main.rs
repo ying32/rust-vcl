@@ -42,12 +42,14 @@ impl TApp {
         };
     }
 
-    fn init(&self) {
-        self.mainForm.init();
-        self.form2.init();
+    fn init(&self) -> &Self {
         self.mainForm
-            .btnOpenForm2
-            .SetOnClick(self.getSId(), Self::onOpenForm2)
+           .init()
+           .btnOpenForm2.SetOnClick(self.getSId(), Self::onOpenForm2);
+
+        self.form2.init();
+
+        return self;
     }
 
     fn onOpenForm2(&self, _sender: usize) {
@@ -60,6 +62,5 @@ fn main() {
     // 写gui的感觉不太方便。唉。。。。
     // 现在的一切都是实验，啥东西感觉随时会变动，随着我对Rust的熟悉成度不断变化，直到满意。
     let app = TApp::new();
-    app.init();
-    app.run();
+    app.init().run();
 }

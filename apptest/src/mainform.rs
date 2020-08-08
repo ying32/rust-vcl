@@ -38,21 +38,20 @@ impl TMainForm {
         };
     }
 
-    pub fn init(&self) {
-        let sid: usize = self.getSId();
+    pub fn init(&self) -> &Self {
+        let sid = self.getSId();
 
         // TForm
-        self.form.SetCaption("你好，Rust！ - Hello Rust!");
-        self.form.SetPosition(TPosition::poScreenCenter);
-        self.form.SetAllowDropFiles(true);
-        self.form.SetOnDropFiles(sid, Self::onDropFile);
-        //self.form.SetOnMouseMove(sid, Self::onFormMouseMove);
-        self.form.SetColor(clSkyblue);
-        self.form.SetKeyPreview(true);
-        self.form.SetOnKeyDown(sid, Self::onFormKeyDown);
-        self.form.SetOnDestroy(sid, Self::onFormDestroy);
-
-        // form.SetOnClick(onBtnClick);
+        self.form
+            .SetCaption("你好，Rust！ - Hello Rust!")
+            .SetPosition(TPosition::poScreenCenter)
+            .SetAllowDropFiles(true)
+            .SetOnDropFiles(sid, Self::onDropFile)
+            //.SetOnMouseMove(sid, Self::onFormMouseMove)
+            .SetColor(clSkyblue)
+            .SetKeyPreview(true)
+            .SetOnKeyDown(sid, Self::onFormKeyDown)
+            .SetOnDestroy(sid, Self::onFormDestroy);
 
         // 测试自动drop
         // let ico = TIcon::new();
@@ -60,82 +59,76 @@ impl TMainForm {
 
         // TOpenDialog
         self.dlgOpen
-            .SetFilter("Rust File|*.rs|Other|*.txt;*.c;*.go|All|*.*");
-        self.dlgOpen.SetTitle("Open File");
+            .SetFilter("Rust File|*.rs|Other|*.txt;*.c;*.go|All|*.*")
+            .SetTitle("Open File");
 
         // TButton
-        self.btn.SetParent(self);
-        self.btn.SetLeft(10);
-        self.btn.SetTop(50);
-        self.btn.SetCaption("button1");
-        self.btn.SetOnClick(sid, Self::onBtnClick);
+        self.btn
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(50)
+            .SetCaption("button1")
+            .SetOnClick(sid, Self::onBtnClick);
 
         // TButton
-        self.btn2.SetParent(self);
-        self.btn2.SetLeft(10);
-        self.btn2.SetTop(self.btn.Top() + self.btn.Height() + 10);
-        self.btn2.SetWidth(120);
-        self.btn2.SetCaption("InputCombo");
-        self.btn2.SetOnClick(sid, Self::onBtn2Click);
+        self.btn2
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.btn.Top() + self.btn.Height() + 10)
+            .SetWidth(120)
+            .SetCaption("InputCombo")
+            .SetOnClick(sid, Self::onBtn2Click);
 
         // TButton
-        self.btn3.SetParent(self);
-        self.btn3.SetLeft(10);
-        self.btn3.SetTop(self.btn2.Top() + self.btn2.Height() + 10);
-        self.btn3.SetCaption("MsgBox");
-        self.btn3.SetOnClick(sid, Self::onBtn3Click);
+        self.btn3
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.btn2.Top() + self.btn2.Height() + 10)
+            .SetCaption("MsgBox")
+            .SetOnClick(sid, Self::onBtn3Click);
 
         // TButton
-        self.btnOpenDialog.SetParent(self);
-        self.btnOpenDialog.SetLeft(10);
         self.btnOpenDialog
-            .SetTop(self.btn3.Top() + self.btn3.Height() + 10);
-        self.btnOpenDialog.SetWidth(120);
-        self.btnOpenDialog.SetCaption("Open Dialog");
-        self.btnOpenDialog
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.btn3.Top() + self.btn3.Height() + 10)
+            .SetWidth(120)
+            .SetCaption("Open Dialog")
             .SetOnClick(sid, Self::onBtnOpenDialogClick);
 
         // TButton
-        self.btnColorDialog.SetParent(self);
-        self.btnColorDialog.SetLeft(10);
         self.btnColorDialog
-            .SetTop(self.btnOpenDialog.Top() + self.btnOpenDialog.Height() + 10);
-        self.btnColorDialog.SetWidth(150);
-        self.btnColorDialog.SetCaption("Open Color Dialog");
-        self.btnColorDialog
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.btnOpenDialog.Top() + self.btnOpenDialog.Height() + 10)
+            .SetWidth(150)
+            .SetCaption("Open Color Dialog")
             .SetOnClick(sid, Self::onBtnColorDialogClick);
 
         // TEdit
-        self.edit1.SetParent(self);
-        self.edit1.SetBounds(
-            10,
-            self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10,
-            300,
-            28,
-        );
-        self.edit1.SetOnChange(sid, Self::onEdit1Change);
+        self.edit1
+            .SetParent(self)
+            .SetBounds(10, self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10, 300, 28)
+            .SetOnChange(sid, Self::onEdit1Change);
 
         // TMemo
-        self.memo1.SetParent(self);
-        self.memo1.SetAlign(TAlign::alRight);
-        self.memo1.SetWidth(350);
-        // 左边相对edit1 + 15距离
         self.memo1
+            .SetParent(self)
+            .SetAlign(TAlign::alRight)
+            .SetWidth(350)
+        // 左边相对edit1 + 15距离
             .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1);
 
         // TButton
-        self.btnOpenForm2.SetParent(self);
-        self.btnOpenForm2.SetLeft(10);
-        self.btnOpenForm2.SetCaption("Open Form2");
-        self.btnOpenForm2.SetWidth(120);
         self.btnOpenForm2
+            .SetParent(self)
+            .SetLeft(10)
+            .SetCaption("Open Form2")
+            .SetWidth(120)
             .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
-        //self.btnOpenForm2.SetOnClick(sid, Self::onOpenForm2Click);
+      
+        return self;
     }
-
-    // fn onOpenForm2Click(&self, _sender: usize) {
-
-    // }
 
     fn onEdit1Change(&self, _sender: usize) {
         println!("edit1.Change={:}", self.edit1.Text());

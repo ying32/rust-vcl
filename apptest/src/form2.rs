@@ -20,22 +20,25 @@ impl TForm2 {
         };
     }
 
-    pub fn init(&self) {
-        let sid: usize = self.getSId();
+    pub fn init(&self) -> &Self {
+        let sid = self.getSId();
 
         // TForm
-        self.form.SetCaption("你好，Rust！ - Hello Rust!");
-        self.form.SetWidth(200);
-        self.form.SetHeight(300);
-        self.form.EnabledMaximize(false);
-        self.form.SetPosition(TPosition::poScreenCenter);
+        self.form
+            .SetCaption("你好，Rust！ - Hello Rust!")
+            .SetWidth(200)
+            .SetHeight(300)
+            .EnabledMaximize(false)
+            .SetPosition(TPosition::poScreenCenter);
 
         // TButton
-        self.btn.SetParent(self);
-        self.btn.SetCaption("msgbox");
-        self.btn.SetOnClick(sid, Self::onBtnClick);
-        self.btn.AnchorHorizontalCenterTo(self);
-        self.btn.AnchorVerticalCenterTo(self);
+        self.btn.SetParent(self)
+            .SetCaption("msgbox")
+            .SetOnClick(sid, Self::onBtnClick)
+            .AnchorHorizontalCenterTo(self)
+            .AnchorVerticalCenterTo(self);
+
+        return self;
     }
 
     pub fn onBtnClick(&self, _sender: usize) {
