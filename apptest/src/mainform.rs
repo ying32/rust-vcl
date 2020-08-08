@@ -111,7 +111,9 @@ impl TMainForm {
             .SetTop(self.btnOpenDialog.Top() + self.btnOpenDialog.Height() + 10)
             .SetWidth(150)
             .SetCaption("Open Color Dialog")
-            .SetOnClick(sid, Self::onBtnColorDialogClick);
+            .SetOnClick(sid, Self::onBtnColorDialogClick)
+            .SetShowHint(true)
+            .SetHint("this a TButton");
 
         // TEdit
         self.edit1
@@ -122,7 +124,9 @@ impl TMainForm {
                 300,
                 28,
             )
-            .SetOnChange(sid, Self::onEdit1Change);
+            .SetOnChange(sid, Self::onEdit1Change)
+            .SetTextHint("example: xxxx");
+            
 
         // TMemo
         self.memo1
@@ -130,7 +134,9 @@ impl TMainForm {
             .SetAlign(TAlign::alRight)
             .SetWidth(350)
             // 左边相对edit1 + 15距离
-            .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1);
+            .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1)
+            .SetScrollBars(TScrollStyle::ssAutoVertical)
+            .Font().SetSize(11).SetName("Courier New");
 
         // TButton
         self.btnOpenForm2
