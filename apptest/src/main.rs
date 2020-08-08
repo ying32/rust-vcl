@@ -34,7 +34,8 @@ impl TApp {
         Application.SetMainFormOnTaskBar(true);
         Application.SetTitle("LCL App");
         Application.Initialize();
-        Application.Icon().LoadFromFile("applogo.ico");
+        // Windows上，自动加载exe中名为MAINICON的图标。
+        //Application.Icon().LoadFromFile("applogo.ico");
 
         return Self {
             mainForm: TMainForm::new(),

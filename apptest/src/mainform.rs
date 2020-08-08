@@ -17,7 +17,9 @@ pub struct TMainForm {
     edit1: TEdit,
     memo1: TMemo,
     pub btnOpenForm2: TButton,
-    form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
+    mainMenu: TMainMenu,
+    popupMenu: TPopupMenu,
+    pub form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
 }
 
 impl TMainForm {
@@ -34,7 +36,11 @@ impl TMainForm {
             edit1: NewObject!(TEdit, form),
             memo1: NewObject!(TMemo, form),
             btnOpenForm2: NewObject!(TButton, form),
-            form: form,
+            // menu
+            mainMenu: NewObject!(TMainMenu, form),
+            popupMenu: NewObject!(TPopupMenu, form),
+
+            form,
         };
     }
 
@@ -108,7 +114,12 @@ impl TMainForm {
         // TEdit
         self.edit1
             .SetParent(self)
-            .SetBounds(10, self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10, 300, 28)
+            .SetBounds(
+                10,
+                self.btnColorDialog.Top() + self.btnColorDialog.Height() + 10,
+                300,
+                28,
+            )
             .SetOnChange(sid, Self::onEdit1Change);
 
         // TMemo
@@ -116,7 +127,7 @@ impl TMainForm {
             .SetParent(self)
             .SetAlign(TAlign::alRight)
             .SetWidth(350)
-        // 左边相对edit1 + 15距离
+            // 左边相对edit1 + 15距离
             .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1);
 
         // TButton
@@ -126,8 +137,63 @@ impl TMainForm {
             .SetCaption("Open Form2")
             .SetWidth(120)
             .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
-      
+
+        // TMainMenu
+        let fileItem = TMenuItem::new(self);
+        fileItem.SetCaption("&File");
+        let mut fSubItem = TMenuItem::new(self);
+        // new
+        fSubItem.SetCaption("&New");
+        fSubItem.SetShortCutText("Ctrl+N");
+        fSubItem.SetName("nFileNew");
+        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        //fSubItem.SetShortCut(TextToShortCut("Ctrl+N"));
+        fileItem.Add(&fSubItem);
+        // open
+        fSubItem = TMenuItem::new(self);
+        fSubItem.SetCaption("&Open");
+        fSubItem.SetShortCutText("Ctrl+O");
+        fSubItem.SetName("nFileOpen");
+        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fileItem.Add(&fSubItem);
+        // -
+        fSubItem = TMenuItem::new(self);
+        fSubItem.SetCaption("-");
+        fileItem.Add(&fSubItem);
+        // exit
+        fSubItem = TMenuItem::new(self);
+        fSubItem.SetCaption("&Exit");
+        fSubItem.SetShortCutText("Ctrl+Q");
+        fSubItem.SetName("nFileExit");
+        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fileItem.Add(&fSubItem);
+
+        self.mainMenu.Items().Add(&fileItem);
+
+        // TPopupMenu
+        // 设置form右键显示菜单
+        self.form.SetPopupMenu(&self.popupMenu);
+
+        fSubItem = TMenuItem::new(self);
+        fSubItem.SetCaption("&Exit");
+        fSubItem.SetShortCutText("Ctrl+Q");
+        fSubItem.SetName("pmExit");
+        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        self.popupMenu.Items().Add(&fSubItem);
+
         return self;
+    }
+
+    fn onMenuItemClick(&self, sender: usize) {
+        let item = TMenuItem::As(sender);
+        let name = item.Name();
+        if name == "nFileNew" {
+            self.memo1.Clear();
+        } else if name == "nFileOpen" {
+            Self::onBtnOpenDialogClick(self, sender);
+        } else if name == "nFileExit" || name == "pmExit" {
+            Application.Terminate();
+        }
     }
 
     fn onEdit1Change(&self, _sender: usize) {

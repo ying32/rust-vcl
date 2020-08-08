@@ -60,7 +60,7 @@ macro_rules! method_Call_1 {
 macro_rules! method_Call_2 {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           $class {
-              0: unsafe {$fnName($($arg),* )}, 1: false, 2: 0,
+              0: unsafe {$fnName($($arg),* )}, 1: false,
           }
     };
 }
@@ -69,7 +69,7 @@ macro_rules! method_Call_2 {
 macro_rules! method_Create {
     ($class: ident, $fnName: ident, $($arg:expr),*) => {
           return $class {
-              0: unsafe { $fnName($($arg),* ) } , 1: true, 2: 0,
+              0: unsafe { $fnName($($arg),* ) } , 1: true,
           }
     };
 }
@@ -114,11 +114,21 @@ macro_rules! impl_Drop_method {
 macro_rules! impl_As_method {
     ($class: ident) => {
         pub fn As(inst: usize) -> Self {
-            $class {
-                0: inst,
-                1: false,
-                2: 0,
-            }
+            $class { 0: inst, 1: false }
+        }
+    };
+}
+
+#[macro_use]
+macro_rules! impl_ShortCutText_method {
+    () => {
+        pub fn SetShortCutText(&self, text: &str) -> &Self {
+            self.SetShortCut(TextToShortCut(text));
+            return &self;
+        }
+
+        pub fn ShortCutText<'a>(&self) -> Cow<'a, str> {
+            return ShortCutToText(self.ShortCut());
         }
     };
 }
