@@ -122,6 +122,11 @@ macro_rules! impl_Object_methods {
             $class { 0: inst, 1: false }
         }
 
+
+        pub fn from(obj: &dyn IObject) -> Self {
+            $class { 0: obj.Instance(), 1: false }
+        }
+
         // Nil Object
         #[inline]
         pub fn Nil() -> Self {
