@@ -335,15 +335,15 @@ impl TControl {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Control_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Control_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -381,15 +381,15 @@ impl TControl {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Control_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Control_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -544,7 +544,7 @@ impl TControl {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Control_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -564,13 +564,13 @@ impl TControl {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Control_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Control_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -810,7 +810,7 @@ impl TWinControl {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl  {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, WinControl_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -897,15 +897,15 @@ impl TWinControl {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(WinControl_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(WinControl_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -933,15 +933,15 @@ impl TWinControl {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(WinControl_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(WinControl_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -1177,7 +1177,7 @@ impl TWinControl {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(WinControl_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -1197,13 +1197,13 @@ impl TWinControl {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(WinControl_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(WinControl_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -1823,7 +1823,7 @@ impl TCheckBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, CheckBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -1910,15 +1910,15 @@ impl TCheckBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -1946,15 +1946,15 @@ impl TCheckBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -2423,7 +2423,7 @@ impl TCheckBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -2443,13 +2443,13 @@ impl TCheckBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(CheckBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -2680,7 +2680,7 @@ impl TRadioButton {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, RadioButton_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -2767,15 +2767,15 @@ impl TRadioButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioButton_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioButton_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -2803,15 +2803,15 @@ impl TRadioButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioButton_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioButton_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -3262,7 +3262,7 @@ impl TRadioButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RadioButton_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -3282,13 +3282,13 @@ impl TRadioButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(RadioButton_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RadioButton_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -3519,7 +3519,7 @@ impl TGroupBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, GroupBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -3606,15 +3606,15 @@ impl TGroupBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(GroupBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(GroupBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -3642,15 +3642,15 @@ impl TGroupBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(GroupBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(GroupBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -4098,7 +4098,7 @@ impl TGroupBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(GroupBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -4118,13 +4118,13 @@ impl TGroupBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(GroupBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(GroupBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -4352,15 +4352,15 @@ impl TLabel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Label_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Label_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -4398,15 +4398,15 @@ impl TLabel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Label_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Label_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -4809,7 +4809,7 @@ impl TLabel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Label_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -4829,13 +4829,13 @@ impl TLabel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Label_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Label_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -5060,12 +5060,12 @@ impl TListBox {
       }
 
 	  pub fn ItemAtPos(&self, pos: &TPoint, existing: bool) -> i32  {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_1!(ListBox_ItemAtPos, self.0, &mut ps1, existing);
       }
 
 	  pub fn ItemRect(&self, index: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListBox_ItemRect, self.0, index, &mut result);
           return result;
       }
@@ -5084,7 +5084,7 @@ impl TListBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ListBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -5171,15 +5171,15 @@ impl TListBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -5207,15 +5207,15 @@ impl TListBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -5769,7 +5769,7 @@ impl TListBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -5789,13 +5789,13 @@ impl TListBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ListBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -6064,7 +6064,7 @@ impl TComboBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ComboBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -6147,15 +6147,15 @@ impl TComboBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -6183,15 +6183,15 @@ impl TComboBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -6764,7 +6764,7 @@ impl TComboBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ComboBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -6784,13 +6784,13 @@ impl TComboBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ComboBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ComboBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -7021,7 +7021,7 @@ impl TPanel {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Panel_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -7108,15 +7108,15 @@ impl TPanel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Panel_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Panel_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -7144,15 +7144,15 @@ impl TPanel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Panel_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Panel_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -7677,7 +7677,7 @@ impl TPanel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Panel_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -7697,13 +7697,13 @@ impl TPanel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Panel_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Panel_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -7931,15 +7931,15 @@ impl TImage {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Image_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Image_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -7977,15 +7977,15 @@ impl TImage {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Image_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Image_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -8356,7 +8356,7 @@ impl TImage {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Image_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -8376,13 +8376,13 @@ impl TImage {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Image_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Image_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -8612,15 +8612,15 @@ impl TLinkLabel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LinkLabel_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LinkLabel_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -8648,15 +8648,15 @@ impl TLinkLabel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LinkLabel_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LinkLabel_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -9000,7 +9000,7 @@ impl TLinkLabel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(LinkLabel_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -9020,13 +9020,13 @@ impl TLinkLabel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(LinkLabel_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(LinkLabel_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -9233,15 +9233,15 @@ impl TSpeedButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpeedButton_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpeedButton_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -9279,15 +9279,15 @@ impl TSpeedButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpeedButton_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpeedButton_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -9666,7 +9666,7 @@ impl TSpeedButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(SpeedButton_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -9686,13 +9686,13 @@ impl TSpeedButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(SpeedButton_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(SpeedButton_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -9902,15 +9902,15 @@ impl TSplitter {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Splitter_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Splitter_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -9948,15 +9948,15 @@ impl TSplitter {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Splitter_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Splitter_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -10192,7 +10192,7 @@ impl TSplitter {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Splitter_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -10212,13 +10212,13 @@ impl TSplitter {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Splitter_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Splitter_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -10427,7 +10427,7 @@ impl TRadioGroup {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, RadioGroup_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -10509,15 +10509,15 @@ impl TRadioGroup {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioGroup_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioGroup_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -10545,15 +10545,15 @@ impl TRadioGroup {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioGroup_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RadioGroup_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -10954,7 +10954,7 @@ impl TRadioGroup {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RadioGroup_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -10974,13 +10974,13 @@ impl TRadioGroup {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(RadioGroup_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RadioGroup_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -11211,7 +11211,7 @@ impl TStaticText {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, StaticText_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -11298,15 +11298,15 @@ impl TStaticText {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StaticText_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StaticText_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -11334,15 +11334,15 @@ impl TStaticText {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StaticText_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StaticText_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -11804,7 +11804,7 @@ impl TStaticText {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StaticText_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -11824,13 +11824,13 @@ impl TStaticText {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(StaticText_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StaticText_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -12090,7 +12090,7 @@ impl TColorBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ColorBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -12173,15 +12173,15 @@ impl TColorBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -12209,15 +12209,15 @@ impl TColorBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -12748,7 +12748,7 @@ impl TColorBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ColorBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -12768,13 +12768,13 @@ impl TColorBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ColorBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ColorBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -13025,12 +13025,12 @@ impl TColorListBox {
       }
 
 	  pub fn ItemAtPos(&self, pos: &TPoint, existing: bool) -> i32  {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_1!(ColorListBox_ItemAtPos, self.0, &mut ps1, existing);
       }
 
 	  pub fn ItemRect(&self, index: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ColorListBox_ItemRect, self.0, index, &mut result);
           return result;
       }
@@ -13049,7 +13049,7 @@ impl TColorListBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ColorListBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -13136,15 +13136,15 @@ impl TColorListBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorListBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorListBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -13172,15 +13172,15 @@ impl TColorListBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorListBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ColorListBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -13670,7 +13670,7 @@ impl TColorListBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ColorListBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -13690,13 +13690,13 @@ impl TColorListBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ColorListBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ColorListBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -15572,7 +15572,7 @@ impl TRichEdit {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, RichEdit_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -15659,15 +15659,15 @@ impl TRichEdit {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RichEdit_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RichEdit_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -15695,15 +15695,15 @@ impl TRichEdit {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RichEdit_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(RichEdit_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -16195,7 +16195,7 @@ impl TRichEdit {
       }
 
 	  pub fn CaretPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(RichEdit_GetCaretPos, self.0, &mut result);
           return result;
       }
@@ -16346,7 +16346,7 @@ impl TRichEdit {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RichEdit_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -16366,13 +16366,13 @@ impl TRichEdit {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(RichEdit_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(RichEdit_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -16608,7 +16608,7 @@ impl TTrackBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, TrackBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -16695,15 +16695,15 @@ impl TTrackBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TrackBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TrackBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -16731,15 +16731,15 @@ impl TTrackBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TrackBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TrackBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -17205,7 +17205,7 @@ impl TTrackBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TrackBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -17225,13 +17225,13 @@ impl TTrackBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(TrackBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TrackBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -17454,7 +17454,7 @@ impl TImageList {
 	  impl_Free_method!(ImageList_Free);
 
 	  pub fn GetHotSpot(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ImageList_GetHotSpot, self.0, &mut result);
           return result;
       }
@@ -17763,7 +17763,7 @@ impl TUpDown {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, UpDown_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -17850,15 +17850,15 @@ impl TUpDown {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(UpDown_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(UpDown_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -17886,15 +17886,15 @@ impl TUpDown {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(UpDown_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(UpDown_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -18288,7 +18288,7 @@ impl TUpDown {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(UpDown_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -18308,13 +18308,13 @@ impl TUpDown {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(UpDown_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(UpDown_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -18546,7 +18546,7 @@ impl TProgressBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ProgressBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -18633,15 +18633,15 @@ impl TProgressBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ProgressBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ProgressBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -18669,15 +18669,15 @@ impl TProgressBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ProgressBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ProgressBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -19121,7 +19121,7 @@ impl TProgressBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ProgressBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -19141,13 +19141,13 @@ impl TProgressBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ProgressBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ProgressBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -19383,7 +19383,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, DateTimePicker_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -19470,15 +19470,15 @@ impl TDateTimePicker {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DateTimePicker_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DateTimePicker_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -19506,15 +19506,15 @@ impl TDateTimePicker {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DateTimePicker_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DateTimePicker_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -20133,7 +20133,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DateTimePicker_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -20153,13 +20153,13 @@ impl TDateTimePicker {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DateTimePicker_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DateTimePicker_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -20390,7 +20390,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, MonthCalendar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -20477,15 +20477,15 @@ impl TMonthCalendar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MonthCalendar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MonthCalendar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -20513,15 +20513,15 @@ impl TMonthCalendar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MonthCalendar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MonthCalendar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -20940,7 +20940,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MonthCalendar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -20960,13 +20960,13 @@ impl TMonthCalendar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(MonthCalendar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MonthCalendar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -21234,7 +21234,7 @@ impl TListView {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ListView_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -21321,15 +21321,15 @@ impl TListView {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListView_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListView_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -21357,15 +21357,15 @@ impl TListView {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListView_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ListView_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -22252,7 +22252,7 @@ impl TListView {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListView_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -22272,13 +22272,13 @@ impl TListView {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ListView_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListView_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -22564,7 +22564,7 @@ impl TTreeView {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, TreeView_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -22651,15 +22651,15 @@ impl TTreeView {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TreeView_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TreeView_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -22687,15 +22687,15 @@ impl TTreeView {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TreeView_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TreeView_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -23540,7 +23540,7 @@ impl TTreeView {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TreeView_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -23560,13 +23560,13 @@ impl TTreeView {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(TreeView_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TreeView_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -23811,7 +23811,7 @@ impl TStatusBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, StatusBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -23888,15 +23888,15 @@ impl TStatusBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StatusBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StatusBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -23924,15 +23924,15 @@ impl TStatusBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StatusBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StatusBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -24418,7 +24418,7 @@ impl TStatusBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StatusBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -24438,13 +24438,13 @@ impl TStatusBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(StatusBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StatusBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -24680,7 +24680,7 @@ impl TToolBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ToolBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -24762,15 +24762,15 @@ impl TToolBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -24798,15 +24798,15 @@ impl TToolBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -25395,7 +25395,7 @@ impl TToolBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToolBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -25415,13 +25415,13 @@ impl TToolBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ToolBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToolBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -25652,7 +25652,7 @@ impl TBitBtn {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, BitBtn_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -25739,15 +25739,15 @@ impl TBitBtn {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BitBtn_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BitBtn_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -25775,15 +25775,15 @@ impl TBitBtn {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BitBtn_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BitBtn_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -26256,7 +26256,7 @@ impl TBitBtn {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(BitBtn_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -26276,13 +26276,13 @@ impl TBitBtn {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(BitBtn_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(BitBtn_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -26952,7 +26952,7 @@ impl TMemo {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Memo_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -27039,15 +27039,15 @@ impl TMemo {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Memo_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Memo_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -27075,15 +27075,15 @@ impl TMemo {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Memo_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Memo_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -27547,7 +27547,7 @@ impl TMemo {
       }
 
 	  pub fn CaretPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Memo_GetCaretPos, self.0, &mut result);
           return result;
       }
@@ -27680,7 +27680,7 @@ impl TMemo {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Memo_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -27700,13 +27700,13 @@ impl TMemo {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Memo_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Memo_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -28281,7 +28281,7 @@ impl TPopupMenu {
       }
 
 	  pub fn PopupPoint(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(PopupMenu_GetPopupPoint, self.0, &mut result);
           return result;
       }
@@ -29560,7 +29560,7 @@ impl TListItem {
 	  impl_Free_method!(ListItem_Free);
 
 	  pub fn DisplayRectSubItem(&self, subItem: i32, code: TDisplayCode) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListItem_DisplayRectSubItem, self.0, subItem, code, &mut result);
           return result;
       }
@@ -29576,7 +29576,7 @@ impl TListItem {
       }
 
 	  pub fn DisplayRect(&self, code: TDisplayCode) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ListItem_DisplayRect, self.0, code, &mut result);
           return result;
       }
@@ -29707,7 +29707,7 @@ impl TListItem {
       }
 
 	  pub fn Position(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ListItem_GetPosition, self.0, &mut result);
           return result;
       }
@@ -29794,7 +29794,7 @@ impl TTreeNode {
       }
 
 	  pub fn DisplayRect(&self, textOnly: bool) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TreeNode_DisplayRect, self.0, textOnly, &mut result);
           return result;
       }
@@ -30028,7 +30028,7 @@ impl TPageControl {
       }
 
 	  pub fn TabRect(&self, index: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(PageControl_TabRect, self.0, index, &mut result);
           return result;
       }
@@ -30042,7 +30042,7 @@ impl TPageControl {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, PageControl_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -30129,15 +30129,15 @@ impl TPageControl {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PageControl_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PageControl_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -30165,15 +30165,15 @@ impl TPageControl {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PageControl_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PageControl_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -30670,7 +30670,7 @@ impl TPageControl {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(PageControl_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -30690,13 +30690,13 @@ impl TPageControl {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(PageControl_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(PageControl_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -30931,7 +30931,7 @@ impl TTabSheet {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, TabSheet_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -31018,15 +31018,15 @@ impl TTabSheet {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TabSheet_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TabSheet_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -31054,15 +31054,15 @@ impl TTabSheet {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TabSheet_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(TabSheet_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -31525,7 +31525,7 @@ impl TTabSheet {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TabSheet_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -31545,13 +31545,13 @@ impl TTabSheet {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(TabSheet_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(TabSheet_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -31751,7 +31751,7 @@ impl TButton {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Button_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -31838,15 +31838,15 @@ impl TButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Button_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Button_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -31874,15 +31874,15 @@ impl TButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Button_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Button_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -32319,7 +32319,7 @@ impl TButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Button_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -32339,13 +32339,13 @@ impl TButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Button_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Button_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -32611,7 +32611,7 @@ impl TEdit {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Edit_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -32698,15 +32698,15 @@ impl TEdit {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Edit_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Edit_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -32734,15 +32734,15 @@ impl TEdit {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Edit_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Edit_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -33319,7 +33319,7 @@ impl TEdit {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Edit_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -33339,13 +33339,13 @@ impl TEdit {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Edit_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Edit_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -33642,7 +33642,7 @@ impl TScreen {
       }
 
 	  pub fn DesktopRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Screen_GetDesktopRect, self.0, &mut result);
           return result;
       }
@@ -33664,7 +33664,7 @@ impl TScreen {
       }
 
 	  pub fn WorkAreaRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Screen_GetWorkAreaRect, self.0, &mut result);
           return result;
       }
@@ -33819,7 +33819,7 @@ impl TMouse {
       }
 
 	  pub fn CursorPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Mouse_GetCursorPos, self.0, &mut result);
           return result;
       }
@@ -34374,7 +34374,7 @@ impl TSpinEdit {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, SpinEdit_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -34461,15 +34461,15 @@ impl TSpinEdit {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpinEdit_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpinEdit_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -34497,15 +34497,15 @@ impl TSpinEdit {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpinEdit_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(SpinEdit_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -35011,7 +35011,7 @@ impl TSpinEdit {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(SpinEdit_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -35031,13 +35031,13 @@ impl TSpinEdit {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(SpinEdit_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(SpinEdit_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -35321,7 +35321,7 @@ impl TMiniWebview {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, MiniWebview_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -35403,15 +35403,15 @@ impl TMiniWebview {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MiniWebview_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MiniWebview_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -35434,15 +35434,15 @@ impl TMiniWebview {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MiniWebview_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MiniWebview_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -35710,7 +35710,7 @@ impl TMiniWebview {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MiniWebview_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -35730,13 +35730,13 @@ impl TMiniWebview {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(MiniWebview_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MiniWebview_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -36034,7 +36034,7 @@ impl TCanvas {
       }
 
 	  pub fn TextExtent(&self, text: &str) -> TSize  {
-          let mut result = TSize::Empty();
+          let mut result = TSize::empty();
           method_Call_1!(Canvas_TextExtent, self.0, to_CString!(text), &mut result);
           return result;
       }
@@ -36152,15 +36152,15 @@ impl TCanvas {
       // static class
 	  impl_Class_method!(Canvas_StaticClassType);
 	  pub fn BrushCopy(&self, dest: &TRect, bitmap: &TBitmap, source: &TRect, color: TColor) -> &Self  {
-          let mut ps1 = TRect::From(dest);
-          let mut ps3 = TRect::From(source);
+          let mut ps1 = dest.clone();
+          let mut ps3 = source.clone();
           method_Call_1!(Canvas_BrushCopy, self.0, &mut ps1, bitmap.Instance(), &mut ps3, color);
           return &self;
       }
 
 	  pub fn CopyRect(&self, dest: &TRect, canvas: &TCanvas, source: &TRect) -> &Self  {
-          let mut ps1 = TRect::From(dest);
-          let mut ps3 = TRect::From(source);
+          let mut ps1 = dest.clone();
+          let mut ps3 = source.clone();
           method_Call_1!(Canvas_CopyRect, self.0, &mut ps1, canvas.Instance(), &mut ps3);
           return &self;
       }
@@ -36176,31 +36176,31 @@ impl TCanvas {
       }
 
 	  pub fn DrawFocusRect(&self, aRect: &TRect) -> &Self  {
-          let mut ps1 = TRect::From(aRect);
+          let mut ps1 = aRect.clone();
           method_Call_1!(Canvas_DrawFocusRect, self.0, &mut ps1);
           return &self;
       }
 
 	  pub fn FillRect(&self, rect: &TRect) -> &Self  {
-          let mut ps1 = TRect::From(rect);
+          let mut ps1 = rect.clone();
           method_Call_1!(Canvas_FillRect, self.0, &mut ps1);
           return &self;
       }
 
 	  pub fn FrameRect(&self, rect: &TRect) -> &Self  {
-          let mut ps1 = TRect::From(rect);
+          let mut ps1 = rect.clone();
           method_Call_1!(Canvas_FrameRect, self.0, &mut ps1);
           return &self;
       }
 
 	  pub fn StretchDraw(&self, rect: &TRect, graphic: &dyn IGraphic) -> &Self  {
-          let mut ps1 = TRect::From(rect);
+          let mut ps1 = rect.clone();
           method_Call_1!(Canvas_StretchDraw, self.0, &mut ps1, graphic.Instance());
           return &self;
       }
 
 	  pub fn TextRect1(&self, rect: &TRect, x: i32, y: i32, text: &str) -> &Self  {
-          let mut ps1 = TRect::From(rect);
+          let mut ps1 = rect.clone();
           method_Call_1!(Canvas_TextRect1, self.0, &mut ps1, x, y, to_CString!(text));
           return &self;
       }
@@ -36248,7 +36248,7 @@ impl TApplication {
 	  impl_Free_method!(Application_Free);
 
 	  pub fn ActivateHint(&self, cursorPos: &TPoint) -> &Self  {
-          let mut ps1 = TPoint::From(cursorPos);
+          let mut ps1 = cursorPos.clone();
           method_Call_1!(Application_ActivateHint, self.0, &mut ps1);
           return &self;
       }
@@ -37591,15 +37591,15 @@ impl TToolButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolButton_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolButton_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -37637,15 +37637,15 @@ impl TToolButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolButton_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToolButton_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -38039,7 +38039,7 @@ impl TToolButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToolButton_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -38059,13 +38059,13 @@ impl TToolButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ToolButton_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToolButton_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -38792,13 +38792,13 @@ impl TMonitor {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Monitor_GetBoundsRect, self.0, &mut result);
           return result;
       }
 
 	  pub fn WorkareaRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Monitor_GetWorkareaRect, self.0, &mut result);
           return result;
       }
@@ -38833,15 +38833,15 @@ impl TPaintBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PaintBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PaintBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -38879,15 +38879,15 @@ impl TPaintBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PaintBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(PaintBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -39200,7 +39200,7 @@ impl TPaintBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(PaintBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -39220,13 +39220,13 @@ impl TPaintBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(PaintBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(PaintBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -39708,7 +39708,7 @@ impl TForm {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Form_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -39790,15 +39790,15 @@ impl TForm {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Form_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Form_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -39821,15 +39821,15 @@ impl TForm {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Form_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Form_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -40575,7 +40575,7 @@ impl TForm {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Form_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -40586,13 +40586,13 @@ impl TForm {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Form_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Form_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -41158,7 +41158,7 @@ impl TScrollBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ScrollBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -41245,15 +41245,15 @@ impl TScrollBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -41281,15 +41281,15 @@ impl TScrollBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -41701,7 +41701,7 @@ impl TScrollBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ScrollBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -41721,13 +41721,13 @@ impl TScrollBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ScrollBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ScrollBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -42002,7 +42002,7 @@ impl TMaskEdit {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, MaskEdit_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -42089,15 +42089,15 @@ impl TMaskEdit {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MaskEdit_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MaskEdit_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -42125,15 +42125,15 @@ impl TMaskEdit {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MaskEdit_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(MaskEdit_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -42706,7 +42706,7 @@ impl TMaskEdit {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MaskEdit_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -42726,13 +42726,13 @@ impl TMaskEdit {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(MaskEdit_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(MaskEdit_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -42960,15 +42960,15 @@ impl TShape {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Shape_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Shape_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -43006,15 +43006,15 @@ impl TShape {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Shape_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Shape_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -43299,7 +43299,7 @@ impl TShape {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Shape_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -43319,13 +43319,13 @@ impl TShape {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Shape_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Shape_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -43535,15 +43535,15 @@ impl TBevel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Bevel_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Bevel_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -43581,15 +43581,15 @@ impl TBevel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Bevel_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Bevel_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -43798,7 +43798,7 @@ impl TBevel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Bevel_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -43818,13 +43818,13 @@ impl TBevel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Bevel_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Bevel_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -44042,7 +44042,7 @@ impl TScrollBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ScrollBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -44129,15 +44129,15 @@ impl TScrollBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -44165,15 +44165,15 @@ impl TScrollBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ScrollBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -44671,7 +44671,7 @@ impl TScrollBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ScrollBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -44691,13 +44691,13 @@ impl TScrollBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ScrollBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ScrollBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -44945,12 +44945,12 @@ impl TCheckListBox {
       }
 
 	  pub fn ItemAtPos(&self, pos: &TPoint, existing: bool) -> i32  {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_1!(CheckListBox_ItemAtPos, self.0, &mut ps1, existing);
       }
 
 	  pub fn ItemRect(&self, index: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckListBox_ItemRect, self.0, index, &mut result);
           return result;
       }
@@ -44969,7 +44969,7 @@ impl TCheckListBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, CheckListBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -45056,15 +45056,15 @@ impl TCheckListBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckListBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckListBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -45092,15 +45092,15 @@ impl TCheckListBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckListBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckListBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -45627,7 +45627,7 @@ impl TCheckListBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckListBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -45647,13 +45647,13 @@ impl TCheckListBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(CheckListBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckListBox_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -45931,15 +45931,15 @@ impl TGauge {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Gauge_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Gauge_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -45977,15 +45977,15 @@ impl TGauge {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Gauge_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Gauge_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -46288,7 +46288,7 @@ impl TGauge {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Gauge_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -46308,13 +46308,13 @@ impl TGauge {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Gauge_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Gauge_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -46529,15 +46529,15 @@ impl TImageButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ImageButton_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ImageButton_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -46575,15 +46575,15 @@ impl TImageButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ImageButton_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ImageButton_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -46942,7 +46942,7 @@ impl TImageButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ImageButton_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -46962,13 +46962,13 @@ impl TImageButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ImageButton_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ImageButton_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -47236,7 +47236,7 @@ impl TFindDialog {
       }
 
 	  pub fn Position(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(FindDialog_GetPosition, self.0, &mut result);
           return result;
       }
@@ -47425,7 +47425,7 @@ impl TReplaceDialog {
       }
 
 	  pub fn Position(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ReplaceDialog_GetPosition, self.0, &mut result);
           return result;
       }
@@ -47892,7 +47892,7 @@ impl TDragObject {
       }
 
 	  pub fn DragPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DragObject_GetDragPos, self.0, &mut result);
           return result;
       }
@@ -47912,7 +47912,7 @@ impl TDragObject {
       }
 
 	  pub fn DragTargetPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DragObject_GetDragTargetPos, self.0, &mut result);
           return result;
       }
@@ -47986,7 +47986,7 @@ impl TDragDockObject {
       }
 
 	  pub fn DockRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DragDockObject_GetDockRect, self.0, &mut result);
           return result;
       }
@@ -48005,7 +48005,7 @@ impl TDragDockObject {
       }
 
 	  pub fn EraseDockRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DragDockObject_GetEraseDockRect, self.0, &mut result);
           return result;
       }
@@ -48043,7 +48043,7 @@ impl TDragDockObject {
       }
 
 	  pub fn DragPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DragDockObject_GetDragPos, self.0, &mut result);
           return result;
       }
@@ -48063,7 +48063,7 @@ impl TDragDockObject {
       }
 
 	  pub fn DragTargetPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DragDockObject_GetDragTargetPos, self.0, &mut result);
           return result;
       }
@@ -48163,7 +48163,7 @@ impl TStringGrid {
       }
 
 	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StringGrid_CellRect, self.0, aCol, aRow, &mut result);
           return result;
       }
@@ -48210,7 +48210,7 @@ impl TStringGrid {
       }
 
 	  pub fn InvalidateRange(&self, aRange: &TRect) -> &Self  {
-          let mut ps1 = TRect::From(aRange);
+          let mut ps1 = aRange.clone();
           method_Call_1!(StringGrid_InvalidateRange, self.0, &mut ps1);
           return &self;
       }
@@ -48229,21 +48229,21 @@ impl TStringGrid {
       }
 
 	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
-          let mut result = TGridCoord::Empty();
+          let mut result = TGridCoord::empty();
           method_Call_1!(StringGrid_MouseCoord, self.0, x, y, &mut result);
           return result;
       }
 
 	  pub fn MouseToCell(&self, mouse: &TPoint) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(mouse);
+          let mut result = TPoint::empty();
+          let mut ps1 = mouse.clone();
           method_Call_1!(StringGrid_MouseToCell, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn MouseToLogcell(&self, mouse: &TPoint) -> TPoint  {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(mouse);
+          let mut result = TPoint::empty();
+          let mut ps1 = mouse.clone();
           method_Call_1!(StringGrid_MouseToLogcell, self.0, &mut ps1, &mut result);
           return result;
       }
@@ -48261,7 +48261,7 @@ impl TStringGrid {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, StringGrid_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -48348,15 +48348,15 @@ impl TStringGrid {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StringGrid_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StringGrid_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -48384,15 +48384,15 @@ impl TStringGrid {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StringGrid_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(StringGrid_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -49358,7 +49358,7 @@ impl TStringGrid {
       }
 
 	  pub fn Selection(&self) -> TGridRect  {
-          let mut result = TGridRect::Empty();
+          let mut result = TGridRect::empty();
           method_Call_1!(StringGrid_GetSelection, self.0, &mut result);
           return result;
       }
@@ -49460,7 +49460,7 @@ impl TStringGrid {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StringGrid_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -49480,13 +49480,13 @@ impl TStringGrid {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(StringGrid_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(StringGrid_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -49767,7 +49767,7 @@ impl TDrawGrid {
 	  impl_Free_method!(DrawGrid_Free);
 
 	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DrawGrid_CellRect, self.0, aCol, aRow, &mut result);
           return result;
       }
@@ -49778,7 +49778,7 @@ impl TDrawGrid {
       }
 
 	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
-          let mut result = TGridCoord::Empty();
+          let mut result = TGridCoord::empty();
           method_Call_1!(DrawGrid_MouseCoord, self.0, x, y, &mut result);
           return result;
       }
@@ -49792,7 +49792,7 @@ impl TDrawGrid {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, DrawGrid_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -49879,15 +49879,15 @@ impl TDrawGrid {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DrawGrid_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DrawGrid_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -49915,15 +49915,15 @@ impl TDrawGrid {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DrawGrid_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(DrawGrid_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -50484,7 +50484,7 @@ impl TDrawGrid {
       }
 
 	  pub fn Selection(&self) -> TGridRect  {
-          let mut result = TGridRect::Empty();
+          let mut result = TGridRect::empty();
           method_Call_1!(DrawGrid_GetSelection, self.0, &mut result);
           return result;
       }
@@ -50586,7 +50586,7 @@ impl TDrawGrid {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DrawGrid_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -50606,13 +50606,13 @@ impl TDrawGrid {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(DrawGrid_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(DrawGrid_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -50863,7 +50863,7 @@ impl TValueListEditor {
       }
 
 	  pub fn CellRect(&self, aCol: i32, aRow: i32) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ValueListEditor_CellRect, self.0, aCol, aRow, &mut result);
           return result;
       }
@@ -50874,7 +50874,7 @@ impl TValueListEditor {
       }
 
 	  pub fn MouseCoord(&self, x: i32, y: i32) -> TGridCoord  {
-          let mut result = TGridCoord::Empty();
+          let mut result = TGridCoord::empty();
           method_Call_1!(ValueListEditor_MouseCoord, self.0, x, y, &mut result);
           return result;
       }
@@ -50888,7 +50888,7 @@ impl TValueListEditor {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ValueListEditor_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -50975,15 +50975,15 @@ impl TValueListEditor {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ValueListEditor_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ValueListEditor_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -51006,15 +51006,15 @@ impl TValueListEditor {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ValueListEditor_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ValueListEditor_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -51574,7 +51574,7 @@ impl TValueListEditor {
       }
 
 	  pub fn Selection(&self) -> TGridRect  {
-          let mut result = TGridRect::Empty();
+          let mut result = TGridRect::empty();
           method_Call_1!(ValueListEditor_GetSelection, self.0, &mut result);
           return result;
       }
@@ -51676,7 +51676,7 @@ impl TValueListEditor {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ValueListEditor_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -51696,13 +51696,13 @@ impl TValueListEditor {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ValueListEditor_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ValueListEditor_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -51974,7 +51974,7 @@ impl THeaderControl {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, HeaderControl_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -52056,15 +52056,15 @@ impl THeaderControl {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(HeaderControl_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(HeaderControl_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -52092,15 +52092,15 @@ impl THeaderControl {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(HeaderControl_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(HeaderControl_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -52528,7 +52528,7 @@ impl THeaderControl {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(HeaderControl_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -52548,13 +52548,13 @@ impl THeaderControl {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(HeaderControl_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(HeaderControl_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -53073,7 +53073,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, LabeledEdit_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -53155,15 +53155,15 @@ impl TLabeledEdit {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LabeledEdit_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LabeledEdit_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -53191,15 +53191,15 @@ impl TLabeledEdit {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LabeledEdit_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(LabeledEdit_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -53784,7 +53784,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(LabeledEdit_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -53804,13 +53804,13 @@ impl TLabeledEdit {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(LabeledEdit_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(LabeledEdit_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -54038,15 +54038,15 @@ impl TBoundLabel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BoundLabel_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BoundLabel_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -54084,15 +54084,15 @@ impl TBoundLabel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BoundLabel_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(BoundLabel_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -54434,7 +54434,7 @@ impl TBoundLabel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(BoundLabel_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -54454,13 +54454,13 @@ impl TBoundLabel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(BoundLabel_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(BoundLabel_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -54664,7 +54664,7 @@ impl TFlowPanel {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, FlowPanel_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -54751,15 +54751,15 @@ impl TFlowPanel {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(FlowPanel_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(FlowPanel_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -54787,15 +54787,15 @@ impl TFlowPanel {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(FlowPanel_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(FlowPanel_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -55320,7 +55320,7 @@ impl TFlowPanel {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(FlowPanel_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -55340,13 +55340,13 @@ impl TFlowPanel {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(FlowPanel_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(FlowPanel_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -55582,7 +55582,7 @@ impl TCoolBar {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, CoolBar_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -55659,15 +55659,15 @@ impl TCoolBar {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CoolBar_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CoolBar_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -55695,15 +55695,15 @@ impl TCoolBar {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CoolBar_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CoolBar_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -56263,7 +56263,7 @@ impl TCoolBar {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CoolBar_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -56283,13 +56283,13 @@ impl TCoolBar {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(CoolBar_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CoolBar_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -57811,7 +57811,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ComboBoxEx_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -57894,15 +57894,15 @@ impl TComboBoxEx {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBoxEx_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBoxEx_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -57930,15 +57930,15 @@ impl TComboBoxEx {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBoxEx_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ComboBoxEx_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -58506,7 +58506,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ComboBoxEx_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -58526,13 +58526,13 @@ impl TComboBoxEx {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ComboBoxEx_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ComboBoxEx_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -58976,7 +58976,7 @@ impl TFrame {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, Frame_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -59063,15 +59063,15 @@ impl TFrame {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Frame_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Frame_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -59099,15 +59099,15 @@ impl TFrame {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Frame_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(Frame_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -59602,7 +59602,7 @@ impl TFrame {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Frame_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -59622,13 +59622,13 @@ impl TFrame {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(Frame_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(Frame_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -60047,15 +60047,15 @@ impl TXButton {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(XButton_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(XButton_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -60093,15 +60093,15 @@ impl TXButton {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(XButton_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(XButton_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -60462,7 +60462,7 @@ impl TXButton {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(XButton_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -60482,13 +60482,13 @@ impl TXButton {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(XButton_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(XButton_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -61093,7 +61093,7 @@ impl TCheckGroup {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, CheckGroup_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -61175,15 +61175,15 @@ impl TCheckGroup {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckGroup_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckGroup_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -61211,15 +61211,15 @@ impl TCheckGroup {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckGroup_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(CheckGroup_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -61726,7 +61726,7 @@ impl TCheckGroup {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckGroup_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -61737,13 +61737,13 @@ impl TCheckGroup {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(CheckGroup_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(CheckGroup_GetClientRect, self.0, &mut result);
           return result;
       }
@@ -61983,7 +61983,7 @@ impl TToggleBox {
       }
 
 	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
+          let mut ps1 = pos.clone();
           return method_Call_2!(TControl, ToggleBox_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
       }
 
@@ -62070,15 +62070,15 @@ impl TToggleBox {
       }
 
 	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToggleBox_ClientToScreen, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToggleBox_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -62106,15 +62106,15 @@ impl TToggleBox {
       }
 
 	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToggleBox_ScreenToClient, self.0, &mut ps1, &mut result);
           return result;
       }
 
 	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
+          let mut result = TPoint::empty();
+          let mut ps1 = point.clone();
           method_Call_1!(ToggleBox_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
           return result;
       }
@@ -62578,7 +62578,7 @@ impl TToggleBox {
       }
 
 	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToggleBox_GetBoundsRect, self.0, &mut result);
           return result;
       }
@@ -62598,13 +62598,13 @@ impl TToggleBox {
       }
 
 	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
+          let mut result = TPoint::empty();
           method_Call_1!(ToggleBox_GetClientOrigin, self.0, &mut result);
           return result;
       }
 
 	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
+          let mut result = TRect::empty();
           method_Call_1!(ToggleBox_GetClientRect, self.0, &mut result);
           return result;
       }

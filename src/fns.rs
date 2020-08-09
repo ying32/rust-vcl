@@ -19,7 +19,7 @@ pub fn GetFPStringArrayMember<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
 }
 
 pub fn GetLibResourceItem(index: i32) -> TResItem {
-    let mut result = TResItem::Empty();
+    let mut result = TResItem::empty();
     unsafe {
         lclapi::DGetLibResourceItem(index, &mut result);
     }
@@ -27,13 +27,13 @@ pub fn GetLibResourceItem(index: i32) -> TResItem {
 }
 
 pub fn StringToGUID(guidStr: &str) -> TGUID {
-    let mut result = TGUID::Empty();
+    let mut result = TGUID::empty();
     unsafe { lclapi::DStringToGUID(to_CString!(guidStr), &mut result) }
     return result;
 }
 
 pub fn CreateGUID() -> TGUID {
-    let mut result = TGUID::Empty();
+    let mut result = TGUID::empty();
     unsafe { lclapi::DCreateGUID(&mut result) }
     return result;
 }
@@ -206,7 +206,7 @@ pub fn SetPropertySecValue(instance: &dyn IObject, propName: &str, secPropName: 
 }
 
 pub fn GUIDToString<'a>(aGUID: &TGUID) -> Cow<'a, str> {
-    let mut ps0 = TGUID::From(aGUID);
+    let mut ps0 = aGUID.clone();
     unsafe { return to_RustString!(lclapi::DGUIDToString(&mut ps0))}
 }
 
@@ -235,7 +235,7 @@ pub fn FindControl(aHandle: HWND) -> TWinControl {
 }
 
 pub fn FindLCLControl(aScreenPos: &TPoint) -> TControl {
-    let mut ps0 = TPoint::From(aScreenPos);
+    let mut ps0 = aScreenPos.clone();
     unsafe { return TControl::As(lclapi::DFindLCLControl(&mut ps0))}
 }
 
@@ -244,17 +244,17 @@ pub fn FindOwnerControl(handle: HWND) -> TWinControl {
 }
 
 pub fn FindControlAtPosition(aPosition: &TPoint, allowDisabled: bool) -> TControl {
-    let mut ps0 = TPoint::From(aPosition);
+    let mut ps0 = aPosition.clone();
     unsafe { return TControl::As(lclapi::DFindControlAtPosition(&mut ps0, allowDisabled))}
 }
 
 pub fn FindLCLWindow(aScreenPos: &TPoint, allowDisabled: bool) -> TWinControl {
-    let mut ps0 = TPoint::From(aScreenPos);
+    let mut ps0 = aScreenPos.clone();
     unsafe { return TWinControl::As(lclapi::DFindLCLWindow(&mut ps0, allowDisabled))}
 }
 
 pub fn FindDragTarget(aPosition: &TPoint, allowDisabled: bool) -> TControl {
-    let mut ps0 = TPoint::From(aPosition);
+    let mut ps0 = aPosition.clone();
     unsafe { return TControl::As(lclapi::DFindDragTarget(&mut ps0, allowDisabled))}
 }
 
