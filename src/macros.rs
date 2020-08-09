@@ -49,6 +49,9 @@ macro_rules! impl_IStream {
     };
 }
 
+ 
+//-------------------------------------------
+
 #[macro_use]
 macro_rules! method_Call_1 {
     ($fnName: ident, $($arg:expr),*) => {
@@ -111,10 +114,24 @@ macro_rules! impl_Drop_method {
 }
 
 #[macro_use]
-macro_rules! impl_As_method {
+macro_rules! impl_Object_methods {
     ($class: ident) => {
+        // usize to Object
+        #[inline]
         pub fn As(inst: usize) -> Self {
             $class { 0: inst, 1: false }
+        }
+
+        // Nil Object
+        #[inline]
+        pub fn Nil() -> Self {
+            $class { 0: 0, 1: false }
+        }
+
+        // Instance is nil
+        #[inline]
+        pub fn IsNil(&self) -> bool {
+            return self.0 == 0;
         }
     };
 }

@@ -19,6 +19,8 @@ pub struct TMainForm {
     pub btnOpenForm2: TButton,
     mainMenu: TMainMenu,
     popupMenu: TPopupMenu,
+    tv1: TTreeView,
+    pb1: TPaintBox,
     pub form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
 }
 
@@ -39,6 +41,8 @@ impl TMainForm {
             // menu
             mainMenu: NewObject!(TMainMenu, form),
             popupMenu: NewObject!(TPopupMenu, form),
+            tv1: NewObject!(TTreeView, form),
+            pb1: NewObject!(TPaintBox, form),
 
             form,
         };
@@ -50,6 +54,7 @@ impl TMainForm {
         // TForm
         self.form
             .SetCaption("你好，Rust！ - Hello Rust!")
+            .SetHeight(556)
             .SetPosition(TPosition::poScreenCenter)
             .SetAllowDropFiles(true)
             .SetOnDropFiles(sid, Self::onDropFile)
@@ -189,7 +194,65 @@ impl TMainForm {
         fSubItem.SetOnClick(sid, Self::onMenuItemClick);
         self.popupMenu.Items().Add(&fSubItem);
 
+        // TTreeView
+        self.tv1
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.btnOpenForm2.Top() + self.btnOpenForm2.Height() + 10)
+            .SetWidth(300)
+            .SetHeight(230)
+            .SetOnClick(sid, Self::onTv1Click);
+
+          
+        
+        let node = self.tv1.Items().AddChild(&TTreeNode::Nil(), "First");
+        self.tv1.Items().AddChild(&node, "Sec");
+        node.Expand(true);
+
+        // TPaintBox
+        self.pb1
+            .SetParent(self)
+            .SetLeft(self.btnColorDialog.Left() + self.btnColorDialog.Width() + 10)
+            .SetTop(10)
+            .SetWidth(150)
+            .SetHeight(200)
+            .SetOnPaint(sid, Self::onPb1Paint);
+
         return self;
+    }
+
+    fn onPb1Paint(&self, _sender: usize) {
+        let canvas = self.pb1.Canvas();
+        let brush = canvas.Brush();
+        
+        let r = TRect{left: 0, top: 0, right: 80, bottom: 80};
+        brush.SetColor(clGreen);
+        canvas.FillRect(&r);
+
+
+        brush.SetStyle(TBrushStyle::bsClear);
+        let cliRect = self.pb1.ClientRect();
+        canvas.Pen().SetColor(clRed);
+        canvas.Rectangle(cliRect.left, cliRect.top, cliRect.right, cliRect.bottom);
+
+        let ico = Application.Icon(); //self.form.Icon();
+        if !ico.IsNil() {
+            brush.SetStyle(TBrushStyle::bsClear);
+            // let jpg = TJPEGImage::new();
+            // jpg.LoadFromFile("btn4[1].jpg");
+            canvas.Draw1(10, 10, &ico);
+        }
+   
+
+    }
+ 
+    fn onTv1Click(&self, _sender: usize) {
+         let node = self.tv1.Selected();
+         if !node.IsNil() {
+             println!("node.text = {:}", node.Text());
+         } else {
+             println!("node is nil.");
+         }
     }
 
     fn onFormMouseDown(&self, _sender: usize, button: TMouseButton, _shift: TShiftState, x: i32, y: i32) {
