@@ -15,7 +15,7 @@ use std::os::raw::c_char;
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TPoint {
     pub x: i32,
     pub y: i32,
@@ -23,7 +23,7 @@ pub struct TPoint {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TRect {
     pub left: i32,
     pub top: i32,
@@ -33,7 +33,7 @@ pub struct TRect {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TSize {
     pub cx: i32,
     pub cy: i32,
@@ -73,7 +73,7 @@ pub type SIZE_T = usize;
 pub type TSet = u32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TMsg {
     pub hwnd: HWND,
     pub message: u32,
@@ -85,7 +85,7 @@ pub struct TMsg {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TCursorInfo {
     pub cbSize: u32,
     pub flags: u32,
@@ -95,7 +95,7 @@ pub struct TCursorInfo {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TWndClass {
     pub style: u32,
     pub lpfnWndProc: usize,
@@ -127,7 +127,7 @@ pub type TClass = usize;
 pub type TThreadID = usize;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TGridCoord {
     pub x: i32,
     pub y: i32,
@@ -138,7 +138,7 @@ pub type TGridRect = TRect;
 pub type IObjectArray = usize;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TSysLocale {
     pub defaultLCID: i32,
     pub priLangID: i32,
@@ -149,7 +149,7 @@ pub struct TSysLocale {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TSmallPoint {
     pub x: i16,
     pub y: i16,
@@ -157,7 +157,7 @@ pub struct TSmallPoint {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TGUID {
     pub d1: u32,
     pub d2: u16,
@@ -167,7 +167,7 @@ pub struct TGUID {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TLibResource {
     pub name: *const c_char,
     pub ptr: usize,
@@ -175,7 +175,7 @@ pub struct TLibResource {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TResItem {
     pub name: usize,
     pub value: usize,
@@ -184,7 +184,7 @@ pub struct TResItem {
 pub type TConstraintSize = i32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TAlignInfo {
     pub alignList: usize,
     pub controlIndex: i32,
@@ -195,7 +195,7 @@ pub struct TAlignInfo {
 
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAlign {
     alNone,
     alTop,
@@ -210,7 +210,7 @@ pub enum TAlign {
 pub type TAlignSet = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBorderStyle {
     bsNone,
     bsSingle,
@@ -223,7 +223,7 @@ pub enum TBorderStyle {
 pub type TFormBorderStyle = TBorderStyle;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFormStyle {
     fsNormal,
     fsMDIChild,
@@ -234,7 +234,7 @@ pub enum TFormStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPosition {
     poDesigned, // use bounds from the designer (read from stream)
     poDefault, // LCL decision (normally window manager decides)
@@ -250,7 +250,7 @@ pub enum TPosition {
 pub type TCursor = i16;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSeekOrigin {
     soBeginning,
     soCurrent,
@@ -258,7 +258,7 @@ pub enum TSeekOrigin {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPixelFormat {
     pfDevice,
     pf1bit,
@@ -272,7 +272,7 @@ pub enum TPixelFormat {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAlignment {
     taLeftJustify,
     taRightJustify,
@@ -282,7 +282,7 @@ pub enum TAlignment {
 pub type TLeftRight = i32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBiDiMode {
     bdLeftToRight,
     bdRightToLeft,
@@ -291,7 +291,7 @@ pub enum TBiDiMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TVerticalAlignment {
     taAlignTop,
     taAlignBottom,
@@ -299,7 +299,7 @@ pub enum TVerticalAlignment {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TComboBoxStyle {
     csDropDown, // like an TEdit plus a button to drop down the list, default
     csSimple, // like an TEdit plus a TListBox
@@ -313,7 +313,7 @@ pub enum TComboBoxStyle {
 pub type TColorBoxStyle = TComboBoxStyle;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TWindowState {
     wsNormal,
     wsMinimized,
@@ -322,7 +322,7 @@ pub enum TWindowState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTextLayout {
     tlTop,
     tlCenter,
@@ -330,7 +330,7 @@ pub enum TTextLayout {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TEllipsisPosition {
     epNone,
     epPathEllipsis,
@@ -341,7 +341,7 @@ pub enum TEllipsisPosition {
 pub type TLinkAlignment = TAlignment;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TListBoxStyle {
     lbStandard,
     lbOwnerDrawFixed,
@@ -350,7 +350,7 @@ pub enum TListBoxStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPopupAlignment {
     paLeft,
     paRight,
@@ -358,14 +358,14 @@ pub enum TPopupAlignment {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTrackButton {
     tbRightButton,
     tbLeftButton,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TProgressBarOrientation {
     pbHorizontal,
     pbVertical,
@@ -374,14 +374,14 @@ pub enum TProgressBarOrientation {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TProgressBarStyle {
     pbstNormal,
     pbstMarquee,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TProgressBarState {
     pbsNormal,
     pbsError,
@@ -389,7 +389,7 @@ pub enum TProgressBarState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TButtonLayout {
     blGlyphLeft,
     blGlyphRight,
@@ -398,7 +398,7 @@ pub enum TButtonLayout {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TButtonState {
     bsUp, // button is up
     bsDisabled, // button disabled (grayed)
@@ -408,7 +408,7 @@ pub enum TButtonState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TButtonStyle {
     bsAutoDetect,
     bsWin31,
@@ -418,7 +418,7 @@ pub enum TButtonStyle {
 pub type TNumGlyphs = i32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TStaticBorderStyle {
     sbsNone,
     sbsSingle,
@@ -426,7 +426,7 @@ pub enum TStaticBorderStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFontStyle {
     fsBold,
     fsItalic,
@@ -438,7 +438,7 @@ pub enum TFontStyle {
 pub type TFontStyles = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TScrollStyle {
     ssNone,
     ssHorizontal,
@@ -450,7 +450,7 @@ pub enum TScrollStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSortType {
     stNone,
     stData,
@@ -459,7 +459,7 @@ pub enum TSortType {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TListArrangement {
     arAlignBottom,
     arAlignLeft,
@@ -470,7 +470,7 @@ pub enum TListArrangement {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TViewStyle {
     vsIcon,
     vsSmallIcon,
@@ -479,7 +479,7 @@ pub enum TViewStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TItemState {
     isNone,
     isCut,
@@ -493,7 +493,7 @@ pub enum TItemState {
 pub type TItemStates = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TItemChange {
     ctText,
     ctImage,
@@ -501,7 +501,7 @@ pub enum TItemChange {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TItemFind {
     ifData,
     ifPartialString,
@@ -510,7 +510,7 @@ pub enum TItemFind {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSearchDirection {
     sdLeft,
     sdRight,
@@ -520,7 +520,7 @@ pub enum TSearchDirection {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TListHotTrackStyle {
     htHandPoint,
     htUnderlineCold,
@@ -531,7 +531,7 @@ pub enum TListHotTrackStyle {
 pub type TListHotTrackStyles = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TItemRequests {
     irText,
     irImage,
@@ -541,7 +541,7 @@ pub enum TItemRequests {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBrushStyle {
     bsSolid,
     bsClear,
@@ -556,7 +556,7 @@ pub enum TBrushStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPenStyle {
     psSolid,
     psDash,
@@ -569,14 +569,14 @@ pub enum TPenStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TUDBtnType {
     btNext,
     btPrev,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTabPosition {
     tpTop,
     tpBottom,
@@ -585,7 +585,7 @@ pub enum TTabPosition {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTabStyle {
     tsTabs,
     tsButtons,
@@ -593,7 +593,7 @@ pub enum TTabStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFontPitch {
     fpDefault,
     fpVariable,
@@ -601,7 +601,7 @@ pub enum TFontPitch {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPenMode {
     pmBlack,
     pmWhite,
@@ -622,21 +622,21 @@ pub enum TPenMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTrackBarOrientation {
     trHorizontal,
     trVertical,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TUDOrientation {
     udHorizontal,
     udVertical,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFontQuality {
     fqDefault,
     fqDraft,
@@ -648,7 +648,7 @@ pub enum TFontQuality {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCloseAction {
     caNone,
     caHide,
@@ -657,7 +657,7 @@ pub enum TCloseAction {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBalloonFlags {
     bfNone,
     bfInfo,
@@ -666,7 +666,7 @@ pub enum TBalloonFlags {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMsgDlgType {
     mtWarning,
     mtError,
@@ -676,7 +676,7 @@ pub enum TMsgDlgType {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMsgDlgBtn {
     mbYes,
     mbNo,
@@ -696,21 +696,21 @@ pub enum TMsgDlgBtn {
 pub type TMsgDlgButtons = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSysLinkType {
     sltURL,
     sltID,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TStatusPanelStyle {
     psText,
     psOwnerDraw,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TJPEGPerformance {
     jpBestQuality,
     jpBestSpeed,
@@ -721,7 +721,7 @@ pub type TJPEGPixelFormat = TPixelFormat;
 pub type TShortCut = u16;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TNodeState {
     nsCut,
     nsDropHilite, // = Node.DropTarget
@@ -736,7 +736,7 @@ pub enum TNodeState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TNodeAttachMode {
     naAdd, // add as last sibling of Destination
     naAddFirst, // add as first sibling of Destination
@@ -747,7 +747,7 @@ pub enum TNodeAttachMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAddMode {
     taAddFirst,
     taAdd,
@@ -755,7 +755,7 @@ pub enum TAddMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMultiSelectStyles {
     msControlSelect,
     msShiftSelect,
@@ -767,7 +767,7 @@ pub enum TMultiSelectStyles {
 pub type TMultiSelectStyle = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TActionListState {
     asNormal,
     asSuspended,
@@ -775,14 +775,14 @@ pub enum TActionListState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGradientDirection {
     gdHorizontal,
     gdVertical,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDrawingStyle {
     dSFocus,
     dSSelected,
@@ -791,14 +791,14 @@ pub enum TDrawingStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TImageType {
     itImage,
     itMask,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TResType {
     rtBitmap,
     rtCursor,
@@ -806,7 +806,7 @@ pub enum TResType {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TLoadResource {
     lrDefaultColor,
     lrDefaultSize,
@@ -820,7 +820,7 @@ pub enum TLoadResource {
 pub type TLoadResources = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TColorDepth {
     cdDefault,
     cdDeviceDependent,
@@ -832,7 +832,7 @@ pub enum TColorDepth {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCheckBoxState {
     cbUnchecked,
     cbChecked,
@@ -840,7 +840,7 @@ pub enum TCheckBoxState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TToolButtonStyle {
     tbsButton, // button (can be clicked)
     tbsCheck, // check item (click to toggle state, can be grouped)
@@ -851,7 +851,7 @@ pub enum TToolButtonStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTBGradientDrawingOption {
     gdoHotTrack,
     gdoGradient,
@@ -861,7 +861,7 @@ pub enum TTBGradientDrawingOption {
 pub type TTBGradientDrawingOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TColorDialogOption {
     cdFullOpen,
     cdPreventFullOpen,
@@ -874,7 +874,7 @@ pub enum TColorDialogOption {
 pub type TColorDialogOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBorderIcon {
     biSystemMenu,
     biMinimize,
@@ -886,7 +886,7 @@ pub enum TBorderIcon {
 pub type TBorderIcons = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFontDialogOption {
     fdAnsiOnly,
     fdTrueTypeOnly,
@@ -910,7 +910,7 @@ pub enum TFontDialogOption {
 pub type TFontDialogOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TOpenOption {
     ofReadOnly,
     ofOverwritePrompt, // if selected file exists shows a message, that file
@@ -943,7 +943,7 @@ pub enum TOpenOption {
 pub type TOpenOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TOpenOptionEx {
     ofExNoPlacesBar,
 }
@@ -952,7 +952,7 @@ pub enum TOpenOptionEx {
 pub type TOpenOptionsEx = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrintRange {
     prAllPages,
     prSelection,
@@ -961,7 +961,7 @@ pub enum TPrintRange {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrintDialogOption {
     poPrintToFile,
     poPageNums,
@@ -976,7 +976,7 @@ pub enum TPrintDialogOption {
 pub type TPrintDialogOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPageSetupDialogOption {
     psoDefaultMinMargins,
     psoDisableMargins,
@@ -995,21 +995,21 @@ pub enum TPageSetupDialogOption {
 pub type TPageSetupDialogOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrinterKind {
     pkDotMatrix,
     pkHPPCL,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPageType {
     ptEnvelope,
     ptPaper,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPageMeasureUnits {
     pmDefault,
     pmMillimeters,
@@ -1017,7 +1017,7 @@ pub enum TPageMeasureUnits {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TStringsOption {
     soStrictDelimiter,
     soWriteBOM,
@@ -1029,7 +1029,7 @@ pub enum TStringsOption {
 pub type TStringsOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TShiftStateEnum {
     ssShift,
     ssAlt,
@@ -1055,7 +1055,7 @@ pub enum TShiftStateEnum {
 pub type TShiftState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMouseButton {
     mbLeft,
     mbRight,
@@ -1065,21 +1065,21 @@ pub enum TMouseButton {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFillStyle {
     fsSurface,
     fsBorder,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFillMode {
     fmAlternate,
     fmWinding,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCanvasStates {
     csHandleValid,
     csFontValid,
@@ -1092,14 +1092,14 @@ pub enum TCanvasStates {
 pub type TCanvasState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCanvasOrientation {
     coLeftToRight,
     coRightToLeft,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTextFormats {
     tfBottom,
     tfCalcRect,
@@ -1131,7 +1131,7 @@ pub enum TTextFormats {
 pub type TTextFormat = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBevelCut {
     bvNone,
     bvLowered,
@@ -1140,7 +1140,7 @@ pub enum TBevelCut {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBevelEdge {
     beLeft,
     beTop,
@@ -1152,7 +1152,7 @@ pub enum TBevelEdge {
 pub type TBevelEdges = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBevelKind {
     bkNone,
     bkTile,
@@ -1161,7 +1161,7 @@ pub enum TBevelKind {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTickMark {
     tmBottomRight,
     tmTopLeft,
@@ -1169,7 +1169,7 @@ pub enum TTickMark {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTickStyle {
     tsNone,
     tsAuto,
@@ -1177,7 +1177,7 @@ pub enum TTickStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPositionToolTip {
     ptNone,
     ptTop,
@@ -1187,7 +1187,7 @@ pub enum TPositionToolTip {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDateTimeKind {
     dtkDate,
     dtkTime,
@@ -1195,7 +1195,7 @@ pub enum TDateTimeKind {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDTDateMode {
     dmComboBox,
     dmUpDown,
@@ -1203,14 +1203,14 @@ pub enum TDTDateMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDTDateFormat {
     dfShort,
     dfLong,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDTCalAlignment {
     dtaLeft,
     dtaRight,
@@ -1218,7 +1218,7 @@ pub enum TDTCalAlignment {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCalDayOfWeek {
     dowMonday,
     dowTuesday,
@@ -1231,7 +1231,7 @@ pub enum TCalDayOfWeek {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSearchType {
     stWholeWord,
     stMatchCase,
@@ -1241,21 +1241,21 @@ pub enum TSearchType {
 pub type TSearchTypes = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TNumberingStyle {
     nsNone,
     nsBullte,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAttributeType {
     atSelected,
     atDefaultText,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TConsistentAttribute {
     caBold,
     caColor,
@@ -1271,14 +1271,14 @@ pub enum TConsistentAttribute {
 pub type TConsistentAttributes = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TIconArrangement {
     iaTop,
     iaLeft,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum THeaderStyle {
     hsGradient,
     hsImage,
@@ -1286,7 +1286,7 @@ pub enum THeaderStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TImageAlignment {
     iiaLeft,
     iiaRight,
@@ -1296,7 +1296,7 @@ pub enum TImageAlignment {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAnchorKind {
     akTop,
     akLeft,
@@ -1308,7 +1308,7 @@ pub enum TAnchorKind {
 pub type TAnchors = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TOwnerDrawStateType {
     odSelected,
     odGrayed,
@@ -1330,7 +1330,7 @@ pub enum TOwnerDrawStateType {
 pub type TOwnerDrawState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBitBtnKind {
     bkCustom,
     bkOK,
@@ -1348,7 +1348,7 @@ pub enum TBitBtnKind {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TScrollBarKind {
     sbHorizontal,
     sbVertical,
@@ -1357,7 +1357,7 @@ pub enum TScrollBarKind {
 pub type TScrollBarInc = i16;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TScrollBarStyle {
     ssRegular,
     ssFlat,
@@ -1365,7 +1365,7 @@ pub enum TScrollBarStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TShapeType {
     stRectangle,
     stSquare,
@@ -1386,7 +1386,7 @@ pub enum TShapeType {
 pub type TBevelStyle = i32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBevelShape {
     bsBox,
     bsFrame,
@@ -1398,7 +1398,7 @@ pub enum TBevelShape {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGaugeKind {
     gkText,
     gkHorizontalBar,
@@ -1409,7 +1409,7 @@ pub enum TGaugeKind {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCustomDrawTarget {
     dtControl,
     dtItem,
@@ -1417,7 +1417,7 @@ pub enum TCustomDrawTarget {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCustomDrawStage {
     cdPrePaint,
     cdPostPaint,
@@ -1426,7 +1426,7 @@ pub enum TCustomDrawStage {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCustomDrawStateFlag {
     cdsSelected,
     cdsGrayed,
@@ -1443,7 +1443,7 @@ pub enum TCustomDrawStateFlag {
 pub type TCustomDrawState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDisplayCode {
     drBounds,
     drIcon,
@@ -1452,7 +1452,7 @@ pub enum TDisplayCode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSelectDirOpt {
     sdAllowCreate,
     sdPerformCreate,
@@ -1463,7 +1463,7 @@ pub enum TSelectDirOpt {
 pub type TSelectDirOpts = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFindOption {
     frDown,
     frFindNext,
@@ -1489,14 +1489,14 @@ pub enum TFindOption {
 pub type TFindOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDragMode {
     dmManual,
     dmAutomatic,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDragState {
     dsDragEnter,
     dsDragLeave,
@@ -1504,14 +1504,14 @@ pub enum TDragState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDragKind {
     dkDrag,
     dkDock,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TEditCharCase {
     ecNormal,
     ecUpperCase,
@@ -1519,7 +1519,7 @@ pub enum TEditCharCase {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TEdgeBorder {
     ebLeft,
     ebTop,
@@ -1531,7 +1531,7 @@ pub enum TEdgeBorder {
 pub type TEdgeBorders = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TEdgeStyle {
     esNone,
     esRaised,
@@ -1539,7 +1539,7 @@ pub enum TEdgeStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGridDrawingStyle {
     gdsClassic,
     gdsThemed,
@@ -1547,7 +1547,7 @@ pub enum TGridDrawingStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGridOption {
     goFixedVertLine,
     goFixedHorzLine,
@@ -1587,7 +1587,7 @@ pub enum TGridOption {
 pub type TGridOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGridDrawStates {
     gdSelected,
     gdFocused,
@@ -1601,14 +1601,14 @@ pub enum TGridDrawStates {
 pub type TGridDrawState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum THeaderSectionStyle {
     hsText,
     hsOwnerDraw,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TLabelPosition {
     lpAbove,
     lpBelow,
@@ -1617,7 +1617,7 @@ pub enum TLabelPosition {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TFlowStyle {
     fsLeftRightTopBottom,
     fsRightLeftTopBottom,
@@ -1630,7 +1630,7 @@ pub enum TFlowStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCoolBandMaximize {
     bmNone,
     bmClick,
@@ -1638,7 +1638,7 @@ pub enum TCoolBandMaximize {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMenuBreak {
     mbNone,
     mbBreak,
@@ -1646,7 +1646,7 @@ pub enum TMenuBreak {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSectionTrackState {
     tsTrackBegin,
     tsTrackMove,
@@ -1654,7 +1654,7 @@ pub enum TSectionTrackState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TControlStateType {
     csLButtonDown,
     csClicked,
@@ -1673,7 +1673,7 @@ pub enum TControlStateType {
 pub type TControlState = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TControlStyleType {
     csAcceptsControls, // can have children in the designer
     csCaptureMouse, // auto capture mouse when clicked
@@ -1713,7 +1713,7 @@ pub enum TControlStyleType {
 pub type TControlStyle = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMouseActivate {
     maDefault,
     maActivate,
@@ -1723,7 +1723,7 @@ pub enum TMouseActivate {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTaskBarProgressState {
     none,
     indeterminate,
@@ -1733,14 +1733,14 @@ pub enum TTaskBarProgressState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TBitmapHandleType {
     bmDIB,
     bmDDB,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrinterState {
     psNoDefine,
     psReady,
@@ -1749,7 +1749,7 @@ pub enum TPrinterState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrinterOrientation {
     poPortrait,
     poLandscape,
@@ -1758,7 +1758,7 @@ pub enum TPrinterOrientation {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrinterCapability {
     pcCopies,
     pcOrientation,
@@ -1769,14 +1769,14 @@ pub enum TPrinterCapability {
 pub type TPrinterCapabilities = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrinterType {
     ptLocal,
     ptNetWork,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TReadyState {
     rsUninitialized,
     rsLoading,
@@ -1786,7 +1786,7 @@ pub enum TReadyState {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TStringEncoding {
     seUnknown,
     seANSI,
@@ -1795,7 +1795,7 @@ pub enum TStringEncoding {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TShowInTaskbar {
     stDefault, // use default rules for showing taskbar item
     stAlways, // always show taskbar item for the form
@@ -1803,7 +1803,7 @@ pub enum TShowInTaskbar {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTaskDialogCommonButton {
     tcbOk,
     tcbYes,
@@ -1817,7 +1817,7 @@ pub enum TTaskDialogCommonButton {
 pub type TTaskDialogCommonButtons = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTaskDialogFlag {
     tfEnableHyperlinks,
     tfUseHiconMain,
@@ -1841,7 +1841,7 @@ pub enum TTaskDialogFlag {
 pub type TTaskDialogFlags = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTaskDialogIcon {
     tdiNone,
     tdiWarning,
@@ -1852,7 +1852,7 @@ pub enum TTaskDialogIcon {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TComboBoxExStyle {
     csExDropDown,
     csExSimple,
@@ -1860,7 +1860,7 @@ pub enum TComboBoxExStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TComboBoxExStyleEx {
     csExCaseSensitive,
     csExNoEditImage,
@@ -1873,7 +1873,7 @@ pub enum TComboBoxExStyleEx {
 pub type TComboBoxExStyles = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAutoCompleteOption {
     acoAutoSuggest,
     acoAutoAppend,
@@ -1888,7 +1888,7 @@ pub enum TAutoCompleteOption {
 pub type TAutoCompleteOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDefaultMonitor {
     dmDesktop,
     dmPrimary,
@@ -1897,14 +1897,14 @@ pub enum TDefaultMonitor {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTransparentMode {
     tmAuto,
     tmFixed,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDrawImageMode {
     dimNormal,
     dimCenter,
@@ -1912,7 +1912,7 @@ pub enum TDrawImageMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TListBoxOption {
     lboDrawFocusRect, // draw focus rect in case of owner drawing
 }
@@ -1921,7 +1921,7 @@ pub enum TListBoxOption {
 pub type TListBoxOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAntialiasingMode {
     amDontCare, // default antialiasing
     amOn, // enabled
@@ -1929,14 +1929,14 @@ pub enum TAntialiasingMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSortDirection {
     sdAscending,
     sdDescending,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTreeViewExpandSignType {
     tvestTheme, // use themed sign
     tvestPlusMinus, // use +/- sign
@@ -1945,7 +1945,7 @@ pub enum TTreeViewExpandSignType {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTreeViewOption {
     tvoAllowMultiselect,
     tvoAutoExpand,
@@ -1970,7 +1970,7 @@ pub enum TTreeViewOption {
 pub type TTreeViewOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGlyphShowMode {
     gsmAlways, // always show
     gsmNever, // never show
@@ -1979,7 +1979,7 @@ pub enum TGlyphShowMode {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCTabControlOption {
     nboShowCloseButtons,
     nboMultiLine,
@@ -1993,7 +1993,7 @@ pub enum TCTabControlOption {
 pub type TCTabControlOptions = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAnchorSideReference {
     asrTop,
     asrBottom,
@@ -2001,7 +2001,7 @@ pub enum TAnchorSideReference {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TControlCellAlign {
     ccaFill,
     ccaLeftTop,
@@ -2013,7 +2013,7 @@ pub enum TControlCellAlign {
 pub type TControlCellAligns = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TChildControlResizeStyle {
     crsAnchorAligning, // (like Delphi)
     crsScaleChilds, // scale children equally, keep space between children fixed
@@ -2022,7 +2022,7 @@ pub enum TChildControlResizeStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TControlChildrenLayout {
     cclNone,
     cclLeftToRightThenTopToBottom, // if BiDiMode <> bdLeftToRight then it becomes RightToLeft
@@ -2030,14 +2030,14 @@ pub enum TControlChildrenLayout {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TColumnLayout {
     clHorizontalThenVertical,
     clVerticalThenHorizontal,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSortIndicator {
     siNone,
     siAscending,
@@ -2047,7 +2047,7 @@ pub enum TSortIndicator {
 pub type TLibType = i32;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TColumnButtonStyle {
     cbsAuto,
     cbsEllipsis,
@@ -2059,7 +2059,7 @@ pub enum TColumnButtonStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGridZone {
     gzNormal,
     gzFixedCols,
@@ -2072,14 +2072,14 @@ pub enum TGridZone {
 pub type TGridZoneSet = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TSortOrder {
     soAscending,
     soDescending,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TAutoAdvance {
     aaNone,
     aaDown,
@@ -2092,7 +2092,7 @@ pub enum TAutoAdvance {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TCellHintPriority {
     chpAll,
     chpAllNoDefault,
@@ -2100,14 +2100,14 @@ pub enum TCellHintPriority {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TMouseWheelOption {
     mwCursor,
     mwGrid,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TGridOption2 {
     goScrollToLastCol, // allow scrolling to last column (so that last column can be leftcol)
     goScrollToLastRow, // allow scrolling to last row (so that last row can be toprow)
@@ -2117,14 +2117,14 @@ pub enum TGridOption2 {
 pub type TGridOptions2 = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TRangeSelectMode {
     rsmSingle,
     rsmMulti,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTitleStyle {
     tsLazarus,
     tsStandard,
@@ -2132,14 +2132,14 @@ pub enum TTitleStyle {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TPrefixOption {
     poNone,
     poHeaderClick,
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDisplaySetting {
     dsShowHeadings,
     dsShowDayNames,
@@ -2149,14 +2149,14 @@ pub enum TDisplaySetting {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTimeFormat {
     tf12, // 12 hours format, with am/pm string
     tf24, // 24 hours format
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TTimeDisplay {
     tdHM, // hour and minute
     tdHMS, // hour Minute and second
@@ -2164,7 +2164,7 @@ pub enum TTimeDisplay {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TArrowShape {
     asClassicSmaller,
     asClassicLarger,
@@ -2175,7 +2175,7 @@ pub enum TArrowShape {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDateDisplayOrder {
     ddoDMY,
     ddoMDY,
@@ -2184,7 +2184,7 @@ pub enum TDateDisplayOrder {
 }
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDateTimePart {
     dtpDay,
     dtpMonth,
@@ -2200,7 +2200,7 @@ pub enum TDateTimePart {
 pub type TDateTimeParts = TSet;
 
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub enum TDateTimePickerOption {
     dtpoDoChangeOnSetDateTime,
     dtpoEnabledIfUnchecked,
@@ -2214,14 +2214,14 @@ pub type TDateTimePickerOptions = TSet;
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 struct TDWordFiller {
 }
 
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TWMKey {
       pub msg: u32,
       msgFiller: TDWordFiller,
@@ -2235,7 +2235,7 @@ pub struct TWMKey {
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 struct TDWordFiller {
       pub filler: [u8;4],
 }
@@ -2243,7 +2243,7 @@ struct TDWordFiller {
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TWMKey {
       pub msg: u32,
       msgFiller: TDWordFiller,
@@ -2257,7 +2257,7 @@ pub struct TWMKey {
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TMessage {
       pub msg: u32,
       pub wParam: WPARAM,
@@ -2268,7 +2268,7 @@ pub struct TMessage {
 
 #[cfg(not(target_arch = "x86_64"))]
 #[repr(C)]
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct TMessage {
       pub msg: u32,
       _UnusedMsg: u32,

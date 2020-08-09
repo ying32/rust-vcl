@@ -225,7 +225,7 @@ impl TMainForm {
         let canvas = self.pb1.Canvas();
         let brush = canvas.Brush();
         
-        let r = TRect{left: 0, top: 0, right: 80, bottom: 80};
+        let r = TRect{left: 10, top: 12, right: 80, bottom: 80};
         brush.SetColor(clGreen);
         canvas.FillRect(&r);
 
@@ -243,7 +243,15 @@ impl TMainForm {
             canvas.Draw1(10, 10, &ico);
         }
    
-
+        brush.SetStyle(TBrushStyle::bsClear);
+        let text = "Test darw text! 你好！";
+        let font = canvas.Font();
+        font
+          .SetStyle(0)
+		  .SetSize(9)
+          .SetColor(clBlue);
+        let mut r2 = cliRect.clone();
+        canvas.TextRect2(&mut r2, &text, Include!(0, TTextFormats::tfCenter, TTextFormats::tfVerticalCenter, TTextFormats::tfSingleLine));
     }
  
     fn onTv1Click(&self, _sender: usize) {
@@ -286,6 +294,22 @@ impl TMainForm {
         ShowMessage("Hello, Rust! 你好，世界！");
         let btn = TButton::As(sender);
         println!("caption: {:?}", btn.Caption());
+
+        let result = SelectDirectory(Include!(0, TSelectDirOpt::sdPrompt), 0);
+        if result.0 {
+            println!("SelectDirectory={:}", result.1);
+        }
+        let result2 = SelectDirectory2("caption", "C:\\", true);
+        if result2.0 {
+            println!("SelectDirectory2={:}", result2.1);
+        }
+
+        let result3 = InputQuery("Caption", "Prompt", "322");
+        if result3.0 {
+            println!("InputQuery={:}", result3.1);
+        }
+        
+
     }
 
     fn onBtn2Click(&self, _sender: usize) {

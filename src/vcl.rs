@@ -38,9 +38,9 @@ pub struct TObject(usize, bool);
 pub struct TComponent(usize, bool);
 pub struct TControl(usize, bool);
 pub struct TWinControl(usize, bool);
-pub struct TMainMenu(usize, bool);
-pub struct TPopupMenu(usize, bool);
-pub struct TMemo(usize, bool);
+pub struct TGraphic(usize, bool);
+pub struct TStrings(usize, bool);
+pub struct TStream(usize, bool);
 pub struct TCheckBox(usize, bool);
 pub struct TRadioButton(usize, bool);
 pub struct TGroupBox(usize, bool);
@@ -79,10 +79,10 @@ pub struct TToolBar(usize, bool);
 pub struct TBitBtn(usize, bool);
 pub struct TIcon(usize, bool);
 pub struct TBitmap(usize, bool);
-pub struct TStream(usize, bool);
+pub struct TMemo(usize, bool);
 pub struct TMemoryStream(usize, bool);
 pub struct TFont(usize, bool);
-pub struct TStrings(usize, bool);
+pub struct TPopupMenu(usize, bool);
 pub struct TStringList(usize, bool);
 pub struct TBrush(usize, bool);
 pub struct TPen(usize, bool);
@@ -107,7 +107,7 @@ pub struct TSpinEdit(usize, bool);
 pub struct TMiniWebview(usize, bool);
 pub struct TCanvas(usize, bool);
 pub struct TApplication(usize, bool);
-pub struct TGraphic(usize, bool);
+pub struct TMainMenu(usize, bool);
 pub struct TPngImage(usize, bool);
 pub struct TJPEGImage(usize, bool);
 pub struct TGIFImage(usize, bool);
@@ -1443,1362 +1443,367 @@ impl_IComponent!(TWinControl);
 impl_IControl!(TWinControl);
 impl_IWinControl!(TWinControl);
 
-impl TMainMenu {
-      pub fn new(aOwner: &dyn IComponent) -> Self {
-        method_Create!(TMainMenu, MainMenu_Create, aOwner.Instance());
+impl TGraphic {
+      pub fn new() -> Self {
+        method_Create!(TGraphic, Graphic_Create, );
       }
 
-      impl_Object_methods!(TMainMenu);
+      impl_Object_methods!(TGraphic);
 
-	  impl_Free_method!(MainMenu_Free);
+	  impl_Free_method!(Graphic_Free);
 
-	  pub fn FindComponent(&self, aName: &str) -> TComponent {
-          return method_Call_2!(TComponent, MainMenu_FindComponent, self.0, to_CString!(aName));
+	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
+          return method_Call_1!(Graphic_Equals, self.0, obj.Instance());
       }
 
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_GetNamePath, self.0));
-      }
-
-	  pub fn HasParent(&self) -> bool {
-          return method_Call_1!(MainMenu_HasParent, self.0);
-      }
-
-	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
-          method_Call_1!(MainMenu_Assign, self.0, source.Instance());
+	  pub fn LoadFromFile(&self, filename: &str) -> &Self  {
+          method_Call_1!(Graphic_LoadFromFile, self.0, to_CString!(filename));
           return &self;
+      }
+
+	  pub fn SaveToFile(&self, filename: &str) -> &Self  {
+          method_Call_1!(Graphic_SaveToFile, self.0, to_CString!(filename));
+          return &self;
+      }
+
+	  pub fn LoadFromStream(&self, stream: &dyn IStream) -> &Self  {
+          method_Call_1!(Graphic_LoadFromStream, self.0, stream.Instance());
+          return &self;
+      }
+
+	  pub fn SaveToStream(&self, stream: &dyn IStream) -> &Self  {
+          method_Call_1!(Graphic_SaveToStream, self.0, stream.Instance());
+          return &self;
+      }
+
+	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
+          method_Call_1!(Graphic_Assign, self.0, source.Instance());
+          return &self;
+      }
+
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Graphic_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
-          return method_Call_1!(MainMenu_ClassType, self.0);
+          return method_Call_1!(Graphic_ClassType, self.0);
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_ClassName, self.0));
+          return to_RustString!(method_Call_1!(Graphic_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
-          return method_Call_1!(MainMenu_InstanceSize, self.0);
+          return method_Call_1!(Graphic_InstanceSize, self.0);
       }
 
 	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
-          return method_Call_1!(MainMenu_InheritsFrom, self.0, aClass);
-      }
-
-	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
-          return method_Call_1!(MainMenu_Equals, self.0, obj.Instance());
+          return method_Call_1!(Graphic_InheritsFrom, self.0, aClass);
       }
 
 	  pub fn GetHashCode(&self) -> i32 {
-          return method_Call_1!(MainMenu_GetHashCode, self.0);
+          return method_Call_1!(Graphic_GetHashCode, self.0);
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_ToString, self.0));
+          return to_RustString!(method_Call_1!(Graphic_ToString, self.0));
       }
 
-	  pub fn ImagesWidth(&self) -> i32  {
-          return method_Call_1!(MainMenu_GetImagesWidth, self.0);
+	  pub fn Empty(&self) -> bool  {
+          return method_Call_1!(Graphic_GetEmpty, self.0);
       }
 
-	  pub fn SetImagesWidth(&self, aValue: i32) -> &Self  {
-          method_Call_1!(MainMenu_SetImagesWidth, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn BiDiMode(&self) -> TBiDiMode  {
-          return method_Call_1!(MainMenu_GetBiDiMode, self.0);
-      }
-
-	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
-          method_Call_1!(MainMenu_SetBiDiMode, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Images(&self) -> TImageList  {
-          return method_Call_2!(TImageList, MainMenu_GetImages, self.0);
-      }
-
-	  pub fn SetImages(&self, aValue: &TImageList) -> &Self  {
-          method_Call_1!(MainMenu_SetImages, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn OwnerDraw(&self) -> bool  {
-          return method_Call_1!(MainMenu_GetOwnerDraw, self.0);
-      }
-
-	  pub fn SetOwnerDraw(&self, aValue: bool) -> &Self  {
-          method_Call_1!(MainMenu_SetOwnerDraw, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TMenuChangeEvent<T>) -> &Self  {
-          method_Call_1!(MainMenu_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn Handle(&self) -> HMENU  {
-          return method_Call_1!(MainMenu_GetHandle, self.0);
-      }
-
-	  pub fn Items(&self) -> TMenuItem  {
-          return method_Call_2!(TMenuItem, MainMenu_GetItems, self.0);
-      }
-
-	  pub fn ComponentCount(&self) -> i32  {
-          return method_Call_1!(MainMenu_GetComponentCount, self.0);
-      }
-
-	  pub fn ComponentIndex(&self) -> i32  {
-          return method_Call_1!(MainMenu_GetComponentIndex, self.0);
-      }
-
-	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
-          method_Call_1!(MainMenu_SetComponentIndex, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Owner(&self) -> TComponent  {
-          return method_Call_2!(TComponent, MainMenu_GetOwner, self.0);
-      }
-
-	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MainMenu_GetName, self.0));
-      }
-
-	  pub fn SetName(&self, aValue: &str) -> &Self  {
-          method_Call_1!(MainMenu_SetName, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn Tag(&self) -> isize  {
-          return method_Call_1!(MainMenu_GetTag, self.0);
-      }
-
-	  pub fn SetTag(&self, aValue: isize) -> &Self  {
-          method_Call_1!(MainMenu_SetTag, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Components(&self, aIndex: i32) -> TComponent  {
-          return method_Call_2!(TComponent, MainMenu_GetComponents, self.0, aIndex);
-      }
-
-      // static class
-	  impl_Class_method!(MainMenu_StaticClassType);
-}
-
-impl_IObject!(TMainMenu);
-impl_IComponent!(TMainMenu);
-
-impl TPopupMenu {
-      pub fn new(aOwner: &dyn IComponent) -> Self {
-        method_Create!(TPopupMenu, PopupMenu_Create, aOwner.Instance());
-      }
-
-      impl_Object_methods!(TPopupMenu);
-
-	  impl_Free_method!(PopupMenu_Free);
-
-	  pub fn CloseMenu(&self) -> &Self  {
-          method_Call_1!(PopupMenu_CloseMenu, self.0);
-          return &self;
-      }
-
-	  pub fn Popup(&self, x: i32, y: i32) -> &Self  {
-          method_Call_1!(PopupMenu_Popup, self.0, x, y);
-          return &self;
-      }
-
-	  pub fn FindComponent(&self, aName: &str) -> TComponent {
-          return method_Call_2!(TComponent, PopupMenu_FindComponent, self.0, to_CString!(aName));
-      }
-
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_GetNamePath, self.0));
-      }
-
-	  pub fn HasParent(&self) -> bool {
-          return method_Call_1!(PopupMenu_HasParent, self.0);
-      }
-
-	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
-          method_Call_1!(PopupMenu_Assign, self.0, source.Instance());
-          return &self;
-      }
-
-	  pub fn ClassType(&self) -> TClass {
-          return method_Call_1!(PopupMenu_ClassType, self.0);
-      }
-
-	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_ClassName, self.0));
-      }
-
-	  pub fn InstanceSize(&self) -> i32 {
-          return method_Call_1!(PopupMenu_InstanceSize, self.0);
-      }
-
-	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
-          return method_Call_1!(PopupMenu_InheritsFrom, self.0, aClass);
-      }
-
-	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
-          return method_Call_1!(PopupMenu_Equals, self.0, obj.Instance());
-      }
-
-	  pub fn GetHashCode(&self) -> i32 {
-          return method_Call_1!(PopupMenu_GetHashCode, self.0);
-      }
-
-	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_ToString, self.0));
-      }
-
-	  pub fn ImagesWidth(&self) -> i32  {
-          return method_Call_1!(PopupMenu_GetImagesWidth, self.0);
-      }
-
-	  pub fn SetImagesWidth(&self, aValue: i32) -> &Self  {
-          method_Call_1!(PopupMenu_SetImagesWidth, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn PopupComponent(&self) -> TComponent  {
-          return method_Call_2!(TComponent, PopupMenu_GetPopupComponent, self.0);
-      }
-
-	  pub fn SetPopupComponent(&self, aValue: &dyn IComponent) -> &Self  {
-          method_Call_1!(PopupMenu_SetPopupComponent, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn PopupPoint(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
-          method_Call_1!(PopupMenu_GetPopupPoint, self.0, &mut result);
-          return result;
-      }
-
-	  pub fn Alignment(&self) -> TPopupAlignment  {
-          return method_Call_1!(PopupMenu_GetAlignment, self.0);
-      }
-
-	  pub fn SetAlignment(&self, aValue: TPopupAlignment) -> &Self  {
-          method_Call_1!(PopupMenu_SetAlignment, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn BiDiMode(&self) -> TBiDiMode  {
-          return method_Call_1!(PopupMenu_GetBiDiMode, self.0);
-      }
-
-	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
-          method_Call_1!(PopupMenu_SetBiDiMode, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Images(&self) -> TImageList  {
-          return method_Call_2!(TImageList, PopupMenu_GetImages, self.0);
-      }
-
-	  pub fn SetImages(&self, aValue: &TImageList) -> &Self  {
-          method_Call_1!(PopupMenu_SetImages, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn OwnerDraw(&self) -> bool  {
-          return method_Call_1!(PopupMenu_GetOwnerDraw, self.0);
-      }
-
-	  pub fn SetOwnerDraw(&self, aValue: bool) -> &Self  {
-          method_Call_1!(PopupMenu_SetOwnerDraw, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn SetOnPopup<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(PopupMenu_SetOnPopup, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn Handle(&self) -> HMENU  {
-          return method_Call_1!(PopupMenu_GetHandle, self.0);
-      }
-
-	  pub fn Items(&self) -> TMenuItem  {
-          return method_Call_2!(TMenuItem, PopupMenu_GetItems, self.0);
-      }
-
-	  pub fn ComponentCount(&self) -> i32  {
-          return method_Call_1!(PopupMenu_GetComponentCount, self.0);
-      }
-
-	  pub fn ComponentIndex(&self) -> i32  {
-          return method_Call_1!(PopupMenu_GetComponentIndex, self.0);
-      }
-
-	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
-          method_Call_1!(PopupMenu_SetComponentIndex, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Owner(&self) -> TComponent  {
-          return method_Call_2!(TComponent, PopupMenu_GetOwner, self.0);
-      }
-
-	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PopupMenu_GetName, self.0));
-      }
-
-	  pub fn SetName(&self, aValue: &str) -> &Self  {
-          method_Call_1!(PopupMenu_SetName, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn Tag(&self) -> isize  {
-          return method_Call_1!(PopupMenu_GetTag, self.0);
-      }
-
-	  pub fn SetTag(&self, aValue: isize) -> &Self  {
-          method_Call_1!(PopupMenu_SetTag, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Components(&self, aIndex: i32) -> TComponent  {
-          return method_Call_2!(TComponent, PopupMenu_GetComponents, self.0, aIndex);
-      }
-
-      // static class
-	  impl_Class_method!(PopupMenu_StaticClassType);
-}
-
-impl_IObject!(TPopupMenu);
-impl_IComponent!(TPopupMenu);
-
-impl TMemo {
-      pub fn new(aOwner: &dyn IComponent) -> Self {
-        method_Create!(TMemo, Memo_Create, aOwner.Instance());
-      }
-
-      impl_Object_methods!(TMemo);
-
-	  impl_Free_method!(Memo_Free);
-
-	  pub fn Append(&self, value: &str) -> &Self  {
-          method_Call_1!(Memo_Append, self.0, to_CString!(value));
-          return &self;
-      }
-
-	  pub fn Clear(&self) -> &Self  {
-          method_Call_1!(Memo_Clear, self.0);
-          return &self;
-      }
-
-	  pub fn ClearSelection(&self) -> &Self  {
-          method_Call_1!(Memo_ClearSelection, self.0);
-          return &self;
-      }
-
-	  pub fn CopyToClipboard(&self) -> &Self  {
-          method_Call_1!(Memo_CopyToClipboard, self.0);
-          return &self;
-      }
-
-	  pub fn CutToClipboard(&self) -> &Self  {
-          method_Call_1!(Memo_CutToClipboard, self.0);
-          return &self;
-      }
-
-	  pub fn PasteFromClipboard(&self) -> &Self  {
-          method_Call_1!(Memo_PasteFromClipboard, self.0);
-          return &self;
-      }
-
-	  pub fn Undo(&self) -> &Self  {
-          method_Call_1!(Memo_Undo, self.0);
-          return &self;
-      }
-
-	  pub fn SelectAll(&self) -> &Self  {
-          method_Call_1!(Memo_SelectAll, self.0);
-          return &self;
-      }
-
-	  pub fn CanFocus(&self) -> bool {
-          return method_Call_1!(Memo_CanFocus, self.0);
-      }
-
-	  pub fn ContainsControl(&self, control: &dyn IControl) -> bool {
-          return method_Call_1!(Memo_ContainsControl, self.0, control.Instance());
-      }
-
-	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
-          let mut ps1 = TPoint::From(pos);
-          return method_Call_2!(TControl, Memo_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
-      }
-
-	  pub fn DisableAlign(&self) -> &Self {
-          method_Call_1!(Memo_DisableAlign, self.0);
-          return &self;
-      }
-
-	  pub fn EnableAlign(&self) -> &Self {
-          method_Call_1!(Memo_EnableAlign, self.0);
-          return &self;
-      }
-
-	  pub fn FindChildControl(&self, controlName: &str) -> TControl {
-          return method_Call_2!(TControl, Memo_FindChildControl, self.0, to_CString!(controlName));
-      }
-
-	  pub fn FlipChildren(&self, allLevels: bool) -> &Self {
-          method_Call_1!(Memo_FlipChildren, self.0, allLevels);
-          return &self;
-      }
-
-	  pub fn Focused(&self) -> bool {
-          return method_Call_1!(Memo_Focused, self.0);
-      }
-
-	  pub fn HandleAllocated(&self) -> bool {
-          return method_Call_1!(Memo_HandleAllocated, self.0);
-      }
-
-	  pub fn InsertControl(&self, aControl: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_InsertControl, self.0, aControl.Instance());
-          return &self;
-      }
-
-	  pub fn Invalidate(&self) -> &Self {
-          method_Call_1!(Memo_Invalidate, self.0);
-          return &self;
-      }
-
-	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_RemoveControl, self.0, aControl.Instance());
-          return &self;
-      }
-
-	  pub fn Realign(&self) -> &Self {
-          method_Call_1!(Memo_Realign, self.0);
-          return &self;
-      }
-
-	  pub fn Repaint(&self) -> &Self {
-          method_Call_1!(Memo_Repaint, self.0);
-          return &self;
-      }
-
-	  pub fn ScaleBy(&self, m: i32, d: i32) -> &Self {
-          method_Call_1!(Memo_ScaleBy, self.0, m, d);
-          return &self;
-      }
-
-	  pub fn ScrollBy(&self, deltaX: i32, deltaY: i32) -> &Self {
-          method_Call_1!(Memo_ScrollBy, self.0, deltaX, deltaY);
-          return &self;
-      }
-
-	  pub fn SetBounds(&self, aLeft: i32, aTop: i32, aWidth: i32, aHeight: i32) -> &Self {
-          method_Call_1!(Memo_SetBounds, self.0, aLeft, aTop, aWidth, aHeight);
-          return &self;
-      }
-
-	  pub fn SetFocus(&self) -> &Self {
-          method_Call_1!(Memo_SetFocus, self.0);
-          return &self;
-      }
-
-	  pub fn Update(&self) -> &Self {
-          method_Call_1!(Memo_Update, self.0);
-          return &self;
-      }
-
-	  pub fn BringToFront(&self) -> &Self {
-          method_Call_1!(Memo_BringToFront, self.0);
-          return &self;
-      }
-
-	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
-          method_Call_1!(Memo_ClientToScreen, self.0, &mut ps1, &mut result);
-          return result;
-      }
-
-	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
-          method_Call_1!(Memo_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
-          return result;
-      }
-
-	  pub fn Dragging(&self) -> bool {
-          return method_Call_1!(Memo_Dragging, self.0);
-      }
-
-	  pub fn HasParent(&self) -> bool {
-          return method_Call_1!(Memo_HasParent, self.0);
-      }
-
-	  pub fn Hide(&self) -> &Self {
-          method_Call_1!(Memo_Hide, self.0);
-          return &self;
-      }
-
-	  pub fn Perform(&self, msg: u32, wParam: usize, lParam: isize) -> isize {
-          return method_Call_1!(Memo_Perform, self.0, msg, wParam, lParam);
-      }
-
-	  pub fn Refresh(&self) -> &Self {
-          method_Call_1!(Memo_Refresh, self.0);
-          return &self;
-      }
-
-	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
-          method_Call_1!(Memo_ScreenToClient, self.0, &mut ps1, &mut result);
-          return result;
-      }
-
-	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
-          let mut result = TPoint::Empty();
-          let mut ps1 = TPoint::From(point);
-          method_Call_1!(Memo_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
-          return result;
-      }
-
-	  pub fn SendToBack(&self) -> &Self {
-          method_Call_1!(Memo_SendToBack, self.0);
-          return &self;
-      }
-
-	  pub fn Show(&self) -> &Self {
-          method_Call_1!(Memo_Show, self.0);
-          return &self;
-      }
-
-	  pub fn GetTextBuf(&self, buffer: &str, bufSize: i32) -> i32 {
-          return method_Call_1!(Memo_GetTextBuf, self.0, to_CString!(buffer), bufSize);
-      }
-
-	  pub fn GetTextLen(&self) -> i32 {
-          return method_Call_1!(Memo_GetTextLen, self.0);
-      }
-
-	  pub fn SetTextBuf(&self, buffer: &str) -> &Self {
-          method_Call_1!(Memo_SetTextBuf, self.0, to_CString!(buffer));
-          return &self;
-      }
-
-	  pub fn FindComponent(&self, aName: &str) -> TComponent {
-          return method_Call_2!(TComponent, Memo_FindComponent, self.0, to_CString!(aName));
-      }
-
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_GetNamePath, self.0));
-      }
-
-	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
-          method_Call_1!(Memo_Assign, self.0, source.Instance());
-          return &self;
-      }
-
-	  pub fn ClassType(&self) -> TClass {
-          return method_Call_1!(Memo_ClassType, self.0);
-      }
-
-	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_ClassName, self.0));
-      }
-
-	  pub fn InstanceSize(&self) -> i32 {
-          return method_Call_1!(Memo_InstanceSize, self.0);
-      }
-
-	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
-          return method_Call_1!(Memo_InheritsFrom, self.0, aClass);
-      }
-
-	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
-          return method_Call_1!(Memo_Equals, self.0, obj.Instance());
-      }
-
-	  pub fn GetHashCode(&self) -> i32 {
-          return method_Call_1!(Memo_GetHashCode, self.0);
-      }
-
-	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_ToString, self.0));
-      }
-
-	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_AnchorToNeighbour, self.0, aSide, aSpace, aSibling.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorParallel(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_AnchorParallel, self.0, aSide, aSpace, aSibling.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorHorizontalCenterTo(&self, aSibling: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_AnchorHorizontalCenterTo, self.0, aSibling.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorVerticalCenterTo(&self, aSibling: &dyn IControl) -> &Self {
-          method_Call_1!(Memo_AnchorVerticalCenterTo, self.0, aSibling.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
-          method_Call_1!(Memo_AnchorAsAlign, self.0, aTheAlign, aSpace);
-          return &self;
-      }
-
-	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
-          method_Call_1!(Memo_AnchorClient, self.0, aSpace);
-          return &self;
-      }
-
-	  pub fn Align(&self) -> TAlign  {
-          return method_Call_1!(Memo_GetAlign, self.0);
-      }
-
-	  pub fn SetAlign(&self, aValue: TAlign) -> &Self  {
-          method_Call_1!(Memo_SetAlign, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Alignment(&self) -> TAlignment  {
-          return method_Call_1!(Memo_GetAlignment, self.0);
-      }
-
-	  pub fn SetAlignment(&self, aValue: TAlignment) -> &Self  {
-          method_Call_1!(Memo_SetAlignment, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Anchors(&self) -> TAnchors  {
-          return method_Call_1!(Memo_GetAnchors, self.0);
-      }
-
-	  pub fn SetAnchors(&self, aValue: TAnchors) -> &Self  {
-          method_Call_1!(Memo_SetAnchors, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn BiDiMode(&self) -> TBiDiMode  {
-          return method_Call_1!(Memo_GetBiDiMode, self.0);
-      }
-
-	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
-          method_Call_1!(Memo_SetBiDiMode, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn BorderStyle(&self) -> TBorderStyle  {
-          return method_Call_1!(Memo_GetBorderStyle, self.0);
-      }
-
-	  pub fn SetBorderStyle(&self, aValue: TBorderStyle) -> &Self  {
-          method_Call_1!(Memo_SetBorderStyle, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn CharCase(&self) -> TEditCharCase  {
-          return method_Call_1!(Memo_GetCharCase, self.0);
-      }
-
-	  pub fn SetCharCase(&self, aValue: TEditCharCase) -> &Self  {
-          method_Call_1!(Memo_SetCharCase, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Color(&self) -> TColor  {
-          return method_Call_1!(Memo_GetColor, self.0);
-      }
-
-	  pub fn SetColor(&self, aValue: TColor) -> &Self  {
-          method_Call_1!(Memo_SetColor, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Constraints(&self) -> TSizeConstraints  {
-          return method_Call_2!(TSizeConstraints, Memo_GetConstraints, self.0);
-      }
-
-	  pub fn SetConstraints(&self, aValue: &TSizeConstraints) -> &Self  {
-          method_Call_1!(Memo_SetConstraints, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn DoubleBuffered(&self) -> bool  {
-          return method_Call_1!(Memo_GetDoubleBuffered, self.0);
-      }
-
-	  pub fn SetDoubleBuffered(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetDoubleBuffered, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn DragCursor(&self) -> TCursor  {
-          return method_Call_1!(Memo_GetDragCursor, self.0);
-      }
-
-	  pub fn SetDragCursor(&self, aValue: TCursor) -> &Self  {
-          method_Call_1!(Memo_SetDragCursor, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn DragKind(&self) -> TDragKind  {
-          return method_Call_1!(Memo_GetDragKind, self.0);
-      }
-
-	  pub fn SetDragKind(&self, aValue: TDragKind) -> &Self  {
-          method_Call_1!(Memo_SetDragKind, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn DragMode(&self) -> TDragMode  {
-          return method_Call_1!(Memo_GetDragMode, self.0);
-      }
-
-	  pub fn SetDragMode(&self, aValue: TDragMode) -> &Self  {
-          method_Call_1!(Memo_SetDragMode, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Enabled(&self) -> bool  {
-          return method_Call_1!(Memo_GetEnabled, self.0);
-      }
-
-	  pub fn SetEnabled(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetEnabled, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Font(&self) -> TFont  {
-          return method_Call_2!(TFont, Memo_GetFont, self.0);
-      }
-
-	  pub fn SetFont(&self, aValue: &TFont) -> &Self  {
-          method_Call_1!(Memo_SetFont, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn HideSelection(&self) -> bool  {
-          return method_Call_1!(Memo_GetHideSelection, self.0);
-      }
-
-	  pub fn SetHideSelection(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetHideSelection, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Lines(&self) -> TStrings  {
-          return method_Call_2!(TStrings, Memo_GetLines, self.0);
-      }
-
-	  pub fn SetLines(&self, aValue: &dyn IStrings) -> &Self  {
-          method_Call_1!(Memo_SetLines, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn MaxLength(&self) -> i32  {
-          return method_Call_1!(Memo_GetMaxLength, self.0);
-      }
-
-	  pub fn SetMaxLength(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetMaxLength, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ParentColor(&self) -> bool  {
-          return method_Call_1!(Memo_GetParentColor, self.0);
-      }
-
-	  pub fn SetParentColor(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetParentColor, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ParentDoubleBuffered(&self) -> bool  {
-          return method_Call_1!(Memo_GetParentDoubleBuffered, self.0);
-      }
-
-	  pub fn SetParentDoubleBuffered(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetParentDoubleBuffered, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ParentFont(&self) -> bool  {
-          return method_Call_1!(Memo_GetParentFont, self.0);
-      }
-
-	  pub fn SetParentFont(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetParentFont, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ParentShowHint(&self) -> bool  {
-          return method_Call_1!(Memo_GetParentShowHint, self.0);
-      }
-
-	  pub fn SetParentShowHint(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetParentShowHint, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn PopupMenu(&self) -> TPopupMenu  {
-          return method_Call_2!(TPopupMenu, Memo_GetPopupMenu, self.0);
-      }
-
-	  pub fn SetPopupMenu(&self, aValue: &TPopupMenu) -> &Self  {
-          method_Call_1!(Memo_SetPopupMenu, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn ReadOnly(&self) -> bool  {
-          return method_Call_1!(Memo_GetReadOnly, self.0);
-      }
-
-	  pub fn SetReadOnly(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetReadOnly, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ScrollBars(&self) -> TScrollStyle  {
-          return method_Call_1!(Memo_GetScrollBars, self.0);
-      }
-
-	  pub fn SetScrollBars(&self, aValue: TScrollStyle) -> &Self  {
-          method_Call_1!(Memo_SetScrollBars, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ShowHint(&self) -> bool  {
-          return method_Call_1!(Memo_GetShowHint, self.0);
-      }
-
-	  pub fn SetShowHint(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetShowHint, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn TabOrder(&self) -> TTabOrder  {
-          return method_Call_1!(Memo_GetTabOrder, self.0);
-      }
-
-	  pub fn SetTabOrder(&self, aValue: TTabOrder) -> &Self  {
-          method_Call_1!(Memo_SetTabOrder, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn TabStop(&self) -> bool  {
-          return method_Call_1!(Memo_GetTabStop, self.0);
-      }
-
-	  pub fn SetTabStop(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetTabStop, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Visible(&self) -> bool  {
-          return method_Call_1!(Memo_GetVisible, self.0);
-      }
-
-	  pub fn SetVisible(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetVisible, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn WantReturns(&self) -> bool  {
-          return method_Call_1!(Memo_GetWantReturns, self.0);
-      }
-
-	  pub fn SetWantReturns(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetWantReturns, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn WantTabs(&self) -> bool  {
-          return method_Call_1!(Memo_GetWantTabs, self.0);
-      }
-
-	  pub fn SetWantTabs(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetWantTabs, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn WordWrap(&self) -> bool  {
-          return method_Call_1!(Memo_GetWordWrap, self.0);
-      }
-
-	  pub fn SetWordWrap(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetWordWrap, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
+	  pub fn Height(&self) -> i32  {
+          return method_Call_1!(Graphic_GetHeight, self.0);
       }
 
-	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
+	  pub fn SetHeight(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Graphic_SetHeight, self.0, aValue);
           return &self;
-      }
-
-	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>) -> &Self  {
-          method_Call_1!(Memo_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn CaretPos(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
-          method_Call_1!(Memo_GetCaretPos, self.0, &mut result);
-          return result;
-      }
-
-	  pub fn SetCaretPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(Memo_SetCaretPos, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn CanUndo(&self) -> bool  {
-          return method_Call_1!(Memo_GetCanUndo, self.0);
       }
 
 	  pub fn Modified(&self) -> bool  {
-          return method_Call_1!(Memo_GetModified, self.0);
+          return method_Call_1!(Graphic_GetModified, self.0);
       }
 
 	  pub fn SetModified(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetModified, self.0, aValue);
+          method_Call_1!(Graphic_SetModified, self.0, aValue);
           return &self;
       }
 
-	  pub fn SelLength(&self) -> i32  {
-          return method_Call_1!(Memo_GetSelLength, self.0);
+	  pub fn Palette(&self) -> HPALETTE  {
+          return method_Call_1!(Graphic_GetPalette, self.0);
       }
 
-	  pub fn SetSelLength(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetSelLength, self.0, aValue);
+	  pub fn SetPalette(&self, aValue: HPALETTE) -> &Self  {
+          method_Call_1!(Graphic_SetPalette, self.0, aValue);
           return &self;
       }
 
-	  pub fn SelStart(&self) -> i32  {
-          return method_Call_1!(Memo_GetSelStart, self.0);
+	  pub fn PaletteModified(&self) -> bool  {
+          return method_Call_1!(Graphic_GetPaletteModified, self.0);
       }
 
-	  pub fn SetSelStart(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetSelStart, self.0, aValue);
+	  pub fn SetPaletteModified(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Graphic_SetPaletteModified, self.0, aValue);
           return &self;
       }
 
-	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetSelText, self.0));
+	  pub fn Transparent(&self) -> bool  {
+          return method_Call_1!(Graphic_GetTransparent, self.0);
       }
 
-	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Memo_SetSelText, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetText, self.0));
-      }
-
-	  pub fn SetText(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Memo_SetText, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetTextHint, self.0));
-      }
-
-	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Memo_SetTextHint, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn DockClientCount(&self) -> i32  {
-          return method_Call_1!(Memo_GetDockClientCount, self.0);
-      }
-
-	  pub fn DockSite(&self) -> bool  {
-          return method_Call_1!(Memo_GetDockSite, self.0);
-      }
-
-	  pub fn SetDockSite(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetDockSite, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn MouseInClient(&self) -> bool  {
-          return method_Call_1!(Memo_GetMouseInClient, self.0);
-      }
-
-	  pub fn VisibleDockClientCount(&self) -> i32  {
-          return method_Call_1!(Memo_GetVisibleDockClientCount, self.0);
-      }
-
-	  pub fn Brush(&self) -> TBrush  {
-          return method_Call_2!(TBrush, Memo_GetBrush, self.0);
-      }
-
-	  pub fn ControlCount(&self) -> i32  {
-          return method_Call_1!(Memo_GetControlCount, self.0);
-      }
-
-	  pub fn Handle(&self) -> HWND  {
-          return method_Call_1!(Memo_GetHandle, self.0);
-      }
-
-	  pub fn ParentWindow(&self) -> HWND  {
-          return method_Call_1!(Memo_GetParentWindow, self.0);
-      }
-
-	  pub fn SetParentWindow(&self, aValue: HWND) -> &Self  {
-          method_Call_1!(Memo_SetParentWindow, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Showing(&self) -> bool  {
-          return method_Call_1!(Memo_GetShowing, self.0);
-      }
-
-	  pub fn UseDockManager(&self) -> bool  {
-          return method_Call_1!(Memo_GetUseDockManager, self.0);
-      }
-
-	  pub fn SetUseDockManager(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Memo_SetUseDockManager, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Action(&self) -> TAction  {
-          return method_Call_2!(TAction, Memo_GetAction, self.0);
-      }
-
-	  pub fn SetAction(&self, aValue: &TAction) -> &Self  {
-          method_Call_1!(Memo_SetAction, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn BoundsRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
-          method_Call_1!(Memo_GetBoundsRect, self.0, &mut result);
-          return result;
-      }
-
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Memo_SetBoundsRect, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ClientHeight(&self) -> i32  {
-          return method_Call_1!(Memo_GetClientHeight, self.0);
-      }
-
-	  pub fn SetClientHeight(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetClientHeight, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ClientOrigin(&self) -> TPoint  {
-          let mut result = TPoint::Empty();
-          method_Call_1!(Memo_GetClientOrigin, self.0, &mut result);
-          return result;
-      }
-
-	  pub fn ClientRect(&self) -> TRect  {
-          let mut result = TRect::Empty();
-          method_Call_1!(Memo_GetClientRect, self.0, &mut result);
-          return result;
-      }
-
-	  pub fn ClientWidth(&self) -> i32  {
-          return method_Call_1!(Memo_GetClientWidth, self.0);
-      }
-
-	  pub fn SetClientWidth(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetClientWidth, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ControlState(&self) -> TControlState  {
-          return method_Call_1!(Memo_GetControlState, self.0);
-      }
-
-	  pub fn SetControlState(&self, aValue: TControlState) -> &Self  {
-          method_Call_1!(Memo_SetControlState, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn ControlStyle(&self) -> TControlStyle  {
-          return method_Call_1!(Memo_GetControlStyle, self.0);
-      }
-
-	  pub fn SetControlStyle(&self, aValue: TControlStyle) -> &Self  {
-          method_Call_1!(Memo_SetControlStyle, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Floating(&self) -> bool  {
-          return method_Call_1!(Memo_GetFloating, self.0);
-      }
-
-	  pub fn Parent(&self) -> TWinControl  {
-          return method_Call_2!(TWinControl, Memo_GetParent, self.0);
-      }
-
-	  pub fn SetParent(&self, aValue: &dyn IWinControl) -> &Self  {
-          method_Call_1!(Memo_SetParent, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn Left(&self) -> i32  {
-          return method_Call_1!(Memo_GetLeft, self.0);
-      }
-
-	  pub fn SetLeft(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetLeft, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Top(&self) -> i32  {
-          return method_Call_1!(Memo_GetTop, self.0);
-      }
-
-	  pub fn SetTop(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetTop, self.0, aValue);
+	  pub fn SetTransparent(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Graphic_SetTransparent, self.0, aValue);
           return &self;
       }
 
 	  pub fn Width(&self) -> i32  {
-          return method_Call_1!(Memo_GetWidth, self.0);
+          return method_Call_1!(Graphic_GetWidth, self.0);
       }
 
 	  pub fn SetWidth(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetWidth, self.0, aValue);
+          method_Call_1!(Graphic_SetWidth, self.0, aValue);
           return &self;
       }
 
-	  pub fn Height(&self) -> i32  {
-          return method_Call_1!(Memo_GetHeight, self.0);
-      }
-
-	  pub fn SetHeight(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetHeight, self.0, aValue);
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Graphic_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
-      }
-
-	  pub fn Cursor(&self) -> TCursor  {
-          return method_Call_1!(Memo_GetCursor, self.0);
-      }
-
-	  pub fn SetCursor(&self, aValue: TCursor) -> &Self  {
-          method_Call_1!(Memo_SetCursor, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetHint, self.0));
-      }
-
-	  pub fn SetHint(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Memo_SetHint, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn ComponentCount(&self) -> i32  {
-          return method_Call_1!(Memo_GetComponentCount, self.0);
-      }
-
-	  pub fn ComponentIndex(&self) -> i32  {
-          return method_Call_1!(Memo_GetComponentIndex, self.0);
-      }
-
-	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Memo_SetComponentIndex, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn Owner(&self) -> TComponent  {
-          return method_Call_2!(TComponent, Memo_GetOwner, self.0);
-      }
-
-	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetName, self.0));
-      }
-
-	  pub fn SetName(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Memo_SetName, self.0, to_CString!(aValue));
-          return &self;
-      }
-
-	  pub fn Tag(&self) -> isize  {
-          return method_Call_1!(Memo_GetTag, self.0);
-      }
-
-	  pub fn SetTag(&self, aValue: isize) -> &Self  {
-          method_Call_1!(Memo_SetTag, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn AnchorSideLeft(&self) -> TAnchorSide  {
-          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideLeft, self.0);
-      }
-
-	  pub fn SetAnchorSideLeft(&self, aValue: &TAnchorSide) -> &Self  {
-          method_Call_1!(Memo_SetAnchorSideLeft, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorSideTop(&self) -> TAnchorSide  {
-          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideTop, self.0);
-      }
-
-	  pub fn SetAnchorSideTop(&self, aValue: &TAnchorSide) -> &Self  {
-          method_Call_1!(Memo_SetAnchorSideTop, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorSideRight(&self) -> TAnchorSide  {
-          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideRight, self.0);
-      }
-
-	  pub fn SetAnchorSideRight(&self, aValue: &TAnchorSide) -> &Self  {
-          method_Call_1!(Memo_SetAnchorSideRight, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn AnchorSideBottom(&self) -> TAnchorSide  {
-          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideBottom, self.0);
-      }
-
-	  pub fn SetAnchorSideBottom(&self, aValue: &TAnchorSide) -> &Self  {
-          method_Call_1!(Memo_SetAnchorSideBottom, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn ChildSizing(&self) -> TControlChildSizing  {
-          return method_Call_2!(TControlChildSizing, Memo_GetChildSizing, self.0);
-      }
-
-	  pub fn SetChildSizing(&self, aValue: &TControlChildSizing) -> &Self  {
-          method_Call_1!(Memo_SetChildSizing, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn BorderSpacing(&self) -> TControlBorderSpacing  {
-          return method_Call_2!(TControlBorderSpacing, Memo_GetBorderSpacing, self.0);
-      }
-
-	  pub fn SetBorderSpacing(&self, aValue: &TControlBorderSpacing) -> &Self  {
-          method_Call_1!(Memo_SetBorderSpacing, self.0, aValue.Instance());
-          return &self;
-      }
-
-	  pub fn DockClients(&self, index: i32) -> TControl  {
-          return method_Call_2!(TControl, Memo_GetDockClients, self.0, index);
-      }
-
-	  pub fn Controls(&self, index: i32) -> TControl  {
-          return method_Call_2!(TControl, Memo_GetControls, self.0, index);
-      }
-
-	  pub fn Components(&self, aIndex: i32) -> TComponent  {
-          return method_Call_2!(TComponent, Memo_GetComponents, self.0, aIndex);
-      }
-
-	  pub fn AnchorSide(&self, aKind: TAnchorKind) -> TAnchorSide  {
-          return method_Call_2!(TAnchorSide, Memo_GetAnchorSide, self.0, aKind);
       }
 
       // static class
-	  impl_Class_method!(Memo_StaticClassType);
+	  impl_Class_method!(Graphic_StaticClassType);
 }
 
-impl_IObject!(TMemo);
-impl_IComponent!(TMemo);
-impl_IControl!(TMemo);
-impl_IWinControl!(TMemo);
+impl_IObject!(TGraphic);
+impl IGraphic for TGraphic {}
+impl_Drop_method!(TGraphic);
+
+impl TStrings {
+      pub fn new() -> Self {
+        method_Create!(TStrings, Strings_Create, );
+      }
+
+      impl_Object_methods!(TStrings);
+
+	  impl_Free_method!(Strings_Free);
+
+	  pub fn Add(&self, s: &str) -> i32  {
+          return method_Call_1!(Strings_Add, self.0, to_CString!(s));
+      }
+
+	  pub fn AddObject(&self, s: &str, aObject: &dyn IObject) -> i32  {
+          return method_Call_1!(Strings_AddObject, self.0, to_CString!(s), aObject.Instance());
+      }
+
+	  pub fn Append(&self, s: &str) -> &Self  {
+          method_Call_1!(Strings_Append, self.0, to_CString!(s));
+          return &self;
+      }
+
+	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
+          method_Call_1!(Strings_Assign, self.0, source.Instance());
+          return &self;
+      }
+
+	  pub fn BeginUpdate(&self) -> &Self  {
+          method_Call_1!(Strings_BeginUpdate, self.0);
+          return &self;
+      }
+
+	  pub fn Clear(&self) -> &Self  {
+          method_Call_1!(Strings_Clear, self.0);
+          return &self;
+      }
+
+	  pub fn Delete(&self, index: i32) -> &Self  {
+          method_Call_1!(Strings_Delete, self.0, index);
+          return &self;
+      }
+
+	  pub fn EndUpdate(&self) -> &Self  {
+          method_Call_1!(Strings_EndUpdate, self.0);
+          return &self;
+      }
+
+	  pub fn Equals(&self, strings: &dyn IStrings) -> bool  {
+          return method_Call_1!(Strings_Equals, self.0, strings.Instance());
+      }
+
+	  pub fn IndexOf(&self, s: &str) -> i32  {
+          return method_Call_1!(Strings_IndexOf, self.0, to_CString!(s));
+      }
+
+	  pub fn IndexOfName(&self, name: &str) -> i32  {
+          return method_Call_1!(Strings_IndexOfName, self.0, to_CString!(name));
+      }
+
+	  pub fn IndexOfObject(&self, aObject: &dyn IObject) -> i32  {
+          return method_Call_1!(Strings_IndexOfObject, self.0, aObject.Instance());
+      }
+
+	  pub fn Insert(&self, index: i32, s: &str) -> &Self  {
+          method_Call_1!(Strings_Insert, self.0, index, to_CString!(s));
+          return &self;
+      }
+
+	  pub fn InsertObject(&self, index: i32, s: &str, aObject: &dyn IObject) -> &Self  {
+          method_Call_1!(Strings_InsertObject, self.0, index, to_CString!(s), aObject.Instance());
+          return &self;
+      }
+
+	  pub fn LoadFromFile(&self, fileName: &str) -> &Self  {
+          method_Call_1!(Strings_LoadFromFile, self.0, to_CString!(fileName));
+          return &self;
+      }
+
+	  pub fn LoadFromStream(&self, stream: &dyn IStream) -> &Self  {
+          method_Call_1!(Strings_LoadFromStream, self.0, stream.Instance());
+          return &self;
+      }
+
+	  pub fn Move(&self, curIndex: i32, newIndex: i32) -> &Self  {
+          method_Call_1!(Strings_Move, self.0, curIndex, newIndex);
+          return &self;
+      }
+
+	  pub fn SaveToFile(&self, fileName: &str) -> &Self  {
+          method_Call_1!(Strings_SaveToFile, self.0, to_CString!(fileName));
+          return &self;
+      }
+
+	  pub fn SaveToStream(&self, stream: &dyn IStream) -> &Self  {
+          method_Call_1!(Strings_SaveToStream, self.0, stream.Instance());
+          return &self;
+      }
+
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetNamePath, self.0));
+      }
+
+	  pub fn ClassType(&self) -> TClass {
+          return method_Call_1!(Strings_ClassType, self.0);
+      }
+
+	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(Strings_ClassName, self.0));
+      }
+
+	  pub fn InstanceSize(&self) -> i32 {
+          return method_Call_1!(Strings_InstanceSize, self.0);
+      }
+
+	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
+          return method_Call_1!(Strings_InheritsFrom, self.0, aClass);
+      }
+
+	  pub fn GetHashCode(&self) -> i32 {
+          return method_Call_1!(Strings_GetHashCode, self.0);
+      }
+
+	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(Strings_ToString, self.0));
+      }
+
+	  pub fn Capacity(&self) -> i32  {
+          return method_Call_1!(Strings_GetCapacity, self.0);
+      }
+
+	  pub fn SetCapacity(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Strings_SetCapacity, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn CommaText<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetCommaText, self.0));
+      }
+
+	  pub fn SetCommaText(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Strings_SetCommaText, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn Count(&self) -> i32  {
+          return method_Call_1!(Strings_GetCount, self.0);
+      }
+
+	  pub fn Delimiter(&self) -> Char  {
+          return method_Call_1!(Strings_GetDelimiter, self.0);
+      }
+
+	  pub fn SetDelimiter(&self, aValue: Char) -> &Self  {
+          method_Call_1!(Strings_SetDelimiter, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn NameValueSeparator(&self) -> Char  {
+          return method_Call_1!(Strings_GetNameValueSeparator, self.0);
+      }
+
+	  pub fn SetNameValueSeparator(&self, aValue: Char) -> &Self  {
+          method_Call_1!(Strings_SetNameValueSeparator, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetText, self.0));
+      }
+
+	  pub fn SetText(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Strings_SetText, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn Objects(&self, index: i32) -> TObject  {
+          return method_Call_2!(TObject, Strings_GetObjects, self.0, index);
+      }
+
+	  pub fn SetObjects(&self, index: i32, aValue: &dyn IObject) -> &Self  {
+          method_Call_1!(Strings_SetObjects, self.0, index, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn Values<'a>(&self, name: &str) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetValues, self.0, to_CString!(name)));
+      }
+
+	  pub fn SetValues(&self, name: &str, aValue: &str) -> &Self  {
+          method_Call_1!(Strings_SetValues, self.0, to_CString!(name), to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn ValueFromIndex<'a>(&self, index: i32) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetValueFromIndex, self.0, index));
+      }
+
+	  pub fn SetValueFromIndex(&self, index: i32, aValue: &str) -> &Self  {
+          method_Call_1!(Strings_SetValueFromIndex, self.0, index, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn Strings<'a>(&self, index: i32) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Strings_GetStrings, self.0, index));
+      }
+
+	  pub fn SetStrings(&self, index: i32, aValue: &str) -> &Self  {
+          method_Call_1!(Strings_SetStrings, self.0, index, to_CString!(aValue));
+          return &self;
+      }
+
+      // static class
+	  impl_Class_method!(Strings_StaticClassType);
+}
+
+impl_IObject!(TStrings);
+impl_IStrings!(TStrings);
+impl_Drop_method!(TStrings);
+
+impl TStream {
+}
+
+impl_IObject!(TStream);
+impl_IStream!(TStream);
 
 impl TCheckBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
@@ -27889,11 +26894,1030 @@ impl_IObject!(TBitmap);
 impl IGraphic for TBitmap {}
 impl_Drop_method!(TBitmap);
 
-impl TStream {
+impl TMemo {
+      pub fn new(aOwner: &dyn IComponent) -> Self {
+        method_Create!(TMemo, Memo_Create, aOwner.Instance());
+      }
+
+      impl_Object_methods!(TMemo);
+
+	  impl_Free_method!(Memo_Free);
+
+	  pub fn Append(&self, value: &str) -> &Self  {
+          method_Call_1!(Memo_Append, self.0, to_CString!(value));
+          return &self;
+      }
+
+	  pub fn Clear(&self) -> &Self  {
+          method_Call_1!(Memo_Clear, self.0);
+          return &self;
+      }
+
+	  pub fn ClearSelection(&self) -> &Self  {
+          method_Call_1!(Memo_ClearSelection, self.0);
+          return &self;
+      }
+
+	  pub fn CopyToClipboard(&self) -> &Self  {
+          method_Call_1!(Memo_CopyToClipboard, self.0);
+          return &self;
+      }
+
+	  pub fn CutToClipboard(&self) -> &Self  {
+          method_Call_1!(Memo_CutToClipboard, self.0);
+          return &self;
+      }
+
+	  pub fn PasteFromClipboard(&self) -> &Self  {
+          method_Call_1!(Memo_PasteFromClipboard, self.0);
+          return &self;
+      }
+
+	  pub fn Undo(&self) -> &Self  {
+          method_Call_1!(Memo_Undo, self.0);
+          return &self;
+      }
+
+	  pub fn SelectAll(&self) -> &Self  {
+          method_Call_1!(Memo_SelectAll, self.0);
+          return &self;
+      }
+
+	  pub fn CanFocus(&self) -> bool {
+          return method_Call_1!(Memo_CanFocus, self.0);
+      }
+
+	  pub fn ContainsControl(&self, control: &dyn IControl) -> bool {
+          return method_Call_1!(Memo_ContainsControl, self.0, control.Instance());
+      }
+
+	  pub fn ControlAtPos(&self, pos: &TPoint, allowDisabled: bool, allowWinControls: bool) -> TControl {
+          let mut ps1 = TPoint::From(pos);
+          return method_Call_2!(TControl, Memo_ControlAtPos, self.0, &mut ps1, allowDisabled, allowWinControls);
+      }
+
+	  pub fn DisableAlign(&self) -> &Self {
+          method_Call_1!(Memo_DisableAlign, self.0);
+          return &self;
+      }
+
+	  pub fn EnableAlign(&self) -> &Self {
+          method_Call_1!(Memo_EnableAlign, self.0);
+          return &self;
+      }
+
+	  pub fn FindChildControl(&self, controlName: &str) -> TControl {
+          return method_Call_2!(TControl, Memo_FindChildControl, self.0, to_CString!(controlName));
+      }
+
+	  pub fn FlipChildren(&self, allLevels: bool) -> &Self {
+          method_Call_1!(Memo_FlipChildren, self.0, allLevels);
+          return &self;
+      }
+
+	  pub fn Focused(&self) -> bool {
+          return method_Call_1!(Memo_Focused, self.0);
+      }
+
+	  pub fn HandleAllocated(&self) -> bool {
+          return method_Call_1!(Memo_HandleAllocated, self.0);
+      }
+
+	  pub fn InsertControl(&self, aControl: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_InsertControl, self.0, aControl.Instance());
+          return &self;
+      }
+
+	  pub fn Invalidate(&self) -> &Self {
+          method_Call_1!(Memo_Invalidate, self.0);
+          return &self;
+      }
+
+	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_RemoveControl, self.0, aControl.Instance());
+          return &self;
+      }
+
+	  pub fn Realign(&self) -> &Self {
+          method_Call_1!(Memo_Realign, self.0);
+          return &self;
+      }
+
+	  pub fn Repaint(&self) -> &Self {
+          method_Call_1!(Memo_Repaint, self.0);
+          return &self;
+      }
+
+	  pub fn ScaleBy(&self, m: i32, d: i32) -> &Self {
+          method_Call_1!(Memo_ScaleBy, self.0, m, d);
+          return &self;
+      }
+
+	  pub fn ScrollBy(&self, deltaX: i32, deltaY: i32) -> &Self {
+          method_Call_1!(Memo_ScrollBy, self.0, deltaX, deltaY);
+          return &self;
+      }
+
+	  pub fn SetBounds(&self, aLeft: i32, aTop: i32, aWidth: i32, aHeight: i32) -> &Self {
+          method_Call_1!(Memo_SetBounds, self.0, aLeft, aTop, aWidth, aHeight);
+          return &self;
+      }
+
+	  pub fn SetFocus(&self) -> &Self {
+          method_Call_1!(Memo_SetFocus, self.0);
+          return &self;
+      }
+
+	  pub fn Update(&self) -> &Self {
+          method_Call_1!(Memo_Update, self.0);
+          return &self;
+      }
+
+	  pub fn BringToFront(&self) -> &Self {
+          method_Call_1!(Memo_BringToFront, self.0);
+          return &self;
+      }
+
+	  pub fn ClientToScreen(&self, point: &TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          let mut ps1 = TPoint::From(point);
+          method_Call_1!(Memo_ClientToScreen, self.0, &mut ps1, &mut result);
+          return result;
+      }
+
+	  pub fn ClientToParent(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          let mut ps1 = TPoint::From(point);
+          method_Call_1!(Memo_ClientToParent, self.0, &mut ps1, aParent.Instance(), &mut result);
+          return result;
+      }
+
+	  pub fn Dragging(&self) -> bool {
+          return method_Call_1!(Memo_Dragging, self.0);
+      }
+
+	  pub fn HasParent(&self) -> bool {
+          return method_Call_1!(Memo_HasParent, self.0);
+      }
+
+	  pub fn Hide(&self) -> &Self {
+          method_Call_1!(Memo_Hide, self.0);
+          return &self;
+      }
+
+	  pub fn Perform(&self, msg: u32, wParam: usize, lParam: isize) -> isize {
+          return method_Call_1!(Memo_Perform, self.0, msg, wParam, lParam);
+      }
+
+	  pub fn Refresh(&self) -> &Self {
+          method_Call_1!(Memo_Refresh, self.0);
+          return &self;
+      }
+
+	  pub fn ScreenToClient(&self, point: &TPoint) -> TPoint {
+          let mut result = TPoint::Empty();
+          let mut ps1 = TPoint::From(point);
+          method_Call_1!(Memo_ScreenToClient, self.0, &mut ps1, &mut result);
+          return result;
+      }
+
+	  pub fn ParentToClient(&self, point: &TPoint, aParent: &dyn IWinControl) -> TPoint {
+          let mut result = TPoint::Empty();
+          let mut ps1 = TPoint::From(point);
+          method_Call_1!(Memo_ParentToClient, self.0, &mut ps1, aParent.Instance(), &mut result);
+          return result;
+      }
+
+	  pub fn SendToBack(&self) -> &Self {
+          method_Call_1!(Memo_SendToBack, self.0);
+          return &self;
+      }
+
+	  pub fn Show(&self) -> &Self {
+          method_Call_1!(Memo_Show, self.0);
+          return &self;
+      }
+
+	  pub fn GetTextBuf(&self, buffer: &str, bufSize: i32) -> i32 {
+          return method_Call_1!(Memo_GetTextBuf, self.0, to_CString!(buffer), bufSize);
+      }
+
+	  pub fn GetTextLen(&self) -> i32 {
+          return method_Call_1!(Memo_GetTextLen, self.0);
+      }
+
+	  pub fn SetTextBuf(&self, buffer: &str) -> &Self {
+          method_Call_1!(Memo_SetTextBuf, self.0, to_CString!(buffer));
+          return &self;
+      }
+
+	  pub fn FindComponent(&self, aName: &str) -> TComponent {
+          return method_Call_2!(TComponent, Memo_FindComponent, self.0, to_CString!(aName));
+      }
+
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(Memo_GetNamePath, self.0));
+      }
+
+	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
+          method_Call_1!(Memo_Assign, self.0, source.Instance());
+          return &self;
+      }
+
+	  pub fn ClassType(&self) -> TClass {
+          return method_Call_1!(Memo_ClassType, self.0);
+      }
+
+	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(Memo_ClassName, self.0));
+      }
+
+	  pub fn InstanceSize(&self) -> i32 {
+          return method_Call_1!(Memo_InstanceSize, self.0);
+      }
+
+	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
+          return method_Call_1!(Memo_InheritsFrom, self.0, aClass);
+      }
+
+	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
+          return method_Call_1!(Memo_Equals, self.0, obj.Instance());
+      }
+
+	  pub fn GetHashCode(&self) -> i32 {
+          return method_Call_1!(Memo_GetHashCode, self.0);
+      }
+
+	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(Memo_ToString, self.0));
+      }
+
+	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_AnchorToNeighbour, self.0, aSide, aSpace, aSibling.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorParallel(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_AnchorParallel, self.0, aSide, aSpace, aSibling.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorHorizontalCenterTo(&self, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_AnchorHorizontalCenterTo, self.0, aSibling.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorVerticalCenterTo(&self, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_AnchorVerticalCenterTo, self.0, aSibling.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
+          method_Call_1!(Memo_AnchorAsAlign, self.0, aTheAlign, aSpace);
+          return &self;
+      }
+
+	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
+          method_Call_1!(Memo_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn Align(&self) -> TAlign  {
+          return method_Call_1!(Memo_GetAlign, self.0);
+      }
+
+	  pub fn SetAlign(&self, aValue: TAlign) -> &Self  {
+          method_Call_1!(Memo_SetAlign, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Alignment(&self) -> TAlignment  {
+          return method_Call_1!(Memo_GetAlignment, self.0);
+      }
+
+	  pub fn SetAlignment(&self, aValue: TAlignment) -> &Self  {
+          method_Call_1!(Memo_SetAlignment, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Anchors(&self) -> TAnchors  {
+          return method_Call_1!(Memo_GetAnchors, self.0);
+      }
+
+	  pub fn SetAnchors(&self, aValue: TAnchors) -> &Self  {
+          method_Call_1!(Memo_SetAnchors, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn BiDiMode(&self) -> TBiDiMode  {
+          return method_Call_1!(Memo_GetBiDiMode, self.0);
+      }
+
+	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
+          method_Call_1!(Memo_SetBiDiMode, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn BorderStyle(&self) -> TBorderStyle  {
+          return method_Call_1!(Memo_GetBorderStyle, self.0);
+      }
+
+	  pub fn SetBorderStyle(&self, aValue: TBorderStyle) -> &Self  {
+          method_Call_1!(Memo_SetBorderStyle, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn CharCase(&self) -> TEditCharCase  {
+          return method_Call_1!(Memo_GetCharCase, self.0);
+      }
+
+	  pub fn SetCharCase(&self, aValue: TEditCharCase) -> &Self  {
+          method_Call_1!(Memo_SetCharCase, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Color(&self) -> TColor  {
+          return method_Call_1!(Memo_GetColor, self.0);
+      }
+
+	  pub fn SetColor(&self, aValue: TColor) -> &Self  {
+          method_Call_1!(Memo_SetColor, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Constraints(&self) -> TSizeConstraints  {
+          return method_Call_2!(TSizeConstraints, Memo_GetConstraints, self.0);
+      }
+
+	  pub fn SetConstraints(&self, aValue: &TSizeConstraints) -> &Self  {
+          method_Call_1!(Memo_SetConstraints, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn DoubleBuffered(&self) -> bool  {
+          return method_Call_1!(Memo_GetDoubleBuffered, self.0);
+      }
+
+	  pub fn SetDoubleBuffered(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetDoubleBuffered, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn DragCursor(&self) -> TCursor  {
+          return method_Call_1!(Memo_GetDragCursor, self.0);
+      }
+
+	  pub fn SetDragCursor(&self, aValue: TCursor) -> &Self  {
+          method_Call_1!(Memo_SetDragCursor, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn DragKind(&self) -> TDragKind  {
+          return method_Call_1!(Memo_GetDragKind, self.0);
+      }
+
+	  pub fn SetDragKind(&self, aValue: TDragKind) -> &Self  {
+          method_Call_1!(Memo_SetDragKind, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn DragMode(&self) -> TDragMode  {
+          return method_Call_1!(Memo_GetDragMode, self.0);
+      }
+
+	  pub fn SetDragMode(&self, aValue: TDragMode) -> &Self  {
+          method_Call_1!(Memo_SetDragMode, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Enabled(&self) -> bool  {
+          return method_Call_1!(Memo_GetEnabled, self.0);
+      }
+
+	  pub fn SetEnabled(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetEnabled, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Font(&self) -> TFont  {
+          return method_Call_2!(TFont, Memo_GetFont, self.0);
+      }
+
+	  pub fn SetFont(&self, aValue: &TFont) -> &Self  {
+          method_Call_1!(Memo_SetFont, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn HideSelection(&self) -> bool  {
+          return method_Call_1!(Memo_GetHideSelection, self.0);
+      }
+
+	  pub fn SetHideSelection(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetHideSelection, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Lines(&self) -> TStrings  {
+          return method_Call_2!(TStrings, Memo_GetLines, self.0);
+      }
+
+	  pub fn SetLines(&self, aValue: &dyn IStrings) -> &Self  {
+          method_Call_1!(Memo_SetLines, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn MaxLength(&self) -> i32  {
+          return method_Call_1!(Memo_GetMaxLength, self.0);
+      }
+
+	  pub fn SetMaxLength(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetMaxLength, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ParentColor(&self) -> bool  {
+          return method_Call_1!(Memo_GetParentColor, self.0);
+      }
+
+	  pub fn SetParentColor(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetParentColor, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ParentDoubleBuffered(&self) -> bool  {
+          return method_Call_1!(Memo_GetParentDoubleBuffered, self.0);
+      }
+
+	  pub fn SetParentDoubleBuffered(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetParentDoubleBuffered, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ParentFont(&self) -> bool  {
+          return method_Call_1!(Memo_GetParentFont, self.0);
+      }
+
+	  pub fn SetParentFont(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetParentFont, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ParentShowHint(&self) -> bool  {
+          return method_Call_1!(Memo_GetParentShowHint, self.0);
+      }
+
+	  pub fn SetParentShowHint(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetParentShowHint, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn PopupMenu(&self) -> TPopupMenu  {
+          return method_Call_2!(TPopupMenu, Memo_GetPopupMenu, self.0);
+      }
+
+	  pub fn SetPopupMenu(&self, aValue: &TPopupMenu) -> &Self  {
+          method_Call_1!(Memo_SetPopupMenu, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn ReadOnly(&self) -> bool  {
+          return method_Call_1!(Memo_GetReadOnly, self.0);
+      }
+
+	  pub fn SetReadOnly(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetReadOnly, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ScrollBars(&self) -> TScrollStyle  {
+          return method_Call_1!(Memo_GetScrollBars, self.0);
+      }
+
+	  pub fn SetScrollBars(&self, aValue: TScrollStyle) -> &Self  {
+          method_Call_1!(Memo_SetScrollBars, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ShowHint(&self) -> bool  {
+          return method_Call_1!(Memo_GetShowHint, self.0);
+      }
+
+	  pub fn SetShowHint(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetShowHint, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn TabOrder(&self) -> TTabOrder  {
+          return method_Call_1!(Memo_GetTabOrder, self.0);
+      }
+
+	  pub fn SetTabOrder(&self, aValue: TTabOrder) -> &Self  {
+          method_Call_1!(Memo_SetTabOrder, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn TabStop(&self) -> bool  {
+          return method_Call_1!(Memo_GetTabStop, self.0);
+      }
+
+	  pub fn SetTabStop(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetTabStop, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Visible(&self) -> bool  {
+          return method_Call_1!(Memo_GetVisible, self.0);
+      }
+
+	  pub fn SetVisible(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetVisible, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn WantReturns(&self) -> bool  {
+          return method_Call_1!(Memo_GetWantReturns, self.0);
+      }
+
+	  pub fn SetWantReturns(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetWantReturns, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn WantTabs(&self) -> bool  {
+          return method_Call_1!(Memo_GetWantTabs, self.0);
+      }
+
+	  pub fn SetWantTabs(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetWantTabs, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn WordWrap(&self) -> bool  {
+          return method_Call_1!(Memo_GetWordWrap, self.0);
+      }
+
+	  pub fn SetWordWrap(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetWordWrap, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnDragDrop<T>(&self, aSelfId: usize, aEventId: TDragDropEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnDragDrop, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnDragOver<T>(&self, aSelfId: usize, aEventId: TDragOverEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnDragOver, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnEndDrag<T>(&self, aSelfId: usize, aEventId: TEndDragEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnEndDrag, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnEnter, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnExit<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnExit, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnKeyDown<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnKeyDown, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnKeyPress<T>(&self, aSelfId: usize, aEventId: TKeyPressEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnKeyPress, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnKeyUp<T>(&self, aSelfId: usize, aEventId: TKeyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnKeyUp, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnMouseDown<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnMouseDown, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnMouseEnter<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnMouseEnter, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnMouseLeave<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnMouseLeave, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnMouseMove<T>(&self, aSelfId: usize, aEventId: TMouseMoveEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnMouseMove, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnMouseUp<T>(&self, aSelfId: usize, aEventId: TMouseEvent<T>) -> &Self  {
+          method_Call_1!(Memo_SetOnMouseUp, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn CaretPos(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_GetCaretPos, self.0, &mut result);
+          return result;
+      }
+
+	  pub fn SetCaretPos(&self, aValue: *mut TPoint) -> &Self  {
+          method_Call_1!(Memo_SetCaretPos, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn CanUndo(&self) -> bool  {
+          return method_Call_1!(Memo_GetCanUndo, self.0);
+      }
+
+	  pub fn Modified(&self) -> bool  {
+          return method_Call_1!(Memo_GetModified, self.0);
+      }
+
+	  pub fn SetModified(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetModified, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn SelLength(&self) -> i32  {
+          return method_Call_1!(Memo_GetSelLength, self.0);
+      }
+
+	  pub fn SetSelLength(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetSelLength, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn SelStart(&self) -> i32  {
+          return method_Call_1!(Memo_GetSelStart, self.0);
+      }
+
+	  pub fn SetSelStart(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetSelStart, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Memo_GetSelText, self.0));
+      }
+
+	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Memo_SetSelText, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Memo_GetText, self.0));
+      }
+
+	  pub fn SetText(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Memo_SetText, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Memo_GetTextHint, self.0));
+      }
+
+	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Memo_SetTextHint, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn DockClientCount(&self) -> i32  {
+          return method_Call_1!(Memo_GetDockClientCount, self.0);
+      }
+
+	  pub fn DockSite(&self) -> bool  {
+          return method_Call_1!(Memo_GetDockSite, self.0);
+      }
+
+	  pub fn SetDockSite(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetDockSite, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn MouseInClient(&self) -> bool  {
+          return method_Call_1!(Memo_GetMouseInClient, self.0);
+      }
+
+	  pub fn VisibleDockClientCount(&self) -> i32  {
+          return method_Call_1!(Memo_GetVisibleDockClientCount, self.0);
+      }
+
+	  pub fn Brush(&self) -> TBrush  {
+          return method_Call_2!(TBrush, Memo_GetBrush, self.0);
+      }
+
+	  pub fn ControlCount(&self) -> i32  {
+          return method_Call_1!(Memo_GetControlCount, self.0);
+      }
+
+	  pub fn Handle(&self) -> HWND  {
+          return method_Call_1!(Memo_GetHandle, self.0);
+      }
+
+	  pub fn ParentWindow(&self) -> HWND  {
+          return method_Call_1!(Memo_GetParentWindow, self.0);
+      }
+
+	  pub fn SetParentWindow(&self, aValue: HWND) -> &Self  {
+          method_Call_1!(Memo_SetParentWindow, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Showing(&self) -> bool  {
+          return method_Call_1!(Memo_GetShowing, self.0);
+      }
+
+	  pub fn UseDockManager(&self) -> bool  {
+          return method_Call_1!(Memo_GetUseDockManager, self.0);
+      }
+
+	  pub fn SetUseDockManager(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Memo_SetUseDockManager, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Action(&self) -> TAction  {
+          return method_Call_2!(TAction, Memo_GetAction, self.0);
+      }
+
+	  pub fn SetAction(&self, aValue: &TAction) -> &Self  {
+          method_Call_1!(Memo_SetAction, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn BoundsRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Memo_GetBoundsRect, self.0, &mut result);
+          return result;
+      }
+
+	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
+          method_Call_1!(Memo_SetBoundsRect, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ClientHeight(&self) -> i32  {
+          return method_Call_1!(Memo_GetClientHeight, self.0);
+      }
+
+	  pub fn SetClientHeight(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetClientHeight, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ClientOrigin(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(Memo_GetClientOrigin, self.0, &mut result);
+          return result;
+      }
+
+	  pub fn ClientRect(&self) -> TRect  {
+          let mut result = TRect::Empty();
+          method_Call_1!(Memo_GetClientRect, self.0, &mut result);
+          return result;
+      }
+
+	  pub fn ClientWidth(&self) -> i32  {
+          return method_Call_1!(Memo_GetClientWidth, self.0);
+      }
+
+	  pub fn SetClientWidth(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetClientWidth, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ControlState(&self) -> TControlState  {
+          return method_Call_1!(Memo_GetControlState, self.0);
+      }
+
+	  pub fn SetControlState(&self, aValue: TControlState) -> &Self  {
+          method_Call_1!(Memo_SetControlState, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ControlStyle(&self) -> TControlStyle  {
+          return method_Call_1!(Memo_GetControlStyle, self.0);
+      }
+
+	  pub fn SetControlStyle(&self, aValue: TControlStyle) -> &Self  {
+          method_Call_1!(Memo_SetControlStyle, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Floating(&self) -> bool  {
+          return method_Call_1!(Memo_GetFloating, self.0);
+      }
+
+	  pub fn Parent(&self) -> TWinControl  {
+          return method_Call_2!(TWinControl, Memo_GetParent, self.0);
+      }
+
+	  pub fn SetParent(&self, aValue: &dyn IWinControl) -> &Self  {
+          method_Call_1!(Memo_SetParent, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn Left(&self) -> i32  {
+          return method_Call_1!(Memo_GetLeft, self.0);
+      }
+
+	  pub fn SetLeft(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetLeft, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Top(&self) -> i32  {
+          return method_Call_1!(Memo_GetTop, self.0);
+      }
+
+	  pub fn SetTop(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetTop, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Width(&self) -> i32  {
+          return method_Call_1!(Memo_GetWidth, self.0);
+      }
+
+	  pub fn SetWidth(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetWidth, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Height(&self) -> i32  {
+          return method_Call_1!(Memo_GetHeight, self.0);
+      }
+
+	  pub fn SetHeight(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetHeight, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Cursor(&self) -> TCursor  {
+          return method_Call_1!(Memo_GetCursor, self.0);
+      }
+
+	  pub fn SetCursor(&self, aValue: TCursor) -> &Self  {
+          method_Call_1!(Memo_SetCursor, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Memo_GetHint, self.0));
+      }
+
+	  pub fn SetHint(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Memo_SetHint, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn ComponentCount(&self) -> i32  {
+          return method_Call_1!(Memo_GetComponentCount, self.0);
+      }
+
+	  pub fn ComponentIndex(&self) -> i32  {
+          return method_Call_1!(Memo_GetComponentIndex, self.0);
+      }
+
+	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Memo_SetComponentIndex, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Owner(&self) -> TComponent  {
+          return method_Call_2!(TComponent, Memo_GetOwner, self.0);
+      }
+
+	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Memo_GetName, self.0));
+      }
+
+	  pub fn SetName(&self, aValue: &str) -> &Self  {
+          method_Call_1!(Memo_SetName, self.0, to_CString!(aValue));
+          return &self;
+      }
+
+	  pub fn Tag(&self) -> isize  {
+          return method_Call_1!(Memo_GetTag, self.0);
+      }
+
+	  pub fn SetTag(&self, aValue: isize) -> &Self  {
+          method_Call_1!(Memo_SetTag, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn AnchorSideLeft(&self) -> TAnchorSide  {
+          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideLeft, self.0);
+      }
+
+	  pub fn SetAnchorSideLeft(&self, aValue: &TAnchorSide) -> &Self  {
+          method_Call_1!(Memo_SetAnchorSideLeft, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorSideTop(&self) -> TAnchorSide  {
+          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideTop, self.0);
+      }
+
+	  pub fn SetAnchorSideTop(&self, aValue: &TAnchorSide) -> &Self  {
+          method_Call_1!(Memo_SetAnchorSideTop, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorSideRight(&self) -> TAnchorSide  {
+          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideRight, self.0);
+      }
+
+	  pub fn SetAnchorSideRight(&self, aValue: &TAnchorSide) -> &Self  {
+          method_Call_1!(Memo_SetAnchorSideRight, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn AnchorSideBottom(&self) -> TAnchorSide  {
+          return method_Call_2!(TAnchorSide, Memo_GetAnchorSideBottom, self.0);
+      }
+
+	  pub fn SetAnchorSideBottom(&self, aValue: &TAnchorSide) -> &Self  {
+          method_Call_1!(Memo_SetAnchorSideBottom, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn ChildSizing(&self) -> TControlChildSizing  {
+          return method_Call_2!(TControlChildSizing, Memo_GetChildSizing, self.0);
+      }
+
+	  pub fn SetChildSizing(&self, aValue: &TControlChildSizing) -> &Self  {
+          method_Call_1!(Memo_SetChildSizing, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn BorderSpacing(&self) -> TControlBorderSpacing  {
+          return method_Call_2!(TControlBorderSpacing, Memo_GetBorderSpacing, self.0);
+      }
+
+	  pub fn SetBorderSpacing(&self, aValue: &TControlBorderSpacing) -> &Self  {
+          method_Call_1!(Memo_SetBorderSpacing, self.0, aValue.Instance());
+          return &self;
+      }
+
+	  pub fn DockClients(&self, index: i32) -> TControl  {
+          return method_Call_2!(TControl, Memo_GetDockClients, self.0, index);
+      }
+
+	  pub fn Controls(&self, index: i32) -> TControl  {
+          return method_Call_2!(TControl, Memo_GetControls, self.0, index);
+      }
+
+	  pub fn Components(&self, aIndex: i32) -> TComponent  {
+          return method_Call_2!(TComponent, Memo_GetComponents, self.0, aIndex);
+      }
+
+	  pub fn AnchorSide(&self, aKind: TAnchorKind) -> TAnchorSide  {
+          return method_Call_2!(TAnchorSide, Memo_GetAnchorSide, self.0, aKind);
+      }
+
+      // static class
+	  impl_Class_method!(Memo_StaticClassType);
 }
 
-impl_IObject!(TStream);
-impl_IStream!(TStream);
+impl_IObject!(TMemo);
+impl_IComponent!(TMemo);
+impl_IControl!(TMemo);
+impl_IWinControl!(TMemo);
 
 impl TMemoryStream {
       pub fn new() -> Self {
@@ -28174,224 +28198,188 @@ impl TFont {
 impl_IObject!(TFont);
 impl_Drop_method!(TFont);
 
-impl TStrings {
-      pub fn new() -> Self {
-        method_Create!(TStrings, Strings_Create, );
+impl TPopupMenu {
+      pub fn new(aOwner: &dyn IComponent) -> Self {
+        method_Create!(TPopupMenu, PopupMenu_Create, aOwner.Instance());
       }
 
-      impl_Object_methods!(TStrings);
+      impl_Object_methods!(TPopupMenu);
 
-	  impl_Free_method!(Strings_Free);
+	  impl_Free_method!(PopupMenu_Free);
 
-	  pub fn Add(&self, s: &str) -> i32  {
-          return method_Call_1!(Strings_Add, self.0, to_CString!(s));
-      }
-
-	  pub fn AddObject(&self, s: &str, aObject: &dyn IObject) -> i32  {
-          return method_Call_1!(Strings_AddObject, self.0, to_CString!(s), aObject.Instance());
-      }
-
-	  pub fn Append(&self, s: &str) -> &Self  {
-          method_Call_1!(Strings_Append, self.0, to_CString!(s));
+	  pub fn CloseMenu(&self) -> &Self  {
+          method_Call_1!(PopupMenu_CloseMenu, self.0);
           return &self;
       }
 
-	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
-          method_Call_1!(Strings_Assign, self.0, source.Instance());
+	  pub fn Popup(&self, x: i32, y: i32) -> &Self  {
+          method_Call_1!(PopupMenu_Popup, self.0, x, y);
           return &self;
       }
 
-	  pub fn BeginUpdate(&self) -> &Self  {
-          method_Call_1!(Strings_BeginUpdate, self.0);
+	  pub fn FindComponent(&self, aName: &str) -> TComponent {
+          return method_Call_2!(TComponent, PopupMenu_FindComponent, self.0, to_CString!(aName));
+      }
+
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(PopupMenu_GetNamePath, self.0));
+      }
+
+	  pub fn HasParent(&self) -> bool {
+          return method_Call_1!(PopupMenu_HasParent, self.0);
+      }
+
+	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
+          method_Call_1!(PopupMenu_Assign, self.0, source.Instance());
           return &self;
-      }
-
-	  pub fn Clear(&self) -> &Self  {
-          method_Call_1!(Strings_Clear, self.0);
-          return &self;
-      }
-
-	  pub fn Delete(&self, index: i32) -> &Self  {
-          method_Call_1!(Strings_Delete, self.0, index);
-          return &self;
-      }
-
-	  pub fn EndUpdate(&self) -> &Self  {
-          method_Call_1!(Strings_EndUpdate, self.0);
-          return &self;
-      }
-
-	  pub fn Equals(&self, strings: &dyn IStrings) -> bool  {
-          return method_Call_1!(Strings_Equals, self.0, strings.Instance());
-      }
-
-	  pub fn IndexOf(&self, s: &str) -> i32  {
-          return method_Call_1!(Strings_IndexOf, self.0, to_CString!(s));
-      }
-
-	  pub fn IndexOfName(&self, name: &str) -> i32  {
-          return method_Call_1!(Strings_IndexOfName, self.0, to_CString!(name));
-      }
-
-	  pub fn IndexOfObject(&self, aObject: &dyn IObject) -> i32  {
-          return method_Call_1!(Strings_IndexOfObject, self.0, aObject.Instance());
-      }
-
-	  pub fn Insert(&self, index: i32, s: &str) -> &Self  {
-          method_Call_1!(Strings_Insert, self.0, index, to_CString!(s));
-          return &self;
-      }
-
-	  pub fn InsertObject(&self, index: i32, s: &str, aObject: &dyn IObject) -> &Self  {
-          method_Call_1!(Strings_InsertObject, self.0, index, to_CString!(s), aObject.Instance());
-          return &self;
-      }
-
-	  pub fn LoadFromFile(&self, fileName: &str) -> &Self  {
-          method_Call_1!(Strings_LoadFromFile, self.0, to_CString!(fileName));
-          return &self;
-      }
-
-	  pub fn LoadFromStream(&self, stream: &dyn IStream) -> &Self  {
-          method_Call_1!(Strings_LoadFromStream, self.0, stream.Instance());
-          return &self;
-      }
-
-	  pub fn Move(&self, curIndex: i32, newIndex: i32) -> &Self  {
-          method_Call_1!(Strings_Move, self.0, curIndex, newIndex);
-          return &self;
-      }
-
-	  pub fn SaveToFile(&self, fileName: &str) -> &Self  {
-          method_Call_1!(Strings_SaveToFile, self.0, to_CString!(fileName));
-          return &self;
-      }
-
-	  pub fn SaveToStream(&self, stream: &dyn IStream) -> &Self  {
-          method_Call_1!(Strings_SaveToStream, self.0, stream.Instance());
-          return &self;
-      }
-
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
-          return method_Call_1!(Strings_ClassType, self.0);
+          return method_Call_1!(PopupMenu_ClassType, self.0);
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Strings_ClassName, self.0));
+          return to_RustString!(method_Call_1!(PopupMenu_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
-          return method_Call_1!(Strings_InstanceSize, self.0);
+          return method_Call_1!(PopupMenu_InstanceSize, self.0);
       }
 
 	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
-          return method_Call_1!(Strings_InheritsFrom, self.0, aClass);
+          return method_Call_1!(PopupMenu_InheritsFrom, self.0, aClass);
+      }
+
+	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
+          return method_Call_1!(PopupMenu_Equals, self.0, obj.Instance());
       }
 
 	  pub fn GetHashCode(&self) -> i32 {
-          return method_Call_1!(Strings_GetHashCode, self.0);
+          return method_Call_1!(PopupMenu_GetHashCode, self.0);
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Strings_ToString, self.0));
+          return to_RustString!(method_Call_1!(PopupMenu_ToString, self.0));
       }
 
-	  pub fn Capacity(&self) -> i32  {
-          return method_Call_1!(Strings_GetCapacity, self.0);
+	  pub fn ImagesWidth(&self) -> i32  {
+          return method_Call_1!(PopupMenu_GetImagesWidth, self.0);
       }
 
-	  pub fn SetCapacity(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Strings_SetCapacity, self.0, aValue);
+	  pub fn SetImagesWidth(&self, aValue: i32) -> &Self  {
+          method_Call_1!(PopupMenu_SetImagesWidth, self.0, aValue);
           return &self;
       }
 
-	  pub fn CommaText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetCommaText, self.0));
+	  pub fn PopupComponent(&self) -> TComponent  {
+          return method_Call_2!(TComponent, PopupMenu_GetPopupComponent, self.0);
       }
 
-	  pub fn SetCommaText(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Strings_SetCommaText, self.0, to_CString!(aValue));
+	  pub fn SetPopupComponent(&self, aValue: &dyn IComponent) -> &Self  {
+          method_Call_1!(PopupMenu_SetPopupComponent, self.0, aValue.Instance());
           return &self;
       }
 
-	  pub fn Count(&self) -> i32  {
-          return method_Call_1!(Strings_GetCount, self.0);
+	  pub fn PopupPoint(&self) -> TPoint  {
+          let mut result = TPoint::Empty();
+          method_Call_1!(PopupMenu_GetPopupPoint, self.0, &mut result);
+          return result;
       }
 
-	  pub fn Delimiter(&self) -> Char  {
-          return method_Call_1!(Strings_GetDelimiter, self.0);
+	  pub fn Alignment(&self) -> TPopupAlignment  {
+          return method_Call_1!(PopupMenu_GetAlignment, self.0);
       }
 
-	  pub fn SetDelimiter(&self, aValue: Char) -> &Self  {
-          method_Call_1!(Strings_SetDelimiter, self.0, aValue);
+	  pub fn SetAlignment(&self, aValue: TPopupAlignment) -> &Self  {
+          method_Call_1!(PopupMenu_SetAlignment, self.0, aValue);
           return &self;
       }
 
-	  pub fn NameValueSeparator(&self) -> Char  {
-          return method_Call_1!(Strings_GetNameValueSeparator, self.0);
+	  pub fn BiDiMode(&self) -> TBiDiMode  {
+          return method_Call_1!(PopupMenu_GetBiDiMode, self.0);
       }
 
-	  pub fn SetNameValueSeparator(&self, aValue: Char) -> &Self  {
-          method_Call_1!(Strings_SetNameValueSeparator, self.0, aValue);
+	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
+          method_Call_1!(PopupMenu_SetBiDiMode, self.0, aValue);
           return &self;
       }
 
-	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetText, self.0));
+	  pub fn Images(&self) -> TImageList  {
+          return method_Call_2!(TImageList, PopupMenu_GetImages, self.0);
       }
 
-	  pub fn SetText(&self, aValue: &str) -> &Self  {
-          method_Call_1!(Strings_SetText, self.0, to_CString!(aValue));
+	  pub fn SetImages(&self, aValue: &TImageList) -> &Self  {
+          method_Call_1!(PopupMenu_SetImages, self.0, aValue.Instance());
           return &self;
       }
 
-	  pub fn Objects(&self, index: i32) -> TObject  {
-          return method_Call_2!(TObject, Strings_GetObjects, self.0, index);
+	  pub fn OwnerDraw(&self) -> bool  {
+          return method_Call_1!(PopupMenu_GetOwnerDraw, self.0);
       }
 
-	  pub fn SetObjects(&self, index: i32, aValue: &dyn IObject) -> &Self  {
-          method_Call_1!(Strings_SetObjects, self.0, index, aValue.Instance());
+	  pub fn SetOwnerDraw(&self, aValue: bool) -> &Self  {
+          method_Call_1!(PopupMenu_SetOwnerDraw, self.0, aValue);
           return &self;
       }
 
-	  pub fn Values<'a>(&self, name: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetValues, self.0, to_CString!(name)));
-      }
-
-	  pub fn SetValues(&self, name: &str, aValue: &str) -> &Self  {
-          method_Call_1!(Strings_SetValues, self.0, to_CString!(name), to_CString!(aValue));
+	  pub fn SetOnPopup<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(PopupMenu_SetOnPopup, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
-	  pub fn ValueFromIndex<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetValueFromIndex, self.0, index));
+	  pub fn Handle(&self) -> HMENU  {
+          return method_Call_1!(PopupMenu_GetHandle, self.0);
       }
 
-	  pub fn SetValueFromIndex(&self, index: i32, aValue: &str) -> &Self  {
-          method_Call_1!(Strings_SetValueFromIndex, self.0, index, to_CString!(aValue));
+	  pub fn Items(&self) -> TMenuItem  {
+          return method_Call_2!(TMenuItem, PopupMenu_GetItems, self.0);
+      }
+
+	  pub fn ComponentCount(&self) -> i32  {
+          return method_Call_1!(PopupMenu_GetComponentCount, self.0);
+      }
+
+	  pub fn ComponentIndex(&self) -> i32  {
+          return method_Call_1!(PopupMenu_GetComponentIndex, self.0);
+      }
+
+	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
+          method_Call_1!(PopupMenu_SetComponentIndex, self.0, aValue);
           return &self;
       }
 
-	  pub fn Strings<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetStrings, self.0, index));
+	  pub fn Owner(&self) -> TComponent  {
+          return method_Call_2!(TComponent, PopupMenu_GetOwner, self.0);
       }
 
-	  pub fn SetStrings(&self, index: i32, aValue: &str) -> &Self  {
-          method_Call_1!(Strings_SetStrings, self.0, index, to_CString!(aValue));
+	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(PopupMenu_GetName, self.0));
+      }
+
+	  pub fn SetName(&self, aValue: &str) -> &Self  {
+          method_Call_1!(PopupMenu_SetName, self.0, to_CString!(aValue));
           return &self;
+      }
+
+	  pub fn Tag(&self) -> isize  {
+          return method_Call_1!(PopupMenu_GetTag, self.0);
+      }
+
+	  pub fn SetTag(&self, aValue: isize) -> &Self  {
+          method_Call_1!(PopupMenu_SetTag, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Components(&self, aIndex: i32) -> TComponent  {
+          return method_Call_2!(TComponent, PopupMenu_GetComponents, self.0, aIndex);
       }
 
       // static class
-	  impl_Class_method!(Strings_StaticClassType);
+	  impl_Class_method!(PopupMenu_StaticClassType);
 }
 
-impl_IObject!(TStrings);
-impl_IStrings!(TStrings);
-impl_Drop_method!(TStrings);
+impl_IObject!(TPopupMenu);
+impl_IComponent!(TPopupMenu);
 
 impl TStringList {
       pub fn new() -> Self {
@@ -36217,13 +36205,9 @@ impl TCanvas {
           return &self;
       }
 
-	//   pub fn TextRect2(&self, rect: *mut TRect, text: &str, aOutStr: *mut &str, textFormat: TTextFormat) -> i32  {
-    //       let mut cstr = CString::new(aOutStr).unwrap().as_ptr(); //to_CString!(aOutStr);
-          
-    //       let result = method_Call_1!(Canvas_TextRect2, self.0, rect, to_CString!(text), *mut cstr, textFormat);
-
-    //       return result;
-    //   }
+	  pub fn TextRect2(&self, rect: *mut TRect, text: &str, textFormat: TTextFormat) -> i32  {
+	     return method_Call_1!(Canvas_TextRect2, self.0, rect, to_CString!(text), &mut (0 as *const i8), textFormat);
+	  }
 
 	  pub fn Polygon(&self, aPoints: *mut TPoint, aLen: i32) -> &Self  {
           method_Call_1!(Canvas_Polygon, self.0, aPoints, aLen);
@@ -36642,142 +36626,154 @@ impl TApplication {
 impl_IObject!(TApplication);
 impl_IComponent!(TApplication);
 
-impl TGraphic {
-      pub fn new() -> Self {
-        method_Create!(TGraphic, Graphic_Create, );
+impl TMainMenu {
+      pub fn new(aOwner: &dyn IComponent) -> Self {
+        method_Create!(TMainMenu, MainMenu_Create, aOwner.Instance());
       }
 
-      impl_Object_methods!(TGraphic);
+      impl_Object_methods!(TMainMenu);
 
-	  impl_Free_method!(Graphic_Free);
+	  impl_Free_method!(MainMenu_Free);
 
-	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
-          return method_Call_1!(Graphic_Equals, self.0, obj.Instance());
+	  pub fn FindComponent(&self, aName: &str) -> TComponent {
+          return method_Call_2!(TComponent, MainMenu_FindComponent, self.0, to_CString!(aName));
       }
 
-	  pub fn LoadFromFile(&self, filename: &str) -> &Self  {
-          method_Call_1!(Graphic_LoadFromFile, self.0, to_CString!(filename));
+	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
+          return to_RustString!(method_Call_1!(MainMenu_GetNamePath, self.0));
+      }
+
+	  pub fn HasParent(&self) -> bool {
+          return method_Call_1!(MainMenu_HasParent, self.0);
+      }
+
+	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
+          method_Call_1!(MainMenu_Assign, self.0, source.Instance());
           return &self;
-      }
-
-	  pub fn SaveToFile(&self, filename: &str) -> &Self  {
-          method_Call_1!(Graphic_SaveToFile, self.0, to_CString!(filename));
-          return &self;
-      }
-
-	  pub fn LoadFromStream(&self, stream: &dyn IStream) -> &Self  {
-          method_Call_1!(Graphic_LoadFromStream, self.0, stream.Instance());
-          return &self;
-      }
-
-	  pub fn SaveToStream(&self, stream: &dyn IStream) -> &Self  {
-          method_Call_1!(Graphic_SaveToStream, self.0, stream.Instance());
-          return &self;
-      }
-
-	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
-          method_Call_1!(Graphic_Assign, self.0, source.Instance());
-          return &self;
-      }
-
-	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Graphic_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
-          return method_Call_1!(Graphic_ClassType, self.0);
+          return method_Call_1!(MainMenu_ClassType, self.0);
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Graphic_ClassName, self.0));
+          return to_RustString!(method_Call_1!(MainMenu_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
-          return method_Call_1!(Graphic_InstanceSize, self.0);
+          return method_Call_1!(MainMenu_InstanceSize, self.0);
       }
 
 	  pub fn InheritsFrom(&self, aClass: TClass) -> bool {
-          return method_Call_1!(Graphic_InheritsFrom, self.0, aClass);
+          return method_Call_1!(MainMenu_InheritsFrom, self.0, aClass);
+      }
+
+	  pub fn Equals(&self, obj: &dyn IObject) -> bool {
+          return method_Call_1!(MainMenu_Equals, self.0, obj.Instance());
       }
 
 	  pub fn GetHashCode(&self) -> i32 {
-          return method_Call_1!(Graphic_GetHashCode, self.0);
+          return method_Call_1!(MainMenu_GetHashCode, self.0);
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Graphic_ToString, self.0));
+          return to_RustString!(method_Call_1!(MainMenu_ToString, self.0));
       }
 
-	  pub fn Empty(&self) -> bool  {
-          return method_Call_1!(Graphic_GetEmpty, self.0);
+	  pub fn ImagesWidth(&self) -> i32  {
+          return method_Call_1!(MainMenu_GetImagesWidth, self.0);
       }
 
-	  pub fn Height(&self) -> i32  {
-          return method_Call_1!(Graphic_GetHeight, self.0);
-      }
-
-	  pub fn SetHeight(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Graphic_SetHeight, self.0, aValue);
+	  pub fn SetImagesWidth(&self, aValue: i32) -> &Self  {
+          method_Call_1!(MainMenu_SetImagesWidth, self.0, aValue);
           return &self;
       }
 
-	  pub fn Modified(&self) -> bool  {
-          return method_Call_1!(Graphic_GetModified, self.0);
+	  pub fn BiDiMode(&self) -> TBiDiMode  {
+          return method_Call_1!(MainMenu_GetBiDiMode, self.0);
       }
 
-	  pub fn SetModified(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Graphic_SetModified, self.0, aValue);
+	  pub fn SetBiDiMode(&self, aValue: TBiDiMode) -> &Self  {
+          method_Call_1!(MainMenu_SetBiDiMode, self.0, aValue);
           return &self;
       }
 
-	  pub fn Palette(&self) -> HPALETTE  {
-          return method_Call_1!(Graphic_GetPalette, self.0);
+	  pub fn Images(&self) -> TImageList  {
+          return method_Call_2!(TImageList, MainMenu_GetImages, self.0);
       }
 
-	  pub fn SetPalette(&self, aValue: HPALETTE) -> &Self  {
-          method_Call_1!(Graphic_SetPalette, self.0, aValue);
+	  pub fn SetImages(&self, aValue: &TImageList) -> &Self  {
+          method_Call_1!(MainMenu_SetImages, self.0, aValue.Instance());
           return &self;
       }
 
-	  pub fn PaletteModified(&self) -> bool  {
-          return method_Call_1!(Graphic_GetPaletteModified, self.0);
+	  pub fn OwnerDraw(&self) -> bool  {
+          return method_Call_1!(MainMenu_GetOwnerDraw, self.0);
       }
 
-	  pub fn SetPaletteModified(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Graphic_SetPaletteModified, self.0, aValue);
+	  pub fn SetOwnerDraw(&self, aValue: bool) -> &Self  {
+          method_Call_1!(MainMenu_SetOwnerDraw, self.0, aValue);
           return &self;
       }
 
-	  pub fn Transparent(&self) -> bool  {
-          return method_Call_1!(Graphic_GetTransparent, self.0);
-      }
-
-	  pub fn SetTransparent(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Graphic_SetTransparent, self.0, aValue);
+	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TMenuChangeEvent<T>) -> &Self  {
+          method_Call_1!(MainMenu_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
-	  pub fn Width(&self) -> i32  {
-          return method_Call_1!(Graphic_GetWidth, self.0);
+	  pub fn Handle(&self) -> HMENU  {
+          return method_Call_1!(MainMenu_GetHandle, self.0);
       }
 
-	  pub fn SetWidth(&self, aValue: i32) -> &Self  {
-          method_Call_1!(Graphic_SetWidth, self.0, aValue);
+	  pub fn Items(&self) -> TMenuItem  {
+          return method_Call_2!(TMenuItem, MainMenu_GetItems, self.0);
+      }
+
+	  pub fn ComponentCount(&self) -> i32  {
+          return method_Call_1!(MainMenu_GetComponentCount, self.0);
+      }
+
+	  pub fn ComponentIndex(&self) -> i32  {
+          return method_Call_1!(MainMenu_GetComponentIndex, self.0);
+      }
+
+	  pub fn SetComponentIndex(&self, aValue: i32) -> &Self  {
+          method_Call_1!(MainMenu_SetComponentIndex, self.0, aValue);
           return &self;
       }
 
-	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Graphic_SetOnChange, self.0, insert_Id!(aEventId, aSelfId));
+	  pub fn Owner(&self) -> TComponent  {
+          return method_Call_2!(TComponent, MainMenu_GetOwner, self.0);
+      }
+
+	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(MainMenu_GetName, self.0));
+      }
+
+	  pub fn SetName(&self, aValue: &str) -> &Self  {
+          method_Call_1!(MainMenu_SetName, self.0, to_CString!(aValue));
           return &self;
+      }
+
+	  pub fn Tag(&self) -> isize  {
+          return method_Call_1!(MainMenu_GetTag, self.0);
+      }
+
+	  pub fn SetTag(&self, aValue: isize) -> &Self  {
+          method_Call_1!(MainMenu_SetTag, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Components(&self, aIndex: i32) -> TComponent  {
+          return method_Call_2!(TComponent, MainMenu_GetComponents, self.0, aIndex);
       }
 
       // static class
-	  impl_Class_method!(Graphic_StaticClassType);
+	  impl_Class_method!(MainMenu_StaticClassType);
 }
 
-impl_IObject!(TGraphic);
-impl IGraphic for TGraphic {}
-impl_Drop_method!(TGraphic);
+impl_IObject!(TMainMenu);
+impl_IComponent!(TMainMenu);
 
 impl TPngImage {
       pub fn new() -> Self {
