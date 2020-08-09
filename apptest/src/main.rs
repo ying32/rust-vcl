@@ -14,13 +14,13 @@ use rust_vcl::vcl::*;
 use form2::TForm2;
 use mainform::TMainForm;
 
+// const array:[u8;4] = [1,2,3,3];
+
 fn test() {
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:}", GUIDToString(&guid));
     println!("{:}", LibAbout());
-
-    // let abc = TGridRect::Empty();
 }
 
 #[derive(VclApp)]
@@ -44,9 +44,14 @@ impl TApp {
     }
 
     fn init(&self) -> &Self {
+        // ????
+        //Application.SetOnException(self.getSId(), Self::onException);
+
+        println!("currentthreadid={}", CurrentThreadId());
         self.mainForm
-           .init()
-           .btnOpenForm2.SetOnClick(self.getSId(), Self::onOpenForm2);
+            .init()
+            .btnOpenForm2
+            .SetOnClick(self.getSId(), Self::onOpenForm2);
 
         self.form2.init();
 
@@ -56,12 +61,19 @@ impl TApp {
     fn onOpenForm2(&self, _sender: usize) {
         self.form2.form.Show();
     }
+
+    fn onException(&self, _sender: usize, e: usize) {
+        let exception = Exception::As(e);
+        println!("exception: {:}", exception.Message());
+    }
 }
 
 fn main() {
     test();
     // 写gui的感觉不太方便。唉。。。。
     // 现在的一切都是实验，啥东西感觉随时会变动，随着我对Rust的熟悉成度不断变化，直到满意。
+    println!("threadid={}", MainThreadId());
+    println!("currentthreadid={}", CurrentThreadId());
     let app = TApp::new();
     app.init().run();
 }

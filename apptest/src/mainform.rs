@@ -4,6 +4,7 @@
 use rust_vcl::fns::*;
 use rust_vcl::types::*;
 use rust_vcl::vcl::*;
+use std::fmt::Debug;
 
 #[derive(VclForm)]
 pub struct TMainForm {
@@ -21,6 +22,7 @@ pub struct TMainForm {
     popupMenu: TPopupMenu,
     tv1: TTreeView,
     pb1: TPaintBox,
+    listBox1: TListBox,
     pub form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
 }
 
@@ -43,7 +45,7 @@ impl TMainForm {
             popupMenu: NewObject!(TPopupMenu, form),
             tv1: NewObject!(TTreeView, form),
             pb1: NewObject!(TPaintBox, form),
-
+            listBox1: NewObject!(TListBox, form),
             form,
         };
     }
@@ -64,11 +66,12 @@ impl TMainForm {
             .SetOnKeyDown(sid, Self::onFormKeyDown)
             .SetOnDestroy(sid, Self::onFormDestroy)
             .SetOnMouseDown(sid, Self::onFormMouseDown)
+            // .SetOnWndProc(sid, Self::onFormWndProc)
             .SetOnMouseUp(sid, Self::onFormMouseUp);
 
         // 测试自动drop
         // let ico = TIcon::new();
-        //println!("{:?}", ico.ClassName());
+        // println!("{:?}", ico.ClassName());
 
         // TOpenDialog
         self.dlgOpen
@@ -131,7 +134,6 @@ impl TMainForm {
             )
             .SetOnChange(sid, Self::onEdit1Change)
             .SetTextHint("example: xxxx");
-            
 
         // TMemo
         self.memo1
@@ -141,7 +143,9 @@ impl TMainForm {
             // 左边相对edit1 + 15距离
             .AnchorToNeighbour(TAnchorKind::akLeft, 15, &self.edit1)
             .SetScrollBars(TScrollStyle::ssAutoVertical)
-            .Font().SetSize(11).SetName("Courier New");
+            .Font()
+            .SetSize(11)
+            .SetName("Courier New");
 
         // TButton
         self.btnOpenForm2
@@ -200,11 +204,9 @@ impl TMainForm {
             .SetLeft(10)
             .SetTop(self.btnOpenForm2.Top() + self.btnOpenForm2.Height() + 10)
             .SetWidth(300)
-            .SetHeight(230)
+            .SetHeight(100)
             .SetOnClick(sid, Self::onTv1Click);
 
-          
-        
         let node = self.tv1.Items().AddChild(&TTreeNode::Nil(), "First");
         self.tv1.Items().AddChild(&node, "Sec");
         node.Expand(true);
@@ -218,17 +220,74 @@ impl TMainForm {
             .SetHeight(200)
             .SetOnPaint(sid, Self::onPb1Paint);
 
+        println!("currentthreadid={}", CurrentThreadId());
+        // TListBox
+        self.listBox1
+            .SetParent(self)
+            .SetLeft(10)
+            .SetTop(self.tv1.Top() + self.tv1.Height() + 10)
+            .SetWidth(300)
+            .SetHeight(100)
+            .SetItemHeight(30)
+            .SetStyle(TListBoxStyle::lbOwnerDrawFixed)
+            .SetOnClick(sid, Self::onListBox1Click)
+            .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
+        for i in 0..20 {
+            let text = format!("item={}", i);
+            self.listBox1.Items().Add(&text);
+        }
+
         return self;
+    }
+
+    fn onFormWndProc(&self, msg: *mut TMessage) {
+        unsafe {
+            self.form.InheritedWndProc(msg);
+            match (*msg).msg {
+                0x0201 => println!("onFormWndProc: mouse down"), // WM_LBUTTONDOWN
+                0x0202 => println!("onFormWndProc: mouse up"),   // WM_LBUTTONUP
+                _ => return,
+            }
+        }
+    }
+
+    fn onListBox1CustomDraw(
+        &self,
+        control: usize,
+        index: i32,
+        aRect: *mut TRect,
+        state: TOwnerDrawState,
+    ) {
+        println!("currentthreadid={}", CurrentThreadId());
+        let canvas = self.listBox1.Canvas();
+        let s = self.listBox1.Items().Strings(index);
+        let fw = canvas.TextWidth(&s);
+        let fh = canvas.TextHeight(&s);
+        let rect = unsafe { &*aRect };
+        canvas.Font().SetColor(clBlack);
+        canvas.Brush().SetColor(clBtnFace);
+        canvas.FillRect(&rect);
+    }
+
+    fn onListBox1Click(&self, _sender: usize) {
+        let idx = self.listBox1.ItemIndex();
+        if idx != -1 {
+            println!("current item: {:}", self.listBox1.Items().Strings(idx));
+        }
     }
 
     fn onPb1Paint(&self, _sender: usize) {
         let canvas = self.pb1.Canvas();
         let brush = canvas.Brush();
-        
-        let r = TRect{left: 10, top: 12, right: 80, bottom: 80};
+
+        let r = TRect {
+            left: 10,
+            top: 12,
+            right: 80,
+            bottom: 80,
+        };
         brush.SetColor(clGreen);
         canvas.FillRect(&r);
-
 
         brush.SetStyle(TBrushStyle::bsClear);
         let cliRect = self.pb1.ClientRect();
@@ -242,33 +301,53 @@ impl TMainForm {
             // jpg.LoadFromFile("btn4[1].jpg");
             canvas.Draw1(10, 10, &ico);
         }
-   
+
         brush.SetStyle(TBrushStyle::bsClear);
         let text = "Test darw text! 你好！";
         let font = canvas.Font();
-        font
-          .SetStyle(0)
-		  .SetSize(9)
-          .SetColor(clBlue);
+        font.SetStyle(0).SetSize(9).SetColor(clBlue);
         let mut r2 = cliRect.clone();
-        canvas.TextRect2(&mut r2, &text, Include!(0, TTextFormats::tfCenter, TTextFormats::tfVerticalCenter, TTextFormats::tfSingleLine));
-    }
- 
-    fn onTv1Click(&self, _sender: usize) {
-         let node = self.tv1.Selected();
-         if !node.IsNil() {
-             println!("node.text = {:}", node.Text());
-         } else {
-             println!("node is nil.");
-         }
+        canvas.TextRect2(
+            &mut r2,
+            &text,
+            Include!(
+                0,
+                TTextFormats::tfCenter,
+                TTextFormats::tfVerticalCenter,
+                TTextFormats::tfSingleLine
+            ),
+        );
     }
 
-    fn onFormMouseDown(&self, _sender: usize, button: TMouseButton, _shift: TShiftState, x: i32, y: i32) {
+    fn onTv1Click(&self, _sender: usize) {
+        let node = self.tv1.Selected();
+        if !node.IsNil() {
+            println!("node.text = {:}", node.Text());
+        } else {
+            println!("node is nil.");
+        }
+    }
+
+    fn onFormMouseDown(
+        &self,
+        _sender: usize,
+        button: TMouseButton,
+        _shift: TShiftState,
+        x: i32,
+        y: i32,
+    ) {
         println!("Button:{}, X:{} Y:{}", button == TMouseButton::mbLeft, x, y);
         println!("OnMouseDown");
     }
 
-    fn onFormMouseUp(&self, _sender: usize, button: TMouseButton, _shift: TShiftState, x: i32, y: i32) {
+    fn onFormMouseUp(
+        &self,
+        _sender: usize,
+        button: TMouseButton,
+        _shift: TShiftState,
+        x: i32,
+        y: i32,
+    ) {
         println!("Button:{}, X:{} Y:{}", button == TMouseButton::mbLeft, x, y);
         println!("OnMouseUp");
     }
@@ -308,8 +387,6 @@ impl TMainForm {
         if result3.0 {
             println!("InputQuery={:}", result3.1);
         }
-        
-
     }
 
     fn onBtn2Click(&self, _sender: usize) {

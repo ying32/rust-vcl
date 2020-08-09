@@ -142,20 +142,6 @@ macro_rules! impl_Object_methods {
 }
 
 #[macro_use]
-macro_rules! impl_ShortCutText_method {
-    () => {
-        pub fn SetShortCutText(&self, text: &str) -> &Self {
-            self.SetShortCut(TextToShortCut(text));
-            return &self;
-        }
-
-        pub fn ShortCutText<'a>(&self) -> Cow<'a, str> {
-            return ShortCutToText(self.ShortCut());
-        }
-    };
-}
-
-#[macro_use]
 macro_rules! to_RustString {
     ($name: expr) => {
         unsafe { CStr::from_ptr($name).to_string_lossy() }

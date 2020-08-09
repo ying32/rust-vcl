@@ -879,6 +879,7 @@ Canvas_GetHandle
 Canvas_GetHashCode
 Canvas_GetNamePath
 Canvas_GetPen
+Canvas_GetPixels
 Canvas_HandleAllocated
 Canvas_InheritsFrom
 Canvas_InstanceSize
@@ -886,7 +887,6 @@ Canvas_LineTo
 Canvas_Lock
 Canvas_MoveTo
 Canvas_Pie
-Canvas_Pixels
 Canvas_PolyBezier
 Canvas_Polygon
 Canvas_Polyline
@@ -1512,7 +1512,10 @@ Clipboard_Clear
 Clipboard_Close
 Clipboard_Create
 Clipboard_Equals
+Clipboard_FindFormatID
+Clipboard_FindPictureFormatID
 Clipboard_Free
+Clipboard_GetAsHtml
 Clipboard_GetAsText
 Clipboard_GetFormatCount
 Clipboard_GetFormats
@@ -1520,14 +1523,17 @@ Clipboard_GetHashCode
 Clipboard_GetNamePath
 Clipboard_GetTextBuf
 Clipboard_HasFormat
+Clipboard_HasFormatName
+Clipboard_HasPictureFormat
 Clipboard_InheritsFrom
 Clipboard_Instance
 Clipboard_InstanceSize
 Clipboard_Open
+Clipboard_SetAsHtml
 Clipboard_SetAsText
-Clipboard_SetClipboard
 Clipboard_SetTextBuf
 Clipboard_StaticClassType
+Clipboard_SupportedFormats
 Clipboard_ToString
 CollectionItem_Assign
 CollectionItem_ClassName
@@ -3008,6 +3014,7 @@ DMove
 DPasswordBox
 DSelectDirectory1
 DSelectDirectory2
+DSetClipboard
 DSetPropertySecValue
 DSetPropertyValue
 DShortCutToText
@@ -5325,6 +5332,7 @@ ImageButton_GetLeft
 ImageButton_GetModalResult
 ImageButton_GetName
 ImageButton_GetNamePath
+ImageButton_GetOrientation
 ImageButton_GetOwner
 ImageButton_GetParent
 ImageButton_GetParentFont
@@ -5393,6 +5401,7 @@ ImageButton_SetOnMouseEnter
 ImageButton_SetOnMouseLeave
 ImageButton_SetOnMouseMove
 ImageButton_SetOnMouseUp
+ImageButton_SetOrientation
 ImageButton_SetParent
 ImageButton_SetParentFont
 ImageButton_SetParentShowHint
@@ -5413,6 +5422,7 @@ ImageList_Add
 ImageList_AddIcon
 ImageList_AddImages
 ImageList_AddMasked
+ImageList_AddSliced
 ImageList_Assign
 ImageList_BeginUpdate
 ImageList_ClassName
@@ -5474,6 +5484,7 @@ ImageList_SetTag
 ImageList_SetWidth
 ImageList_ShowDragImage
 ImageList_StaticClassType
+ImageList_StretchDraw
 ImageList_ToString
 Image_AnchorAsAlign
 Image_AnchorClient
@@ -7371,6 +7382,7 @@ MenuItem_GetOwner
 MenuItem_GetParent
 MenuItem_GetRadioItem
 MenuItem_GetShortCut
+MenuItem_GetShortCutText
 MenuItem_GetTag
 MenuItem_GetVisible
 MenuItem_HasParent
@@ -7394,6 +7406,7 @@ MenuItem_SetOnClick
 MenuItem_SetOnMeasureItem
 MenuItem_SetRadioItem
 MenuItem_SetShortCut
+MenuItem_SetShortCutText
 MenuItem_SetTag
 MenuItem_SetVisible
 MenuItem_StaticClassType

@@ -28,6 +28,7 @@ extern "system" {
   pub fn DTextToShortCut(AText: *const c_char) -> TShortCut;
   pub fn DShortCutToText(AVal: TShortCut) -> *const c_char;
   pub fn Clipboard_Instance() -> usize;
+  pub fn DSetClipboard(ANewClipboard: usize) -> usize;
   #[cfg(not(target_os = "windows"))]
   pub fn DSendMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> LRESULT;
   #[cfg(not(target_os = "windows"))]
@@ -46,6 +47,8 @@ extern "system" {
   pub fn DReleaseDC(hWnd: HWND, dc: HDC) -> i32;
   #[cfg(not(target_os = "windows"))]
   pub fn DSetForegroundWindow(hWnd: HWND) -> bool;
+  #[cfg(not(target_os = "windows"))]
+  pub fn DRegisterClipboardFormat(AFormat: *const c_char) -> TClipboardFormat;
   #[cfg(not(target_os = "windows"))]
   pub fn DWindowFromPoint(point: *mut TPoint) -> HWND;
   fn SetEventCallback(APtr: usize);
@@ -3922,6 +3925,8 @@ extern "system" {
   // ----------------- TImageList ----------------------
   pub fn ImageList_Create(AOwner: usize) -> usize;
   pub fn ImageList_Free(AObj: usize);
+  pub fn ImageList_StretchDraw(AObj: usize, ACanvas: usize, AIndex: i32, ARect: *mut TRect, AEnabled: bool);
+  pub fn ImageList_AddSliced(AObj: usize, Image: usize, AHorizontalCount: i32, AVerticalCount: i32) -> i32;
   pub fn ImageList_GetHotSpot(AObj: usize, Result: *mut TPoint);
   pub fn ImageList_HideDragImage(AObj: usize);
   pub fn ImageList_ShowDragImage(AObj: usize);
@@ -6484,6 +6489,8 @@ extern "system" {
   pub fn MenuItem_GetItems(AObj: usize, Index: i32) -> usize;
   pub fn MenuItem_GetComponents(AObj: usize, AIndex: i32) -> usize;
   pub fn MenuItem_StaticClassType() -> TClass;
+  pub fn MenuItem_GetShortCutText(AObj: usize) -> *const c_char;
+  pub fn MenuItem_SetShortCutText(AObj: usize, Value: *const c_char);
 
   // ----------------- TPicture ----------------------
   pub fn Picture_Create() -> usize;
@@ -8036,6 +8043,7 @@ extern "system" {
   pub fn Canvas_Rectangle(AObj: usize, X1: i32, Y1: i32, X2: i32, Y2: i32);
   pub fn Canvas_Refresh(AObj: usize);
   pub fn Canvas_RoundRect(AObj: usize, X1: i32, Y1: i32, X2: i32, Y2: i32, X3: i32, Y3: i32);
+  pub fn Canvas_StretchDraw(AObj: usize, Rect: *mut TRect, Graphic: usize);
   pub fn Canvas_TextExtent(AObj: usize, Text: *const c_char, Result: *mut TSize);
   pub fn Canvas_TextOut(AObj: usize, X: i32, Y: i32, Text: *const c_char);
   pub fn Canvas_Lock(AObj: usize);
@@ -8062,6 +8070,8 @@ extern "system" {
   pub fn Canvas_SetPen(AObj: usize, AValue: usize);
   pub fn Canvas_SetOnChange(AObj: usize, AEventId: usize);
   pub fn Canvas_SetOnChanging(AObj: usize, AEventId: usize);
+  pub fn Canvas_GetPixels(AObj: usize, X: i32, Y: i32) -> TColor;
+  pub fn Canvas_SetPixels(AObj: usize, X: i32, Y: i32, AValue: TColor);
   pub fn Canvas_StaticClassType() -> TClass;
   pub fn Canvas_BrushCopy(AObj: usize, Dest: *mut TRect, Bitmap: usize, Source: *mut TRect, Color: TColor);
   pub fn Canvas_CopyRect(AObj: usize, Dest: *mut TRect, Canvas: usize, Source: *mut TRect);
@@ -8070,14 +8080,11 @@ extern "system" {
   pub fn Canvas_DrawFocusRect(AObj: usize, ARect: *mut TRect);
   pub fn Canvas_FillRect(AObj: usize, Rect: *mut TRect);
   pub fn Canvas_FrameRect(AObj: usize, Rect: *mut TRect);
-  pub fn Canvas_StretchDraw(AObj: usize, Rect: *mut TRect, Graphic: usize);
   pub fn Canvas_TextRect1(AObj: usize, Rect: *mut TRect, X: i32, Y: i32, Text: *const c_char);
-  pub fn Canvas_TextRect2(AObj: usize, Rect: *mut TRect, Text: *const c_char, AOutStr: *mut *const c_char, TextFormat: TTextFormat) -> i32;
+  pub fn Canvas_TextRect2(AObj: usize, Rect: *mut TRect, Text: *const c_char, TextFormat: TTextFormat) -> i32;
   pub fn Canvas_Polygon(AObj: usize, APoints: *mut TPoint, ALen: i32);
   pub fn Canvas_Polyline(AObj: usize, APoints: *mut TPoint, ALen: i32);
   pub fn Canvas_PolyBezier(AObj: usize, APoints: *mut TPoint, ALen: i32);
-  pub fn Canvas_Pixels(AObj: usize, X: i32, Y: i32) -> TColor;
-  pub fn Canvas_SetPixels(AObj: usize, X: i32, Y: i32, AColor: TColor);
 
   // ----------------- TApplication ----------------------
   pub fn Application_Create(AOwner: usize) -> usize;
@@ -8628,10 +8635,16 @@ extern "system" {
   // ----------------- TClipboard ----------------------
   pub fn Clipboard_Create() -> usize;
   pub fn Clipboard_Free(AObj: usize);
+  pub fn Clipboard_FindPictureFormatID(AObj: usize) -> TClipboardFormat;
+  pub fn Clipboard_FindFormatID(AObj: usize, FormatName: *const c_char) -> TClipboardFormat;
+  pub fn Clipboard_GetAsHtml(AObj: usize, ExtractFragmentOnly: bool) -> *const c_char;
+  pub fn Clipboard_SupportedFormats(AObj: usize, List: usize);
+  pub fn Clipboard_HasFormatName(AObj: usize, FormatName: *const c_char) -> bool;
+  pub fn Clipboard_HasPictureFormat(AObj: usize) -> bool;
+  pub fn Clipboard_SetAsHtml(AObj: usize, Html: *const c_char, PlainText: *const c_char);
   pub fn Clipboard_Assign(AObj: usize, Source: usize);
   pub fn Clipboard_Clear(AObj: usize);
   pub fn Clipboard_Close(AObj: usize);
-  pub fn Clipboard_HasFormat(AObj: usize, Format: u16) -> bool;
   pub fn Clipboard_Open(AObj: usize);
   pub fn Clipboard_GetTextBuf(AObj: usize, Buffer: *const c_char, BufSize: i32) -> i32;
   pub fn Clipboard_SetTextBuf(AObj: usize, Buffer: *const c_char);
@@ -8646,9 +8659,9 @@ extern "system" {
   pub fn Clipboard_GetAsText(AObj: usize) -> *const c_char;
   pub fn Clipboard_SetAsText(AObj: usize, AValue: *const c_char);
   pub fn Clipboard_GetFormatCount(AObj: usize) -> i32;
-  pub fn Clipboard_GetFormats(AObj: usize, Index: i32) -> u16;
+  pub fn Clipboard_GetFormats(AObj: usize, Index: i32) -> TClipboardFormat;
   pub fn Clipboard_StaticClassType() -> TClass;
-  pub fn Clipboard_SetClipboard(NewClipboard: usize) -> usize;
+  pub fn Clipboard_HasFormat(AObj: usize, AFormatID: TClipboardFormat) -> bool;
 
   // ----------------- TMonitor ----------------------
   pub fn Monitor_Create() -> usize;
@@ -10426,6 +10439,8 @@ extern "system" {
   pub fn ImageButton_SetFont(AObj: usize, AValue: usize);
   pub fn ImageButton_GetImageCount(AObj: usize) -> i32;
   pub fn ImageButton_SetImageCount(AObj: usize, AValue: i32);
+  pub fn ImageButton_GetOrientation(AObj: usize) -> TImageOrientation;
+  pub fn ImageButton_SetOrientation(AObj: usize, AValue: TImageOrientation);
   pub fn ImageButton_GetModalResult(AObj: usize) -> TModalResult;
   pub fn ImageButton_SetModalResult(AObj: usize, AValue: TModalResult);
   pub fn ImageButton_GetParentShowHint(AObj: usize) -> bool;
@@ -14153,11 +14168,13 @@ extern "system" fn doEventCallback(f: usize, args: usize, arg_count: i32) -> usi
 }
 
 // 消息回调
-extern "system" fn doMessageCallback(_f: usize, _msg: usize) -> usize {
+extern "system" fn doMessageCallback(f: usize, msg: usize) -> usize {
+    let sid = getSelfId(f);
+    unsafe { transmute::<usize, fn(usize, usize)>(f)(sid, msg) };
     return 0;
 }
 
-// 线程同步回调
+// 线程同步回调(未实现)
 extern "system" fn doThreadSyncCallback() -> usize {
     return 0;
 }

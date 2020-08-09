@@ -11,7 +11,6 @@
 
 use lclapi::*;
 use types::*;
-use fns::{TextToShortCut, ShortCutToText};
 
 use std::borrow::Cow;
 use std::ffi::{CStr, CString};
@@ -181,8 +180,6 @@ impl TObject {
         method_Create!(TObject, Object_Create, );
       }
 
-      impl_Object_methods!(TObject);
-
 	  impl_Free_method!(Object_Free);
 
 	  pub fn ClassType(&self) -> TClass  {
@@ -213,6 +210,9 @@ impl TObject {
           return to_RustString!(method_Call_1!(Object_ToString, self.0));
       }
 
+
+      impl_Object_methods!(TObject);
+
       // static class
 	  impl_Class_method!(Object_StaticClassType);
 }
@@ -224,8 +224,6 @@ impl TComponent {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TComponent, Component_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TComponent);
 
 	  impl_Free_method!(Component_Free);
 
@@ -313,6 +311,9 @@ impl TComponent {
           return method_Call_2!(TComponent, Component_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TComponent);
+
       // static class
 	  impl_Class_method!(Component_StaticClassType);
 }
@@ -324,8 +325,6 @@ impl TControl {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TControl, Control_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TControl);
 
 	  impl_Free_method!(Control_Free);
 
@@ -784,6 +783,9 @@ impl TControl {
           return method_Call_2!(TAnchorSide, Control_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TControl);
+
       // static class
 	  impl_Class_method!(Control_StaticClassType);
 }
@@ -796,8 +798,6 @@ impl TWinControl {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TWinControl, WinControl_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TWinControl);
 
 	  impl_Free_method!(WinControl_Free);
 
@@ -1434,6 +1434,9 @@ impl TWinControl {
           return method_Call_2!(TAnchorSide, WinControl_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TWinControl);
+
       // static class
 	  impl_Class_method!(WinControl_StaticClassType);
 }
@@ -1447,8 +1450,6 @@ impl TGraphic {
       pub fn new() -> Self {
         method_Create!(TGraphic, Graphic_Create, );
       }
-
-      impl_Object_methods!(TGraphic);
 
 	  impl_Free_method!(Graphic_Free);
 
@@ -1572,6 +1573,9 @@ impl TGraphic {
           return &self;
       }
 
+
+      impl_Object_methods!(TGraphic);
+
       // static class
 	  impl_Class_method!(Graphic_StaticClassType);
 }
@@ -1584,8 +1588,6 @@ impl TStrings {
       pub fn new() -> Self {
         method_Create!(TStrings, Strings_Create, );
       }
-
-      impl_Object_methods!(TStrings);
 
 	  impl_Free_method!(Strings_Free);
 
@@ -1791,6 +1793,9 @@ impl TStrings {
           return &self;
       }
 
+
+      impl_Object_methods!(TStrings);
+
       // static class
 	  impl_Class_method!(Strings_StaticClassType);
 }
@@ -1809,8 +1814,6 @@ impl TCheckBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TCheckBox, CheckBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCheckBox);
 
 	  impl_Free_method!(CheckBox_Free);
 
@@ -2653,6 +2656,9 @@ impl TCheckBox {
           return method_Call_2!(TAnchorSide, CheckBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TCheckBox);
+
       // static class
 	  impl_Class_method!(CheckBox_StaticClassType);
 }
@@ -2666,8 +2672,6 @@ impl TRadioButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TRadioButton, RadioButton_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TRadioButton);
 
 	  impl_Free_method!(RadioButton_Free);
 
@@ -3492,6 +3496,9 @@ impl TRadioButton {
           return method_Call_2!(TAnchorSide, RadioButton_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TRadioButton);
+
       // static class
 	  impl_Class_method!(RadioButton_StaticClassType);
 }
@@ -3505,8 +3512,6 @@ impl TGroupBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TGroupBox, GroupBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TGroupBox);
 
 	  impl_Free_method!(GroupBox_Free);
 
@@ -4328,6 +4333,9 @@ impl TGroupBox {
           return method_Call_2!(TAnchorSide, GroupBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TGroupBox);
+
       // static class
 	  impl_Class_method!(GroupBox_StaticClassType);
 }
@@ -4341,8 +4349,6 @@ impl TLabel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TLabel, Label_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TLabel);
 
 	  impl_Free_method!(Label_Free);
 
@@ -5022,6 +5028,9 @@ impl TLabel {
           return method_Call_2!(TAnchorSide, Label_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TLabel);
+
       // static class
 	  impl_Class_method!(Label_StaticClassType);
 }
@@ -5034,8 +5043,6 @@ impl TListBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TListBox, ListBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListBox);
 
 	  impl_Free_method!(ListBox_Free);
 
@@ -6008,6 +6015,9 @@ impl TListBox {
           return method_Call_2!(TAnchorSide, ListBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TListBox);
+
       // static class
 	  impl_Class_method!(ListBox_StaticClassType);
 }
@@ -6021,8 +6031,6 @@ impl TComboBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TComboBox, ComboBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TComboBox);
 
 	  impl_Free_method!(ComboBox_Free);
 
@@ -6994,6 +7002,9 @@ impl TComboBox {
           return method_Call_2!(TAnchorSide, ComboBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TComboBox);
+
       // static class
 	  impl_Class_method!(ComboBox_StaticClassType);
 }
@@ -7007,8 +7018,6 @@ impl TPanel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPanel, Panel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPanel);
 
 	  impl_Free_method!(Panel_Free);
 
@@ -7907,6 +7916,9 @@ impl TPanel {
           return method_Call_2!(TAnchorSide, Panel_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TPanel);
+
       // static class
 	  impl_Class_method!(Panel_StaticClassType);
 }
@@ -7920,8 +7932,6 @@ impl TImage {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TImage, Image_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TImage);
 
 	  impl_Free_method!(Image_Free);
 
@@ -8569,6 +8579,9 @@ impl TImage {
           return method_Call_2!(TAnchorSide, Image_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TImage);
+
       // static class
 	  impl_Class_method!(Image_StaticClassType);
 }
@@ -8581,8 +8594,6 @@ impl TLinkLabel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TLinkLabel, LinkLabel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TLinkLabel);
 
 	  impl_Free_method!(LinkLabel_Free);
 
@@ -9204,6 +9215,9 @@ impl TLinkLabel {
           return method_Call_2!(TAnchorSide, LinkLabel_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TLinkLabel);
+
       // static class
 	  impl_Class_method!(LinkLabel_StaticClassType);
 }
@@ -9217,8 +9231,6 @@ impl TSpeedButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSpeedButton, SpeedButton_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSpeedButton);
 
 	  impl_Free_method!(SpeedButton_Free);
 
@@ -9879,6 +9891,9 @@ impl TSpeedButton {
           return method_Call_2!(TAnchorSide, SpeedButton_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TSpeedButton);
+
       // static class
 	  impl_Class_method!(SpeedButton_StaticClassType);
 }
@@ -9891,8 +9906,6 @@ impl TSplitter {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSplitter, Splitter_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSplitter);
 
 	  impl_Free_method!(Splitter_Free);
 
@@ -10396,6 +10409,9 @@ impl TSplitter {
           return method_Call_2!(TAnchorSide, Splitter_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TSplitter);
+
       // static class
 	  impl_Class_method!(Splitter_StaticClassType);
 }
@@ -10408,8 +10424,6 @@ impl TRadioGroup {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TRadioGroup, RadioGroup_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TRadioGroup);
 
 	  impl_Free_method!(RadioGroup_Free);
 
@@ -11184,6 +11198,9 @@ impl TRadioGroup {
           return method_Call_2!(TAnchorSide, RadioGroup_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TRadioGroup);
+
       // static class
 	  impl_Class_method!(RadioGroup_StaticClassType);
 }
@@ -11197,8 +11214,6 @@ impl TStaticText {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TStaticText, StaticText_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TStaticText);
 
 	  impl_Free_method!(StaticText_Free);
 
@@ -12034,6 +12049,9 @@ impl TStaticText {
           return method_Call_2!(TAnchorSide, StaticText_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TStaticText);
+
       // static class
 	  impl_Class_method!(StaticText_StaticClassType);
 }
@@ -12047,8 +12065,6 @@ impl TColorBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TColorBox, ColorBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TColorBox);
 
 	  impl_Free_method!(ColorBox_Free);
 
@@ -12986,6 +13002,9 @@ impl TColorBox {
           return method_Call_2!(TAnchorSide, ColorBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TColorBox);
+
       // static class
 	  impl_Class_method!(ColorBox_StaticClassType);
 }
@@ -12999,8 +13018,6 @@ impl TColorListBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TColorListBox, ColorListBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TColorListBox);
 
 	  impl_Free_method!(ColorListBox_Free);
 
@@ -13908,6 +13925,9 @@ impl TColorListBox {
           return method_Call_2!(TAnchorSide, ColorListBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TColorListBox);
+
       // static class
 	  impl_Class_method!(ColorListBox_StaticClassType);
 }
@@ -13921,8 +13941,6 @@ impl TTrayIcon {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTrayIcon, TrayIcon_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTrayIcon);
 
 	  impl_Free_method!(TrayIcon_Free);
 
@@ -14121,6 +14139,9 @@ impl TTrayIcon {
           return method_Call_2!(TComponent, TrayIcon_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TTrayIcon);
+
       // static class
 	  impl_Class_method!(TrayIcon_StaticClassType);
 }
@@ -14132,8 +14153,6 @@ impl TOpenDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TOpenDialog, OpenDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TOpenDialog);
 
 	  impl_Free_method!(OpenDialog_Free);
 
@@ -14306,6 +14325,9 @@ impl TOpenDialog {
           return method_Call_2!(TComponent, OpenDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TOpenDialog);
+
       // static class
 	  impl_Class_method!(OpenDialog_StaticClassType);
 }
@@ -14317,8 +14339,6 @@ impl TSaveDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSaveDialog, SaveDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSaveDialog);
 
 	  impl_Free_method!(SaveDialog_Free);
 
@@ -14491,6 +14511,9 @@ impl TSaveDialog {
           return method_Call_2!(TComponent, SaveDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TSaveDialog);
+
       // static class
 	  impl_Class_method!(SaveDialog_StaticClassType);
 }
@@ -14502,8 +14525,6 @@ impl TColorDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TColorDialog, ColorDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TColorDialog);
 
 	  impl_Free_method!(ColorDialog_Free);
 
@@ -14618,6 +14639,9 @@ impl TColorDialog {
           return method_Call_2!(TComponent, ColorDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TColorDialog);
+
       // static class
 	  impl_Class_method!(ColorDialog_StaticClassType);
 }
@@ -14629,8 +14653,6 @@ impl TFontDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TFontDialog, FontDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TFontDialog);
 
 	  impl_Free_method!(FontDialog_Free);
 
@@ -14754,6 +14776,9 @@ impl TFontDialog {
           return method_Call_2!(TComponent, FontDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TFontDialog);
+
       // static class
 	  impl_Class_method!(FontDialog_StaticClassType);
 }
@@ -14765,8 +14790,6 @@ impl TPrintDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPrintDialog, PrintDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPrintDialog);
 
 	  impl_Free_method!(PrintDialog_Free);
 
@@ -14953,6 +14976,9 @@ impl TPrintDialog {
           return method_Call_2!(TComponent, PrintDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TPrintDialog);
+
       // static class
 	  impl_Class_method!(PrintDialog_StaticClassType);
 }
@@ -14964,8 +14990,6 @@ impl TOpenPictureDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TOpenPictureDialog, OpenPictureDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TOpenPictureDialog);
 
 	  impl_Free_method!(OpenPictureDialog_Free);
 
@@ -15138,6 +15162,9 @@ impl TOpenPictureDialog {
           return method_Call_2!(TComponent, OpenPictureDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TOpenPictureDialog);
+
       // static class
 	  impl_Class_method!(OpenPictureDialog_StaticClassType);
 }
@@ -15149,8 +15176,6 @@ impl TSavePictureDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSavePictureDialog, SavePictureDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSavePictureDialog);
 
 	  impl_Free_method!(SavePictureDialog_Free);
 
@@ -15323,6 +15348,9 @@ impl TSavePictureDialog {
           return method_Call_2!(TComponent, SavePictureDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TSavePictureDialog);
+
       // static class
 	  impl_Class_method!(SavePictureDialog_StaticClassType);
 }
@@ -15334,8 +15362,6 @@ impl TSelectDirectoryDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSelectDirectoryDialog, SelectDirectoryDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSelectDirectoryDialog);
 
 	  impl_Free_method!(SelectDirectoryDialog_Free);
 
@@ -15508,6 +15534,9 @@ impl TSelectDirectoryDialog {
           return method_Call_2!(TComponent, SelectDirectoryDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TSelectDirectoryDialog);
+
       // static class
 	  impl_Class_method!(SelectDirectoryDialog_StaticClassType);
 }
@@ -15519,8 +15548,6 @@ impl TRichEdit {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TRichEdit, RichEdit_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TRichEdit);
 
 	  impl_Free_method!(RichEdit_Free);
 
@@ -16576,6 +16603,9 @@ impl TRichEdit {
           return method_Call_2!(TAnchorSide, RichEdit_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TRichEdit);
+
       // static class
 	  impl_Class_method!(RichEdit_StaticClassType);
 }
@@ -16589,8 +16619,6 @@ impl TTrackBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTrackBar, TrackBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTrackBar);
 
 	  impl_Free_method!(TrackBar_Free);
 
@@ -17435,6 +17463,9 @@ impl TTrackBar {
           return method_Call_2!(TAnchorSide, TrackBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TTrackBar);
+
       // static class
 	  impl_Class_method!(TrackBar_StaticClassType);
 }
@@ -17449,9 +17480,17 @@ impl TImageList {
         method_Create!(TImageList, ImageList_Create, aOwner.Instance());
       }
 
-      impl_Object_methods!(TImageList);
-
 	  impl_Free_method!(ImageList_Free);
+
+	  pub fn StretchDraw(&self, aCanvas: &TCanvas, aIndex: i32, aRect: &TRect, aEnabled: bool) -> &Self  {
+          let mut ps3 = aRect.clone();
+          method_Call_1!(ImageList_StretchDraw, self.0, aCanvas.Instance(), aIndex, &mut ps3, aEnabled);
+          return &self;
+      }
+
+	  pub fn AddSliced(&self, image: &TBitmap, aHorizontalCount: i32, aVerticalCount: i32) -> i32  {
+          return method_Call_1!(ImageList_AddSliced, self.0, image.Instance(), aHorizontalCount, aVerticalCount);
+      }
 
 	  pub fn GetHotSpot(&self) -> TPoint  {
           let mut result = TPoint::empty();
@@ -17723,6 +17762,9 @@ impl TImageList {
           return method_Call_2!(TComponent, ImageList_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TImageList);
+
       // static class
 	  impl_Class_method!(ImageList_StaticClassType);
 	  pub fn Draw1(&self, canvas: &TCanvas, x: i32, y: i32, index: i32, enabled: bool) -> &Self  {
@@ -17749,8 +17791,6 @@ impl TUpDown {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TUpDown, UpDown_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TUpDown);
 
 	  impl_Free_method!(UpDown_Free);
 
@@ -18509,6 +18549,9 @@ impl TUpDown {
           return method_Call_2!(TAnchorSide, UpDown_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TUpDown);
+
       // static class
 	  impl_Class_method!(UpDown_StaticClassType);
 }
@@ -18522,8 +18565,6 @@ impl TProgressBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TProgressBar, ProgressBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TProgressBar);
 
 	  impl_Free_method!(ProgressBar_Free);
 
@@ -19342,6 +19383,9 @@ impl TProgressBar {
           return method_Call_2!(TAnchorSide, ProgressBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TProgressBar);
+
       // static class
 	  impl_Class_method!(ProgressBar_StaticClassType);
 }
@@ -19355,8 +19399,6 @@ impl TDateTimePicker {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TDateTimePicker, DateTimePicker_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TDateTimePicker);
 
 	  impl_Free_method!(DateTimePicker_Free);
 
@@ -20363,6 +20405,9 @@ impl TDateTimePicker {
           return method_Call_2!(TAnchorSide, DateTimePicker_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TDateTimePicker);
+
       // static class
 	  impl_Class_method!(DateTimePicker_StaticClassType);
 }
@@ -20376,8 +20421,6 @@ impl TMonthCalendar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMonthCalendar, MonthCalendar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMonthCalendar);
 
 	  impl_Free_method!(MonthCalendar_Free);
 
@@ -21170,6 +21213,9 @@ impl TMonthCalendar {
           return method_Call_2!(TAnchorSide, MonthCalendar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TMonthCalendar);
+
       // static class
 	  impl_Class_method!(MonthCalendar_StaticClassType);
 }
@@ -21183,8 +21229,6 @@ impl TListView {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TListView, ListView_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListView);
 
 	  impl_Free_method!(ListView_Free);
 
@@ -22486,6 +22530,9 @@ impl TListView {
           return method_Call_2!(TAnchorSide, ListView_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TListView);
+
       // static class
 	  impl_Class_method!(ListView_StaticClassType);
 }
@@ -22499,8 +22546,6 @@ impl TTreeView {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTreeView, TreeView_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTreeView);
 
 	  impl_Free_method!(TreeView_Free);
 
@@ -23774,6 +23819,9 @@ impl TTreeView {
           return method_Call_2!(TAnchorSide, TreeView_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TTreeView);
+
       // static class
 	  impl_Class_method!(TreeView_StaticClassType);
 }
@@ -23787,8 +23835,6 @@ impl TStatusBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TStatusBar, StatusBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TStatusBar);
 
 	  impl_Free_method!(StatusBar_Free);
 
@@ -24648,6 +24694,9 @@ impl TStatusBar {
           return method_Call_2!(TAnchorSide, StatusBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TStatusBar);
+
       // static class
 	  impl_Class_method!(StatusBar_StaticClassType);
 }
@@ -24661,8 +24710,6 @@ impl TToolBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TToolBar, ToolBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TToolBar);
 
 	  impl_Free_method!(ToolBar_Free);
 
@@ -25620,6 +25667,9 @@ impl TToolBar {
           return method_Call_2!(TAnchorSide, ToolBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TToolBar);
+
       // static class
 	  impl_Class_method!(ToolBar_StaticClassType);
 }
@@ -25633,8 +25683,6 @@ impl TBitBtn {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TBitBtn, BitBtn_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TBitBtn);
 
 	  impl_Free_method!(BitBtn_Free);
 
@@ -26486,6 +26534,9 @@ impl TBitBtn {
           return method_Call_2!(TAnchorSide, BitBtn_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TBitBtn);
+
       // static class
 	  impl_Class_method!(BitBtn_StaticClassType);
 }
@@ -26499,8 +26550,6 @@ impl TIcon {
       pub fn new() -> Self {
         method_Create!(TIcon, Icon_Create, );
       }
-
-      impl_Object_methods!(TIcon);
 
 	  impl_Free_method!(Icon_Free);
 
@@ -26652,6 +26701,9 @@ impl TIcon {
           return &self;
       }
 
+
+      impl_Object_methods!(TIcon);
+
       // static class
 	  impl_Class_method!(Icon_StaticClassType);
 }
@@ -26664,8 +26716,6 @@ impl TBitmap {
       pub fn new() -> Self {
         method_Create!(TBitmap, Bitmap_Create, );
       }
-
-      impl_Object_methods!(TBitmap);
 
 	  impl_Free_method!(Bitmap_Free);
 
@@ -26866,6 +26916,9 @@ impl TBitmap {
           return method_Call_1!(Bitmap_GetScanLine, self.0, row);
       }
 
+
+      impl_Object_methods!(TBitmap);
+
       // static class
 	  impl_Class_method!(Bitmap_StaticClassType);
 	  pub fn Clear(&self) -> &Self  {
@@ -26898,8 +26951,6 @@ impl TMemo {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMemo, Memo_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMemo);
 
 	  impl_Free_method!(Memo_Free);
 
@@ -27910,6 +27961,9 @@ impl TMemo {
           return method_Call_2!(TAnchorSide, Memo_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TMemo);
+
       // static class
 	  impl_Class_method!(Memo_StaticClassType);
 }
@@ -27923,8 +27977,6 @@ impl TMemoryStream {
       pub fn new() -> Self {
         method_Create!(TMemoryStream, MemoryStream_Create, );
       }
-
-      impl_Object_methods!(TMemoryStream);
 
 	  impl_Free_method!(MemoryStream_Free);
 
@@ -28021,6 +28073,9 @@ impl TMemoryStream {
           return &self;
       }
 
+
+      impl_Object_methods!(TMemoryStream);
+
       // static class
 	  impl_Class_method!(MemoryStream_StaticClassType);
 	  pub fn Write(&self, buffer: usize, count: i32) -> i32  {
@@ -28041,8 +28096,6 @@ impl TFont {
       pub fn new() -> Self {
         method_Create!(TFont, Font_Create, );
       }
-
-      impl_Object_methods!(TFont);
 
 	  impl_Free_method!(Font_Free);
 
@@ -28191,6 +28244,9 @@ impl TFont {
           return &self;
       }
 
+
+      impl_Object_methods!(TFont);
+
       // static class
 	  impl_Class_method!(Font_StaticClassType);
 }
@@ -28202,8 +28258,6 @@ impl TPopupMenu {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPopupMenu, PopupMenu_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPopupMenu);
 
 	  impl_Free_method!(PopupMenu_Free);
 
@@ -28374,6 +28428,9 @@ impl TPopupMenu {
           return method_Call_2!(TComponent, PopupMenu_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TPopupMenu);
+
       // static class
 	  impl_Class_method!(PopupMenu_StaticClassType);
 }
@@ -28385,8 +28442,6 @@ impl TStringList {
       pub fn new() -> Self {
         method_Create!(TStringList, StringList_Create, );
       }
-
-      impl_Object_methods!(TStringList);
 
 	  impl_Free_method!(StringList_Free);
 
@@ -28611,6 +28666,9 @@ impl TStringList {
           return &self;
       }
 
+
+      impl_Object_methods!(TStringList);
+
       // static class
 	  impl_Class_method!(StringList_StaticClassType);
 }
@@ -28623,8 +28681,6 @@ impl TBrush {
       pub fn new() -> Self {
         method_Create!(TBrush, Brush_Create, );
       }
-
-      impl_Object_methods!(TBrush);
 
 	  impl_Free_method!(Brush_Free);
 
@@ -28706,6 +28762,9 @@ impl TBrush {
           return &self;
       }
 
+
+      impl_Object_methods!(TBrush);
+
       // static class
 	  impl_Class_method!(Brush_StaticClassType);
 }
@@ -28717,8 +28776,6 @@ impl TPen {
       pub fn new() -> Self {
         method_Create!(TPen, Pen_Create, );
       }
-
-      impl_Object_methods!(TPen);
 
 	  impl_Free_method!(Pen_Free);
 
@@ -28809,6 +28866,9 @@ impl TPen {
           return &self;
       }
 
+
+      impl_Object_methods!(TPen);
+
       // static class
 	  impl_Class_method!(Pen_StaticClassType);
 }
@@ -28820,11 +28880,6 @@ impl TMenuItem {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMenuItem, MenuItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMenuItem);
-
-      impl_ShortCutText_method!();
-
 
 	  impl_Free_method!(MenuItem_Free);
 
@@ -29084,8 +29139,20 @@ impl TMenuItem {
           return method_Call_2!(TComponent, MenuItem_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TMenuItem);
+
       // static class
 	  impl_Class_method!(MenuItem_StaticClassType);
+	  pub fn ShortCutText<'a>(&self) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(MenuItem_GetShortCutText, self.0));
+      }
+
+	  pub fn SetShortCutText(&self, value: &str) -> &Self  {
+          method_Call_1!(MenuItem_SetShortCutText, self.0, to_CString!(value));
+          return &self;
+      }
+
 }
 
 impl_IObject!(TMenuItem);
@@ -29095,8 +29162,6 @@ impl TPicture {
       pub fn new() -> Self {
         method_Create!(TPicture, Picture_Create, );
       }
-
-      impl_Object_methods!(TPicture);
 
 	  impl_Free_method!(Picture_Free);
 
@@ -29197,6 +29262,9 @@ impl TPicture {
           return &self;
       }
 
+
+      impl_Object_methods!(TPicture);
+
       // static class
 	  impl_Class_method!(Picture_StaticClassType);
 }
@@ -29208,8 +29276,6 @@ impl TListColumns {
       pub fn new(aOwner: &TListView) -> Self {
         method_Create!(TListColumns, ListColumns_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListColumns);
 
 	  impl_Free_method!(ListColumns_Free);
 
@@ -29299,6 +29365,9 @@ impl TListColumns {
           return &self;
       }
 
+
+      impl_Object_methods!(TListColumns);
+
       // static class
 	  impl_Class_method!(ListColumns_StaticClassType);
 }
@@ -29310,8 +29379,6 @@ impl TListItems {
       pub fn new(aOwner: &TListView) -> Self {
         method_Create!(TListItems, ListItems_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListItems);
 
 	  impl_Free_method!(ListItems_Free);
 
@@ -29406,6 +29473,9 @@ impl TListItems {
           return &self;
       }
 
+
+      impl_Object_methods!(TListItems);
+
       // static class
 	  impl_Class_method!(ListItems_StaticClassType);
 }
@@ -29417,8 +29487,6 @@ impl TTreeNodes {
       pub fn new(aOwner: &TTreeView) -> Self {
         method_Create!(TTreeNodes, TreeNodes_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTreeNodes);
 
 	  impl_Free_method!(TreeNodes_Free);
 
@@ -29543,6 +29611,9 @@ impl TTreeNodes {
           return method_Call_2!(TTreeNode, TreeNodes_GetItem, self.0, index);
       }
 
+
+      impl_Object_methods!(TTreeNodes);
+
       // static class
 	  impl_Class_method!(TreeNodes_StaticClassType);
 }
@@ -29554,8 +29625,6 @@ impl TListItem {
       pub fn new(aOwner: &TListItems) -> Self {
         method_Create!(TListItem, ListItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListItem);
 
 	  impl_Free_method!(ListItem_Free);
 
@@ -29762,6 +29831,9 @@ impl TListItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TListItem);
+
       // static class
 	  impl_Class_method!(ListItem_StaticClassType);
 }
@@ -29773,8 +29845,6 @@ impl TTreeNode {
       pub fn new(aOwner: &TTreeNodes) -> Self {
         method_Create!(TTreeNode, TreeNode_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTreeNode);
 
 	  impl_Free_method!(TreeNode_Free);
 
@@ -30006,6 +30076,9 @@ impl TTreeNode {
           return &self;
       }
 
+
+      impl_Object_methods!(TTreeNode);
+
       // static class
 	  impl_Class_method!(TreeNode_StaticClassType);
 }
@@ -30017,8 +30090,6 @@ impl TPageControl {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPageControl, PageControl_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPageControl);
 
 	  impl_Free_method!(PageControl_Free);
 
@@ -30904,6 +30975,9 @@ impl TPageControl {
           return method_Call_2!(TAnchorSide, PageControl_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TPageControl);
+
       // static class
 	  impl_Class_method!(PageControl_StaticClassType);
 }
@@ -30917,8 +30991,6 @@ impl TTabSheet {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTabSheet, TabSheet_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTabSheet);
 
 	  impl_Free_method!(TabSheet_Free);
 
@@ -31719,6 +31791,9 @@ impl TTabSheet {
           return method_Call_2!(TAnchorSide, TabSheet_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TTabSheet);
+
       // static class
 	  impl_Class_method!(TabSheet_StaticClassType);
 }
@@ -31732,8 +31807,6 @@ impl TButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TButton, Button_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TButton);
 
 	  impl_Free_method!(Button_Free);
 
@@ -32549,6 +32622,9 @@ impl TButton {
           return method_Call_2!(TAnchorSide, Button_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TButton);
+
       // static class
 	  impl_Class_method!(Button_StaticClassType);
 }
@@ -32562,8 +32638,6 @@ impl TEdit {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TEdit, Edit_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TEdit);
 
 	  impl_Free_method!(Edit_Free);
 
@@ -33549,6 +33623,9 @@ impl TEdit {
           return method_Call_2!(TAnchorSide, Edit_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TEdit);
+
       // static class
 	  impl_Class_method!(Edit_StaticClassType);
 }
@@ -33562,8 +33639,6 @@ impl TScreen {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TScreen, Screen_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TScreen);
 
 	  impl_Free_method!(Screen_Free);
 
@@ -33765,6 +33840,9 @@ impl TScreen {
           return method_Call_2!(TComponent, Screen_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TScreen);
+
       // static class
 	  impl_Class_method!(Screen_StaticClassType);
 }
@@ -33776,8 +33854,6 @@ impl TMouse {
       pub fn new() -> Self {
         method_Create!(TMouse, Mouse_Create, );
       }
-
-      impl_Object_methods!(TMouse);
 
 	  impl_Free_method!(Mouse_Free);
 
@@ -33837,6 +33913,9 @@ impl TMouse {
           return method_Call_1!(Mouse_GetWheelScrollLines, self.0);
       }
 
+
+      impl_Object_methods!(TMouse);
+
       // static class
 	  impl_Class_method!(Mouse_StaticClassType);
 }
@@ -33848,8 +33927,6 @@ impl TListColumn {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TListColumn, ListColumn_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TListColumn);
 
 	  impl_Free_method!(ListColumn_Free);
 
@@ -33998,6 +34075,9 @@ impl TListColumn {
           return &self;
       }
 
+
+      impl_Object_methods!(TListColumn);
+
       // static class
 	  impl_Class_method!(ListColumn_StaticClassType);
 }
@@ -34009,8 +34089,6 @@ impl TCollectionItem {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TCollectionItem, CollectionItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCollectionItem);
 
 	  impl_Free_method!(CollectionItem_Free);
 
@@ -34078,6 +34156,9 @@ impl TCollectionItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TCollectionItem);
+
       // static class
 	  impl_Class_method!(CollectionItem_StaticClassType);
 }
@@ -34089,8 +34170,6 @@ impl TStatusPanels {
       pub fn new(aOwner: &TStatusBar) -> Self {
         method_Create!(TStatusPanels, StatusPanels_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TStatusPanels);
 
 	  impl_Free_method!(StatusPanels_Free);
 
@@ -34189,6 +34268,9 @@ impl TStatusPanels {
           return &self;
       }
 
+
+      impl_Object_methods!(TStatusPanels);
+
       // static class
 	  impl_Class_method!(StatusPanels_StaticClassType);
 }
@@ -34200,8 +34282,6 @@ impl TStatusPanel {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TStatusPanel, StatusPanel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TStatusPanel);
 
 	  impl_Free_method!(StatusPanel_Free);
 
@@ -34314,6 +34394,9 @@ impl TStatusPanel {
           return &self;
       }
 
+
+      impl_Object_methods!(TStatusPanel);
+
       // static class
 	  impl_Class_method!(StatusPanel_StaticClassType);
 }
@@ -34325,8 +34408,6 @@ impl TSpinEdit {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TSpinEdit, SpinEdit_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TSpinEdit);
 
 	  impl_Free_method!(SpinEdit_Free);
 
@@ -35241,6 +35322,9 @@ impl TSpinEdit {
           return method_Call_2!(TAnchorSide, SpinEdit_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TSpinEdit);
+
       // static class
 	  impl_Class_method!(SpinEdit_StaticClassType);
 }
@@ -35254,8 +35338,6 @@ impl TMiniWebview {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMiniWebview, MiniWebview_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMiniWebview);
 
 	  impl_Free_method!(MiniWebview_Free);
 
@@ -35949,6 +36031,9 @@ impl TMiniWebview {
           return method_Call_2!(TAnchorSide, MiniWebview_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TMiniWebview);
+
       // static class
 	  impl_Class_method!(MiniWebview_StaticClassType);
 }
@@ -35962,8 +36047,6 @@ impl TCanvas {
       pub fn new() -> Self {
         method_Create!(TCanvas, Canvas_Create, );
       }
-
-      impl_Object_methods!(TCanvas);
 
 	  impl_Free_method!(Canvas_Free);
 
@@ -36030,6 +36113,12 @@ impl TCanvas {
 
 	  pub fn RoundRect(&self, x1: i32, y1: i32, x2: i32, y2: i32, x3: i32, y3: i32) -> &Self  {
           method_Call_1!(Canvas_RoundRect, self.0, x1, y1, x2, y2, x3, y3);
+          return &self;
+      }
+
+	  pub fn StretchDraw(&self, rect: &TRect, graphic: &dyn IGraphic) -> &Self  {
+          let mut ps1 = rect.clone();
+          method_Call_1!(Canvas_StretchDraw, self.0, &mut ps1, graphic.Instance());
           return &self;
       }
 
@@ -36149,6 +36238,18 @@ impl TCanvas {
           return &self;
       }
 
+	  pub fn Pixels(&self, x: i32, y: i32) -> TColor  {
+          return method_Call_1!(Canvas_GetPixels, self.0, x, y);
+      }
+
+	  pub fn SetPixels(&self, x: i32, y: i32, aValue: TColor) -> &Self  {
+          method_Call_1!(Canvas_SetPixels, self.0, x, y, aValue);
+          return &self;
+      }
+
+
+      impl_Object_methods!(TCanvas);
+
       // static class
 	  impl_Class_method!(Canvas_StaticClassType);
 	  pub fn BrushCopy(&self, dest: &TRect, bitmap: &TBitmap, source: &TRect, color: TColor) -> &Self  {
@@ -36193,12 +36294,6 @@ impl TCanvas {
           return &self;
       }
 
-	  pub fn StretchDraw(&self, rect: &TRect, graphic: &dyn IGraphic) -> &Self  {
-          let mut ps1 = rect.clone();
-          method_Call_1!(Canvas_StretchDraw, self.0, &mut ps1, graphic.Instance());
-          return &self;
-      }
-
 	  pub fn TextRect1(&self, rect: &TRect, x: i32, y: i32, text: &str) -> &Self  {
           let mut ps1 = rect.clone();
           method_Call_1!(Canvas_TextRect1, self.0, &mut ps1, x, y, to_CString!(text));
@@ -36206,8 +36301,8 @@ impl TCanvas {
       }
 
 	  pub fn TextRect2(&self, rect: *mut TRect, text: &str, textFormat: TTextFormat) -> i32  {
-	     return method_Call_1!(Canvas_TextRect2, self.0, rect, to_CString!(text), &mut (0 as *const i8), textFormat);
-	  }
+          return method_Call_1!(Canvas_TextRect2, self.0, rect, to_CString!(text), textFormat);
+      }
 
 	  pub fn Polygon(&self, aPoints: *mut TPoint, aLen: i32) -> &Self  {
           method_Call_1!(Canvas_Polygon, self.0, aPoints, aLen);
@@ -36224,15 +36319,6 @@ impl TCanvas {
           return &self;
       }
 
-	  pub fn Pixels(&self, x: i32, y: i32) -> TColor  {
-          return method_Call_1!(Canvas_Pixels, self.0, x, y);
-      }
-
-	  pub fn SetPixels(&self, x: i32, y: i32, aColor: TColor) -> &Self  {
-          method_Call_1!(Canvas_SetPixels, self.0, x, y, aColor);
-          return &self;
-      }
-
 }
 
 impl_IObject!(TCanvas);
@@ -36242,8 +36328,6 @@ impl TApplication {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TApplication, Application_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TApplication);
 
 	  impl_Free_method!(Application_Free);
 
@@ -36605,6 +36689,9 @@ impl TApplication {
           return method_Call_2!(TComponent, Application_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TApplication);
+
       // static class
 	  impl_Class_method!(Application_StaticClassType);
 	  pub fn Initialize(&self) -> &Self  {
@@ -36630,8 +36717,6 @@ impl TMainMenu {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMainMenu, MainMenu_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMainMenu);
 
 	  impl_Free_method!(MainMenu_Free);
 
@@ -36768,6 +36853,9 @@ impl TMainMenu {
           return method_Call_2!(TComponent, MainMenu_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TMainMenu);
+
       // static class
 	  impl_Class_method!(MainMenu_StaticClassType);
 }
@@ -36779,8 +36867,6 @@ impl TPngImage {
       pub fn new() -> Self {
         method_Create!(TPngImage, PngImage_Create, );
       }
-
-      impl_Object_methods!(TPngImage);
 
 	  impl_Free_method!(PngImage_Free);
 
@@ -36913,6 +36999,9 @@ impl TPngImage {
           return &self;
       }
 
+
+      impl_Object_methods!(TPngImage);
+
       // static class
 	  impl_Class_method!(PngImage_StaticClassType);
 }
@@ -36925,8 +37014,6 @@ impl TJPEGImage {
       pub fn new() -> Self {
         method_Create!(TJPEGImage, JPEGImage_Create, );
       }
-
-      impl_Object_methods!(TJPEGImage);
 
 	  impl_Free_method!(JPEGImage_Free);
 
@@ -37077,6 +37164,9 @@ impl TJPEGImage {
           return &self;
       }
 
+
+      impl_Object_methods!(TJPEGImage);
+
       // static class
 	  impl_Class_method!(JPEGImage_StaticClassType);
 }
@@ -37089,8 +37179,6 @@ impl TGIFImage {
       pub fn new() -> Self {
         method_Create!(TGIFImage, GIFImage_Create, );
       }
-
-      impl_Object_methods!(TGIFImage);
 
 	  impl_Free_method!(GIFImage_Free);
 
@@ -37223,6 +37311,9 @@ impl TGIFImage {
           return &self;
       }
 
+
+      impl_Object_methods!(TGIFImage);
+
       // static class
 	  impl_Class_method!(GIFImage_StaticClassType);
 }
@@ -37235,8 +37326,6 @@ impl TActionList {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TActionList, ActionList_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TActionList);
 
 	  impl_Free_method!(ActionList_Free);
 
@@ -37347,6 +37436,9 @@ impl TActionList {
           return method_Call_2!(TComponent, ActionList_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TActionList);
+
       // static class
 	  impl_Class_method!(ActionList_StaticClassType);
 }
@@ -37358,8 +37450,6 @@ impl TAction {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TAction, Action_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TAction);
 
 	  impl_Free_method!(Action_Free);
 
@@ -37555,6 +37645,9 @@ impl TAction {
           return method_Call_2!(TComponent, Action_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TAction);
+
       // static class
 	  impl_Class_method!(Action_StaticClassType);
 }
@@ -37566,8 +37659,6 @@ impl TToolButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TToolButton, ToolButton_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TToolButton);
 
 	  impl_Free_method!(ToolButton_Free);
 
@@ -38243,6 +38334,9 @@ impl TToolButton {
           return method_Call_2!(TAnchorSide, ToolButton_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TToolButton);
+
       // static class
 	  impl_Class_method!(ToolButton_StaticClassType);
 }
@@ -38255,8 +38349,6 @@ impl TIniFile {
       pub fn new(aFileName: &str) -> Self {
         method_Create!(TIniFile, IniFile_Create, to_CString!(aFileName));
       }
-
-      impl_Object_methods!(TIniFile);
 
 	  impl_Free_method!(IniFile_Free);
 
@@ -38392,6 +38484,9 @@ impl TIniFile {
           return to_RustString!(method_Call_1!(IniFile_GetFileName, self.0));
       }
 
+
+      impl_Object_methods!(TIniFile);
+
       // static class
 	  impl_Class_method!(IniFile_StaticClassType);
 }
@@ -38403,8 +38498,6 @@ impl TRegistry {
       pub fn new(aAccess: u32) -> Self {
         method_Create!(TRegistry, Registry_Create, aAccess);
       }
-
-      impl_Object_methods!(TRegistry);
 
 	  impl_Free_method!(Registry_Free);
 
@@ -38621,6 +38714,9 @@ impl TRegistry {
           return &self;
       }
 
+
+      impl_Object_methods!(TRegistry);
+
       // static class
 	  impl_Class_method!(Registry_StaticClassType);
 }
@@ -38633,9 +38729,37 @@ impl TClipboard {
         method_Create!(TClipboard, Clipboard_Create, );
       }
 
-      impl_Object_methods!(TClipboard);
-
 	  impl_Free_method!(Clipboard_Free);
+
+	  pub fn FindPictureFormatID(&self) -> TClipboardFormat  {
+          return method_Call_1!(Clipboard_FindPictureFormatID, self.0);
+      }
+
+	  pub fn FindFormatID(&self, formatName: &str) -> TClipboardFormat  {
+          return method_Call_1!(Clipboard_FindFormatID, self.0, to_CString!(formatName));
+      }
+
+	  pub fn GetAsHtml<'a>(&self, extractFragmentOnly: bool) -> Cow<'a, str>  {
+          return to_RustString!(method_Call_1!(Clipboard_GetAsHtml, self.0, extractFragmentOnly));
+      }
+
+	  pub fn SupportedFormats(&self, list: &dyn IStrings) -> &Self  {
+          method_Call_1!(Clipboard_SupportedFormats, self.0, list.Instance());
+          return &self;
+      }
+
+	  pub fn HasFormatName(&self, formatName: &str) -> bool  {
+          return method_Call_1!(Clipboard_HasFormatName, self.0, to_CString!(formatName));
+      }
+
+	  pub fn HasPictureFormat(&self) -> bool  {
+          return method_Call_1!(Clipboard_HasPictureFormat, self.0);
+      }
+
+	  pub fn SetAsHtml(&self, html: &str, plainText: &str) -> &Self  {
+          method_Call_1!(Clipboard_SetAsHtml, self.0, to_CString!(html), to_CString!(plainText));
+          return &self;
+      }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
           method_Call_1!(Clipboard_Assign, self.0, source.Instance());
@@ -38650,10 +38774,6 @@ impl TClipboard {
 	  pub fn Close(&self) -> &Self  {
           method_Call_1!(Clipboard_Close, self.0);
           return &self;
-      }
-
-	  pub fn HasFormat(&self, format: u16) -> bool  {
-          return method_Call_1!(Clipboard_HasFormat, self.0, format);
       }
 
 	  pub fn Open(&self) -> &Self  {
@@ -38715,14 +38835,17 @@ impl TClipboard {
           return method_Call_1!(Clipboard_GetFormatCount, self.0);
       }
 
-	  pub fn Formats(&self, index: i32) -> u16  {
+	  pub fn Formats(&self, index: i32) -> TClipboardFormat  {
           return method_Call_1!(Clipboard_GetFormats, self.0, index);
       }
 
+
+      impl_Object_methods!(TClipboard);
+
       // static class
 	  impl_Class_method!(Clipboard_StaticClassType);
-	  pub fn SetClipboard(&self) -> TClipboard  {
-          return method_Call_2!(TClipboard, Clipboard_SetClipboard, self.0);
+	  pub fn HasFormat(&self, aFormatID: TClipboardFormat) -> bool  {
+          return method_Call_1!(Clipboard_HasFormat, self.0, aFormatID);
       }
 
 }
@@ -38734,8 +38857,6 @@ impl TMonitor {
       pub fn new() -> Self {
         method_Create!(TMonitor, Monitor_Create, );
       }
-
-      impl_Object_methods!(TMonitor);
 
 	  impl_Free_method!(Monitor_Free);
 
@@ -38811,6 +38932,9 @@ impl TMonitor {
           return method_Call_1!(Monitor_GetPixelsPerInch, self.0);
       }
 
+
+      impl_Object_methods!(TMonitor);
+
       // static class
 	  impl_Class_method!(Monitor_StaticClassType);
 }
@@ -38822,8 +38946,6 @@ impl TPaintBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPaintBox, PaintBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPaintBox);
 
 	  impl_Free_method!(PaintBox_Free);
 
@@ -39413,6 +39535,9 @@ impl TPaintBox {
           return method_Call_2!(TAnchorSide, PaintBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TPaintBox);
+
       // static class
 	  impl_Class_method!(PaintBox_StaticClassType);
 }
@@ -39425,8 +39550,6 @@ impl TTimer {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTimer, Timer_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTimer);
 
 	  impl_Free_method!(Timer_Free);
 
@@ -39537,6 +39660,9 @@ impl TTimer {
           return method_Call_2!(TComponent, Timer_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TTimer);
+
       // static class
 	  impl_Class_method!(Timer_StaticClassType);
 }
@@ -39548,8 +39674,6 @@ impl TList {
       pub fn new() -> Self {
         method_Create!(TList, List_Create, );
       }
-
-      impl_Object_methods!(TList);
 
 	  impl_Free_method!(List_Free);
 
@@ -39644,6 +39768,9 @@ impl TList {
           return &self;
       }
 
+
+      impl_Object_methods!(TList);
+
       // static class
 	  impl_Class_method!(List_StaticClassType);
 }
@@ -39655,8 +39782,6 @@ impl TForm {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TForm, Form_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TForm);
 
 	  impl_Free_method!(Form_Free);
 
@@ -40751,6 +40876,9 @@ impl TForm {
           return method_Call_2!(TAnchorSide, Form_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TForm);
+
       // static class
 	  impl_Class_method!(Form_StaticClassType);
 	  pub fn Create2(&self, aInitScale: bool) -> TForm  {
@@ -40916,6 +41044,9 @@ impl TParaAttributes {
           return &self;
       }
 
+
+      impl_Object_methods!(TParaAttributes);
+
       // static class
 	  impl_Class_method!(ParaAttributes_StaticClassType);
 }
@@ -41023,6 +41154,9 @@ impl TTextAttributes {
           return &self;
       }
 
+
+      impl_Object_methods!(TTextAttributes);
+
       // static class
 	  impl_Class_method!(TextAttributes_StaticClassType);
 }
@@ -41085,6 +41219,9 @@ impl TIconOptions {
           return &self;
       }
 
+
+      impl_Object_methods!(TIconOptions);
+
       // static class
 	  impl_Class_method!(IconOptions_StaticClassType);
 }
@@ -41129,6 +41266,9 @@ impl Exception {
           return &self;
       }
 
+
+      impl_Object_methods!(Exception);
+
       // static class
 	  impl_Class_method!(Exception_StaticClassType);
 }
@@ -41139,8 +41279,6 @@ impl TScrollBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TScrollBar, ScrollBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TScrollBar);
 
 	  impl_Free_method!(ScrollBar_Free);
 
@@ -41931,6 +42069,9 @@ impl TScrollBar {
           return method_Call_2!(TAnchorSide, ScrollBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TScrollBar);
+
       // static class
 	  impl_Class_method!(ScrollBar_StaticClassType);
 }
@@ -41944,8 +42085,6 @@ impl TMaskEdit {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TMaskEdit, MaskEdit_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TMaskEdit);
 
 	  impl_Free_method!(MaskEdit_Free);
 
@@ -42936,6 +43075,9 @@ impl TMaskEdit {
           return method_Call_2!(TAnchorSide, MaskEdit_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TMaskEdit);
+
       // static class
 	  impl_Class_method!(MaskEdit_StaticClassType);
 }
@@ -42949,8 +43091,6 @@ impl TShape {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TShape, Shape_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TShape);
 
 	  impl_Free_method!(Shape_Free);
 
@@ -43512,6 +43652,9 @@ impl TShape {
           return method_Call_2!(TAnchorSide, Shape_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TShape);
+
       // static class
 	  impl_Class_method!(Shape_StaticClassType);
 }
@@ -43524,8 +43667,6 @@ impl TBevel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TBevel, Bevel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TBevel);
 
 	  impl_Free_method!(Bevel_Free);
 
@@ -44011,6 +44152,9 @@ impl TBevel {
           return method_Call_2!(TAnchorSide, Bevel_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TBevel);
+
       // static class
 	  impl_Class_method!(Bevel_StaticClassType);
 }
@@ -44023,8 +44167,6 @@ impl TScrollBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TScrollBox, ScrollBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TScrollBox);
 
 	  impl_Free_method!(ScrollBox_Free);
 
@@ -44901,6 +45043,9 @@ impl TScrollBox {
           return method_Call_2!(TAnchorSide, ScrollBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TScrollBox);
+
       // static class
 	  impl_Class_method!(ScrollBox_StaticClassType);
 }
@@ -44914,8 +45059,6 @@ impl TCheckListBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TCheckListBox, CheckListBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCheckListBox);
 
 	  impl_Free_method!(CheckListBox_Free);
 
@@ -45902,6 +46045,9 @@ impl TCheckListBox {
           return method_Call_2!(TAnchorSide, CheckListBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TCheckListBox);
+
       // static class
 	  impl_Class_method!(CheckListBox_StaticClassType);
 }
@@ -45915,8 +46061,6 @@ impl TGauge {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TGauge, Gauge_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TGauge);
 
 	  impl_Free_method!(Gauge_Free);
 
@@ -46501,6 +46645,9 @@ impl TGauge {
           return method_Call_2!(TAnchorSide, Gauge_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TGauge);
+
       // static class
 	  impl_Class_method!(Gauge_StaticClassType);
 }
@@ -46513,8 +46660,6 @@ impl TImageButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TImageButton, ImageButton_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TImageButton);
 
 	  impl_Free_method!(ImageButton_Free);
 
@@ -46797,6 +46942,15 @@ impl TImageButton {
 
 	  pub fn SetImageCount(&self, aValue: i32) -> &Self  {
           method_Call_1!(ImageButton_SetImageCount, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn Orientation(&self) -> TImageOrientation  {
+          return method_Call_1!(ImageButton_GetOrientation, self.0);
+      }
+
+	  pub fn SetOrientation(&self, aValue: TImageOrientation) -> &Self  {
+          method_Call_1!(ImageButton_SetOrientation, self.0, aValue);
           return &self;
       }
 
@@ -47155,6 +47309,9 @@ impl TImageButton {
           return method_Call_2!(TAnchorSide, ImageButton_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TImageButton);
+
       // static class
 	  impl_Class_method!(ImageButton_StaticClassType);
 }
@@ -47167,8 +47324,6 @@ impl TFindDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TFindDialog, FindDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TFindDialog);
 
 	  impl_Free_method!(FindDialog_Free);
 
@@ -47331,6 +47486,9 @@ impl TFindDialog {
           return method_Call_2!(TComponent, FindDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TFindDialog);
+
       // static class
 	  impl_Class_method!(FindDialog_StaticClassType);
 }
@@ -47342,8 +47500,6 @@ impl TReplaceDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TReplaceDialog, ReplaceDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TReplaceDialog);
 
 	  impl_Free_method!(ReplaceDialog_Free);
 
@@ -47520,6 +47676,9 @@ impl TReplaceDialog {
           return method_Call_2!(TComponent, ReplaceDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TReplaceDialog);
+
       // static class
 	  impl_Class_method!(ReplaceDialog_StaticClassType);
 }
@@ -47531,8 +47690,6 @@ impl TPrinterSetupDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPrinterSetupDialog, PrinterSetupDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPrinterSetupDialog);
 
 	  impl_Free_method!(PrinterSetupDialog_Free);
 
@@ -47638,6 +47795,9 @@ impl TPrinterSetupDialog {
           return method_Call_2!(TComponent, PrinterSetupDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TPrinterSetupDialog);
+
       // static class
 	  impl_Class_method!(PrinterSetupDialog_StaticClassType);
 }
@@ -47649,8 +47809,6 @@ impl TPageSetupDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TPageSetupDialog, PageSetupDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TPageSetupDialog);
 
 	  impl_Free_method!(PageSetupDialog_Free);
 
@@ -47823,6 +47981,9 @@ impl TPageSetupDialog {
           return method_Call_2!(TComponent, PageSetupDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TPageSetupDialog);
+
       // static class
 	  impl_Class_method!(PageSetupDialog_StaticClassType);
 }
@@ -47834,8 +47995,6 @@ impl TDragObject {
       pub fn new(aOwner: &dyn IControl) -> Self {
         method_Create!(TDragObject, DragObject_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TDragObject);
 
 	  impl_Free_method!(DragObject_Free);
 
@@ -47926,6 +48085,9 @@ impl TDragObject {
           return method_Call_1!(DragObject_GetDropped, self.0);
       }
 
+
+      impl_Object_methods!(TDragObject);
+
       // static class
 	  impl_Class_method!(DragObject_StaticClassType);
 }
@@ -47937,8 +48099,6 @@ impl TDragDockObject {
       pub fn new(aOwner: &dyn IControl) -> Self {
         method_Create!(TDragDockObject, DragDockObject_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TDragDockObject);
 
 	  impl_Free_method!(DragDockObject_Free);
 
@@ -48077,6 +48237,9 @@ impl TDragDockObject {
           return method_Call_1!(DragDockObject_GetDropped, self.0);
       }
 
+
+      impl_Object_methods!(TDragDockObject);
+
       // static class
 	  impl_Class_method!(DragDockObject_StaticClassType);
 }
@@ -48088,8 +48251,6 @@ impl TStringGrid {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TStringGrid, StringGrid_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TStringGrid);
 
 	  impl_Free_method!(StringGrid_Free);
 
@@ -49748,6 +49909,9 @@ impl TStringGrid {
           return method_Call_2!(TAnchorSide, StringGrid_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TStringGrid);
+
       // static class
 	  impl_Class_method!(StringGrid_StaticClassType);
 }
@@ -49761,8 +49925,6 @@ impl TDrawGrid {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TDrawGrid, DrawGrid_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TDrawGrid);
 
 	  impl_Free_method!(DrawGrid_Free);
 
@@ -50834,6 +50996,9 @@ impl TDrawGrid {
           return method_Call_2!(TAnchorSide, DrawGrid_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TDrawGrid);
+
       // static class
 	  impl_Class_method!(DrawGrid_StaticClassType);
 }
@@ -50847,8 +51012,6 @@ impl TValueListEditor {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TValueListEditor, ValueListEditor_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TValueListEditor);
 
 	  impl_Free_method!(ValueListEditor_Free);
 
@@ -51942,6 +52105,9 @@ impl TValueListEditor {
           return method_Call_2!(TAnchorSide, ValueListEditor_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TValueListEditor);
+
       // static class
 	  impl_Class_method!(ValueListEditor_StaticClassType);
 }
@@ -51955,8 +52121,6 @@ impl THeaderControl {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(THeaderControl, HeaderControl_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(THeaderControl);
 
 	  impl_Free_method!(HeaderControl_Free);
 
@@ -52758,6 +52922,9 @@ impl THeaderControl {
           return method_Call_2!(TAnchorSide, HeaderControl_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(THeaderControl);
+
       // static class
 	  impl_Class_method!(HeaderControl_StaticClassType);
 }
@@ -52771,8 +52938,6 @@ impl THeaderSection {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(THeaderSection, HeaderSection_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(THeaderSection);
 
 	  impl_Free_method!(HeaderSection_Free);
 
@@ -52902,6 +53067,9 @@ impl THeaderSection {
           return &self;
       }
 
+
+      impl_Object_methods!(THeaderSection);
+
       // static class
 	  impl_Class_method!(HeaderSection_StaticClassType);
 }
@@ -52913,8 +53081,6 @@ impl THeaderSections {
       pub fn new(aOwner: &THeaderControl) -> Self {
         method_Create!(THeaderSections, HeaderSections_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(THeaderSections);
 
 	  impl_Free_method!(HeaderSections_Free);
 
@@ -53008,6 +53174,9 @@ impl THeaderSections {
           return &self;
       }
 
+
+      impl_Object_methods!(THeaderSections);
+
       // static class
 	  impl_Class_method!(HeaderSections_StaticClassType);
 }
@@ -53019,8 +53188,6 @@ impl TLabeledEdit {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TLabeledEdit, LabeledEdit_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TLabeledEdit);
 
 	  impl_Free_method!(LabeledEdit_Free);
 
@@ -54014,6 +54181,9 @@ impl TLabeledEdit {
           return method_Call_2!(TAnchorSide, LabeledEdit_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TLabeledEdit);
+
       // static class
 	  impl_Class_method!(LabeledEdit_StaticClassType);
 }
@@ -54027,8 +54197,6 @@ impl TBoundLabel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TBoundLabel, BoundLabel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TBoundLabel);
 
 	  impl_Free_method!(BoundLabel_Free);
 
@@ -54629,6 +54797,9 @@ impl TBoundLabel {
           return method_Call_2!(TAnchorSide, BoundLabel_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TBoundLabel);
+
       // static class
 	  impl_Class_method!(BoundLabel_StaticClassType);
 }
@@ -54641,8 +54812,6 @@ impl TFlowPanel {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TFlowPanel, FlowPanel_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TFlowPanel);
 
 	  impl_Free_method!(FlowPanel_Free);
 
@@ -55550,6 +55719,9 @@ impl TFlowPanel {
           return method_Call_2!(TAnchorSide, FlowPanel_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TFlowPanel);
+
       // static class
 	  impl_Class_method!(FlowPanel_StaticClassType);
 }
@@ -55563,8 +55735,6 @@ impl TCoolBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TCoolBar, CoolBar_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCoolBar);
 
 	  impl_Free_method!(CoolBar_Free);
 
@@ -56493,6 +56663,9 @@ impl TCoolBar {
           return method_Call_2!(TAnchorSide, CoolBar_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TCoolBar);
+
       // static class
 	  impl_Class_method!(CoolBar_StaticClassType);
 }
@@ -56506,8 +56679,6 @@ impl TCoolBands {
       pub fn new(aOwner: &TCoolBar) -> Self {
         method_Create!(TCoolBands, CoolBands_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCoolBands);
 
 	  impl_Free_method!(CoolBands_Free);
 
@@ -56601,6 +56772,9 @@ impl TCoolBands {
           return &self;
       }
 
+
+      impl_Object_methods!(TCoolBands);
+
       // static class
 	  impl_Class_method!(CoolBands_StaticClassType);
 }
@@ -56612,8 +56786,6 @@ impl TCoolBand {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TCoolBand, CoolBand_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCoolBand);
 
 	  impl_Free_method!(CoolBand_Free);
 
@@ -56829,6 +57001,9 @@ impl TCoolBand {
           return &self;
       }
 
+
+      impl_Object_methods!(TCoolBand);
+
       // static class
 	  impl_Class_method!(CoolBand_StaticClassType);
 }
@@ -56840,8 +57015,6 @@ impl TCollection {
       pub fn new(aOwner: usize) -> Self {
         method_Create!(TCollection, Collection_Create, aOwner);
       }
-
-      impl_Object_methods!(TCollection);
 
 	  impl_Free_method!(Collection_Free);
 
@@ -56931,6 +57104,9 @@ impl TCollection {
           return &self;
       }
 
+
+      impl_Object_methods!(TCollection);
+
       // static class
 	  impl_Class_method!(Collection_StaticClassType);
 }
@@ -56942,8 +57118,6 @@ impl TPrinter {
       pub fn new() -> Self {
         method_Create!(TPrinter, Printer_Create, );
       }
-
-      impl_Object_methods!(TPrinter);
 
 	  impl_Free_method!(Printer_Free);
 
@@ -57068,6 +57242,9 @@ impl TPrinter {
           return &self;
       }
 
+
+      impl_Object_methods!(TPrinter);
+
       // static class
 	  impl_Class_method!(Printer_StaticClassType);
 	  pub fn SetPrinter(&self, aName: &str) -> &Self  {
@@ -57084,8 +57261,6 @@ impl TTaskDialog {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TTaskDialog, TaskDialog_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTaskDialog);
 
 	  impl_Free_method!(TaskDialog_Free);
 
@@ -57330,6 +57505,9 @@ impl TTaskDialog {
           return method_Call_2!(TComponent, TaskDialog_GetComponents, self.0, aIndex);
       }
 
+
+      impl_Object_methods!(TTaskDialog);
+
       // static class
 	  impl_Class_method!(TaskDialog_StaticClassType);
 }
@@ -57437,6 +57615,9 @@ impl TTaskDialogButtons {
           return &self;
       }
 
+
+      impl_Object_methods!(TTaskDialogButtons);
+
       // static class
 	  impl_Class_method!(TaskDialogButtons_StaticClassType);
 }
@@ -57447,8 +57628,6 @@ impl TTaskDialogButtonItem {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TTaskDialogButtonItem, TaskDialogButtonItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTaskDialogButtonItem);
 
 	  impl_Free_method!(TaskDialogButtonItem_Free);
 
@@ -57543,6 +57722,9 @@ impl TTaskDialogButtonItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TTaskDialogButtonItem);
+
       // static class
 	  impl_Class_method!(TaskDialogButtonItem_StaticClassType);
 }
@@ -57554,8 +57736,6 @@ impl TTaskDialogRadioButtonItem {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TTaskDialogRadioButtonItem, TaskDialogRadioButtonItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTaskDialogRadioButtonItem);
 
 	  impl_Free_method!(TaskDialogRadioButtonItem_Free);
 
@@ -57650,6 +57830,9 @@ impl TTaskDialogRadioButtonItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TTaskDialogRadioButtonItem);
+
       // static class
 	  impl_Class_method!(TaskDialogRadioButtonItem_StaticClassType);
 }
@@ -57661,8 +57844,6 @@ impl TTaskDialogBaseButtonItem {
       pub fn new(aOwner: &TCollection) -> Self {
         method_Create!(TTaskDialogBaseButtonItem, TaskDialogBaseButtonItem_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TTaskDialogBaseButtonItem);
 
 	  impl_Free_method!(TaskDialogBaseButtonItem_Free);
 
@@ -57757,6 +57938,9 @@ impl TTaskDialogBaseButtonItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TTaskDialogBaseButtonItem);
+
       // static class
 	  impl_Class_method!(TaskDialogBaseButtonItem_StaticClassType);
 }
@@ -57768,8 +57952,6 @@ impl TComboBoxEx {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TComboBoxEx, ComboBoxEx_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TComboBoxEx);
 
 	  impl_Free_method!(ComboBoxEx_Free);
 
@@ -58736,6 +58918,9 @@ impl TComboBoxEx {
           return method_Call_2!(TAnchorSide, ComboBoxEx_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TComboBoxEx);
+
       // static class
 	  impl_Class_method!(ComboBoxEx_StaticClassType);
 }
@@ -58830,6 +59015,9 @@ impl TComboExItems {
 	  pub fn ComboItems(&self, index: i32) -> TComboExItem  {
           return method_Call_2!(TComboExItem, ComboExItems_GetComboItems, self.0, index);
       }
+
+
+      impl_Object_methods!(TComboExItems);
 
       // static class
 	  impl_Class_method!(ComboExItems_StaticClassType);
@@ -58947,6 +59135,9 @@ impl TComboExItem {
           return &self;
       }
 
+
+      impl_Object_methods!(TComboExItem);
+
       // static class
 	  impl_Class_method!(ComboExItem_StaticClassType);
 }
@@ -58957,8 +59148,6 @@ impl TFrame {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TFrame, Frame_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TFrame);
 
 	  impl_Free_method!(Frame_Free);
 
@@ -59832,6 +60021,9 @@ impl TFrame {
           return method_Call_2!(TAnchorSide, Frame_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TFrame);
+
       // static class
 	  impl_Class_method!(Frame_StaticClassType);
 }
@@ -59941,6 +60133,9 @@ impl TControlScrollBar {
           return &self;
       }
 
+
+      impl_Object_methods!(TControlScrollBar);
+
       // static class
 	  impl_Class_method!(ControlScrollBar_StaticClassType);
 }
@@ -60026,6 +60221,9 @@ impl TSizeConstraints {
           return &self;
       }
 
+
+      impl_Object_methods!(TSizeConstraints);
+
       // static class
 	  impl_Class_method!(SizeConstraints_StaticClassType);
 }
@@ -60036,8 +60234,6 @@ impl TXButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TXButton, XButton_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TXButton);
 
 	  impl_Free_method!(XButton_Free);
 
@@ -60675,6 +60871,9 @@ impl TXButton {
           return method_Call_2!(TAnchorSide, XButton_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TXButton);
+
       // static class
 	  impl_Class_method!(XButton_StaticClassType);
 }
@@ -60742,6 +60941,9 @@ impl TAnchorSide {
           method_Call_1!(AnchorSide_SetSide, self.0, aValue);
           return &self;
       }
+
+
+      impl_Object_methods!(TAnchorSide);
 
       // static class
 	  impl_Class_method!(AnchorSide_StaticClassType);
@@ -60917,6 +61119,9 @@ impl TControlBorderSpacing {
           return &self;
       }
 
+
+      impl_Object_methods!(TControlBorderSpacing);
+
       // static class
 	  impl_Class_method!(ControlBorderSpacing_StaticClassType);
 }
@@ -61060,6 +61265,9 @@ impl TControlChildSizing {
           return &self;
       }
 
+
+      impl_Object_methods!(TControlChildSizing);
+
       // static class
 	  impl_Class_method!(ControlChildSizing_StaticClassType);
 }
@@ -61070,8 +61278,6 @@ impl TCheckGroup {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TCheckGroup, CheckGroup_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TCheckGroup);
 
 	  impl_Free_method!(CheckGroup_Free);
 
@@ -61956,6 +62162,9 @@ impl TCheckGroup {
           return method_Call_2!(TAnchorSide, CheckGroup_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TCheckGroup);
+
       // static class
 	  impl_Class_method!(CheckGroup_StaticClassType);
 }
@@ -61969,8 +62178,6 @@ impl TToggleBox {
       pub fn new(aOwner: &dyn IComponent) -> Self {
         method_Create!(TToggleBox, ToggleBox_Create, aOwner.Instance());
       }
-
-      impl_Object_methods!(TToggleBox);
 
 	  impl_Free_method!(ToggleBox_Free);
 
@@ -62799,6 +63006,9 @@ impl TToggleBox {
           return method_Call_2!(TAnchorSide, ToggleBox_GetAnchorSide, self.0, aKind);
       }
 
+
+      impl_Object_methods!(TToggleBox);
+
       // static class
 	  impl_Class_method!(ToggleBox_StaticClassType);
 }
@@ -62939,6 +63149,9 @@ impl TGridColumnTitle {
           method_Call_1!(GridColumnTitle_SetPrefixOption, self.0, aValue);
           return &self;
       }
+
+
+      impl_Object_methods!(TGridColumnTitle);
 
       // static class
 	  impl_Class_method!(GridColumnTitle_StaticClassType);
@@ -63193,6 +63406,9 @@ impl TGridColumn {
           return &self;
       }
 
+
+      impl_Object_methods!(TGridColumn);
+
       // static class
 	  impl_Class_method!(GridColumn_StaticClassType);
 }
@@ -63313,6 +63529,9 @@ impl TGridColumns {
           method_Call_1!(GridColumns_SetItems, self.0, index, aValue.Instance());
           return &self;
       }
+
+
+      impl_Object_methods!(TGridColumns);
 
       // static class
 	  impl_Class_method!(GridColumns_StaticClassType);

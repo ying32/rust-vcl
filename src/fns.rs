@@ -12,7 +12,7 @@ use lclapi;
 use std::borrow::Cow;
 use std::ffi::{CStr, CString};
 use types::*;
-use vcl::{TControl, TWinControl, IObject, IComponent, IStrings, IStream};
+use vcl::{TControl, TWinControl, IObject, IComponent, IStrings, IStream, TClipboard};
 
 pub fn GetFPStringArrayMember<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
     return to_RustString!(lclapi::DGetStringArrOf(ptr, index));
@@ -89,6 +89,10 @@ pub fn ShortCutToText<'a>(aVal: TShortCut) -> Cow<'a, str> {
     unsafe { return to_RustString!(lclapi::DShortCutToText(aVal))}
 }
 
+pub fn SetClipboard(aNewClipboard: &TClipboard) -> TClipboard {
+    unsafe { return TClipboard::As(lclapi::DSetClipboard(aNewClipboard.Instance()))}
+}
+
 #[cfg(not(target_os = "windows"))]
 pub fn SendMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> LRESULT {
     unsafe { return lclapi::DSendMessage(hWd, msg, wParam, lParam)}
@@ -132,6 +136,11 @@ pub fn ReleaseDC(hWnd: HWND, dc: HDC) -> i32 {
 #[cfg(not(target_os = "windows"))]
 pub fn SetForegroundWindow(hWnd: HWND) -> bool {
     unsafe { return lclapi::DSetForegroundWindow(hWnd)}
+}
+
+#[cfg(not(target_os = "windows"))]
+pub fn RegisterClipboardFormat(aFormat: &str) -> TClipboardFormat {
+    unsafe { return lclapi::DRegisterClipboardFormat(to_CString!(aFormat))}
 }
 
 #[cfg(not(target_os = "windows"))]

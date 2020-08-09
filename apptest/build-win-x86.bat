@@ -2,7 +2,7 @@
 
 set destDir=.\target\i686-pc-windows-msvc\debug
 
-copy ".\win32\liblcl.lib" ".\liblcl.lib"
+copy ".\win32\liblcl.lib" ".\liblcl.lib" /V
 
 cargo rustc --target=i686-pc-windows-msvc -- -C link-args="/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /MACHINE:X86 app.res"
 

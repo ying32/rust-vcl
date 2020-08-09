@@ -125,6 +125,7 @@ pub type TSpacingSize = i32;
 pub type Char = u16;
 pub type TClass = usize;
 pub type TThreadID = usize;
+pub type TClipboardFormat = usize;
 
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
@@ -2211,6 +2212,13 @@ pub enum TDateTimePickerOption {
 // set of TDateTimePickerOption
 pub type TDateTimePickerOptions = TSet;
 
+#[repr(C)]
+#[derive(PartialEq, Debug, Clone)]
+pub enum TImageOrientation {
+    ioHorizontal,
+    ioVertical,
+}
+
 
 #[cfg(not(target_arch = "x86"))]
 #[repr(C)]
@@ -2977,22 +2985,36 @@ pub const mrNoToAll: i32 = mrAll + 1;
 pub const mrYesToAll: i32 = mrNoToAll + 1;
 
 // Predefined Clipboard Formats
-pub const CF_TEXT: u8 = 1;
-pub const CF_BITMAP: u8 = 2;
-pub const CF_METAFILEPICT: u8 = 3;
-pub const CF_SYLK: u8 = 4;
-pub const CF_DIF: u8 = 5;
-pub const CF_TIFF: u8 = 6;
-pub const CF_OEMTEXT: u8 = 7;
-pub const CF_DIB: u8 = 8;
-pub const CF_PALETTE: u8 = 9;
-pub const CF_PENDATA: u8 = 10;
-pub const CF_RIFF: u8 = 11;
-pub const CF_WAVE: u8 = 12;
-pub const CF_UNICODETEXT: u8 = 13;
-pub const CF_ENHMETAFILE: u8 = 14;
-pub const CF_HDROP: u8 = 15;
-pub const CF_LOCALE: u8 = 0x10;
+pub const CF_BITMAP: TClipboardFormat = 2;
+pub const CF_DIB: TClipboardFormat = 8;
+pub const CF_PALETTE: TClipboardFormat = 9;
+pub const CF_ENHMETAFILE: TClipboardFormat = 14;
+pub const CF_METAFILEPICT: TClipboardFormat = 3;
+pub const CF_OEMTEXT: TClipboardFormat = 7;
+pub const CF_TEXT: TClipboardFormat = 1;
+pub const CF_UNICODETEXT: TClipboardFormat = 13;
+pub const CF_DIF: TClipboardFormat = 5;
+pub const CF_DSPBITMAP: TClipboardFormat = 130;
+pub const CF_DSPENHMETAFILE: TClipboardFormat = 142;
+pub const CF_DSPMETAFILEPICT: TClipboardFormat = 131;
+pub const CF_DSPTEXT: TClipboardFormat = 129;
+pub const CF_GDIOBJFIRST: TClipboardFormat = 768;
+pub const CF_GDIOBJLAST: TClipboardFormat = 1023;
+pub const CF_HDROP: TClipboardFormat = 15;
+pub const CF_LOCALE: TClipboardFormat = 16;
+pub const CF_OWNERDISPLAY: TClipboardFormat = 128;
+pub const CF_PENDATA: TClipboardFormat = 10;
+pub const CF_PRIVATEFIRST: TClipboardFormat = 512;
+pub const CF_PRIVATELAST: TClipboardFormat = 767;
+pub const CF_RIFF: TClipboardFormat = 11;
+pub const CF_SYLK: TClipboardFormat = 4;
+pub const CF_WAVE: TClipboardFormat = 12;
+pub const CF_TIFF: TClipboardFormat = 6;
+
+// custom
+pub const CF_PICTURE: TClipboardFormat = 700;
+pub const CF_HTML: TClipboardFormat = 701;
+pub const CF_COMPONENT: TClipboardFormat = 702;
 
 // 光标定义
 pub const crHigh: TCursor = 0;
