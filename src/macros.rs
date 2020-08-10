@@ -49,7 +49,6 @@ macro_rules! impl_IStream {
     };
 }
 
- 
 //-------------------------------------------
 
 #[macro_use]
@@ -122,9 +121,11 @@ macro_rules! impl_Object_methods {
             $class { 0: inst, 1: false }
         }
 
-
         pub fn from(obj: &dyn IObject) -> Self {
-            $class { 0: obj.Instance(), 1: false }
+            $class {
+                0: obj.Instance(),
+                1: false,
+            }
         }
 
         // Nil Object
@@ -251,5 +252,12 @@ macro_rules! ImplForm {
 macro_rules! NewObject {
     ($class: ident, $obj: ident) => {
         $class::new(&$obj)
+    };
+}
+
+#[macro_export]
+macro_rules! ShowMessageFmt {
+    ($($arg:tt)*) => {
+        ShowMessage(&format!($($arg)*))
     };
 }

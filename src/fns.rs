@@ -62,11 +62,6 @@ pub fn InputQuery<'a>(ACaption: &str, APrompt: &str, Value: &str)-> (bool, Cow<'
     let result = unsafe { lclapi::DInputQuery(to_CString!(ACaption), to_CString!(APrompt), to_CString!(Value), &mut cstr) };
     return (result, to_RustString!(cstr), );
 }
-/*
-// 待实现的函数
-proc ShowMessageFmt*(formatstr: string, a: varargs[string, `$`]) =
-  ShowMessage(strutils.format(formatstr, a))
-*/
 
 
 pub fn LibStringEncoding() -> TStringEncoding {

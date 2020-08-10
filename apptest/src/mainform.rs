@@ -4,7 +4,6 @@
 use rust_vcl::fns::*;
 use rust_vcl::types::*;
 use rust_vcl::vcl::*;
-use std::fmt::Debug;
 
 #[derive(VclForm)]
 pub struct TMainForm {
@@ -220,7 +219,6 @@ impl TMainForm {
             .SetHeight(200)
             .SetOnPaint(sid, Self::onPb1Paint);
 
-        println!("currentthreadid={}", CurrentThreadId());
         // TListBox
         self.listBox1
             .SetParent(self)
@@ -228,7 +226,7 @@ impl TMainForm {
             .SetTop(self.tv1.Top() + self.tv1.Height() + 10)
             .SetWidth(300)
             .SetHeight(100)
-            .SetItemHeight(30)
+            // .SetItemHeight(30)
             .SetStyle(TListBoxStyle::lbOwnerDrawFixed)
             .SetOnClick(sid, Self::onListBox1Click)
             .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
@@ -258,15 +256,31 @@ impl TMainForm {
         aRect: *mut TRect,
         state: TOwnerDrawState,
     ) {
-        println!("currentthreadid={}", CurrentThreadId());
         let canvas = self.listBox1.Canvas();
-        let s = self.listBox1.Items().Strings(index);
+        let s = self.listBox1.Items().Strings(index).into_owned();
         let fw = canvas.TextWidth(&s);
         let fh = canvas.TextHeight(&s);
         let rect = unsafe { &*aRect };
         canvas.Font().SetColor(clBlack);
         canvas.Brush().SetColor(clBtnFace);
         canvas.FillRect(&rect);
+        canvas.Brush().SetColor(0x00FFF7F7);
+        canvas.Pen().SetColor(clSkyblue);
+        canvas.Rectangle(rect.left + 1, rect.top + 1, rect.right - 1, rect.bottom - 1);
+        canvas.Rectangle(rect.left, rect.top, rect.right, rect.bottom);
+        if InSet!(state, TOwnerDrawStateType::odSelected) {
+            canvas.Brush().SetColor(0x00FFB2B5);
+            canvas.Rectangle(rect.left + 1, rect.top + 1, rect.right - 1, rect.bottom - 1);
+            canvas.Font().SetColor(clBlue);
+            if InSet!(state, TOwnerDrawStateType::odFocused) {
+                canvas.DrawFocusRect(&rect);
+            }
+        }
+        canvas.TextOut(
+            rect.left + (rect.right - fw) / 2,
+            rect.top + (30 - fh) / 2,
+            &s,
+        );
     }
 
     fn onListBox1Click(&self, _sender: usize) {
@@ -371,6 +385,7 @@ impl TMainForm {
     // 按钮1单击事件
     fn onBtnClick(&self, sender: usize) {
         ShowMessage("Hello, Rust! 你好，世界！");
+        ShowMessageFmt!("Hello 1={}, 2={}", 1, "2");
         let btn = TButton::As(sender);
         println!("caption: {:?}", btn.Caption());
 
