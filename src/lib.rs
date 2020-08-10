@@ -10,6 +10,7 @@ pub use vcl_derives::*;
 
 pub mod fns;
 pub mod lclapi;
+pub mod messages;
 pub mod types;
 
 pub mod vcl;

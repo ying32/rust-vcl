@@ -2,6 +2,7 @@
 #![allow(dead_code)]
 
 use rust_vcl::fns::*;
+use rust_vcl::messages::*;
 use rust_vcl::types::*;
 use rust_vcl::vcl::*;
 use std::mem::size_of;
@@ -245,8 +246,8 @@ impl TMainForm {
         unsafe {
             self.form.InheritedWndProc(msg);
             match (*msg).msg {
-                0x0201 => println!("onFormWndProc: mouse down"), // WM_LBUTTONDOWN
-                0x0202 => println!("onFormWndProc: mouse up"),   // WM_LBUTTONUP
+                WM_LBUTTONDOWN => println!("onFormWndProc: mouse down"), // WM_LBUTTONDOWN
+                WM_LBUTTONUP => println!("onFormWndProc: mouse up"),     // WM_LBUTTONUP
                 _ => return,
             }
         }
