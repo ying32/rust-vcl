@@ -231,9 +231,13 @@ impl TMainForm {
             .SetWidth(300)
             .SetHeight(100)
             .SetItemHeight(30)
-            .SetStyle(TListBoxStyle::lbOwnerDrawFixed)
             .SetOnClick(sid, Self::onListBox1Click)
             .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
+
+        // 在MSVC x64下设置这个会错误，原因不明。。。也许是跟msvc编译器有冲突也说不定
+        #[cfg(not(all(target_env = "msvc", target_os = "windows", target_arch = "x86_64")))]
+        self.listBox1.SetStyle(TListBoxStyle::lbOwnerDrawFixed);
+
         for i in 0..20 {
             let text = format!("item={}", i);
             self.listBox1.Items().Add(&text);
