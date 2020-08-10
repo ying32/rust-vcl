@@ -2220,14 +2220,14 @@ pub enum TImageOrientation {
 }
 
 
-#[cfg(not(target_arch = "x86"))]
+#[cfg(target_arch = "x86")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 struct TDWordFiller {
 }
 
 
-#[cfg(not(target_arch = "x86"))]
+#[cfg(target_arch = "x86")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 pub struct TWMKey {
@@ -2241,7 +2241,7 @@ pub struct TWMKey {
 }
 
 
-#[cfg(not(target_arch = "x86_64"))]
+#[cfg(target_arch = "x86_64")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 struct TDWordFiller {
@@ -2249,7 +2249,7 @@ struct TDWordFiller {
 }
 
 
-#[cfg(not(target_arch = "x86_64"))]
+#[cfg(target_arch = "x86_64")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 pub struct TWMKey {
@@ -2263,7 +2263,7 @@ pub struct TWMKey {
 }
 
 
-#[cfg(not(target_arch = "x86"))]
+#[cfg(target_arch = "x86")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 pub struct TMessage {
@@ -2274,7 +2274,7 @@ pub struct TMessage {
 }
 
 
-#[cfg(not(target_arch = "x86_64"))]
+#[cfg(target_arch = "x86_64")]
 #[repr(C)]
 #[derive(PartialEq, Debug, Clone)]
 pub struct TMessage {

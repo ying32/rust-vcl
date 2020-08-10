@@ -4,6 +4,7 @@
 use rust_vcl::fns::*;
 use rust_vcl::types::*;
 use rust_vcl::vcl::*;
+use std::mem::size_of;
 
 #[derive(VclForm)]
 pub struct TMainForm {
@@ -51,6 +52,8 @@ impl TMainForm {
 
     pub fn init(&self) -> &Self {
         let sid = self.getSId();
+
+        println!("size TMessage: {}", size_of::<TMessage>());
 
         // TForm
         self.form
@@ -226,7 +229,7 @@ impl TMainForm {
             .SetTop(self.tv1.Top() + self.tv1.Height() + 10)
             .SetWidth(300)
             .SetHeight(100)
-            // .SetItemHeight(30)
+            .SetItemHeight(30)
             .SetStyle(TListBoxStyle::lbOwnerDrawFixed)
             .SetOnClick(sid, Self::onListBox1Click)
             .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
@@ -251,7 +254,7 @@ impl TMainForm {
 
     fn onListBox1CustomDraw(
         &self,
-        control: usize,
+        _control: usize,
         index: i32,
         aRect: *mut TRect,
         state: TOwnerDrawState,

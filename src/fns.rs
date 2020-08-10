@@ -15,7 +15,7 @@ use types::*;
 use vcl::{TControl, TWinControl, IObject, IComponent, IStrings, IStream, TClipboard};
 
 pub fn GetFPStringArrayMember<'a>(ptr: usize, index: isize) -> Cow<'a, str> {
-    return to_RustString!(lclapi::DGetStringArrOf(ptr, index));
+    return ToRustString(unsafe { lclapi::DGetStringArrOf(ptr, index) });
 }
 
 pub fn GetLibResourceItem(index: i32) -> TResItem {
@@ -48,19 +48,26 @@ pub fn GdkWindow_GetXId(AW: PGdkWindow) -> TXId {
 pub fn SelectDirectory<'a>(Options: TSelectDirOpts, HelpCtx: i32) -> (bool, Cow<'a, str>) {
     let mut cstr = to_CString!("");
     let result = unsafe { lclapi::DSelectDirectory1(&mut cstr, Options, HelpCtx) };
-    return (result, to_RustString!(cstr), );
+    return (result, ToRustString(cstr), );
 }
 
 pub fn SelectDirectory2<'a>(Caption: &str, Root: &str, AShowHidden: bool) -> (bool, Cow<'a, str>) {
     let mut cstr = to_CString!("");
     let result = unsafe { lclapi::DSelectDirectory2(to_CString!(Caption), to_CString!(Root), AShowHidden, &mut cstr) };
-    return (result, to_RustString!(cstr), );
+    return (result, ToRustString(cstr), );
 }
 
 pub fn InputQuery<'a>(ACaption: &str, APrompt: &str, Value: &str)-> (bool, Cow<'a, str>) {
     let mut cstr = to_CString!("");
     let result = unsafe { lclapi::DInputQuery(to_CString!(ACaption), to_CString!(APrompt), to_CString!(Value), &mut cstr) };
-    return (result, to_RustString!(cstr), );
+    return (result, ToRustString(cstr), );
+}
+
+pub fn ToRustString<'a>(s: *const i8) -> Cow<'a, str> {
+    if s == 0 as *const i8 {
+        return Cow::Owned(String::from(""));
+    }
+    return unsafe { CStr::from_ptr(s).to_string_lossy() };
 }
 
 
@@ -81,7 +88,7 @@ pub fn TextToShortCut(aText: &str) -> TShortCut {
 }
 
 pub fn ShortCutToText<'a>(aVal: TShortCut) -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DShortCutToText(aVal))}
+    unsafe { return ToRustString(lclapi::DShortCutToText(aVal))}
 }
 
 pub fn SetClipboard(aNewClipboard: &TClipboard) -> TClipboard {
@@ -168,7 +175,7 @@ pub fn SysOpen(fileName: &str) {
 }
 
 pub fn ExtractFilePath<'a>(aFileName: &str) -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DExtractFilePath(to_CString!(aFileName)))}
+    unsafe { return ToRustString(lclapi::DExtractFilePath(to_CString!(aFileName)))}
 }
 
 pub fn FileExists(aFileName: &str) -> bool {
@@ -176,11 +183,11 @@ pub fn FileExists(aFileName: &str) -> bool {
 }
 
 pub fn InputBox<'a>(aCaption: &str, aPrompt: &str, aDefault: &str) -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DInputBox(to_CString!(aCaption), to_CString!(aPrompt), to_CString!(aDefault)))}
+    unsafe { return ToRustString(lclapi::DInputBox(to_CString!(aCaption), to_CString!(aPrompt), to_CString!(aDefault)))}
 }
 
 pub fn PasswordBox<'a>(aCaption: &str, aPrompt: &str) -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DPasswordBox(to_CString!(aCaption), to_CString!(aPrompt)))}
+    unsafe { return ToRustString(lclapi::DPasswordBox(to_CString!(aCaption), to_CString!(aPrompt)))}
 }
 
 pub fn InputCombo(aCaption: &str, aPrompt: &str, aList: &dyn IStrings) -> i32 {
@@ -188,7 +195,7 @@ pub fn InputCombo(aCaption: &str, aPrompt: &str, aList: &dyn IStrings) -> i32 {
 }
 
 pub fn InputComboEx<'a>(aCaption: &str, aPrompt: &str, aList: &dyn IStrings, allowCustomText: bool) -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DInputComboEx(to_CString!(aCaption), to_CString!(aPrompt), aList.Instance(), allowCustomText))}
+    unsafe { return ToRustString(lclapi::DInputComboEx(to_CString!(aCaption), to_CString!(aPrompt), aList.Instance(), allowCustomText))}
 }
 
 #[cfg(target_os = "windows")]
@@ -211,11 +218,11 @@ pub fn SetPropertySecValue(instance: &dyn IObject, propName: &str, secPropName: 
 
 pub fn GUIDToString<'a>(aGUID: &TGUID) -> Cow<'a, str> {
     let mut ps0 = aGUID.clone();
-    unsafe { return to_RustString!(lclapi::DGUIDToString(&mut ps0))}
+    unsafe { return ToRustString(lclapi::DGUIDToString(&mut ps0))}
 }
 
 pub fn LibAbout<'a>() -> Cow<'a, str> {
-    unsafe { return to_RustString!(lclapi::DLibAbout())}
+    unsafe { return ToRustString(lclapi::DLibAbout())}
 }
 
 pub fn GetLibResourceCount() -> i32 {

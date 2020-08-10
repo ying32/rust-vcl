@@ -21,6 +21,9 @@ fn test() {
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:}", GUIDToString(&guid));
     println!("{:}", LibAbout());
+    let nullptr = 0 as *const i8;
+    let abc = ToRustString(nullptr);
+    println!("abc={}", &abc);
 }
 
 #[derive(VclApp)]

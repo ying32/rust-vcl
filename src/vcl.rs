@@ -11,9 +11,10 @@
 
 use lclapi::*;
 use types::*;
+use fns::ToRustString;
 
 use std::borrow::Cow;
-use std::ffi::{CStr, CString};
+use std::ffi::CString;
 use std::mem::{transmute};
 
 pub trait IObject { fn Instance(&self) -> usize; }
@@ -187,7 +188,7 @@ impl TObject {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Object_ClassName, self.0));
+          return ToRustString(method_Call_1!(Object_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32  {
@@ -207,7 +208,7 @@ impl TObject {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Object_ToString, self.0));
+          return ToRustString(method_Call_1!(Object_ToString, self.0));
       }
 
 
@@ -232,7 +233,7 @@ impl TComponent {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Component_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Component_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool  {
@@ -249,7 +250,7 @@ impl TComponent {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Component_ClassName, self.0));
+          return ToRustString(method_Call_1!(Component_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -269,7 +270,7 @@ impl TComponent {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Component_ToString, self.0));
+          return ToRustString(method_Call_1!(Component_ToString, self.0));
       }
 
 	  pub fn ComponentCount(&self) -> i32  {
@@ -290,7 +291,7 @@ impl TComponent {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Component_GetName, self.0));
+          return ToRustString(method_Call_1!(Component_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -431,7 +432,7 @@ impl TControl {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Control_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Control_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -444,7 +445,7 @@ impl TControl {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Control_ClassName, self.0));
+          return ToRustString(method_Call_1!(Control_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -464,7 +465,7 @@ impl TControl {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Control_ToString, self.0));
+          return ToRustString(method_Call_1!(Control_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self  {
@@ -687,7 +688,7 @@ impl TControl {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Control_GetHint, self.0));
+          return ToRustString(method_Call_1!(Control_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -713,7 +714,7 @@ impl TControl {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Control_GetName, self.0));
+          return ToRustString(method_Call_1!(Control_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -974,7 +975,7 @@ impl TWinControl {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(WinControl_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(WinControl_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -987,7 +988,7 @@ impl TWinControl {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(WinControl_ClassName, self.0));
+          return ToRustString(method_Call_1!(WinControl_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -1007,7 +1008,7 @@ impl TWinControl {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(WinControl_ToString, self.0));
+          return ToRustString(method_Call_1!(WinControl_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -1321,7 +1322,7 @@ impl TWinControl {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(WinControl_GetHint, self.0));
+          return ToRustString(method_Call_1!(WinControl_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -1347,7 +1348,7 @@ impl TWinControl {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(WinControl_GetName, self.0));
+          return ToRustString(method_Call_1!(WinControl_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -1483,7 +1484,7 @@ impl TGraphic {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Graphic_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Graphic_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -1491,7 +1492,7 @@ impl TGraphic {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Graphic_ClassName, self.0));
+          return ToRustString(method_Call_1!(Graphic_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -1507,7 +1508,7 @@ impl TGraphic {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Graphic_ToString, self.0));
+          return ToRustString(method_Call_1!(Graphic_ToString, self.0));
       }
 
 	  pub fn Empty(&self) -> bool  {
@@ -1681,7 +1682,7 @@ impl TStrings {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Strings_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -1689,7 +1690,7 @@ impl TStrings {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Strings_ClassName, self.0));
+          return ToRustString(method_Call_1!(Strings_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -1705,7 +1706,7 @@ impl TStrings {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Strings_ToString, self.0));
+          return ToRustString(method_Call_1!(Strings_ToString, self.0));
       }
 
 	  pub fn Capacity(&self) -> i32  {
@@ -1718,7 +1719,7 @@ impl TStrings {
       }
 
 	  pub fn CommaText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetCommaText, self.0));
+          return ToRustString(method_Call_1!(Strings_GetCommaText, self.0));
       }
 
 	  pub fn SetCommaText(&self, aValue: &str) -> &Self  {
@@ -1749,7 +1750,7 @@ impl TStrings {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetText, self.0));
+          return ToRustString(method_Call_1!(Strings_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -1767,7 +1768,7 @@ impl TStrings {
       }
 
 	  pub fn Values<'a>(&self, name: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetValues, self.0, to_CString!(name)));
+          return ToRustString(method_Call_1!(Strings_GetValues, self.0, to_CString!(name)));
       }
 
 	  pub fn SetValues(&self, name: &str, aValue: &str) -> &Self  {
@@ -1776,7 +1777,7 @@ impl TStrings {
       }
 
 	  pub fn ValueFromIndex<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetValueFromIndex, self.0, index));
+          return ToRustString(method_Call_1!(Strings_GetValueFromIndex, self.0, index));
       }
 
 	  pub fn SetValueFromIndex(&self, index: i32, aValue: &str) -> &Self  {
@@ -1785,7 +1786,7 @@ impl TStrings {
       }
 
 	  pub fn Strings<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Strings_GetStrings, self.0, index));
+          return ToRustString(method_Call_1!(Strings_GetStrings, self.0, index));
       }
 
 	  pub fn SetStrings(&self, index: i32, aValue: &str) -> &Self  {
@@ -1990,7 +1991,7 @@ impl TCheckBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CheckBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -2003,7 +2004,7 @@ impl TCheckBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(CheckBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -2023,7 +2024,7 @@ impl TCheckBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckBox_ToString, self.0));
+          return ToRustString(method_Call_1!(CheckBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -2116,7 +2117,7 @@ impl TCheckBox {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckBox_GetCaption, self.0));
+          return ToRustString(method_Call_1!(CheckBox_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -2543,7 +2544,7 @@ impl TCheckBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(CheckBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -2569,7 +2570,7 @@ impl TCheckBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckBox_GetName, self.0));
+          return ToRustString(method_Call_1!(CheckBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -2848,7 +2849,7 @@ impl TRadioButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioButton_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(RadioButton_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -2861,7 +2862,7 @@ impl TRadioButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioButton_ClassName, self.0));
+          return ToRustString(method_Call_1!(RadioButton_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -2881,7 +2882,7 @@ impl TRadioButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioButton_ToString, self.0));
+          return ToRustString(method_Call_1!(RadioButton_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -2965,7 +2966,7 @@ impl TRadioButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioButton_GetCaption, self.0));
+          return ToRustString(method_Call_1!(RadioButton_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -3383,7 +3384,7 @@ impl TRadioButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioButton_GetHint, self.0));
+          return ToRustString(method_Call_1!(RadioButton_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -3409,7 +3410,7 @@ impl TRadioButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioButton_GetName, self.0));
+          return ToRustString(method_Call_1!(RadioButton_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -3688,7 +3689,7 @@ impl TGroupBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GroupBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(GroupBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -3701,7 +3702,7 @@ impl TGroupBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GroupBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(GroupBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -3721,7 +3722,7 @@ impl TGroupBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GroupBox_ToString, self.0));
+          return ToRustString(method_Call_1!(GroupBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -3782,7 +3783,7 @@ impl TGroupBox {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GroupBox_GetCaption, self.0));
+          return ToRustString(method_Call_1!(GroupBox_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -4220,7 +4221,7 @@ impl TGroupBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GroupBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(GroupBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -4246,7 +4247,7 @@ impl TGroupBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GroupBox_GetName, self.0));
+          return ToRustString(method_Call_1!(GroupBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -4455,7 +4456,7 @@ impl TLabel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Label_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Label_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -4468,7 +4469,7 @@ impl TLabel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Label_ClassName, self.0));
+          return ToRustString(method_Call_1!(Label_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -4488,7 +4489,7 @@ impl TLabel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Label_ToString, self.0));
+          return ToRustString(method_Call_1!(Label_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -4576,7 +4577,7 @@ impl TLabel {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Label_GetCaption, self.0));
+          return ToRustString(method_Call_1!(Label_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -4932,7 +4933,7 @@ impl TLabel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Label_GetHint, self.0));
+          return ToRustString(method_Call_1!(Label_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -4958,7 +4959,7 @@ impl TLabel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Label_GetName, self.0));
+          return ToRustString(method_Call_1!(Label_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -5255,7 +5256,7 @@ impl TListBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -5268,7 +5269,7 @@ impl TListBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -5288,7 +5289,7 @@ impl TListBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ListBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -5893,7 +5894,7 @@ impl TListBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ListBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -5919,7 +5920,7 @@ impl TListBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ListBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -6232,7 +6233,7 @@ impl TComboBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ComboBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -6245,7 +6246,7 @@ impl TComboBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ComboBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -6265,7 +6266,7 @@ impl TComboBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ComboBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -6551,7 +6552,7 @@ impl TComboBox {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBox_GetText, self.0));
+          return ToRustString(method_Call_1!(ComboBox_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -6668,7 +6669,7 @@ impl TComboBox {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBox_GetSelText, self.0));
+          return ToRustString(method_Call_1!(ComboBox_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -6889,7 +6890,7 @@ impl TComboBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ComboBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -6915,7 +6916,7 @@ impl TComboBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ComboBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -7194,7 +7195,7 @@ impl TPanel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Panel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Panel_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -7207,7 +7208,7 @@ impl TPanel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Panel_ClassName, self.0));
+          return ToRustString(method_Call_1!(Panel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -7227,7 +7228,7 @@ impl TPanel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Panel_ToString, self.0));
+          return ToRustString(method_Call_1!(Panel_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -7342,7 +7343,7 @@ impl TPanel {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Panel_GetCaption, self.0));
+          return ToRustString(method_Call_1!(Panel_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -7803,7 +7804,7 @@ impl TPanel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Panel_GetHint, self.0));
+          return ToRustString(method_Call_1!(Panel_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -7829,7 +7830,7 @@ impl TPanel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Panel_GetName, self.0));
+          return ToRustString(method_Call_1!(Panel_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -8038,7 +8039,7 @@ impl TImage {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Image_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Image_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -8051,7 +8052,7 @@ impl TImage {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Image_ClassName, self.0));
+          return ToRustString(method_Call_1!(Image_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -8071,7 +8072,7 @@ impl TImage {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Image_ToString, self.0));
+          return ToRustString(method_Call_1!(Image_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -8483,7 +8484,7 @@ impl TImage {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Image_GetHint, self.0));
+          return ToRustString(method_Call_1!(Image_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -8509,7 +8510,7 @@ impl TImage {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Image_GetName, self.0));
+          return ToRustString(method_Call_1!(Image_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -8700,7 +8701,7 @@ impl TLinkLabel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LinkLabel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -8713,7 +8714,7 @@ impl TLinkLabel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LinkLabel_ClassName, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -8733,7 +8734,7 @@ impl TLinkLabel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LinkLabel_ToString, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -8803,7 +8804,7 @@ impl TLinkLabel {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LinkLabel_GetCaption, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -9119,7 +9120,7 @@ impl TLinkLabel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LinkLabel_GetHint, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -9145,7 +9146,7 @@ impl TLinkLabel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LinkLabel_GetName, self.0));
+          return ToRustString(method_Call_1!(LinkLabel_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -9342,7 +9343,7 @@ impl TSpeedButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpeedButton_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -9355,7 +9356,7 @@ impl TSpeedButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpeedButton_ClassName, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -9375,7 +9376,7 @@ impl TSpeedButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpeedButton_ToString, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -9517,7 +9518,7 @@ impl TSpeedButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpeedButton_GetCaption, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -9795,7 +9796,7 @@ impl TSpeedButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpeedButton_GetHint, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -9821,7 +9822,7 @@ impl TSpeedButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpeedButton_GetName, self.0));
+          return ToRustString(method_Call_1!(SpeedButton_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -10012,7 +10013,7 @@ impl TSplitter {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Splitter_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Splitter_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -10025,7 +10026,7 @@ impl TSplitter {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Splitter_ClassName, self.0));
+          return ToRustString(method_Call_1!(Splitter_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -10045,7 +10046,7 @@ impl TSplitter {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Splitter_ToString, self.0));
+          return ToRustString(method_Call_1!(Splitter_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -10313,7 +10314,7 @@ impl TSplitter {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Splitter_GetHint, self.0));
+          return ToRustString(method_Call_1!(Splitter_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -10339,7 +10340,7 @@ impl TSplitter {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Splitter_GetName, self.0));
+          return ToRustString(method_Call_1!(Splitter_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -10600,7 +10601,7 @@ impl TRadioGroup {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioGroup_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -10613,7 +10614,7 @@ impl TRadioGroup {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioGroup_ClassName, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -10633,7 +10634,7 @@ impl TRadioGroup {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RadioGroup_ToString, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -10694,7 +10695,7 @@ impl TRadioGroup {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioGroup_GetCaption, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -11085,7 +11086,7 @@ impl TRadioGroup {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioGroup_GetHint, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -11111,7 +11112,7 @@ impl TRadioGroup {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RadioGroup_GetName, self.0));
+          return ToRustString(method_Call_1!(RadioGroup_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -11390,7 +11391,7 @@ impl TStaticText {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StaticText_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StaticText_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -11403,7 +11404,7 @@ impl TStaticText {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StaticText_ClassName, self.0));
+          return ToRustString(method_Call_1!(StaticText_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -11423,7 +11424,7 @@ impl TStaticText {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StaticText_ToString, self.0));
+          return ToRustString(method_Call_1!(StaticText_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -11511,7 +11512,7 @@ impl TStaticText {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StaticText_GetCaption, self.0));
+          return ToRustString(method_Call_1!(StaticText_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -11936,7 +11937,7 @@ impl TStaticText {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StaticText_GetHint, self.0));
+          return ToRustString(method_Call_1!(StaticText_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -11962,7 +11963,7 @@ impl TStaticText {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StaticText_GetName, self.0));
+          return ToRustString(method_Call_1!(StaticText_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -12266,7 +12267,7 @@ impl TColorBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ColorBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -12279,7 +12280,7 @@ impl TColorBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ColorBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -12299,7 +12300,7 @@ impl TColorBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ColorBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -12642,7 +12643,7 @@ impl TColorBox {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorBox_GetSelText, self.0));
+          return ToRustString(method_Call_1!(ColorBox_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -12881,7 +12882,7 @@ impl TColorBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ColorBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -12907,7 +12908,7 @@ impl TColorBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ColorBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -12983,7 +12984,7 @@ impl TColorBox {
       }
 
 	  pub fn ColorNames<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorBox_GetColorNames, self.0, index));
+          return ToRustString(method_Call_1!(ColorBox_GetColorNames, self.0, index));
       }
 
 	  pub fn DockClients(&self, index: i32) -> TControl  {
@@ -13230,7 +13231,7 @@ impl TColorListBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorListBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ColorListBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -13243,7 +13244,7 @@ impl TColorListBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorListBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ColorListBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -13263,7 +13264,7 @@ impl TColorListBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorListBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ColorListBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -13804,7 +13805,7 @@ impl TColorListBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorListBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ColorListBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -13830,7 +13831,7 @@ impl TColorListBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorListBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ColorListBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -13906,7 +13907,7 @@ impl TColorListBox {
       }
 
 	  pub fn ColorNames<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorListBox_GetColorNames, self.0, index));
+          return ToRustString(method_Call_1!(ColorListBox_GetColorNames, self.0, index));
       }
 
 	  pub fn DockClients(&self, index: i32) -> TControl  {
@@ -13954,7 +13955,7 @@ impl TTrayIcon {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrayIcon_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -13971,7 +13972,7 @@ impl TTrayIcon {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrayIcon_ClassName, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -13991,7 +13992,7 @@ impl TTrayIcon {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrayIcon_ToString, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_ToString, self.0));
       }
 
 	  pub fn AnimateInterval(&self) -> u32  {
@@ -14004,7 +14005,7 @@ impl TTrayIcon {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrayIcon_GetHint, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -14013,7 +14014,7 @@ impl TTrayIcon {
       }
 
 	  pub fn BalloonHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrayIcon_GetBalloonHint, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_GetBalloonHint, self.0));
       }
 
 	  pub fn SetBalloonHint(&self, aValue: &str) -> &Self  {
@@ -14022,7 +14023,7 @@ impl TTrayIcon {
       }
 
 	  pub fn BalloonTitle<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrayIcon_GetBalloonTitle, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_GetBalloonTitle, self.0));
       }
 
 	  pub fn SetBalloonTitle(&self, aValue: &str) -> &Self  {
@@ -14118,7 +14119,7 @@ impl TTrayIcon {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrayIcon_GetName, self.0));
+          return ToRustString(method_Call_1!(TrayIcon_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -14165,7 +14166,7 @@ impl TOpenDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -14182,7 +14183,7 @@ impl TOpenDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -14202,7 +14203,7 @@ impl TOpenDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_ToString, self.0));
       }
 
 	  pub fn Files(&self) -> TStrings  {
@@ -14210,7 +14211,7 @@ impl TOpenDialog {
       }
 
 	  pub fn DefaultExt<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetDefaultExt, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetDefaultExt, self.0));
       }
 
 	  pub fn SetDefaultExt(&self, aValue: &str) -> &Self  {
@@ -14219,7 +14220,7 @@ impl TOpenDialog {
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetFileName, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetFileName, self.0));
       }
 
 	  pub fn SetFileName(&self, aValue: &str) -> &Self  {
@@ -14228,7 +14229,7 @@ impl TOpenDialog {
       }
 
 	  pub fn Filter<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetFilter, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetFilter, self.0));
       }
 
 	  pub fn SetFilter(&self, aValue: &str) -> &Self  {
@@ -14246,7 +14247,7 @@ impl TOpenDialog {
       }
 
 	  pub fn InitialDir<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetInitialDir, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetInitialDir, self.0));
       }
 
 	  pub fn SetInitialDir(&self, aValue: &str) -> &Self  {
@@ -14264,7 +14265,7 @@ impl TOpenDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -14304,7 +14305,7 @@ impl TOpenDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(OpenDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -14351,7 +14352,7 @@ impl TSaveDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SaveDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -14368,7 +14369,7 @@ impl TSaveDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SaveDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -14388,7 +14389,7 @@ impl TSaveDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SaveDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_ToString, self.0));
       }
 
 	  pub fn Files(&self) -> TStrings  {
@@ -14396,7 +14397,7 @@ impl TSaveDialog {
       }
 
 	  pub fn DefaultExt<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetDefaultExt, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetDefaultExt, self.0));
       }
 
 	  pub fn SetDefaultExt(&self, aValue: &str) -> &Self  {
@@ -14405,7 +14406,7 @@ impl TSaveDialog {
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetFileName, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetFileName, self.0));
       }
 
 	  pub fn SetFileName(&self, aValue: &str) -> &Self  {
@@ -14414,7 +14415,7 @@ impl TSaveDialog {
       }
 
 	  pub fn Filter<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetFilter, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetFilter, self.0));
       }
 
 	  pub fn SetFilter(&self, aValue: &str) -> &Self  {
@@ -14432,7 +14433,7 @@ impl TSaveDialog {
       }
 
 	  pub fn InitialDir<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetInitialDir, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetInitialDir, self.0));
       }
 
 	  pub fn SetInitialDir(&self, aValue: &str) -> &Self  {
@@ -14450,7 +14451,7 @@ impl TSaveDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -14490,7 +14491,7 @@ impl TSaveDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SaveDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(SaveDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -14537,7 +14538,7 @@ impl TColorDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ColorDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -14554,7 +14555,7 @@ impl TColorDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(ColorDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -14574,7 +14575,7 @@ impl TColorDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ColorDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(ColorDialog_ToString, self.0));
       }
 
 	  pub fn Color(&self) -> TColor  {
@@ -14618,7 +14619,7 @@ impl TColorDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ColorDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(ColorDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -14665,7 +14666,7 @@ impl TFontDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FontDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(FontDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -14682,7 +14683,7 @@ impl TFontDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FontDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(FontDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -14702,7 +14703,7 @@ impl TFontDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FontDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(FontDialog_ToString, self.0));
       }
 
 	  pub fn Font(&self) -> TFont  {
@@ -14755,7 +14756,7 @@ impl TFontDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FontDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(FontDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -14802,7 +14803,7 @@ impl TPrintDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrintDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PrintDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -14819,7 +14820,7 @@ impl TPrintDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrintDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(PrintDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -14839,7 +14840,7 @@ impl TPrintDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrintDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(PrintDialog_ToString, self.0));
       }
 
 	  pub fn Collate(&self) -> bool  {
@@ -14955,7 +14956,7 @@ impl TPrintDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PrintDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(PrintDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -15002,7 +15003,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -15019,7 +15020,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -15039,11 +15040,11 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_ToString, self.0));
       }
 
 	  pub fn Filter<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetFilter, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetFilter, self.0));
       }
 
 	  pub fn SetFilter(&self, aValue: &str) -> &Self  {
@@ -15056,7 +15057,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn DefaultExt<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetDefaultExt, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetDefaultExt, self.0));
       }
 
 	  pub fn SetDefaultExt(&self, aValue: &str) -> &Self  {
@@ -15065,7 +15066,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetFileName, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetFileName, self.0));
       }
 
 	  pub fn SetFileName(&self, aValue: &str) -> &Self  {
@@ -15083,7 +15084,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn InitialDir<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetInitialDir, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetInitialDir, self.0));
       }
 
 	  pub fn SetInitialDir(&self, aValue: &str) -> &Self  {
@@ -15101,7 +15102,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -15141,7 +15142,7 @@ impl TOpenPictureDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(OpenPictureDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(OpenPictureDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -15188,7 +15189,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -15205,7 +15206,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SavePictureDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -15225,11 +15226,11 @@ impl TSavePictureDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SavePictureDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_ToString, self.0));
       }
 
 	  pub fn Filter<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetFilter, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetFilter, self.0));
       }
 
 	  pub fn SetFilter(&self, aValue: &str) -> &Self  {
@@ -15242,7 +15243,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn DefaultExt<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetDefaultExt, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetDefaultExt, self.0));
       }
 
 	  pub fn SetDefaultExt(&self, aValue: &str) -> &Self  {
@@ -15251,7 +15252,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetFileName, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetFileName, self.0));
       }
 
 	  pub fn SetFileName(&self, aValue: &str) -> &Self  {
@@ -15269,7 +15270,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn InitialDir<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetInitialDir, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetInitialDir, self.0));
       }
 
 	  pub fn SetInitialDir(&self, aValue: &str) -> &Self  {
@@ -15287,7 +15288,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -15327,7 +15328,7 @@ impl TSavePictureDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SavePictureDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(SavePictureDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -15374,7 +15375,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -15391,7 +15392,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -15411,7 +15412,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_ToString, self.0));
       }
 
 	  pub fn Files(&self) -> TStrings  {
@@ -15419,7 +15420,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn DefaultExt<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetDefaultExt, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetDefaultExt, self.0));
       }
 
 	  pub fn SetDefaultExt(&self, aValue: &str) -> &Self  {
@@ -15428,7 +15429,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetFileName, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetFileName, self.0));
       }
 
 	  pub fn SetFileName(&self, aValue: &str) -> &Self  {
@@ -15437,7 +15438,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn Filter<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetFilter, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetFilter, self.0));
       }
 
 	  pub fn SetFilter(&self, aValue: &str) -> &Self  {
@@ -15455,7 +15456,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn InitialDir<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetInitialDir, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetInitialDir, self.0));
       }
 
 	  pub fn SetInitialDir(&self, aValue: &str) -> &Self  {
@@ -15473,7 +15474,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -15513,7 +15514,7 @@ impl TSelectDirectoryDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SelectDirectoryDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(SelectDirectoryDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -15763,7 +15764,7 @@ impl TRichEdit {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RichEdit_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -15776,7 +15777,7 @@ impl TRichEdit {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RichEdit_ClassName, self.0));
+          return ToRustString(method_Call_1!(RichEdit_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -15796,7 +15797,7 @@ impl TRichEdit {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(RichEdit_ToString, self.0));
+          return ToRustString(method_Call_1!(RichEdit_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -16264,7 +16265,7 @@ impl TRichEdit {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RichEdit_GetSelText, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -16273,7 +16274,7 @@ impl TRichEdit {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RichEdit_GetText, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -16282,7 +16283,7 @@ impl TRichEdit {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RichEdit_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -16490,7 +16491,7 @@ impl TRichEdit {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RichEdit_GetHint, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -16516,7 +16517,7 @@ impl TRichEdit {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(RichEdit_GetName, self.0));
+          return ToRustString(method_Call_1!(RichEdit_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -16800,7 +16801,7 @@ impl TTrackBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrackBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TrackBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -16813,7 +16814,7 @@ impl TTrackBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrackBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(TrackBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -16833,7 +16834,7 @@ impl TTrackBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TrackBar_ToString, self.0));
+          return ToRustString(method_Call_1!(TrackBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -17350,7 +17351,7 @@ impl TTrackBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrackBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(TrackBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -17376,7 +17377,7 @@ impl TTrackBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TrackBar_GetName, self.0));
+          return ToRustString(method_Call_1!(TrackBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -17585,7 +17586,7 @@ impl TImageList {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageList_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ImageList_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -17597,7 +17598,7 @@ impl TImageList {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageList_ClassName, self.0));
+          return ToRustString(method_Call_1!(ImageList_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -17617,7 +17618,7 @@ impl TImageList {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageList_ToString, self.0));
+          return ToRustString(method_Call_1!(ImageList_ToString, self.0));
       }
 
 	  pub fn BlendColor(&self) -> TColor  {
@@ -17741,7 +17742,7 @@ impl TImageList {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ImageList_GetName, self.0));
+          return ToRustString(method_Call_1!(ImageList_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -17967,7 +17968,7 @@ impl TUpDown {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(UpDown_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(UpDown_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -17980,7 +17981,7 @@ impl TUpDown {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(UpDown_ClassName, self.0));
+          return ToRustString(method_Call_1!(UpDown_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -18000,7 +18001,7 @@ impl TUpDown {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(UpDown_ToString, self.0));
+          return ToRustString(method_Call_1!(UpDown_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -18061,7 +18062,7 @@ impl TUpDown {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(UpDown_GetHint, self.0));
+          return ToRustString(method_Call_1!(UpDown_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -18462,7 +18463,7 @@ impl TUpDown {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(UpDown_GetName, self.0));
+          return ToRustString(method_Call_1!(UpDown_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -18751,7 +18752,7 @@ impl TProgressBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ProgressBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ProgressBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -18764,7 +18765,7 @@ impl TProgressBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ProgressBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(ProgressBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -18784,7 +18785,7 @@ impl TProgressBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ProgressBar_ToString, self.0));
+          return ToRustString(method_Call_1!(ProgressBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -18890,7 +18891,7 @@ impl TProgressBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ProgressBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(ProgressBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -19296,7 +19297,7 @@ impl TProgressBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ProgressBar_GetName, self.0));
+          return ToRustString(method_Call_1!(ProgressBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -19589,7 +19590,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -19602,7 +19603,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DateTimePicker_ClassName, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -19622,7 +19623,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DateTimePicker_ToString, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -19710,7 +19711,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn DateSeparator<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetDateSeparator, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetDateSeparator, self.0));
       }
 
 	  pub fn SetDateSeparator(&self, aValue: &str) -> &Self  {
@@ -19728,7 +19729,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn MonthNames<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetMonthNames, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetMonthNames, self.0));
       }
 
 	  pub fn SetMonthNames(&self, aValue: &str) -> &Self  {
@@ -19782,7 +19783,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn TextForNullDate<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetTextForNullDate, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetTextForNullDate, self.0));
       }
 
 	  pub fn SetTextForNullDate(&self, aValue: &str) -> &Self  {
@@ -19800,7 +19801,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn TimeSeparator<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetTimeSeparator, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetTimeSeparator, self.0));
       }
 
 	  pub fn SetTimeSeparator(&self, aValue: &str) -> &Self  {
@@ -20292,7 +20293,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetHint, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -20318,7 +20319,7 @@ impl TDateTimePicker {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DateTimePicker_GetName, self.0));
+          return ToRustString(method_Call_1!(DateTimePicker_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -20597,7 +20598,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MonthCalendar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(MonthCalendar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -20610,7 +20611,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MonthCalendar_ClassName, self.0));
+          return ToRustString(method_Call_1!(MonthCalendar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -20630,7 +20631,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MonthCalendar_ToString, self.0));
+          return ToRustString(method_Call_1!(MonthCalendar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -21100,7 +21101,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MonthCalendar_GetHint, self.0));
+          return ToRustString(method_Call_1!(MonthCalendar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -21126,7 +21127,7 @@ impl TMonthCalendar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MonthCalendar_GetName, self.0));
+          return ToRustString(method_Call_1!(MonthCalendar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -21442,7 +21443,7 @@ impl TListView {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListView_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListView_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -21455,7 +21456,7 @@ impl TListView {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListView_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListView_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -21475,7 +21476,7 @@ impl TListView {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListView_ToString, self.0));
+          return ToRustString(method_Call_1!(ListView_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -22413,7 +22414,7 @@ impl TListView {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListView_GetHint, self.0));
+          return ToRustString(method_Call_1!(ListView_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -22439,7 +22440,7 @@ impl TListView {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListView_GetName, self.0));
+          return ToRustString(method_Call_1!(ListView_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -22773,7 +22774,7 @@ impl TTreeView {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeView_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TreeView_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -22786,7 +22787,7 @@ impl TTreeView {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeView_ClassName, self.0));
+          return ToRustString(method_Call_1!(TreeView_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -22806,7 +22807,7 @@ impl TTreeView {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeView_ToString, self.0));
+          return ToRustString(method_Call_1!(TreeView_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -23702,7 +23703,7 @@ impl TTreeView {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TreeView_GetHint, self.0));
+          return ToRustString(method_Call_1!(TreeView_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -23728,7 +23729,7 @@ impl TTreeView {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TreeView_GetName, self.0));
+          return ToRustString(method_Call_1!(TreeView_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -24011,7 +24012,7 @@ impl TStatusBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StatusBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -24024,7 +24025,7 @@ impl TStatusBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(StatusBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -24044,7 +24045,7 @@ impl TStatusBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusBar_ToString, self.0));
+          return ToRustString(method_Call_1!(StatusBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -24276,7 +24277,7 @@ impl TStatusBar {
       }
 
 	  pub fn SimpleText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusBar_GetSimpleText, self.0));
+          return ToRustString(method_Call_1!(StatusBar_GetSimpleText, self.0));
       }
 
 	  pub fn SetSimpleText(&self, aValue: &str) -> &Self  {
@@ -24581,7 +24582,7 @@ impl TStatusBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(StatusBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -24607,7 +24608,7 @@ impl TStatusBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusBar_GetName, self.0));
+          return ToRustString(method_Call_1!(StatusBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -24886,7 +24887,7 @@ impl TToolBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ToolBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -24899,7 +24900,7 @@ impl TToolBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(ToolBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -24919,7 +24920,7 @@ impl TToolBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolBar_ToString, self.0));
+          return ToRustString(method_Call_1!(ToolBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -25019,7 +25020,7 @@ impl TToolBar {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolBar_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ToolBar_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -25550,7 +25551,7 @@ impl TToolBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(ToolBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -25576,7 +25577,7 @@ impl TToolBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolBar_GetName, self.0));
+          return ToRustString(method_Call_1!(ToolBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -25864,7 +25865,7 @@ impl TBitBtn {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BitBtn_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(BitBtn_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -25877,7 +25878,7 @@ impl TBitBtn {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BitBtn_ClassName, self.0));
+          return ToRustString(method_Call_1!(BitBtn_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -25897,7 +25898,7 @@ impl TBitBtn {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BitBtn_ToString, self.0));
+          return ToRustString(method_Call_1!(BitBtn_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -26003,7 +26004,7 @@ impl TBitBtn {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BitBtn_GetCaption, self.0));
+          return ToRustString(method_Call_1!(BitBtn_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -26421,7 +26422,7 @@ impl TBitBtn {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BitBtn_GetHint, self.0));
+          return ToRustString(method_Call_1!(BitBtn_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -26447,7 +26448,7 @@ impl TBitBtn {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BitBtn_GetName, self.0));
+          return ToRustString(method_Call_1!(BitBtn_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -26602,7 +26603,7 @@ impl TIcon {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Icon_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Icon_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -26610,7 +26611,7 @@ impl TIcon {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Icon_ClassName, self.0));
+          return ToRustString(method_Call_1!(Icon_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -26626,7 +26627,7 @@ impl TIcon {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Icon_ToString, self.0));
+          return ToRustString(method_Call_1!(Icon_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HICON  {
@@ -26773,7 +26774,7 @@ impl TBitmap {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bitmap_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Bitmap_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -26781,7 +26782,7 @@ impl TBitmap {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bitmap_ClassName, self.0));
+          return ToRustString(method_Call_1!(Bitmap_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -26797,7 +26798,7 @@ impl TBitmap {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bitmap_ToString, self.0));
+          return ToRustString(method_Call_1!(Bitmap_ToString, self.0));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -27167,7 +27168,7 @@ impl TMemo {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Memo_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -27180,7 +27181,7 @@ impl TMemo {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_ClassName, self.0));
+          return ToRustString(method_Call_1!(Memo_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -27200,7 +27201,7 @@ impl TMemo {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Memo_ToString, self.0));
+          return ToRustString(method_Call_1!(Memo_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -27640,7 +27641,7 @@ impl TMemo {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetSelText, self.0));
+          return ToRustString(method_Call_1!(Memo_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -27649,7 +27650,7 @@ impl TMemo {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetText, self.0));
+          return ToRustString(method_Call_1!(Memo_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -27658,7 +27659,7 @@ impl TMemo {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(Memo_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -27848,7 +27849,7 @@ impl TMemo {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetHint, self.0));
+          return ToRustString(method_Call_1!(Memo_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -27874,7 +27875,7 @@ impl TMemo {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Memo_GetName, self.0));
+          return ToRustString(method_Call_1!(Memo_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -28024,7 +28025,7 @@ impl TMemoryStream {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MemoryStream_ClassName, self.0));
+          return ToRustString(method_Call_1!(MemoryStream_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32  {
@@ -28044,7 +28045,7 @@ impl TMemoryStream {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MemoryStream_ToString, self.0));
+          return ToRustString(method_Call_1!(MemoryStream_ToString, self.0));
       }
 
 	  pub fn Memory(&self) -> usize  {
@@ -28109,7 +28110,7 @@ impl TFont {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Font_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Font_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -28117,7 +28118,7 @@ impl TFont {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Font_ClassName, self.0));
+          return ToRustString(method_Call_1!(Font_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28137,7 +28138,7 @@ impl TFont {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Font_ToString, self.0));
+          return ToRustString(method_Call_1!(Font_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HFONT  {
@@ -28186,7 +28187,7 @@ impl TFont {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Font_GetName, self.0));
+          return ToRustString(method_Call_1!(Font_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -28276,7 +28277,7 @@ impl TPopupMenu {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PopupMenu_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -28293,7 +28294,7 @@ impl TPopupMenu {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_ClassName, self.0));
+          return ToRustString(method_Call_1!(PopupMenu_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28313,7 +28314,7 @@ impl TPopupMenu {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PopupMenu_ToString, self.0));
+          return ToRustString(method_Call_1!(PopupMenu_ToString, self.0));
       }
 
 	  pub fn ImagesWidth(&self) -> i32  {
@@ -28407,7 +28408,7 @@ impl TPopupMenu {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PopupMenu_GetName, self.0));
+          return ToRustString(method_Call_1!(PopupMenu_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -28535,7 +28536,7 @@ impl TStringList {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringList_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StringList_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -28543,7 +28544,7 @@ impl TStringList {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringList_ClassName, self.0));
+          return ToRustString(method_Call_1!(StringList_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28559,7 +28560,7 @@ impl TStringList {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringList_ToString, self.0));
+          return ToRustString(method_Call_1!(StringList_ToString, self.0));
       }
 
 	  pub fn Sorted(&self) -> bool  {
@@ -28591,7 +28592,7 @@ impl TStringList {
       }
 
 	  pub fn CommaText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringList_GetCommaText, self.0));
+          return ToRustString(method_Call_1!(StringList_GetCommaText, self.0));
       }
 
 	  pub fn SetCommaText(&self, aValue: &str) -> &Self  {
@@ -28622,7 +28623,7 @@ impl TStringList {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringList_GetText, self.0));
+          return ToRustString(method_Call_1!(StringList_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -28640,7 +28641,7 @@ impl TStringList {
       }
 
 	  pub fn Values<'a>(&self, name: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringList_GetValues, self.0, to_CString!(name)));
+          return ToRustString(method_Call_1!(StringList_GetValues, self.0, to_CString!(name)));
       }
 
 	  pub fn SetValues(&self, name: &str, aValue: &str) -> &Self  {
@@ -28649,7 +28650,7 @@ impl TStringList {
       }
 
 	  pub fn ValueFromIndex<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringList_GetValueFromIndex, self.0, index));
+          return ToRustString(method_Call_1!(StringList_GetValueFromIndex, self.0, index));
       }
 
 	  pub fn SetValueFromIndex(&self, index: i32, aValue: &str) -> &Self  {
@@ -28658,7 +28659,7 @@ impl TStringList {
       }
 
 	  pub fn Strings<'a>(&self, index: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringList_GetStrings, self.0, index));
+          return ToRustString(method_Call_1!(StringList_GetStrings, self.0, index));
       }
 
 	  pub fn SetStrings(&self, index: i32, aValue: &str) -> &Self  {
@@ -28690,7 +28691,7 @@ impl TBrush {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Brush_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Brush_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -28698,7 +28699,7 @@ impl TBrush {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Brush_ClassName, self.0));
+          return ToRustString(method_Call_1!(Brush_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28718,7 +28719,7 @@ impl TBrush {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Brush_ToString, self.0));
+          return ToRustString(method_Call_1!(Brush_ToString, self.0));
       }
 
 	  pub fn Bitmap(&self) -> TBitmap  {
@@ -28785,7 +28786,7 @@ impl TPen {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Pen_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Pen_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -28793,7 +28794,7 @@ impl TPen {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Pen_ClassName, self.0));
+          return ToRustString(method_Call_1!(Pen_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28813,7 +28814,7 @@ impl TPen {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Pen_ToString, self.0));
+          return ToRustString(method_Call_1!(Pen_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HPEN  {
@@ -28921,7 +28922,7 @@ impl TMenuItem {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MenuItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(MenuItem_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -28934,7 +28935,7 @@ impl TMenuItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MenuItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(MenuItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -28954,7 +28955,7 @@ impl TMenuItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MenuItem_ToString, self.0));
+          return ToRustString(method_Call_1!(MenuItem_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HMENU  {
@@ -28997,7 +28998,7 @@ impl TMenuItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MenuItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(MenuItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -29042,7 +29043,7 @@ impl TMenuItem {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MenuItem_GetHint, self.0));
+          return ToRustString(method_Call_1!(MenuItem_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -29114,7 +29115,7 @@ impl TMenuItem {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MenuItem_GetName, self.0));
+          return ToRustString(method_Call_1!(MenuItem_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -29145,7 +29146,7 @@ impl TMenuItem {
       // static class
 	  impl_Class_method!(MenuItem_StaticClassType);
 	  pub fn ShortCutText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MenuItem_GetShortCutText, self.0));
+          return ToRustString(method_Call_1!(MenuItem_GetShortCutText, self.0));
       }
 
 	  pub fn SetShortCutText(&self, value: &str) -> &Self  {
@@ -29191,7 +29192,7 @@ impl TPicture {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Picture_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Picture_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -29199,7 +29200,7 @@ impl TPicture {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Picture_ClassName, self.0));
+          return ToRustString(method_Call_1!(Picture_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29219,7 +29220,7 @@ impl TPicture {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Picture_ToString, self.0));
+          return ToRustString(method_Call_1!(Picture_ToString, self.0));
       }
 
 	  pub fn Bitmap(&self) -> TBitmap  {
@@ -29317,7 +29318,7 @@ impl TListColumns {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListColumns_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListColumns_GetNamePath, self.0));
       }
 
 	  pub fn Insert(&self, index: i32) -> TCollectionItem  {
@@ -29329,7 +29330,7 @@ impl TListColumns {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListColumns_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListColumns_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29349,7 +29350,7 @@ impl TListColumns {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListColumns_ToString, self.0));
+          return ToRustString(method_Call_1!(ListColumns_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -29420,7 +29421,7 @@ impl TListItems {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListItems_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListItems_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -29428,7 +29429,7 @@ impl TListItems {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListItems_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListItems_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29448,7 +29449,7 @@ impl TListItems {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListItems_ToString, self.0));
+          return ToRustString(method_Call_1!(ListItems_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -29568,7 +29569,7 @@ impl TTreeNodes {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TreeNodes_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TreeNodes_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -29576,7 +29577,7 @@ impl TTreeNodes {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeNodes_ClassName, self.0));
+          return ToRustString(method_Call_1!(TreeNodes_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29596,7 +29597,7 @@ impl TTreeNodes {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeNodes_ToString, self.0));
+          return ToRustString(method_Call_1!(TreeNodes_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -29660,7 +29661,7 @@ impl TListItem {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListItem_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -29668,7 +29669,7 @@ impl TListItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29688,7 +29689,7 @@ impl TListItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListItem_ToString, self.0));
+          return ToRustString(method_Call_1!(ListItem_ToString, self.0));
       }
 
 	  pub fn DropTarget(&self) -> bool  {
@@ -29701,7 +29702,7 @@ impl TListItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ListItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -29897,7 +29898,7 @@ impl TTreeNode {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TreeNode_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TreeNode_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -29905,7 +29906,7 @@ impl TTreeNode {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeNode_ClassName, self.0));
+          return ToRustString(method_Call_1!(TreeNode_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -29925,7 +29926,7 @@ impl TTreeNode {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TreeNode_ToString, self.0));
+          return ToRustString(method_Call_1!(TreeNode_ToString, self.0));
       }
 
 	  pub fn AbsoluteIndex(&self) -> i32  {
@@ -30055,7 +30056,7 @@ impl TTreeNode {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TreeNode_GetText, self.0));
+          return ToRustString(method_Call_1!(TreeNode_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -30277,7 +30278,7 @@ impl TPageControl {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageControl_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PageControl_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -30290,7 +30291,7 @@ impl TPageControl {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageControl_ClassName, self.0));
+          return ToRustString(method_Call_1!(PageControl_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -30310,7 +30311,7 @@ impl TPageControl {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageControl_ToString, self.0));
+          return ToRustString(method_Call_1!(PageControl_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -30858,7 +30859,7 @@ impl TPageControl {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PageControl_GetHint, self.0));
+          return ToRustString(method_Call_1!(PageControl_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -30884,7 +30885,7 @@ impl TPageControl {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PageControl_GetName, self.0));
+          return ToRustString(method_Call_1!(PageControl_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -31167,7 +31168,7 @@ impl TTabSheet {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TabSheet_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TabSheet_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -31180,7 +31181,7 @@ impl TTabSheet {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TabSheet_ClassName, self.0));
+          return ToRustString(method_Call_1!(TabSheet_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -31200,7 +31201,7 @@ impl TTabSheet {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TabSheet_ToString, self.0));
+          return ToRustString(method_Call_1!(TabSheet_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -31256,7 +31257,7 @@ impl TTabSheet {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TabSheet_GetCaption, self.0));
+          return ToRustString(method_Call_1!(TabSheet_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -31678,7 +31679,7 @@ impl TTabSheet {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TabSheet_GetHint, self.0));
+          return ToRustString(method_Call_1!(TabSheet_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -31704,7 +31705,7 @@ impl TTabSheet {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TabSheet_GetName, self.0));
+          return ToRustString(method_Call_1!(TabSheet_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -31988,7 +31989,7 @@ impl TButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Button_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Button_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -32001,7 +32002,7 @@ impl TButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Button_ClassName, self.0));
+          return ToRustString(method_Call_1!(Button_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -32021,7 +32022,7 @@ impl TButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Button_ToString, self.0));
+          return ToRustString(method_Call_1!(Button_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -32100,7 +32101,7 @@ impl TButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Button_GetCaption, self.0));
+          return ToRustString(method_Call_1!(Button_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -32509,7 +32510,7 @@ impl TButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Button_GetHint, self.0));
+          return ToRustString(method_Call_1!(Button_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -32535,7 +32536,7 @@ impl TButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Button_GetName, self.0));
+          return ToRustString(method_Call_1!(Button_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -32849,7 +32850,7 @@ impl TEdit {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Edit_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Edit_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -32862,7 +32863,7 @@ impl TEdit {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Edit_ClassName, self.0));
+          return ToRustString(method_Call_1!(Edit_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -32882,7 +32883,7 @@ impl TEdit {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Edit_ToString, self.0));
+          return ToRustString(method_Call_1!(Edit_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -33177,7 +33178,7 @@ impl TEdit {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Edit_GetText, self.0));
+          return ToRustString(method_Call_1!(Edit_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -33186,7 +33187,7 @@ impl TEdit {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Edit_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(Edit_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -33320,7 +33321,7 @@ impl TEdit {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Edit_GetSelText, self.0));
+          return ToRustString(method_Call_1!(Edit_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -33510,7 +33511,7 @@ impl TEdit {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Edit_GetHint, self.0));
+          return ToRustString(method_Call_1!(Edit_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -33536,7 +33537,7 @@ impl TEdit {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Edit_GetName, self.0));
+          return ToRustString(method_Call_1!(Edit_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -33647,7 +33648,7 @@ impl TScreen {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Screen_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Screen_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -33664,7 +33665,7 @@ impl TScreen {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Screen_ClassName, self.0));
+          return ToRustString(method_Call_1!(Screen_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -33684,7 +33685,7 @@ impl TScreen {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Screen_ToString, self.0));
+          return ToRustString(method_Call_1!(Screen_ToString, self.0));
       }
 
 	  pub fn ActiveControl(&self) -> TWinControl  {
@@ -33802,7 +33803,7 @@ impl TScreen {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Screen_GetName, self.0));
+          return ToRustString(method_Call_1!(Screen_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -33862,7 +33863,7 @@ impl TMouse {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Mouse_ClassName, self.0));
+          return ToRustString(method_Call_1!(Mouse_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -33882,7 +33883,7 @@ impl TMouse {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Mouse_ToString, self.0));
+          return ToRustString(method_Call_1!(Mouse_ToString, self.0));
       }
 
 	  pub fn Capture(&self) -> HWND  {
@@ -33936,7 +33937,7 @@ impl TListColumn {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListColumn_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ListColumn_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -33944,7 +33945,7 @@ impl TListColumn {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListColumn_ClassName, self.0));
+          return ToRustString(method_Call_1!(ListColumn_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -33964,7 +33965,7 @@ impl TListColumn {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ListColumn_ToString, self.0));
+          return ToRustString(method_Call_1!(ListColumn_ToString, self.0));
       }
 
 	  pub fn SortIndicator(&self) -> TSortIndicator  {
@@ -33995,7 +33996,7 @@ impl TListColumn {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListColumn_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ListColumn_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -34067,7 +34068,7 @@ impl TListColumn {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ListColumn_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(ListColumn_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -34093,7 +34094,7 @@ impl TCollectionItem {
 	  impl_Free_method!(CollectionItem_Free);
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CollectionItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CollectionItem_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -34106,7 +34107,7 @@ impl TCollectionItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CollectionItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(CollectionItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -34126,7 +34127,7 @@ impl TCollectionItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CollectionItem_ToString, self.0));
+          return ToRustString(method_Call_1!(CollectionItem_ToString, self.0));
       }
 
 	  pub fn Collection(&self) -> TCollection  {
@@ -34148,7 +34149,7 @@ impl TCollectionItem {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CollectionItem_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(CollectionItem_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -34215,7 +34216,7 @@ impl TStatusPanels {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusPanels_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StatusPanels_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -34223,7 +34224,7 @@ impl TStatusPanels {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusPanels_ClassName, self.0));
+          return ToRustString(method_Call_1!(StatusPanels_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -34243,7 +34244,7 @@ impl TStatusPanels {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusPanels_ToString, self.0));
+          return ToRustString(method_Call_1!(StatusPanels_ToString, self.0));
       }
 
 	  pub fn Capacity(&self) -> i32  {
@@ -34291,7 +34292,7 @@ impl TStatusPanel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusPanel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StatusPanel_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -34299,7 +34300,7 @@ impl TStatusPanel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusPanel_ClassName, self.0));
+          return ToRustString(method_Call_1!(StatusPanel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -34319,7 +34320,7 @@ impl TStatusPanel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StatusPanel_ToString, self.0));
+          return ToRustString(method_Call_1!(StatusPanel_ToString, self.0));
       }
 
 	  pub fn Alignment(&self) -> TAlignment  {
@@ -34350,7 +34351,7 @@ impl TStatusPanel {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusPanel_GetText, self.0));
+          return ToRustString(method_Call_1!(StatusPanel_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -34386,7 +34387,7 @@ impl TStatusPanel {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StatusPanel_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(StatusPanel_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -34619,7 +34620,7 @@ impl TSpinEdit {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpinEdit_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -34632,7 +34633,7 @@ impl TSpinEdit {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpinEdit_ClassName, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -34652,7 +34653,7 @@ impl TSpinEdit {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SpinEdit_ToString, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -34965,7 +34966,7 @@ impl TSpinEdit {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpinEdit_GetSelText, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -34974,7 +34975,7 @@ impl TSpinEdit {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpinEdit_GetText, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -34983,7 +34984,7 @@ impl TSpinEdit {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpinEdit_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -35209,7 +35210,7 @@ impl TSpinEdit {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpinEdit_GetHint, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -35235,7 +35236,7 @@ impl TSpinEdit {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SpinEdit_GetName, self.0));
+          return ToRustString(method_Call_1!(SpinEdit_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -35382,11 +35383,11 @@ impl TMiniWebview {
       }
 
 	  pub fn ExecuteScript<'a>(&self, aScriptText: &str, aScriptType: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MiniWebview_ExecuteScript, self.0, to_CString!(aScriptText), to_CString!(aScriptType)));
+          return ToRustString(method_Call_1!(MiniWebview_ExecuteScript, self.0, to_CString!(aScriptText), to_CString!(aScriptType)));
       }
 
 	  pub fn ExecuteJS<'a>(&self, aScriptText: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MiniWebview_ExecuteJS, self.0, to_CString!(aScriptText)));
+          return ToRustString(method_Call_1!(MiniWebview_ExecuteJS, self.0, to_CString!(aScriptText)));
       }
 
 	  pub fn LoadHTML(&self, aStr: &str) -> &Self  {
@@ -35557,7 +35558,7 @@ impl TMiniWebview {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MiniWebview_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(MiniWebview_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -35570,7 +35571,7 @@ impl TMiniWebview {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MiniWebview_ClassName, self.0));
+          return ToRustString(method_Call_1!(MiniWebview_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -35590,7 +35591,7 @@ impl TMiniWebview {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MiniWebview_ToString, self.0));
+          return ToRustString(method_Call_1!(MiniWebview_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -35918,7 +35919,7 @@ impl TMiniWebview {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MiniWebview_GetHint, self.0));
+          return ToRustString(method_Call_1!(MiniWebview_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -35944,7 +35945,7 @@ impl TMiniWebview {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MiniWebview_GetName, self.0));
+          return ToRustString(method_Call_1!(MiniWebview_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -36152,7 +36153,7 @@ impl TCanvas {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Canvas_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Canvas_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -36160,7 +36161,7 @@ impl TCanvas {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Canvas_ClassName, self.0));
+          return ToRustString(method_Call_1!(Canvas_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -36180,7 +36181,7 @@ impl TCanvas {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Canvas_ToString, self.0));
+          return ToRustString(method_Call_1!(Canvas_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HDC  {
@@ -36401,7 +36402,7 @@ impl TApplication {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Application_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Application_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -36418,7 +36419,7 @@ impl TApplication {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Application_ClassName, self.0));
+          return ToRustString(method_Call_1!(Application_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -36438,7 +36439,7 @@ impl TApplication {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Application_ToString, self.0));
+          return ToRustString(method_Call_1!(Application_ToString, self.0));
       }
 
 	  pub fn Scaled(&self) -> bool  {
@@ -36460,7 +36461,7 @@ impl TApplication {
       }
 
 	  pub fn Location<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Application_GetLocation, self.0));
+          return ToRustString(method_Call_1!(Application_GetLocation, self.0));
       }
 
 	  pub fn StopOnException(&self) -> bool  {
@@ -36482,11 +36483,11 @@ impl TApplication {
       }
 
 	  pub fn ExeName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Application_GetExeName, self.0));
+          return ToRustString(method_Call_1!(Application_GetExeName, self.0));
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Application_GetHint, self.0));
+          return ToRustString(method_Call_1!(Application_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -36593,7 +36594,7 @@ impl TApplication {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Application_GetTitle, self.0));
+          return ToRustString(method_Call_1!(Application_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -36668,7 +36669,7 @@ impl TApplication {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Application_GetName, self.0));
+          return ToRustString(method_Call_1!(Application_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -36725,7 +36726,7 @@ impl TMainMenu {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(MainMenu_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -36742,7 +36743,7 @@ impl TMainMenu {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_ClassName, self.0));
+          return ToRustString(method_Call_1!(MainMenu_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -36762,7 +36763,7 @@ impl TMainMenu {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MainMenu_ToString, self.0));
+          return ToRustString(method_Call_1!(MainMenu_ToString, self.0));
       }
 
 	  pub fn ImagesWidth(&self) -> i32  {
@@ -36832,7 +36833,7 @@ impl TMainMenu {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MainMenu_GetName, self.0));
+          return ToRustString(method_Call_1!(MainMenu_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -36915,7 +36916,7 @@ impl TPngImage {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PngImage_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PngImage_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -36923,7 +36924,7 @@ impl TPngImage {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PngImage_ClassName, self.0));
+          return ToRustString(method_Call_1!(PngImage_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -36939,7 +36940,7 @@ impl TPngImage {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PngImage_ToString, self.0));
+          return ToRustString(method_Call_1!(PngImage_ToString, self.0));
       }
 
 	  pub fn Canvas(&self) -> TCanvas  {
@@ -37052,7 +37053,7 @@ impl TJPEGImage {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(JPEGImage_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(JPEGImage_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -37060,7 +37061,7 @@ impl TJPEGImage {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(JPEGImage_ClassName, self.0));
+          return ToRustString(method_Call_1!(JPEGImage_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -37076,7 +37077,7 @@ impl TJPEGImage {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(JPEGImage_ToString, self.0));
+          return ToRustString(method_Call_1!(JPEGImage_ToString, self.0));
       }
 
 	  pub fn PixelFormat(&self) -> TPixelFormat  {
@@ -37222,7 +37223,7 @@ impl TGIFImage {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GIFImage_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(GIFImage_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -37230,7 +37231,7 @@ impl TGIFImage {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GIFImage_ClassName, self.0));
+          return ToRustString(method_Call_1!(GIFImage_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -37246,7 +37247,7 @@ impl TGIFImage {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GIFImage_ToString, self.0));
+          return ToRustString(method_Call_1!(GIFImage_ToString, self.0));
       }
 
 	  pub fn BitsPerPixel(&self) -> i32  {
@@ -37334,7 +37335,7 @@ impl TActionList {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ActionList_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ActionList_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -37351,7 +37352,7 @@ impl TActionList {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ActionList_ClassName, self.0));
+          return ToRustString(method_Call_1!(ActionList_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -37371,7 +37372,7 @@ impl TActionList {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ActionList_ToString, self.0));
+          return ToRustString(method_Call_1!(ActionList_ToString, self.0));
       }
 
 	  pub fn Images(&self) -> TImageList  {
@@ -37415,7 +37416,7 @@ impl TActionList {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ActionList_GetName, self.0));
+          return ToRustString(method_Call_1!(ActionList_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -37470,7 +37471,7 @@ impl TAction {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Action_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Action_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -37483,7 +37484,7 @@ impl TAction {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Action_ClassName, self.0));
+          return ToRustString(method_Call_1!(Action_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -37503,7 +37504,7 @@ impl TAction {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Action_ToString, self.0));
+          return ToRustString(method_Call_1!(Action_ToString, self.0));
       }
 
 	  pub fn AutoCheck(&self) -> bool  {
@@ -37516,7 +37517,7 @@ impl TAction {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Action_GetCaption, self.0));
+          return ToRustString(method_Call_1!(Action_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -37552,7 +37553,7 @@ impl TAction {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Action_GetHint, self.0));
+          return ToRustString(method_Call_1!(Action_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -37624,7 +37625,7 @@ impl TAction {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Action_GetName, self.0));
+          return ToRustString(method_Call_1!(Action_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -37774,7 +37775,7 @@ impl TToolButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolButton_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ToolButton_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -37787,7 +37788,7 @@ impl TToolButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolButton_ClassName, self.0));
+          return ToRustString(method_Call_1!(ToolButton_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -37807,7 +37808,7 @@ impl TToolButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToolButton_ToString, self.0));
+          return ToRustString(method_Call_1!(ToolButton_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -37872,7 +37873,7 @@ impl TToolButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolButton_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ToolButton_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -38238,7 +38239,7 @@ impl TToolButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolButton_GetHint, self.0));
+          return ToRustString(method_Call_1!(ToolButton_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -38264,7 +38265,7 @@ impl TToolButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToolButton_GetName, self.0));
+          return ToRustString(method_Call_1!(ToolButton_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -38353,7 +38354,7 @@ impl TIniFile {
 	  impl_Free_method!(IniFile_Free);
 
 	  pub fn ReadString<'a>(&self, section: &str, ident: &str, default: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(IniFile_ReadString, self.0, to_CString!(section), to_CString!(ident), to_CString!(default)));
+          return ToRustString(method_Call_1!(IniFile_ReadString, self.0, to_CString!(section), to_CString!(ident), to_CString!(default)));
       }
 
 	  pub fn WriteString(&self, section: &str, ident: &str, value: &str) -> &Self  {
@@ -38457,7 +38458,7 @@ impl TIniFile {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(IniFile_ClassName, self.0));
+          return ToRustString(method_Call_1!(IniFile_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -38477,11 +38478,11 @@ impl TIniFile {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(IniFile_ToString, self.0));
+          return ToRustString(method_Call_1!(IniFile_ToString, self.0));
       }
 
 	  pub fn FileName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(IniFile_GetFileName, self.0));
+          return ToRustString(method_Call_1!(IniFile_GetFileName, self.0));
       }
 
 
@@ -38566,7 +38567,7 @@ impl TRegistry {
       }
 
 	  pub fn ReadString<'a>(&self, name: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Registry_ReadString, self.0, to_CString!(name)));
+          return ToRustString(method_Call_1!(Registry_ReadString, self.0, to_CString!(name)));
       }
 
 	  pub fn ReadTime(&self, name: &str) -> u32  {
@@ -38648,7 +38649,7 @@ impl TRegistry {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Registry_ClassName, self.0));
+          return ToRustString(method_Call_1!(Registry_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -38668,7 +38669,7 @@ impl TRegistry {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Registry_ToString, self.0));
+          return ToRustString(method_Call_1!(Registry_ToString, self.0));
       }
 
 	  pub fn CurrentKey(&self) -> HKEY  {
@@ -38676,7 +38677,7 @@ impl TRegistry {
       }
 
 	  pub fn CurrentPath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Registry_GetCurrentPath, self.0));
+          return ToRustString(method_Call_1!(Registry_GetCurrentPath, self.0));
       }
 
 	  pub fn LazyWrite(&self) -> bool  {
@@ -38693,7 +38694,7 @@ impl TRegistry {
       }
 
 	  pub fn LastErrorMsg<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Registry_GetLastErrorMsg, self.0));
+          return ToRustString(method_Call_1!(Registry_GetLastErrorMsg, self.0));
       }
 
 	  pub fn RootKey(&self) -> HKEY  {
@@ -38740,7 +38741,7 @@ impl TClipboard {
       }
 
 	  pub fn GetAsHtml<'a>(&self, extractFragmentOnly: bool) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Clipboard_GetAsHtml, self.0, extractFragmentOnly));
+          return ToRustString(method_Call_1!(Clipboard_GetAsHtml, self.0, extractFragmentOnly));
       }
 
 	  pub fn SupportedFormats(&self, list: &dyn IStrings) -> &Self  {
@@ -38791,7 +38792,7 @@ impl TClipboard {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Clipboard_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Clipboard_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -38799,7 +38800,7 @@ impl TClipboard {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Clipboard_ClassName, self.0));
+          return ToRustString(method_Call_1!(Clipboard_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -38819,11 +38820,11 @@ impl TClipboard {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Clipboard_ToString, self.0));
+          return ToRustString(method_Call_1!(Clipboard_ToString, self.0));
       }
 
 	  pub fn AsText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Clipboard_GetAsText, self.0));
+          return ToRustString(method_Call_1!(Clipboard_GetAsText, self.0));
       }
 
 	  pub fn SetAsText(&self, aValue: &str) -> &Self  {
@@ -38865,7 +38866,7 @@ impl TMonitor {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Monitor_ClassName, self.0));
+          return ToRustString(method_Call_1!(Monitor_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -38885,7 +38886,7 @@ impl TMonitor {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Monitor_ToString, self.0));
+          return ToRustString(method_Call_1!(Monitor_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HMONITOR  {
@@ -39052,7 +39053,7 @@ impl TPaintBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PaintBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PaintBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -39065,7 +39066,7 @@ impl TPaintBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PaintBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(PaintBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -39085,7 +39086,7 @@ impl TPaintBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PaintBox_ToString, self.0));
+          return ToRustString(method_Call_1!(PaintBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -39439,7 +39440,7 @@ impl TPaintBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PaintBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(PaintBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -39465,7 +39466,7 @@ impl TPaintBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PaintBox_GetName, self.0));
+          return ToRustString(method_Call_1!(PaintBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -39558,7 +39559,7 @@ impl TTimer {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Timer_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Timer_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -39575,7 +39576,7 @@ impl TTimer {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Timer_ClassName, self.0));
+          return ToRustString(method_Call_1!(Timer_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -39595,7 +39596,7 @@ impl TTimer {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Timer_ToString, self.0));
+          return ToRustString(method_Call_1!(Timer_ToString, self.0));
       }
 
 	  pub fn Enabled(&self) -> bool  {
@@ -39639,7 +39640,7 @@ impl TTimer {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Timer_GetName, self.0));
+          return ToRustString(method_Call_1!(Timer_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -39714,7 +39715,7 @@ impl TList {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(List_ClassName, self.0));
+          return ToRustString(method_Call_1!(List_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -39734,7 +39735,7 @@ impl TList {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(List_ToString, self.0));
+          return ToRustString(method_Call_1!(List_ToString, self.0));
       }
 
 	  pub fn Capacity(&self) -> i32  {
@@ -39982,7 +39983,7 @@ impl TForm {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Form_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Form_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -39995,7 +39996,7 @@ impl TForm {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Form_ClassName, self.0));
+          return ToRustString(method_Call_1!(Form_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -40015,7 +40016,7 @@ impl TForm {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Form_ToString, self.0));
+          return ToRustString(method_Call_1!(Form_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -40180,7 +40181,7 @@ impl TForm {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Form_GetCaption, self.0));
+          return ToRustString(method_Call_1!(Form_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -40763,7 +40764,7 @@ impl TForm {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Form_GetHint, self.0));
+          return ToRustString(method_Call_1!(Form_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -40789,7 +40790,7 @@ impl TForm {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Form_GetName, self.0));
+          return ToRustString(method_Call_1!(Form_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -40950,7 +40951,7 @@ impl TParaAttributes {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ParaAttributes_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ParaAttributes_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -40958,7 +40959,7 @@ impl TParaAttributes {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ParaAttributes_ClassName, self.0));
+          return ToRustString(method_Call_1!(ParaAttributes_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -40978,7 +40979,7 @@ impl TParaAttributes {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ParaAttributes_ToString, self.0));
+          return ToRustString(method_Call_1!(ParaAttributes_ToString, self.0));
       }
 
 	  pub fn Alignment(&self) -> TAlignment  {
@@ -41060,7 +41061,7 @@ impl TTextAttributes {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TextAttributes_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TextAttributes_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -41068,7 +41069,7 @@ impl TTextAttributes {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TextAttributes_ClassName, self.0));
+          return ToRustString(method_Call_1!(TextAttributes_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -41088,7 +41089,7 @@ impl TTextAttributes {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TextAttributes_ToString, self.0));
+          return ToRustString(method_Call_1!(TextAttributes_ToString, self.0));
       }
 
 	  pub fn Charset(&self) -> TFontCharset  {
@@ -41110,7 +41111,7 @@ impl TTextAttributes {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TextAttributes_GetName, self.0));
+          return ToRustString(method_Call_1!(TextAttributes_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -41170,7 +41171,7 @@ impl TIconOptions {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(IconOptions_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(IconOptions_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -41178,7 +41179,7 @@ impl TIconOptions {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(IconOptions_ClassName, self.0));
+          return ToRustString(method_Call_1!(IconOptions_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -41198,7 +41199,7 @@ impl TIconOptions {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(IconOptions_ToString, self.0));
+          return ToRustString(method_Call_1!(IconOptions_ToString, self.0));
       }
 
 	  pub fn Arrangement(&self) -> TIconArrangement  {
@@ -41230,7 +41231,7 @@ impl_IObject!(TIconOptions);
 
 impl Exception {
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Exception_ToString, self.0));
+          return ToRustString(method_Call_1!(Exception_ToString, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -41238,7 +41239,7 @@ impl Exception {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Exception_ClassName, self.0));
+          return ToRustString(method_Call_1!(Exception_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -41258,7 +41259,7 @@ impl Exception {
       }
 
 	  pub fn Message<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Exception_GetMessage, self.0));
+          return ToRustString(method_Call_1!(Exception_GetMessage, self.0));
       }
 
 	  pub fn SetMessage(&self, aValue: &str) -> &Self  {
@@ -41460,7 +41461,7 @@ impl TScrollBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ScrollBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -41473,7 +41474,7 @@ impl TScrollBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(ScrollBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -41493,7 +41494,7 @@ impl TScrollBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBar_ToString, self.0));
+          return ToRustString(method_Call_1!(ScrollBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -41956,7 +41957,7 @@ impl TScrollBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ScrollBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(ScrollBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -41982,7 +41983,7 @@ impl TScrollBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ScrollBar_GetName, self.0));
+          return ToRustString(method_Call_1!(ScrollBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -42301,7 +42302,7 @@ impl TMaskEdit {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MaskEdit_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -42314,7 +42315,7 @@ impl TMaskEdit {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MaskEdit_ClassName, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -42334,7 +42335,7 @@ impl TMaskEdit {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(MaskEdit_ToString, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -42611,7 +42612,7 @@ impl TMaskEdit {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetText, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -42620,7 +42621,7 @@ impl TMaskEdit {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -42732,7 +42733,7 @@ impl TMaskEdit {
       }
 
 	  pub fn EditText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetEditText, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetEditText, self.0));
       }
 
 	  pub fn SetEditText(&self, aValue: &str) -> &Self  {
@@ -42772,7 +42773,7 @@ impl TMaskEdit {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetSelText, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -42962,7 +42963,7 @@ impl TMaskEdit {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetHint, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -42988,7 +42989,7 @@ impl TMaskEdit {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(MaskEdit_GetName, self.0));
+          return ToRustString(method_Call_1!(MaskEdit_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -43197,7 +43198,7 @@ impl TShape {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Shape_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Shape_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -43210,7 +43211,7 @@ impl TShape {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Shape_ClassName, self.0));
+          return ToRustString(method_Call_1!(Shape_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -43230,7 +43231,7 @@ impl TShape {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Shape_ToString, self.0));
+          return ToRustString(method_Call_1!(Shape_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -43556,7 +43557,7 @@ impl TShape {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Shape_GetHint, self.0));
+          return ToRustString(method_Call_1!(Shape_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -43582,7 +43583,7 @@ impl TShape {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Shape_GetName, self.0));
+          return ToRustString(method_Call_1!(Shape_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -43773,7 +43774,7 @@ impl TBevel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bevel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Bevel_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -43786,7 +43787,7 @@ impl TBevel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bevel_ClassName, self.0));
+          return ToRustString(method_Call_1!(Bevel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -43806,7 +43807,7 @@ impl TBevel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Bevel_ToString, self.0));
+          return ToRustString(method_Call_1!(Bevel_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -44056,7 +44057,7 @@ impl TBevel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Bevel_GetHint, self.0));
+          return ToRustString(method_Call_1!(Bevel_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -44082,7 +44083,7 @@ impl TBevel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Bevel_GetName, self.0));
+          return ToRustString(method_Call_1!(Bevel_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -44348,7 +44349,7 @@ impl TScrollBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ScrollBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -44361,7 +44362,7 @@ impl TScrollBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ScrollBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -44381,7 +44382,7 @@ impl TScrollBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ScrollBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ScrollBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -44930,7 +44931,7 @@ impl TScrollBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ScrollBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ScrollBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -44956,7 +44957,7 @@ impl TScrollBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ScrollBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ScrollBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -45276,7 +45277,7 @@ impl TCheckListBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckListBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CheckListBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -45289,7 +45290,7 @@ impl TCheckListBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckListBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(CheckListBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -45309,7 +45310,7 @@ impl TCheckListBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckListBox_ToString, self.0));
+          return ToRustString(method_Call_1!(CheckListBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -45887,7 +45888,7 @@ impl TCheckListBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckListBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(CheckListBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -45913,7 +45914,7 @@ impl TCheckListBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckListBox_GetName, self.0));
+          return ToRustString(method_Call_1!(CheckListBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -46172,7 +46173,7 @@ impl TGauge {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Gauge_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Gauge_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -46185,7 +46186,7 @@ impl TGauge {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Gauge_ClassName, self.0));
+          return ToRustString(method_Call_1!(Gauge_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -46205,7 +46206,7 @@ impl TGauge {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Gauge_ToString, self.0));
+          return ToRustString(method_Call_1!(Gauge_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -46549,7 +46550,7 @@ impl TGauge {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Gauge_GetHint, self.0));
+          return ToRustString(method_Call_1!(Gauge_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -46575,7 +46576,7 @@ impl TGauge {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Gauge_GetName, self.0));
+          return ToRustString(method_Call_1!(Gauge_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -46771,7 +46772,7 @@ impl TImageButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageButton_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ImageButton_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -46784,7 +46785,7 @@ impl TImageButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageButton_ClassName, self.0));
+          return ToRustString(method_Call_1!(ImageButton_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -46804,7 +46805,7 @@ impl TImageButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ImageButton_ToString, self.0));
+          return ToRustString(method_Call_1!(ImageButton_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -46883,7 +46884,7 @@ impl TImageButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ImageButton_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ImageButton_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -47213,7 +47214,7 @@ impl TImageButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ImageButton_GetHint, self.0));
+          return ToRustString(method_Call_1!(ImageButton_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -47239,7 +47240,7 @@ impl TImageButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ImageButton_GetName, self.0));
+          return ToRustString(method_Call_1!(ImageButton_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -47341,7 +47342,7 @@ impl TFindDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FindDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(FindDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -47358,7 +47359,7 @@ impl TFindDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FindDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(FindDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -47378,7 +47379,7 @@ impl TFindDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FindDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(FindDialog_ToString, self.0));
       }
 
 	  pub fn Left(&self) -> i32  {
@@ -47411,7 +47412,7 @@ impl TFindDialog {
       }
 
 	  pub fn FindText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FindDialog_GetFindText, self.0));
+          return ToRustString(method_Call_1!(FindDialog_GetFindText, self.0));
       }
 
 	  pub fn SetFindText(&self, aValue: &str) -> &Self  {
@@ -47465,7 +47466,7 @@ impl TFindDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FindDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(FindDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -47517,7 +47518,7 @@ impl TReplaceDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ReplaceDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -47534,7 +47535,7 @@ impl TReplaceDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ReplaceDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -47554,11 +47555,11 @@ impl TReplaceDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ReplaceDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_ToString, self.0));
       }
 
 	  pub fn ReplaceText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ReplaceDialog_GetReplaceText, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_GetReplaceText, self.0));
       }
 
 	  pub fn SetReplaceText(&self, aValue: &str) -> &Self  {
@@ -47601,7 +47602,7 @@ impl TReplaceDialog {
       }
 
 	  pub fn FindText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ReplaceDialog_GetFindText, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_GetFindText, self.0));
       }
 
 	  pub fn SetFindText(&self, aValue: &str) -> &Self  {
@@ -47655,7 +47656,7 @@ impl TReplaceDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ReplaceDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(ReplaceDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -47702,7 +47703,7 @@ impl TPrinterSetupDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrinterSetupDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PrinterSetupDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -47719,7 +47720,7 @@ impl TPrinterSetupDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrinterSetupDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(PrinterSetupDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -47739,7 +47740,7 @@ impl TPrinterSetupDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PrinterSetupDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(PrinterSetupDialog_ToString, self.0));
       }
 
 	  pub fn Handle(&self) -> HWND  {
@@ -47774,7 +47775,7 @@ impl TPrinterSetupDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PrinterSetupDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(PrinterSetupDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -47821,7 +47822,7 @@ impl TPageSetupDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageSetupDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(PageSetupDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -47838,7 +47839,7 @@ impl TPageSetupDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageSetupDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(PageSetupDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -47858,7 +47859,7 @@ impl TPageSetupDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(PageSetupDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(PageSetupDialog_ToString, self.0));
       }
 
 	  pub fn MarginLeft(&self) -> i32  {
@@ -47960,7 +47961,7 @@ impl TPageSetupDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(PageSetupDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(PageSetupDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -48018,7 +48019,7 @@ impl TDragObject {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DragObject_ClassName, self.0));
+          return ToRustString(method_Call_1!(DragObject_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -48038,7 +48039,7 @@ impl TDragObject {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DragObject_ToString, self.0));
+          return ToRustString(method_Call_1!(DragObject_ToString, self.0));
       }
 
 	  pub fn AlwaysShowDragImages(&self) -> bool  {
@@ -48122,7 +48123,7 @@ impl TDragDockObject {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DragDockObject_ClassName, self.0));
+          return ToRustString(method_Call_1!(DragDockObject_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -48142,7 +48143,7 @@ impl TDragDockObject {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DragDockObject_ToString, self.0));
+          return ToRustString(method_Call_1!(DragDockObject_ToString, self.0));
       }
 
 	  pub fn DockRect(&self) -> TRect  {
@@ -48586,7 +48587,7 @@ impl TStringGrid {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringGrid_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(StringGrid_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -48599,7 +48600,7 @@ impl TStringGrid {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringGrid_ClassName, self.0));
+          return ToRustString(method_Call_1!(StringGrid_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -48619,7 +48620,7 @@ impl TStringGrid {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(StringGrid_ToString, self.0));
+          return ToRustString(method_Call_1!(StringGrid_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -49738,7 +49739,7 @@ impl TStringGrid {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringGrid_GetHint, self.0));
+          return ToRustString(method_Call_1!(StringGrid_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -49764,7 +49765,7 @@ impl TStringGrid {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringGrid_GetName, self.0));
+          return ToRustString(method_Call_1!(StringGrid_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -49840,7 +49841,7 @@ impl TStringGrid {
       }
 
 	  pub fn Cells<'a>(&self, aCol: i32, aRow: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(StringGrid_GetCells, self.0, aCol, aRow));
+          return ToRustString(method_Call_1!(StringGrid_GetCells, self.0, aCol, aRow));
       }
 
 	  pub fn SetCells(&self, aCol: i32, aRow: i32, aValue: &str) -> &Self  {
@@ -50118,7 +50119,7 @@ impl TDrawGrid {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DrawGrid_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(DrawGrid_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -50131,7 +50132,7 @@ impl TDrawGrid {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DrawGrid_ClassName, self.0));
+          return ToRustString(method_Call_1!(DrawGrid_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -50151,7 +50152,7 @@ impl TDrawGrid {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(DrawGrid_ToString, self.0));
+          return ToRustString(method_Call_1!(DrawGrid_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -50865,7 +50866,7 @@ impl TDrawGrid {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DrawGrid_GetHint, self.0));
+          return ToRustString(method_Call_1!(DrawGrid_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -50891,7 +50892,7 @@ impl TDrawGrid {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(DrawGrid_GetName, self.0));
+          return ToRustString(method_Call_1!(DrawGrid_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -51210,7 +51211,7 @@ impl TValueListEditor {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ValueListEditor_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ValueListEditor_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -51223,7 +51224,7 @@ impl TValueListEditor {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ValueListEditor_ClassName, self.0));
+          return ToRustString(method_Call_1!(ValueListEditor_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -51243,7 +51244,7 @@ impl TValueListEditor {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ValueListEditor_ToString, self.0));
+          return ToRustString(method_Call_1!(ValueListEditor_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -51956,7 +51957,7 @@ impl TValueListEditor {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ValueListEditor_GetHint, self.0));
+          return ToRustString(method_Call_1!(ValueListEditor_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -51982,7 +51983,7 @@ impl TValueListEditor {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ValueListEditor_GetName, self.0));
+          return ToRustString(method_Call_1!(ValueListEditor_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -52054,7 +52055,7 @@ impl TValueListEditor {
       }
 
 	  pub fn Cells<'a>(&self, aCol: i32, aRow: i32) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ValueListEditor_GetCells, self.0, aCol, aRow));
+          return ToRustString(method_Call_1!(ValueListEditor_GetCells, self.0, aCol, aRow));
       }
 
 	  pub fn SetCells(&self, aCol: i32, aRow: i32, aValue: &str) -> &Self  {
@@ -52063,7 +52064,7 @@ impl TValueListEditor {
       }
 
 	  pub fn Values<'a>(&self, key: &str) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ValueListEditor_GetValues, self.0, to_CString!(key)));
+          return ToRustString(method_Call_1!(ValueListEditor_GetValues, self.0, to_CString!(key)));
       }
 
 	  pub fn SetValues(&self, key: &str, aValue: &str) -> &Self  {
@@ -52297,7 +52298,7 @@ impl THeaderControl {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderControl_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(HeaderControl_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -52310,7 +52311,7 @@ impl THeaderControl {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderControl_ClassName, self.0));
+          return ToRustString(method_Call_1!(HeaderControl_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -52330,7 +52331,7 @@ impl THeaderControl {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderControl_ToString, self.0));
+          return ToRustString(method_Call_1!(HeaderControl_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -52809,7 +52810,7 @@ impl THeaderControl {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderControl_GetHint, self.0));
+          return ToRustString(method_Call_1!(HeaderControl_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -52835,7 +52836,7 @@ impl THeaderControl {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderControl_GetName, self.0));
+          return ToRustString(method_Call_1!(HeaderControl_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -52947,7 +52948,7 @@ impl THeaderSection {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderSection_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(HeaderSection_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -52955,7 +52956,7 @@ impl THeaderSection {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderSection_ClassName, self.0));
+          return ToRustString(method_Call_1!(HeaderSection_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -52975,7 +52976,7 @@ impl THeaderSection {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderSection_ToString, self.0));
+          return ToRustString(method_Call_1!(HeaderSection_ToString, self.0));
       }
 
 	  pub fn Left(&self) -> i32  {
@@ -53023,7 +53024,7 @@ impl THeaderSection {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderSection_GetText, self.0));
+          return ToRustString(method_Call_1!(HeaderSection_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -53059,7 +53060,7 @@ impl THeaderSection {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderSection_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(HeaderSection_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -53130,7 +53131,7 @@ impl THeaderSections {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(HeaderSections_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(HeaderSections_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -53138,7 +53139,7 @@ impl THeaderSections {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderSections_ClassName, self.0));
+          return ToRustString(method_Call_1!(HeaderSections_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -53158,7 +53159,7 @@ impl THeaderSections {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(HeaderSections_ToString, self.0));
+          return ToRustString(method_Call_1!(HeaderSections_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -53399,7 +53400,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -53412,7 +53413,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LabeledEdit_ClassName, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -53432,7 +53433,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(LabeledEdit_ToString, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -53731,7 +53732,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetText, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -53740,7 +53741,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn TextHint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetTextHint, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetTextHint, self.0));
       }
 
 	  pub fn SetTextHint(&self, aValue: &str) -> &Self  {
@@ -53869,7 +53870,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetSelText, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -54068,7 +54069,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetHint, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -54094,7 +54095,7 @@ impl TLabeledEdit {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(LabeledEdit_GetName, self.0));
+          return ToRustString(method_Call_1!(LabeledEdit_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -54303,7 +54304,7 @@ impl TBoundLabel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BoundLabel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -54316,7 +54317,7 @@ impl TBoundLabel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BoundLabel_ClassName, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -54336,7 +54337,7 @@ impl TBoundLabel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(BoundLabel_ToString, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -54379,7 +54380,7 @@ impl TBoundLabel {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BoundLabel_GetCaption, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -54701,7 +54702,7 @@ impl TBoundLabel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BoundLabel_GetHint, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -54727,7 +54728,7 @@ impl TBoundLabel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(BoundLabel_GetName, self.0));
+          return ToRustString(method_Call_1!(BoundLabel_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -54997,7 +54998,7 @@ impl TFlowPanel {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FlowPanel_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -55010,7 +55011,7 @@ impl TFlowPanel {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FlowPanel_ClassName, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -55030,7 +55031,7 @@ impl TFlowPanel {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(FlowPanel_ToString, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -55136,7 +55137,7 @@ impl TFlowPanel {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FlowPanel_GetCaption, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -55606,7 +55607,7 @@ impl TFlowPanel {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FlowPanel_GetHint, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -55632,7 +55633,7 @@ impl TFlowPanel {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(FlowPanel_GetName, self.0));
+          return ToRustString(method_Call_1!(FlowPanel_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -55906,7 +55907,7 @@ impl TCoolBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CoolBar_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -55919,7 +55920,7 @@ impl TCoolBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(CoolBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -55939,7 +55940,7 @@ impl TCoolBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBar_ToString, self.0));
+          return ToRustString(method_Call_1!(CoolBar_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -56550,7 +56551,7 @@ impl TCoolBar {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBar_GetHint, self.0));
+          return ToRustString(method_Call_1!(CoolBar_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -56576,7 +56577,7 @@ impl TCoolBar {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBar_GetName, self.0));
+          return ToRustString(method_Call_1!(CoolBar_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -56724,7 +56725,7 @@ impl TCoolBands {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBands_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CoolBands_GetNamePath, self.0));
       }
 
 	  pub fn Insert(&self, index: i32) -> TCollectionItem  {
@@ -56736,7 +56737,7 @@ impl TCoolBands {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBands_ClassName, self.0));
+          return ToRustString(method_Call_1!(CoolBands_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -56756,7 +56757,7 @@ impl TCoolBands {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBands_ToString, self.0));
+          return ToRustString(method_Call_1!(CoolBands_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -56795,7 +56796,7 @@ impl TCoolBand {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBand_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CoolBand_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -56803,7 +56804,7 @@ impl TCoolBand {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBand_ClassName, self.0));
+          return ToRustString(method_Call_1!(CoolBand_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -56823,7 +56824,7 @@ impl TCoolBand {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CoolBand_ToString, self.0));
+          return ToRustString(method_Call_1!(CoolBand_ToString, self.0));
       }
 
 	  pub fn Height(&self) -> i32  {
@@ -56948,7 +56949,7 @@ impl TCoolBand {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBand_GetText, self.0));
+          return ToRustString(method_Call_1!(CoolBand_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -56993,7 +56994,7 @@ impl TCoolBand {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CoolBand_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(CoolBand_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -57056,7 +57057,7 @@ impl TCollection {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Collection_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Collection_GetNamePath, self.0));
       }
 
 	  pub fn Insert(&self, index: i32) -> TCollectionItem  {
@@ -57068,7 +57069,7 @@ impl TCollection {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Collection_ClassName, self.0));
+          return ToRustString(method_Call_1!(Collection_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57088,7 +57089,7 @@ impl TCollection {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Collection_ToString, self.0));
+          return ToRustString(method_Call_1!(Collection_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -57151,7 +57152,7 @@ impl TPrinter {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Printer_ClassName, self.0));
+          return ToRustString(method_Call_1!(Printer_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57171,7 +57172,7 @@ impl TPrinter {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Printer_ToString, self.0));
+          return ToRustString(method_Call_1!(Printer_ToString, self.0));
       }
 
 	  pub fn Aborted(&self) -> bool  {
@@ -57234,7 +57235,7 @@ impl TPrinter {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Printer_GetTitle, self.0));
+          return ToRustString(method_Call_1!(Printer_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -57273,7 +57274,7 @@ impl TTaskDialog {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialog_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetNamePath, self.0));
       }
 
 	  pub fn HasParent(&self) -> bool {
@@ -57290,7 +57291,7 @@ impl TTaskDialog {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialog_ClassName, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57310,7 +57311,7 @@ impl TTaskDialog {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialog_ToString, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_ToString, self.0));
       }
 
 	  pub fn Buttons(&self) -> TTaskDialogButtons  {
@@ -57323,7 +57324,7 @@ impl TTaskDialog {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetCaption, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -57350,7 +57351,7 @@ impl TTaskDialog {
       }
 
 	  pub fn ExpandButtonCaption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetExpandButtonCaption, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetExpandButtonCaption, self.0));
       }
 
 	  pub fn SetExpandButtonCaption(&self, aValue: &str) -> &Self  {
@@ -57359,7 +57360,7 @@ impl TTaskDialog {
       }
 
 	  pub fn ExpandedText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetExpandedText, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetExpandedText, self.0));
       }
 
 	  pub fn SetExpandedText(&self, aValue: &str) -> &Self  {
@@ -57386,7 +57387,7 @@ impl TTaskDialog {
       }
 
 	  pub fn FooterText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetFooterText, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetFooterText, self.0));
       }
 
 	  pub fn SetFooterText(&self, aValue: &str) -> &Self  {
@@ -57413,7 +57414,7 @@ impl TTaskDialog {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetText, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -57422,7 +57423,7 @@ impl TTaskDialog {
       }
 
 	  pub fn Title<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetTitle, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetTitle, self.0));
       }
 
 	  pub fn SetTitle(&self, aValue: &str) -> &Self  {
@@ -57431,7 +57432,7 @@ impl TTaskDialog {
       }
 
 	  pub fn VerificationText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetVerificationText, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetVerificationText, self.0));
       }
 
 	  pub fn SetVerificationText(&self, aValue: &str) -> &Self  {
@@ -57484,7 +57485,7 @@ impl TTaskDialog {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialog_GetName, self.0));
+          return ToRustString(method_Call_1!(TaskDialog_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -57558,7 +57559,7 @@ impl TTaskDialogButtons {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogButtons_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtons_GetNamePath, self.0));
       }
 
 	  pub fn Insert(&self, index: i32) -> TCollectionItem  {
@@ -57570,7 +57571,7 @@ impl TTaskDialogButtons {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogButtons_ClassName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtons_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57590,7 +57591,7 @@ impl TTaskDialogButtons {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogButtons_ToString, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtons_ToString, self.0));
       }
 
 	  pub fn DefaultButton(&self) -> TTaskDialogBaseButtonItem  {
@@ -57632,7 +57633,7 @@ impl TTaskDialogButtonItem {
 	  impl_Free_method!(TaskDialogButtonItem_Free);
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogButtonItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtonItem_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -57645,7 +57646,7 @@ impl TTaskDialogButtonItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogButtonItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtonItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57665,7 +57666,7 @@ impl TTaskDialogButtonItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogButtonItem_ToString, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtonItem_ToString, self.0));
       }
 
 	  pub fn ModalResult(&self) -> TModalResult  {
@@ -57678,7 +57679,7 @@ impl TTaskDialogButtonItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogButtonItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtonItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -57714,7 +57715,7 @@ impl TTaskDialogButtonItem {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogButtonItem_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogButtonItem_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -57740,7 +57741,7 @@ impl TTaskDialogRadioButtonItem {
 	  impl_Free_method!(TaskDialogRadioButtonItem_Free);
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogRadioButtonItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TaskDialogRadioButtonItem_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -57753,7 +57754,7 @@ impl TTaskDialogRadioButtonItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogRadioButtonItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogRadioButtonItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57773,7 +57774,7 @@ impl TTaskDialogRadioButtonItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogRadioButtonItem_ToString, self.0));
+          return ToRustString(method_Call_1!(TaskDialogRadioButtonItem_ToString, self.0));
       }
 
 	  pub fn ModalResult(&self) -> TModalResult  {
@@ -57786,7 +57787,7 @@ impl TTaskDialogRadioButtonItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogRadioButtonItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(TaskDialogRadioButtonItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -57822,7 +57823,7 @@ impl TTaskDialogRadioButtonItem {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogRadioButtonItem_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogRadioButtonItem_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -57848,7 +57849,7 @@ impl TTaskDialogBaseButtonItem {
 	  impl_Free_method!(TaskDialogBaseButtonItem_Free);
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogBaseButtonItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(TaskDialogBaseButtonItem_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -57861,7 +57862,7 @@ impl TTaskDialogBaseButtonItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogBaseButtonItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogBaseButtonItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -57881,7 +57882,7 @@ impl TTaskDialogBaseButtonItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(TaskDialogBaseButtonItem_ToString, self.0));
+          return ToRustString(method_Call_1!(TaskDialogBaseButtonItem_ToString, self.0));
       }
 
 	  pub fn ModalResult(&self) -> TModalResult  {
@@ -57894,7 +57895,7 @@ impl TTaskDialogBaseButtonItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogBaseButtonItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(TaskDialogBaseButtonItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -57930,7 +57931,7 @@ impl TTaskDialogBaseButtonItem {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(TaskDialogBaseButtonItem_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(TaskDialogBaseButtonItem_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -58153,7 +58154,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBoxEx_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -58166,7 +58167,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBoxEx_ClassName, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -58186,7 +58187,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboBoxEx_ToString, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -58454,7 +58455,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn Text<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBoxEx_GetText, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_GetText, self.0));
       }
 
 	  pub fn SetText(&self, aValue: &str) -> &Self  {
@@ -58575,7 +58576,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn SelText<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBoxEx_GetSelText, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_GetSelText, self.0));
       }
 
 	  pub fn SetSelText(&self, aValue: &str) -> &Self  {
@@ -58805,7 +58806,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBoxEx_GetHint, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -58831,7 +58832,7 @@ impl TComboBoxEx {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboBoxEx_GetName, self.0));
+          return ToRustString(method_Call_1!(ComboBoxEx_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -58977,7 +58978,7 @@ impl TComboExItems {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboExItems_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ComboExItems_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -58985,7 +58986,7 @@ impl TComboExItems {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboExItems_ClassName, self.0));
+          return ToRustString(method_Call_1!(ComboExItems_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -59005,7 +59006,7 @@ impl TComboExItems {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboExItems_ToString, self.0));
+          return ToRustString(method_Call_1!(ComboExItems_ToString, self.0));
       }
 
 	  pub fn Count(&self) -> i32  {
@@ -59032,7 +59033,7 @@ impl TComboExItem {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboExItem_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ComboExItem_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -59040,7 +59041,7 @@ impl TComboExItem {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboExItem_ClassName, self.0));
+          return ToRustString(method_Call_1!(ComboExItem_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -59060,7 +59061,7 @@ impl TComboExItem {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ComboExItem_ToString, self.0));
+          return ToRustString(method_Call_1!(ComboExItem_ToString, self.0));
       }
 
 	  pub fn Indent(&self) -> i32  {
@@ -59091,7 +59092,7 @@ impl TComboExItem {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboExItem_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ComboExItem_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -59127,7 +59128,7 @@ impl TComboExItem {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ComboExItem_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(ComboExItem_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -59329,7 +59330,7 @@ impl TFrame {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Frame_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(Frame_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -59342,7 +59343,7 @@ impl TFrame {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Frame_ClassName, self.0));
+          return ToRustString(method_Call_1!(Frame_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -59362,7 +59363,7 @@ impl TFrame {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(Frame_ToString, self.0));
+          return ToRustString(method_Call_1!(Frame_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -59908,7 +59909,7 @@ impl TFrame {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Frame_GetHint, self.0));
+          return ToRustString(method_Call_1!(Frame_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -59934,7 +59935,7 @@ impl TFrame {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(Frame_GetName, self.0));
+          return ToRustString(method_Call_1!(Frame_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -60044,7 +60045,7 @@ impl TControlScrollBar {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ControlScrollBar_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ControlScrollBar_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -60052,7 +60053,7 @@ impl TControlScrollBar {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlScrollBar_ClassName, self.0));
+          return ToRustString(method_Call_1!(ControlScrollBar_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -60072,7 +60073,7 @@ impl TControlScrollBar {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlScrollBar_ToString, self.0));
+          return ToRustString(method_Call_1!(ControlScrollBar_ToString, self.0));
       }
 
 	  pub fn ScrollPos(&self) -> i32  {
@@ -60149,7 +60150,7 @@ impl TSizeConstraints {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(SizeConstraints_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(SizeConstraints_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -60157,7 +60158,7 @@ impl TSizeConstraints {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SizeConstraints_ClassName, self.0));
+          return ToRustString(method_Call_1!(SizeConstraints_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -60177,7 +60178,7 @@ impl TSizeConstraints {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(SizeConstraints_ToString, self.0));
+          return ToRustString(method_Call_1!(SizeConstraints_ToString, self.0));
       }
 
 	  pub fn SetOnChange<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
@@ -60340,7 +60341,7 @@ impl TXButton {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(XButton_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(XButton_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -60353,7 +60354,7 @@ impl TXButton {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(XButton_ClassName, self.0));
+          return ToRustString(method_Call_1!(XButton_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -60373,7 +60374,7 @@ impl TXButton {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(XButton_ToString, self.0));
+          return ToRustString(method_Call_1!(XButton_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -60407,7 +60408,7 @@ impl TXButton {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(XButton_GetCaption, self.0));
+          return ToRustString(method_Call_1!(XButton_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -60775,7 +60776,7 @@ impl TXButton {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(XButton_GetHint, self.0));
+          return ToRustString(method_Call_1!(XButton_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -60801,7 +60802,7 @@ impl TXButton {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(XButton_GetName, self.0));
+          return ToRustString(method_Call_1!(XButton_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -60889,7 +60890,7 @@ impl TAnchorSide {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(AnchorSide_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(AnchorSide_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -60897,7 +60898,7 @@ impl TAnchorSide {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(AnchorSide_ClassName, self.0));
+          return ToRustString(method_Call_1!(AnchorSide_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -60917,7 +60918,7 @@ impl TAnchorSide {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(AnchorSide_ToString, self.0));
+          return ToRustString(method_Call_1!(AnchorSide_ToString, self.0));
       }
 
 	  pub fn Owner(&self) -> TControl  {
@@ -60958,7 +60959,7 @@ impl TControlBorderSpacing {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ControlBorderSpacing_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ControlBorderSpacing_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -60966,7 +60967,7 @@ impl TControlBorderSpacing {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlBorderSpacing_ClassName, self.0));
+          return ToRustString(method_Call_1!(ControlBorderSpacing_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -60986,7 +60987,7 @@ impl TControlBorderSpacing {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlBorderSpacing_ToString, self.0));
+          return ToRustString(method_Call_1!(ControlBorderSpacing_ToString, self.0));
       }
 
 	  pub fn Control(&self) -> TControl  {
@@ -61135,7 +61136,7 @@ impl TControlChildSizing {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ControlChildSizing_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ControlChildSizing_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -61143,7 +61144,7 @@ impl TControlChildSizing {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlChildSizing_ClassName, self.0));
+          return ToRustString(method_Call_1!(ControlChildSizing_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -61163,7 +61164,7 @@ impl TControlChildSizing {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ControlChildSizing_ToString, self.0));
+          return ToRustString(method_Call_1!(ControlChildSizing_ToString, self.0));
       }
 
 	  pub fn Control(&self) -> TWinControl  {
@@ -61458,7 +61459,7 @@ impl TCheckGroup {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckGroup_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -61471,7 +61472,7 @@ impl TCheckGroup {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckGroup_ClassName, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -61491,7 +61492,7 @@ impl TCheckGroup {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(CheckGroup_ToString, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -61570,7 +61571,7 @@ impl TCheckGroup {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckGroup_GetCaption, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -62031,7 +62032,7 @@ impl TCheckGroup {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckGroup_GetHint, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -62057,7 +62058,7 @@ impl TCheckGroup {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(CheckGroup_GetName, self.0));
+          return ToRustString(method_Call_1!(CheckGroup_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -62354,7 +62355,7 @@ impl TToggleBox {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToggleBox_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_GetNamePath, self.0));
       }
 
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
@@ -62367,7 +62368,7 @@ impl TToggleBox {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToggleBox_ClassName, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -62387,7 +62388,7 @@ impl TToggleBox {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(ToggleBox_ToString, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_ToString, self.0));
       }
 
 	  pub fn AnchorToNeighbour(&self, aSide: TAnchorKind, aSpace: i32, aSibling: &dyn IControl) -> &Self {
@@ -62457,7 +62458,7 @@ impl TToggleBox {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToggleBox_GetCaption, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -62547,7 +62548,7 @@ impl TToggleBox {
       }
 
 	  pub fn Hint<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToggleBox_GetHint, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_GetHint, self.0));
       }
 
 	  pub fn SetHint(&self, aValue: &str) -> &Self  {
@@ -62919,7 +62920,7 @@ impl TToggleBox {
       }
 
 	  pub fn Name<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(ToggleBox_GetName, self.0));
+          return ToRustString(method_Call_1!(ToggleBox_GetName, self.0));
       }
 
 	  pub fn SetName(&self, aValue: &str) -> &Self  {
@@ -63034,7 +63035,7 @@ impl TGridColumnTitle {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumnTitle_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(GridColumnTitle_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -63042,7 +63043,7 @@ impl TGridColumnTitle {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumnTitle_ClassName, self.0));
+          return ToRustString(method_Call_1!(GridColumnTitle_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -63062,7 +63063,7 @@ impl TGridColumnTitle {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumnTitle_ToString, self.0));
+          return ToRustString(method_Call_1!(GridColumnTitle_ToString, self.0));
       }
 
 	  pub fn Column(&self) -> TGridColumn  {
@@ -63079,7 +63080,7 @@ impl TGridColumnTitle {
       }
 
 	  pub fn Caption<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumnTitle_GetCaption, self.0));
+          return ToRustString(method_Call_1!(GridColumnTitle_GetCaption, self.0));
       }
 
 	  pub fn SetCaption(&self, aValue: &str) -> &Self  {
@@ -63170,7 +63171,7 @@ impl TGridColumn {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumn_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(GridColumn_GetNamePath, self.0));
       }
 
 	  pub fn ClassType(&self) -> TClass {
@@ -63178,7 +63179,7 @@ impl TGridColumn {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumn_ClassName, self.0));
+          return ToRustString(method_Call_1!(GridColumn_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -63198,7 +63199,7 @@ impl TGridColumn {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumn_ToString, self.0));
+          return ToRustString(method_Call_1!(GridColumn_ToString, self.0));
       }
 
 	  pub fn Grid(&self) -> TStringGrid  {
@@ -63362,7 +63363,7 @@ impl TGridColumn {
       }
 
 	  pub fn ValueChecked<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumn_GetValueChecked, self.0));
+          return ToRustString(method_Call_1!(GridColumn_GetValueChecked, self.0));
       }
 
 	  pub fn SetValueChecked(&self, aValue: &str) -> &Self  {
@@ -63371,7 +63372,7 @@ impl TGridColumn {
       }
 
 	  pub fn ValueUnchecked<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumn_GetValueUnchecked, self.0));
+          return ToRustString(method_Call_1!(GridColumn_GetValueUnchecked, self.0));
       }
 
 	  pub fn SetValueUnchecked(&self, aValue: &str) -> &Self  {
@@ -63398,7 +63399,7 @@ impl TGridColumn {
       }
 
 	  pub fn DisplayName<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumn_GetDisplayName, self.0));
+          return ToRustString(method_Call_1!(GridColumn_GetDisplayName, self.0));
       }
 
 	  pub fn SetDisplayName(&self, aValue: &str) -> &Self  {
@@ -63470,7 +63471,7 @@ impl TGridColumns {
       }
 
 	  pub fn GetNamePath<'a>(&self) -> Cow<'a, str>  {
-          return to_RustString!(method_Call_1!(GridColumns_GetNamePath, self.0));
+          return ToRustString(method_Call_1!(GridColumns_GetNamePath, self.0));
       }
 
 	  pub fn Insert(&self, index: i32) -> TCollectionItem  {
@@ -63482,7 +63483,7 @@ impl TGridColumns {
       }
 
 	  pub fn ClassName<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumns_ClassName, self.0));
+          return ToRustString(method_Call_1!(GridColumns_ClassName, self.0));
       }
 
 	  pub fn InstanceSize(&self) -> i32 {
@@ -63502,7 +63503,7 @@ impl TGridColumns {
       }
 
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
-          return to_RustString!(method_Call_1!(GridColumns_ToString, self.0));
+          return ToRustString(method_Call_1!(GridColumns_ToString, self.0));
       }
 
 	  pub fn Grid(&self) -> TStringGrid  {

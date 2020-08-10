@@ -143,13 +143,6 @@ macro_rules! impl_Object_methods {
 }
 
 #[macro_use]
-macro_rules! to_RustString {
-    ($name: expr) => {
-        unsafe { CStr::from_ptr($name).to_string_lossy() }
-    };
-}
-
-#[macro_use]
 macro_rules! to_CString {
     ($name: expr) => {
         CString::new($name).unwrap().as_ptr()
