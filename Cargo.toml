@@ -8,6 +8,7 @@ exclude = ["rust-vcl.iml"]
 keywords = ["vcl", "lcl"]
 categories = ["gui"]
 repository = "https://github.com/ying32/rust-vcl"
+description = "cross-platform rust GUI"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 build = "src/build.rs"
