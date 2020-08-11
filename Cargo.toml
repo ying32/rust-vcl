@@ -23,6 +23,7 @@ lazy_static="1.4.0"
 
 [dependencies.vcl_derives]
 path = "./vcl_derives"
+version = "0.1.0"
 
 [build-dependencies]
 dunce = "0.1.1"
