@@ -234,8 +234,8 @@ impl TMainForm {
             .SetOnClick(sid, Self::onListBox1Click)
             .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
 
-        // 在MSVC x64下设置这个会错误，原因不明。。。也许是跟msvc编译器有冲突也说不定
-        #[cfg(not(all(target_env = "msvc", target_os = "windows", target_arch = "x86_64")))]
+        // 因为liblcl没有支持ASLR，所以MSVC编译器编译的会出现这个，使用link器参数关闭：/DYNAMICBASE:NO
+        //#[cfg(not(all(target_env = "msvc", target_os = "windows", target_arch = "x86_64")))]
         self.listBox1.SetStyle(TListBoxStyle::lbOwnerDrawFixed);
 
         for i in 0..20 {

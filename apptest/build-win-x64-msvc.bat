@@ -4,7 +4,7 @@ set destDir=.\target\debug
 
 copy ".\win64\liblcl.lib" ".\liblcl.lib" /V
 
-cargo rustc -- -C link-args="/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /MACHINE:X64 app.res"
+cargo rustc -- -C link-args="/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /DYNAMICBASE:NO /MACHINE:X64 app.res"
 
 if %errorlevel%==0 (
 	if not exist "%destDir%\liblcl.dll" (copy ".\win64\liblcl.dll" "%destDir%\liblcl.dll") 
