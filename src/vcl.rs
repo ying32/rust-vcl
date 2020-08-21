@@ -488,6 +488,11 @@ impl TControl {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self  {
+          method_Call_1!(Control_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self  {
           method_Call_1!(Control_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -495,6 +500,62 @@ impl TControl {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self  {
           method_Call_1!(Control_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32  {
+          return method_Call_1!(Control_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self  {
+          method_Call_1!(Control_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self  {
+          method_Call_1!(Control_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self  {
+          let mut ps2 = aProportion;
+          method_Call_1!(Control_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -852,6 +913,11 @@ impl TWinControl {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self  {
+          method_Call_1!(WinControl_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self  {
           method_Call_1!(WinControl_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -1031,6 +1097,11 @@ impl TWinControl {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(WinControl_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(WinControl_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -1038,6 +1109,62 @@ impl TWinControl {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(WinControl_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(WinControl_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(WinControl_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(WinControl_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(WinControl_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -1868,6 +1995,11 @@ impl TCheckBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(CheckBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(CheckBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -2047,6 +2179,11 @@ impl TCheckBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(CheckBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(CheckBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -2054,6 +2191,62 @@ impl TCheckBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(CheckBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(CheckBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(CheckBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(CheckBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -2726,6 +2919,11 @@ impl TRadioButton {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(RadioButton_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(RadioButton_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -2905,6 +3103,11 @@ impl TRadioButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(RadioButton_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(RadioButton_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -2912,6 +3115,62 @@ impl TRadioButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(RadioButton_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioButton_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(RadioButton_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(RadioButton_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(RadioButton_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -3566,6 +3825,11 @@ impl TGroupBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(GroupBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(GroupBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -3745,6 +4009,11 @@ impl TGroupBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(GroupBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(GroupBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -3752,6 +4021,62 @@ impl TGroupBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(GroupBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(GroupBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(GroupBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(GroupBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(GroupBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -4512,6 +4837,11 @@ impl TLabel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Label_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Label_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -4519,6 +4849,62 @@ impl TLabel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Label_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Label_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Label_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Label_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Label_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -5133,6 +5519,11 @@ impl TListBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ListBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ListBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -5312,6 +5703,11 @@ impl TListBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ListBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ListBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -5319,6 +5715,62 @@ impl TListBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ListBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ListBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ListBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ListBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -6110,6 +6562,11 @@ impl TComboBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ComboBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ComboBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -6289,6 +6746,11 @@ impl TComboBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ComboBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ComboBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -6296,6 +6758,62 @@ impl TComboBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ComboBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ComboBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ComboBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ComboBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -7072,6 +7590,11 @@ impl TPanel {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Panel_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Panel_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -7251,6 +7774,11 @@ impl TPanel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Panel_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Panel_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -7258,6 +7786,62 @@ impl TPanel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Panel_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Panel_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Panel_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Panel_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Panel_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -8095,6 +8679,11 @@ impl TImage {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Image_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Image_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -8102,6 +8691,62 @@ impl TImage {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Image_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Image_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Image_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Image_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Image_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -8757,6 +9402,11 @@ impl TLinkLabel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(LinkLabel_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(LinkLabel_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -8764,6 +9414,62 @@ impl TLinkLabel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(LinkLabel_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LinkLabel_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(LinkLabel_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(LinkLabel_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(LinkLabel_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -9399,6 +10105,11 @@ impl TSpeedButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(SpeedButton_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(SpeedButton_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -9406,6 +10117,62 @@ impl TSpeedButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(SpeedButton_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpeedButton_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(SpeedButton_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(SpeedButton_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(SpeedButton_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -10069,6 +10836,11 @@ impl TSplitter {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Splitter_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Splitter_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -10076,6 +10848,62 @@ impl TSplitter {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Splitter_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Splitter_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Splitter_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Splitter_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Splitter_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -10478,6 +11306,11 @@ impl TRadioGroup {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(RadioGroup_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(RadioGroup_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -10657,6 +11490,11 @@ impl TRadioGroup {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(RadioGroup_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(RadioGroup_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -10664,6 +11502,62 @@ impl TRadioGroup {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(RadioGroup_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RadioGroup_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(RadioGroup_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(RadioGroup_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(RadioGroup_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -11268,6 +12162,11 @@ impl TStaticText {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(StaticText_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(StaticText_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -11447,6 +12346,11 @@ impl TStaticText {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(StaticText_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(StaticText_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -11454,6 +12358,62 @@ impl TStaticText {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(StaticText_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StaticText_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(StaticText_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(StaticText_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(StaticText_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -12144,6 +13104,11 @@ impl TColorBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ColorBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ColorBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -12323,6 +13288,11 @@ impl TColorBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ColorBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ColorBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -12330,6 +13300,62 @@ impl TColorBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ColorBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ColorBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ColorBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ColorBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -13108,6 +14134,11 @@ impl TColorListBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ColorListBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ColorListBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -13287,6 +14318,11 @@ impl TColorListBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ColorListBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ColorListBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -13294,6 +14330,62 @@ impl TColorListBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ColorListBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ColorListBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ColorListBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ColorListBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ColorListBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -14587,6 +15679,15 @@ impl TColorDialog {
           return &self;
       }
 
+	  pub fn CustomColors(&self) -> TStrings  {
+          return method_Call_2!(TStrings, ColorDialog_GetCustomColors, self.0);
+      }
+
+	  pub fn SetCustomColors(&self, aValue: &dyn IStrings) -> &Self  {
+          method_Call_1!(ColorDialog_SetCustomColors, self.0, aValue.Instance());
+          return &self;
+      }
+
 	  pub fn Handle(&self) -> HWND  {
           return method_Call_1!(ColorDialog_GetHandle, self.0);
       }
@@ -15641,6 +16742,11 @@ impl TRichEdit {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(RichEdit_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(RichEdit_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -15820,6 +16926,11 @@ impl TRichEdit {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(RichEdit_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(RichEdit_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -15827,6 +16938,62 @@ impl TRichEdit {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(RichEdit_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(RichEdit_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(RichEdit_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(RichEdit_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(RichEdit_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -16678,6 +17845,11 @@ impl TTrackBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(TrackBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(TrackBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -16857,6 +18029,11 @@ impl TTrackBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(TrackBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(TrackBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -16864,6 +18041,62 @@ impl TTrackBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(TrackBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TrackBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(TrackBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(TrackBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(TrackBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -17845,6 +19078,11 @@ impl TUpDown {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(UpDown_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(UpDown_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -18024,6 +19262,11 @@ impl TUpDown {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(UpDown_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(UpDown_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -18031,6 +19274,62 @@ impl TUpDown {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(UpDown_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(UpDown_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(UpDown_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(UpDown_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(UpDown_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -18629,6 +19928,11 @@ impl TProgressBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ProgressBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ProgressBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -18808,6 +20112,11 @@ impl TProgressBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ProgressBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ProgressBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -18815,6 +20124,62 @@ impl TProgressBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ProgressBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ProgressBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ProgressBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ProgressBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ProgressBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -19467,6 +20832,11 @@ impl TDateTimePicker {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(DateTimePicker_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(DateTimePicker_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -19646,6 +21016,11 @@ impl TDateTimePicker {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(DateTimePicker_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(DateTimePicker_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -19653,6 +21028,62 @@ impl TDateTimePicker {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(DateTimePicker_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DateTimePicker_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(DateTimePicker_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(DateTimePicker_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(DateTimePicker_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -20475,6 +21906,11 @@ impl TMonthCalendar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(MonthCalendar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(MonthCalendar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -20654,6 +22090,11 @@ impl TMonthCalendar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(MonthCalendar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(MonthCalendar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -20661,6 +22102,62 @@ impl TMonthCalendar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(MonthCalendar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MonthCalendar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(MonthCalendar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(MonthCalendar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(MonthCalendar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -21320,6 +22817,11 @@ impl TListView {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ListView_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ListView_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -21499,6 +23001,11 @@ impl TListView {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ListView_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ListView_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -21506,6 +23013,62 @@ impl TListView {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ListView_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ListView_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ListView_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ListView_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ListView_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -22059,17 +23622,17 @@ impl TListView {
           return &self;
       }
 
-	  pub fn SetOnData<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataEvent<T>) -> &Self  {
+	  pub fn SetOnData<T>(&self, aSelfId: usize, aEventId: TLVDataEvent<T>) -> &Self  {
           method_Call_1!(ListView_SetOnData, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
-	  pub fn SetOnDataFind<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataFindEvent<T>) -> &Self  {
+	  pub fn SetOnDataFind<T>(&self, aSelfId: usize, aEventId: TLVDataFindEvent<T>) -> &Self  {
           method_Call_1!(ListView_SetOnDataFind, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
-	  pub fn SetOnDataHint<T>(&self, aSelfId: usize, aEventId: TLVOwnerDataHintEvent<T>) -> &Self  {
+	  pub fn SetOnDataHint<T>(&self, aSelfId: usize, aEventId: TLVDataHintEvent<T>) -> &Self  {
           method_Call_1!(ListView_SetOnDataHint, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
@@ -22651,6 +24214,11 @@ impl TTreeView {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(TreeView_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(TreeView_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -22830,6 +24398,11 @@ impl TTreeView {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(TreeView_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(TreeView_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -22837,6 +24410,62 @@ impl TTreeView {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(TreeView_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TreeView_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(TreeView_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(TreeView_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(TreeView_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -23894,6 +25523,11 @@ impl TStatusBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(StatusBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(StatusBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -24068,6 +25702,11 @@ impl TStatusBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(StatusBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(StatusBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -24075,6 +25714,62 @@ impl TStatusBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(StatusBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StatusBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(StatusBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(StatusBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(StatusBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -24764,6 +26459,11 @@ impl TToolBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ToolBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ToolBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -24943,6 +26643,11 @@ impl TToolBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ToolBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ToolBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -24950,6 +26655,62 @@ impl TToolBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ToolBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ToolBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ToolBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ToolBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -25742,6 +27503,11 @@ impl TBitBtn {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(BitBtn_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(BitBtn_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -25921,6 +27687,11 @@ impl TBitBtn {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(BitBtn_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(BitBtn_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -25928,6 +27699,62 @@ impl TBitBtn {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(BitBtn_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BitBtn_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(BitBtn_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(BitBtn_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(BitBtn_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -27045,6 +28872,11 @@ impl TMemo {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Memo_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Memo_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -27224,6 +29056,11 @@ impl TMemo {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Memo_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Memo_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -27231,6 +29068,62 @@ impl TMemo {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Memo_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Memo_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Memo_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Memo_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Memo_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -30155,6 +32048,11 @@ impl TPageControl {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(PageControl_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(PageControl_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -30334,6 +32232,11 @@ impl TPageControl {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(PageControl_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(PageControl_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -30341,6 +32244,62 @@ impl TPageControl {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(PageControl_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PageControl_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(PageControl_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(PageControl_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(PageControl_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -31045,6 +33004,11 @@ impl TTabSheet {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(TabSheet_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(TabSheet_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -31224,6 +33188,11 @@ impl TTabSheet {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(TabSheet_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(TabSheet_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -31231,6 +33200,62 @@ impl TTabSheet {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(TabSheet_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(TabSheet_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(TabSheet_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(TabSheet_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(TabSheet_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -31866,6 +33891,11 @@ impl TButton {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Button_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Button_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -32045,6 +34075,11 @@ impl TButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Button_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Button_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -32052,6 +34087,62 @@ impl TButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Button_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Button_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Button_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Button_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Button_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -32727,6 +34818,11 @@ impl TEdit {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Edit_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Edit_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -32906,6 +35002,11 @@ impl TEdit {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Edit_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Edit_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -32913,6 +35014,62 @@ impl TEdit {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Edit_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Edit_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Edit_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Edit_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Edit_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -34497,6 +36654,11 @@ impl TSpinEdit {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(SpinEdit_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(SpinEdit_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -34676,6 +36838,11 @@ impl TSpinEdit {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(SpinEdit_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(SpinEdit_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -34683,6 +36850,62 @@ impl TSpinEdit {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(SpinEdit_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(SpinEdit_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(SpinEdit_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(SpinEdit_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(SpinEdit_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -35445,6 +37668,11 @@ impl TMiniWebview {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(MiniWebview_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(MiniWebview_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -35614,6 +37842,11 @@ impl TMiniWebview {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(MiniWebview_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(MiniWebview_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -35621,6 +37854,62 @@ impl TMiniWebview {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(MiniWebview_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MiniWebview_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(MiniWebview_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(MiniWebview_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(MiniWebview_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -37831,6 +40120,11 @@ impl TToolButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ToolButton_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ToolButton_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -37838,6 +40132,62 @@ impl TToolButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ToolButton_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToolButton_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ToolButton_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ToolButton_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ToolButton_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -39109,6 +41459,11 @@ impl TPaintBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(PaintBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(PaintBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -39116,6 +41471,62 @@ impl TPaintBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(PaintBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(PaintBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(PaintBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(PaintBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(PaintBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -39875,6 +42286,11 @@ impl TForm {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Form_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Form_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -40039,6 +42455,11 @@ impl TForm {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Form_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Form_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -40046,6 +42467,62 @@ impl TForm {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Form_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Form_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Form_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Form_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Form_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -40069,6 +42546,15 @@ impl TForm {
 
 	  pub fn SetShowInTaskBar(&self, aValue: TShowInTaskbar) -> &Self  {
           method_Call_1!(Form_SetShowInTaskBar, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn DesignTimePPI(&self) -> i32  {
+          return method_Call_1!(Form_GetDesignTimePPI, self.0);
+      }
+
+	  pub fn SetDesignTimePPI(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Form_SetDesignTimePPI, self.0, aValue);
           return &self;
       }
 
@@ -41338,6 +43824,11 @@ impl TScrollBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ScrollBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ScrollBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -41517,6 +44008,11 @@ impl TScrollBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ScrollBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ScrollBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -41524,6 +44020,62 @@ impl TScrollBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ScrollBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ScrollBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ScrollBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ScrollBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -42183,6 +44735,11 @@ impl TMaskEdit {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(MaskEdit_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(MaskEdit_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -42358,6 +44915,11 @@ impl TMaskEdit {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(MaskEdit_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(MaskEdit_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -42365,6 +44927,62 @@ impl TMaskEdit {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(MaskEdit_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(MaskEdit_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(MaskEdit_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(MaskEdit_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(MaskEdit_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -43254,6 +45872,11 @@ impl TShape {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Shape_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Shape_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -43261,6 +45884,62 @@ impl TShape {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Shape_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Shape_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Shape_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Shape_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Shape_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -43830,6 +46509,11 @@ impl TBevel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Bevel_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Bevel_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -43837,6 +46521,62 @@ impl TBevel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Bevel_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Bevel_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Bevel_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Bevel_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Bevel_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -44226,6 +46966,11 @@ impl TScrollBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ScrollBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ScrollBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -44405,6 +47150,11 @@ impl TScrollBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ScrollBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ScrollBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -44412,6 +47162,62 @@ impl TScrollBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ScrollBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ScrollBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ScrollBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ScrollBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ScrollBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -45154,6 +47960,11 @@ impl TCheckListBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(CheckListBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(CheckListBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -45333,6 +48144,11 @@ impl TCheckListBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(CheckListBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(CheckListBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -45340,6 +48156,62 @@ impl TCheckListBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(CheckListBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckListBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(CheckListBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(CheckListBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(CheckListBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -46229,6 +49101,11 @@ impl TGauge {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Gauge_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Gauge_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -46236,6 +49113,62 @@ impl TGauge {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Gauge_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Gauge_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Gauge_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Gauge_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Gauge_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -46828,6 +49761,11 @@ impl TImageButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ImageButton_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ImageButton_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -46835,6 +49773,62 @@ impl TImageButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ImageButton_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ImageButton_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ImageButton_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ImageButton_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ImageButton_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -48464,6 +51458,11 @@ impl TStringGrid {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(StringGrid_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(StringGrid_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -48643,6 +51642,11 @@ impl TStringGrid {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(StringGrid_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(StringGrid_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -48650,6 +51654,62 @@ impl TStringGrid {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(StringGrid_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(StringGrid_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(StringGrid_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(StringGrid_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(StringGrid_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -49996,6 +53056,11 @@ impl TDrawGrid {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(DrawGrid_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(DrawGrid_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -50175,6 +53240,11 @@ impl TDrawGrid {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(DrawGrid_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(DrawGrid_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -50182,6 +53252,62 @@ impl TDrawGrid {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(DrawGrid_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(DrawGrid_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(DrawGrid_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(DrawGrid_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(DrawGrid_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -51093,6 +54219,11 @@ impl TValueListEditor {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ValueListEditor_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ValueListEditor_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -51267,6 +54398,11 @@ impl TValueListEditor {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ValueListEditor_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ValueListEditor_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -51274,6 +54410,62 @@ impl TValueListEditor {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ValueListEditor_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ValueListEditor_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ValueListEditor_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ValueListEditor_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ValueListEditor_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -52175,6 +55367,11 @@ impl THeaderControl {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(HeaderControl_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(HeaderControl_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -52354,6 +55551,11 @@ impl THeaderControl {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(HeaderControl_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(HeaderControl_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -52361,6 +55563,62 @@ impl THeaderControl {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(HeaderControl_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(HeaderControl_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(HeaderControl_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(HeaderControl_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(HeaderControl_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -53282,6 +56540,11 @@ impl TLabeledEdit {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(LabeledEdit_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(LabeledEdit_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -53456,6 +56719,11 @@ impl TLabeledEdit {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(LabeledEdit_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(LabeledEdit_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -53463,6 +56731,62 @@ impl TLabeledEdit {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(LabeledEdit_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(LabeledEdit_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(LabeledEdit_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(LabeledEdit_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(LabeledEdit_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -54360,6 +57684,11 @@ impl TBoundLabel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(BoundLabel_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(BoundLabel_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -54367,6 +57696,62 @@ impl TBoundLabel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(BoundLabel_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(BoundLabel_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(BoundLabel_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(BoundLabel_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(BoundLabel_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -54875,6 +58260,11 @@ impl TFlowPanel {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(FlowPanel_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(FlowPanel_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -55054,6 +58444,11 @@ impl TFlowPanel {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(FlowPanel_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(FlowPanel_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -55061,6 +58456,62 @@ impl TFlowPanel {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(FlowPanel_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(FlowPanel_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(FlowPanel_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(FlowPanel_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(FlowPanel_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -55784,6 +59235,11 @@ impl TCoolBar {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(CoolBar_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(CoolBar_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -55963,6 +59419,11 @@ impl TCoolBar {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(CoolBar_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(CoolBar_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -55970,6 +59431,62 @@ impl TCoolBar {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(CoolBar_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CoolBar_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(CoolBar_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(CoolBar_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(CoolBar_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -58031,6 +61548,11 @@ impl TComboBoxEx {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ComboBoxEx_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ComboBoxEx_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -58210,6 +61732,11 @@ impl TComboBoxEx {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ComboBoxEx_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ComboBoxEx_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -58217,6 +61744,62 @@ impl TComboBoxEx {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ComboBoxEx_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ComboBoxEx_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ComboBoxEx_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ComboBoxEx_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ComboBoxEx_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -59207,6 +62790,11 @@ impl TFrame {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(Frame_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(Frame_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -59386,6 +62974,11 @@ impl TFrame {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(Frame_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(Frame_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -59393,6 +62986,71 @@ impl TFrame {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(Frame_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(Frame_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(Frame_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(Frame_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(Frame_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
+          return &self;
+      }
+
+	  pub fn DesignTimePPI(&self) -> i32  {
+          return method_Call_1!(Frame_GetDesignTimePPI, self.0);
+      }
+
+	  pub fn SetDesignTimePPI(&self, aValue: i32) -> &Self  {
+          method_Call_1!(Frame_SetDesignTimePPI, self.0, aValue);
           return &self;
       }
 
@@ -60397,6 +64055,11 @@ impl TXButton {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(XButton_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(XButton_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -60404,6 +64067,62 @@ impl TXButton {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(XButton_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(XButton_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(XButton_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(XButton_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(XButton_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -61336,6 +65055,11 @@ impl TCheckGroup {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(CheckGroup_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(CheckGroup_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -61515,6 +65239,11 @@ impl TCheckGroup {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(CheckGroup_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(CheckGroup_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -61522,6 +65251,62 @@ impl TCheckGroup {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(CheckGroup_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(CheckGroup_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(CheckGroup_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(CheckGroup_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(CheckGroup_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -62232,6 +66017,11 @@ impl TToggleBox {
           return &self;
       }
 
+	  pub fn PaintTo(&self, dC: HDC, x: i32, y: i32) -> &Self {
+          method_Call_1!(ToggleBox_PaintTo, self.0, dC, x, y);
+          return &self;
+      }
+
 	  pub fn RemoveControl(&self, aControl: &dyn IControl) -> &Self {
           method_Call_1!(ToggleBox_RemoveControl, self.0, aControl.Instance());
           return &self;
@@ -62411,6 +66201,11 @@ impl TToggleBox {
           return &self;
       }
 
+	  pub fn AnchorSame(&self, aSide: TAnchorKind, aSibling: &dyn IControl) -> &Self {
+          method_Call_1!(ToggleBox_AnchorSame, self.0, aSide, aSibling.Instance());
+          return &self;
+      }
+
 	  pub fn AnchorAsAlign(&self, aTheAlign: TAlign, aSpace: i32) -> &Self {
           method_Call_1!(ToggleBox_AnchorAsAlign, self.0, aTheAlign, aSpace);
           return &self;
@@ -62418,6 +66213,62 @@ impl TToggleBox {
 
 	  pub fn AnchorClient(&self, aSpace: i32) -> &Self {
           method_Call_1!(ToggleBox_AnchorClient, self.0, aSpace);
+          return &self;
+      }
+
+	  pub fn ScaleDesignToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleDesignToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormToDesign(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleFormToDesign, self.0, aSize);
+      }
+
+	  pub fn Scale96ToForm(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_Scale96ToForm, self.0, aSize);
+      }
+
+	  pub fn ScaleFormTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleFormTo96, self.0, aSize);
+      }
+
+	  pub fn Scale96ToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_Scale96ToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleFontTo96, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenToFont(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleScreenToFont, self.0, aSize);
+      }
+
+	  pub fn ScaleFontToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleFontToScreen, self.0, aSize);
+      }
+
+	  pub fn Scale96ToScreen(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_Scale96ToScreen, self.0, aSize);
+      }
+
+	  pub fn ScaleScreenTo96(&self, aSize: i32) -> i32 {
+          return method_Call_1!(ToggleBox_ScaleScreenTo96, self.0, aSize);
+      }
+
+	  pub fn AutoAdjustLayout(&self, aMode: TLayoutAdjustmentPolicy, aFromPPI: i32, aToPPI: i32, aOldFormWidth: i32, aNewFormWidth: i32) -> &Self {
+          method_Call_1!(ToggleBox_AutoAdjustLayout, self.0, aMode, aFromPPI, aToPPI, aOldFormWidth, aNewFormWidth);
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self {
+          method_Call_1!(ToggleBox_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self {
+          let mut ps2 = aProportion;
+          method_Call_1!(ToggleBox_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 
@@ -63030,6 +66881,17 @@ impl TGridColumnTitle {
           return &self;
       }
 
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self  {
+          method_Call_1!(GridColumnTitle_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self  {
+          let mut ps2 = aProportion;
+          method_Call_1!(GridColumnTitle_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
+          return &self;
+      }
+
 	  pub fn IsDefault(&self) -> bool  {
           return method_Call_1!(GridColumnTitle_IsDefault, self.0);
       }
@@ -63163,6 +67025,17 @@ impl_IObject!(TGridColumnTitle);
 impl TGridColumn {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
           method_Call_1!(GridColumn_Assign, self.0, source.Instance());
+          return &self;
+      }
+
+	  pub fn FixDesignFontsPPI(&self, aDesignTimePPI: i32) -> &Self  {
+          method_Call_1!(GridColumn_FixDesignFontsPPI, self.0, aDesignTimePPI);
+          return &self;
+      }
+
+	  pub fn ScaleFontsPPI(&self, aToPPI: i32, aProportion: f64) -> &Self  {
+          let mut ps2 = aProportion;
+          method_Call_1!(GridColumn_ScaleFontsPPI, self.0, aToPPI, &mut ps2);
           return &self;
       }
 

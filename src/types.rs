@@ -2219,6 +2219,15 @@ pub enum TImageOrientation {
     ioVertical,
 }
 
+#[repr(C)]
+#[derive(PartialEq, Debug, Clone)]
+pub enum TLayoutAdjustmentPolicy {
+    lapDefault, // widgetset dependent
+    lapFixedLayout, // A fixed absolute layout in all platforms
+    lapAutoAdjustWithoutHorizontalScrolling, // Smartphone platforms use this one,
+    lapAutoAdjustForDPI, // For desktops using High DPI, scale x and y to fit the DPI
+}
+
 
 #[cfg(target_arch = "x86")]
 #[repr(C)]
@@ -2489,10 +2498,10 @@ pub type TMeasureItemEvent<T> = fn(T, usize, i32, *mut i32);
 pub type TLVChangingEvent<T> = fn(T, usize, usize, TItemChange, *mut bool);
 
 // fn (&self, sender: usize, item: usize)
-pub type TLVOwnerDataEvent<T> = fn(T, usize, usize);
+pub type TLVDataEvent<T> = fn(T, usize, usize);
 
 // fn (&self, sender: usize, find: TItemFind, findString: *const c_char, findPosition: *mut TPoint, findData: TCustomData, startIndex: i32, direction: TSearchDirection, warp: bool, index: *mut i32)
-pub type TLVOwnerDataFindEvent<T> = fn(T, usize, TItemFind, *const c_char, *mut TPoint, TCustomData, i32, TSearchDirection, bool, *mut i32);
+pub type TLVDataFindEvent<T> = fn(T, usize, TItemFind, *const c_char, *mut TPoint, TCustomData, i32, TSearchDirection, bool, *mut i32);
 
 // fn (&self, sender: usize, item: usize)
 pub type TLVDeletedEvent<T> = fn(T, usize, usize);
@@ -2547,8 +2556,6 @@ pub type TLVDrawItemEvent<T> = fn(T, usize, usize, *mut TRect, TOwnerDrawState);
 
 // fn (&self, sender: usize, startIndex: i32, endIndex: i32)
 pub type TLVDataHintEvent<T> = fn(T, usize, i32, i32);
-
-pub type TLVOwnerDataHintEvent<T> = TLVDataHintEvent<T>;
 
 // fn (&self, sender: usize, aRect: *mut TRect, defaultDraw: *mut bool)
 pub type TTVCustomDrawEvent<T> = fn(T, usize, *mut TRect, *mut bool);
