@@ -29,27 +29,16 @@ extern "system" {
   pub fn DShortCutToText(AVal: TShortCut) -> *const c_char;
   pub fn Clipboard_Instance() -> usize;
   pub fn DSetClipboard(ANewClipboard: usize) -> usize;
-  #[cfg(not(target_os = "windows"))]
   pub fn DSendMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> LRESULT;
-  #[cfg(not(target_os = "windows"))]
   pub fn DPostMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DIsIconic(hWnd: HWND) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DIsWindow(hWnd: HWND) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DIsZoomed(hWnd: HWND) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DIsWindowVisible(hWnd: HWND) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DGetDC(hWnd: HWND) -> HDC;
-  #[cfg(not(target_os = "windows"))]
   pub fn DReleaseDC(hWnd: HWND, dc: HDC) -> i32;
-  #[cfg(not(target_os = "windows"))]
   pub fn DSetForegroundWindow(hWnd: HWND) -> bool;
-  #[cfg(not(target_os = "windows"))]
   pub fn DRegisterClipboardFormat(AFormat: *const c_char) -> TClipboardFormat;
-  #[cfg(not(target_os = "windows"))]
   pub fn DWindowFromPoint(point: *mut TPoint) -> HWND;
   fn SetEventCallback(APtr: usize);
   fn SetMessageCallback(APtr: usize);
@@ -109,6 +98,8 @@ extern "system" {
   pub fn ResFormLoadFromResourceName(AInstance: usize, AResName: *const c_char, ARoot: usize);
   pub fn ResFormLoadFromFile(AFileName: *const c_char, ARoot: usize);
   pub fn ResFormLoadFromStream(AStream: usize, ARoot: usize);
+  pub fn ResFormRegisterFormResource(AClassName: *const c_char, AData: usize, ALen: i32) -> bool;
+  pub fn ResFormLoadFromClassName(AClassName: *const c_char, ARoot: usize) -> bool;
 
 
 
@@ -5092,6 +5083,10 @@ extern "system" {
   pub fn ListView_Clear(AObj: usize);
   pub fn ListView_ClearSelection(AObj: usize);
   pub fn ListView_DeleteSelected(AObj: usize);
+  pub fn ListView_GetHitTestInfoAt(AObj: usize, X: i32, Y: i32) -> THitTests;
+  pub fn ListView_GetItemAt(AObj: usize, X: i32, Y: i32) -> usize;
+  pub fn ListView_GetNearestItem(AObj: usize, Point: *mut TPoint, Direction: TSearchDirection) -> usize;
+  pub fn ListView_GetNextItem(AObj: usize, StartItem: usize, Direction: TSearchDirection, States: TListItemStates) -> usize;
   pub fn ListView_IsEditing(AObj: usize) -> bool;
   pub fn ListView_SelectAll(AObj: usize);
   pub fn ListView_CustomSort(AObj: usize, SortProc: PFNLVCOMPARE, lParam: isize) -> bool;
@@ -5180,6 +5175,7 @@ extern "system" {
   pub fn ListView_SetToolTips(AObj: usize, AValue: bool);
   pub fn ListView_GetScrollBars(AObj: usize) -> TScrollStyle;
   pub fn ListView_SetScrollBars(AObj: usize, AValue: TScrollStyle);
+  pub fn ListView_GetColumnCount(AObj: usize) -> i32;
   pub fn ListView_GetAction(AObj: usize) -> usize;
   pub fn ListView_SetAction(AObj: usize, AValue: usize);
   pub fn ListView_GetAlign(AObj: usize) -> TAlign;
@@ -5392,6 +5388,7 @@ extern "system" {
   pub fn TreeView_AlphaSort(AObj: usize, ARecurse: bool) -> bool;
   pub fn TreeView_FullCollapse(AObj: usize);
   pub fn TreeView_FullExpand(AObj: usize);
+  pub fn TreeView_GetHitTestInfoAt(AObj: usize, X: i32, Y: i32) -> THitTests;
   pub fn TreeView_GetNodeAt(AObj: usize, X: i32, Y: i32) -> usize;
   pub fn TreeView_IsEditing(AObj: usize) -> bool;
   pub fn TreeView_LoadFromFile(AObj: usize, FileName: *const c_char);
@@ -6361,6 +6358,10 @@ extern "system" {
   // ----------------- TBitmap ----------------------
   pub fn Bitmap_Create() -> usize;
   pub fn Bitmap_Free(AObj: usize);
+  pub fn Bitmap_LoadFromDevice(AObj: usize, ADc: HDC);
+  pub fn Bitmap_EndUpdate(AObj: usize, AStreamIsValid: bool);
+  pub fn Bitmap_BeginUpdate(AObj: usize, ACanvasOnly: bool);
+  pub fn Bitmap_Clear(AObj: usize);
   pub fn Bitmap_Assign(AObj: usize, Source: usize);
   pub fn Bitmap_FreeImage(AObj: usize);
   pub fn Bitmap_HandleAllocated(AObj: usize) -> bool;
@@ -6406,10 +6407,6 @@ extern "system" {
   pub fn Bitmap_SetOnChange(AObj: usize, AEventId: usize);
   pub fn Bitmap_GetScanLine(AObj: usize, Row: i32) -> usize;
   pub fn Bitmap_StaticClassType() -> TClass;
-  pub fn Bitmap_Clear(AObj: usize);
-  pub fn Bitmap_BeginUpdate(AObj: usize, ACanvasOnly: bool);
-  pub fn Bitmap_EndUpdate(AObj: usize, AStreamIsValid: bool);
-  pub fn Bitmap_LoadFromDevice(AObj: usize, ADc: HDC);
 
   // ----------------- TMemo ----------------------
   pub fn Memo_Create(AOwner: usize) -> usize;
@@ -9424,6 +9421,14 @@ extern "system" {
   // ----------------- TForm ----------------------
   pub fn Form_Create(AOwner: usize) -> usize;
   pub fn Form_Free(AObj: usize);
+  pub fn Form_InheritedWndProc(AObj: usize, TheMessage: *mut TMessage);
+  pub fn Form_EnabledMaximize(AObj: usize, AValue: bool);
+  pub fn Form_EnabledMinimize(AObj: usize, AValue: bool);
+  pub fn Form_EnabledSystemMenu(AObj: usize, AValue: bool);
+  pub fn Form_ScaleForCurrentDpi(AObj: usize);
+  pub fn Form_ScaleForPPI(AObj: usize, ANewPPI: i32);
+  pub fn Form_ScreenCenter(AObj: usize);
+  pub fn Form_WorkAreaCenter(AObj: usize);
   pub fn Form_Cascade(AObj: usize);
   pub fn Form_Close(AObj: usize);
   pub fn Form_FocusControl(AObj: usize, Control: usize);
@@ -9588,8 +9593,10 @@ extern "system" {
   pub fn Form_SetOnClick(AObj: usize, AEventId: usize);
   pub fn Form_SetOnClose(AObj: usize, AEventId: usize);
   pub fn Form_SetOnCloseQuery(AObj: usize, AEventId: usize);
+  pub fn Form_SetOnConstrainedResize(AObj: usize, AEventId: usize);
   pub fn Form_SetOnContextPopup(AObj: usize, AEventId: usize);
   pub fn Form_SetOnDblClick(AObj: usize, AEventId: usize);
+  pub fn Form_SetOnDestroy(AObj: usize, AEventId: usize);
   pub fn Form_SetOnDeactivate(AObj: usize, AEventId: usize);
   pub fn Form_SetOnDockDrop(AObj: usize, AEventId: usize);
   pub fn Form_SetOnDragDrop(AObj: usize, AEventId: usize);
@@ -9679,16 +9686,7 @@ extern "system" {
   pub fn Form_GetAnchorSide(AObj: usize, AKind: TAnchorKind) -> usize;
   pub fn Form_StaticClassType() -> TClass;
   pub fn Form_Create2(AOwner: usize, AInitScale: bool) -> usize;
-  pub fn Form_EnabledMaximize(AObj: usize, AValue: bool);
-  pub fn Form_EnabledMinimize(AObj: usize, AValue: bool);
-  pub fn Form_EnabledSystemMenu(AObj: usize, AValue: bool);
-  pub fn Form_SetOnDestroy(AObj: usize, AEventId: usize);
-  pub fn Form_SetOnConstrainedResize(AObj: usize, AEventId: usize);
   pub fn Form_SetOnWndProc(AObj: usize, AEventId: usize);
-  pub fn Form_ScaleForPPI(AObj: usize, ANewPPI: i32);
-  pub fn Form_ScaleControlsForDpi(AObj: usize, ANewPPI: i32);
-  pub fn Form_ScaleForCurrentDpi(AObj: usize);
-  pub fn Form_InheritedWndProc(AObj: usize, AMsg: *mut TMessage);
 
   // ----------------- TParaAttributes ----------------------
   pub fn ParaAttributes_Assign(AObj: usize, Source: usize);
@@ -10577,6 +10575,7 @@ extern "system" {
   pub fn ScrollBox_GetVisible(AObj: usize) -> bool;
   pub fn ScrollBox_SetVisible(AObj: usize, AValue: bool);
   pub fn ScrollBox_SetOnClick(AObj: usize, AEventId: usize);
+  pub fn ScrollBox_SetOnConstrainedResize(AObj: usize, AEventId: usize);
   pub fn ScrollBox_SetOnDblClick(AObj: usize, AEventId: usize);
   pub fn ScrollBox_SetOnDockDrop(AObj: usize, AEventId: usize);
   pub fn ScrollBox_SetOnDragDrop(AObj: usize, AEventId: usize);
@@ -13072,6 +13071,7 @@ extern "system" {
   pub fn FlowPanel_SetVisible(AObj: usize, AValue: bool);
   pub fn FlowPanel_SetOnAlignPosition(AObj: usize, AEventId: usize);
   pub fn FlowPanel_SetOnClick(AObj: usize, AEventId: usize);
+  pub fn FlowPanel_SetOnConstrainedResize(AObj: usize, AEventId: usize);
   pub fn FlowPanel_SetOnContextPopup(AObj: usize, AEventId: usize);
   pub fn FlowPanel_SetOnDockDrop(AObj: usize, AEventId: usize);
   pub fn FlowPanel_SetOnDblClick(AObj: usize, AEventId: usize);
@@ -14076,6 +14076,7 @@ extern "system" {
   pub fn Frame_SetVisible(AObj: usize, AValue: bool);
   pub fn Frame_SetOnAlignPosition(AObj: usize, AEventId: usize);
   pub fn Frame_SetOnClick(AObj: usize, AEventId: usize);
+  pub fn Frame_SetOnConstrainedResize(AObj: usize, AEventId: usize);
   pub fn Frame_SetOnContextPopup(AObj: usize, AEventId: usize);
   pub fn Frame_SetOnDblClick(AObj: usize, AEventId: usize);
   pub fn Frame_SetOnDockDrop(AObj: usize, AEventId: usize);

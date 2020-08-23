@@ -22754,6 +22754,23 @@ impl TListView {
           return &self;
       }
 
+	  pub fn GetHitTestInfoAt(&self, x: i32, y: i32) -> THitTests  {
+          return method_Call_1!(ListView_GetHitTestInfoAt, self.0, x, y);
+      }
+
+	  pub fn GetItemAt(&self, x: i32, y: i32) -> TListItem  {
+          return method_Call_2!(TListItem, ListView_GetItemAt, self.0, x, y);
+      }
+
+	  pub fn GetNearestItem(&self, point: &TPoint, direction: TSearchDirection) -> TListItem  {
+          let mut ps1 = point.clone();
+          return method_Call_2!(TListItem, ListView_GetNearestItem, self.0, &mut ps1, direction);
+      }
+
+	  pub fn GetNextItem(&self, startItem: &TListItem, direction: TSearchDirection, states: TListItemStates) -> TListItem  {
+          return method_Call_2!(TListItem, ListView_GetNextItem, self.0, startItem.Instance(), direction, states);
+      }
+
 	  pub fn IsEditing(&self) -> bool  {
           return method_Call_1!(ListView_IsEditing, self.0);
       }
@@ -23160,6 +23177,10 @@ impl TListView {
 	  pub fn SetScrollBars(&self, aValue: TScrollStyle) -> &Self  {
           method_Call_1!(ListView_SetScrollBars, self.0, aValue);
           return &self;
+      }
+
+	  pub fn ColumnCount(&self) -> i32  {
+          return method_Call_1!(ListView_GetColumnCount, self.0);
       }
 
 	  pub fn Action(&self) -> TAction  {
@@ -24125,6 +24146,10 @@ impl TTreeView {
 	  pub fn FullExpand(&self) -> &Self  {
           method_Call_1!(TreeView_FullExpand, self.0);
           return &self;
+      }
+
+	  pub fn GetHitTestInfoAt(&self, x: i32, y: i32) -> THitTests  {
+          return method_Call_1!(TreeView_GetHitTestInfoAt, self.0, x, y);
       }
 
 	  pub fn GetNodeAt(&self, x: i32, y: i32) -> TTreeNode  {
@@ -28547,6 +28572,26 @@ impl TBitmap {
 
 	  impl_Free_method!(Bitmap_Free);
 
+	  pub fn LoadFromDevice(&self, aDc: HDC) -> &Self  {
+          method_Call_1!(Bitmap_LoadFromDevice, self.0, aDc);
+          return &self;
+      }
+
+	  pub fn EndUpdate(&self, aStreamIsValid: bool) -> &Self  {
+          method_Call_1!(Bitmap_EndUpdate, self.0, aStreamIsValid);
+          return &self;
+      }
+
+	  pub fn BeginUpdate(&self, aCanvasOnly: bool) -> &Self  {
+          method_Call_1!(Bitmap_BeginUpdate, self.0, aCanvasOnly);
+          return &self;
+      }
+
+	  pub fn Clear(&self) -> &Self  {
+          method_Call_1!(Bitmap_Clear, self.0);
+          return &self;
+      }
+
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self {
           method_Call_1!(Bitmap_Assign, self.0, source.Instance());
           return &self;
@@ -28749,26 +28794,6 @@ impl TBitmap {
 
       // static class
 	  impl_Class_method!(Bitmap_StaticClassType);
-	  pub fn Clear(&self) -> &Self  {
-          method_Call_1!(Bitmap_Clear, self.0);
-          return &self;
-      }
-
-	  pub fn BeginUpdate(&self, aCanvasOnly: bool) -> &Self  {
-          method_Call_1!(Bitmap_BeginUpdate, self.0, aCanvasOnly);
-          return &self;
-      }
-
-	  pub fn EndUpdate(&self, aStreamIsValid: bool) -> &Self  {
-          method_Call_1!(Bitmap_EndUpdate, self.0, aStreamIsValid);
-          return &self;
-      }
-
-	  pub fn LoadFromDevice(&self, aDc: HDC) -> &Self  {
-          method_Call_1!(Bitmap_LoadFromDevice, self.0, aDc);
-          return &self;
-      }
-
 }
 
 impl_IObject!(TBitmap);
@@ -42197,6 +42222,46 @@ impl TForm {
 
 	  impl_Free_method!(Form_Free);
 
+	  pub fn InheritedWndProc(&self, theMessage: *mut TMessage) -> &Self  {
+          method_Call_1!(Form_InheritedWndProc, self.0, theMessage);
+          return &self;
+      }
+
+	  pub fn EnabledMaximize(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Form_EnabledMaximize, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn EnabledMinimize(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Form_EnabledMinimize, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn EnabledSystemMenu(&self, aValue: bool) -> &Self  {
+          method_Call_1!(Form_EnabledSystemMenu, self.0, aValue);
+          return &self;
+      }
+
+	  pub fn ScaleForCurrentDpi(&self) -> &Self  {
+          method_Call_1!(Form_ScaleForCurrentDpi, self.0);
+          return &self;
+      }
+
+	  pub fn ScaleForPPI(&self, aNewPPI: i32) -> &Self  {
+          method_Call_1!(Form_ScaleForPPI, self.0, aNewPPI);
+          return &self;
+      }
+
+	  pub fn ScreenCenter(&self) -> &Self  {
+          method_Call_1!(Form_ScreenCenter, self.0);
+          return &self;
+      }
+
+	  pub fn WorkAreaCenter(&self) -> &Self  {
+          method_Call_1!(Form_WorkAreaCenter, self.0);
+          return &self;
+      }
+
 	  pub fn Cascade(&self) -> &Self  {
           method_Call_1!(Form_Cascade, self.0);
           return &self;
@@ -42952,6 +43017,11 @@ impl TForm {
           return &self;
       }
 
+	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>) -> &Self  {
+          method_Call_1!(Form_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
 	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>) -> &Self  {
           method_Call_1!(Form_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
@@ -42959,6 +43029,11 @@ impl TForm {
 
 	  pub fn SetOnDblClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
           method_Call_1!(Form_SetOnDblClick, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnDestroy<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
+          method_Call_1!(Form_SetOnDestroy, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
@@ -43372,53 +43447,8 @@ impl TForm {
           return method_Call_2!(TForm, Form_Create2, self.0, aInitScale);
       }
 
-	  pub fn EnabledMaximize(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Form_EnabledMaximize, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn EnabledMinimize(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Form_EnabledMinimize, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn EnabledSystemMenu(&self, aValue: bool) -> &Self  {
-          method_Call_1!(Form_EnabledSystemMenu, self.0, aValue);
-          return &self;
-      }
-
-	  pub fn SetOnDestroy<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
-          method_Call_1!(Form_SetOnDestroy, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>) -> &Self  {
-          method_Call_1!(Form_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
 	  pub fn SetOnWndProc<T>(&self, aSelfId: usize, aEventId: TWndProcEvent<T>) -> &Self  {
           method_Call_1!(Form_SetOnWndProc, self.0, insert_Id!(aEventId, aSelfId));
-          return &self;
-      }
-
-	  pub fn ScaleForPPI(&self, aNewPPI: i32) -> &Self  {
-          method_Call_1!(Form_ScaleForPPI, self.0, aNewPPI);
-          return &self;
-      }
-
-	  pub fn ScaleControlsForDpi(&self, aNewPPI: i32) -> &Self  {
-          method_Call_1!(Form_ScaleControlsForDpi, self.0, aNewPPI);
-          return &self;
-      }
-
-	  pub fn ScaleForCurrentDpi(&self) -> &Self  {
-          method_Call_1!(Form_ScaleForCurrentDpi, self.0);
-          return &self;
-      }
-
-	  pub fn InheritedWndProc(&self, aMsg: *mut TMessage) -> &Self  {
-          method_Call_1!(Form_InheritedWndProc, self.0, aMsg);
           return &self;
       }
 
@@ -47448,6 +47478,11 @@ impl TScrollBox {
 
 	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
           method_Call_1!(ScrollBox_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>) -> &Self  {
+          method_Call_1!(ScrollBox_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 
@@ -58804,6 +58839,11 @@ impl TFlowPanel {
           return &self;
       }
 
+	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>) -> &Self  {
+          method_Call_1!(FlowPanel_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
 	  pub fn SetOnContextPopup<T>(&self, aSelfId: usize, aEventId: TContextPopupEvent<T>) -> &Self  {
           method_Call_1!(FlowPanel_SetOnContextPopup, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
@@ -63268,6 +63308,11 @@ impl TFrame {
 
 	  pub fn SetOnClick<T>(&self, aSelfId: usize, aEventId: TNotifyEvent<T>) -> &Self  {
           method_Call_1!(Frame_SetOnClick, self.0, insert_Id!(aEventId, aSelfId));
+          return &self;
+      }
+
+	  pub fn SetOnConstrainedResize<T>(&self, aSelfId: usize, aEventId: TConstrainedResizeEvent<T>) -> &Self  {
+          method_Call_1!(Frame_SetOnConstrainedResize, self.0, insert_Id!(aEventId, aSelfId));
           return &self;
       }
 

@@ -2228,6 +2228,38 @@ pub enum TLayoutAdjustmentPolicy {
     lapAutoAdjustForDPI, // For desktops using High DPI, scale x and y to fit the DPI
 }
 
+#[repr(C)]
+#[derive(PartialEq, Debug, Clone)]
+pub enum THitTest {
+    htAbove,
+    htBelow,
+    htNowhere,
+    htOnItem,
+    htOnButton,
+    htOnIcon,
+    htOnIndent,
+    htOnLabel,
+    htOnRight,
+    htOnStateIcon,
+    htToLeft,
+    htToRight,
+}
+
+// set of THitTest
+pub type THitTests = TSet;
+
+#[repr(C)]
+#[derive(PartialEq, Debug, Clone)]
+pub enum TListItemState {
+    lisCut,
+    lisDropTarget,
+    lisFocused,
+    lisSelected,
+}
+
+// set of TListItemState
+pub type TListItemStates = TSet;
+
 
 #[cfg(target_arch = "x86")]
 #[repr(C)]

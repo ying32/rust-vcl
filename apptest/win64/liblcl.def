@@ -3190,6 +3190,7 @@ DFindLCLControl
 DFindLCLWindow
 DFindOwnerControl
 DGUIDToString
+DGetDC
 DGetLibResourceCount
 DGetLibResourceItem
 DGetLibType
@@ -3200,6 +3201,10 @@ DInputBox
 DInputCombo
 DInputComboEx
 DInputQuery
+DIsIconic
+DIsWindow
+DIsWindowVisible
+DIsZoomed
 DLibAbout
 DLibStringEncoding
 DLibVersion
@@ -3208,9 +3213,14 @@ DMessageDlg
 DModifyLibResource
 DMove
 DPasswordBox
+DPostMessage
+DRegisterClipboardFormat
+DReleaseDC
 DSelectDirectory1
 DSelectDirectory2
+DSendMessage
 DSetClipboard
+DSetForegroundWindow
 DSetPropertySecValue
 DSetPropertyValue
 DShortCutToText
@@ -3221,6 +3231,7 @@ DSynchronize
 DSysLocale
 DSysOpen
 DTextToShortCut
+DWindowFromPoint
 DateTimePicker_AnchorAsAlign
 DateTimePicker_AnchorClient
 DateTimePicker_AnchorHorizontalCenterTo
@@ -4216,6 +4227,7 @@ FlowPanel_SetLeft
 FlowPanel_SetName
 FlowPanel_SetOnAlignPosition
 FlowPanel_SetOnClick
+FlowPanel_SetOnConstrainedResize
 FlowPanel_SetOnContextPopup
 FlowPanel_SetOnDblClick
 FlowPanel_SetOnDockDrop
@@ -4464,7 +4476,6 @@ Form_Scale96ToFont
 Form_Scale96ToForm
 Form_Scale96ToScreen
 Form_ScaleBy
-Form_ScaleControlsForDpi
 Form_ScaleDesignToForm
 Form_ScaleFontTo96
 Form_ScaleFontToScreen
@@ -4475,6 +4486,7 @@ Form_ScaleFormTo96
 Form_ScaleFormToDesign
 Form_ScaleScreenTo96
 Form_ScaleScreenToFont
+Form_ScreenCenter
 Form_ScreenToClient
 Form_ScrollBy
 Form_ScrollInView
@@ -4589,6 +4601,7 @@ Form_ShowModal
 Form_StaticClassType
 Form_ToString
 Form_Update
+Form_WorkAreaCenter
 Frame_AnchorAsAlign
 Frame_AnchorClient
 Frame_AnchorHorizontalCenterTo
@@ -4755,6 +4768,7 @@ Frame_SetLeft
 Frame_SetName
 Frame_SetOnAlignPosition
 Frame_SetOnClick
+Frame_SetOnConstrainedResize
 Frame_SetOnContextPopup
 Frame_SetOnDblClick
 Frame_SetOnDockDrop
@@ -7029,6 +7043,7 @@ ListView_GetClientWidth
 ListView_GetColor
 ListView_GetColumn
 ListView_GetColumnClick
+ListView_GetColumnCount
 ListView_GetColumns
 ListView_GetComponentCount
 ListView_GetComponentIndex
@@ -7058,8 +7073,10 @@ ListView_GetHashCode
 ListView_GetHeight
 ListView_GetHideSelection
 ListView_GetHint
+ListView_GetHitTestInfoAt
 ListView_GetHotTrack
 ListView_GetIconOptions
+ListView_GetItemAt
 ListView_GetItemFocused
 ListView_GetItemIndex
 ListView_GetItems
@@ -7070,6 +7087,8 @@ ListView_GetMouseInClient
 ListView_GetMultiSelect
 ListView_GetName
 ListView_GetNamePath
+ListView_GetNearestItem
+ListView_GetNextItem
 ListView_GetOwner
 ListView_GetOwnerData
 ListView_GetOwnerDraw
@@ -9895,9 +9914,11 @@ ReplaceDialog_SetTag
 ReplaceDialog_SetTop
 ReplaceDialog_StaticClassType
 ReplaceDialog_ToString
+ResFormLoadFromClassName
 ResFormLoadFromFile
 ResFormLoadFromResourceName
 ResFormLoadFromStream
+ResFormRegisterFormResource
 RichEdit_AnchorAsAlign
 RichEdit_AnchorClient
 RichEdit_AnchorHorizontalCenterTo
@@ -10635,6 +10656,7 @@ ScrollBox_SetLeft
 ScrollBox_SetName
 ScrollBox_SetOnAlignPosition
 ScrollBox_SetOnClick
+ScrollBox_SetOnConstrainedResize
 ScrollBox_SetOnDblClick
 ScrollBox_SetOnDockDrop
 ScrollBox_SetOnDragDrop
@@ -13709,6 +13731,7 @@ TreeView_GetHashCode
 TreeView_GetHeight
 TreeView_GetHideSelection
 TreeView_GetHint
+TreeView_GetHitTestInfoAt
 TreeView_GetHotTrack
 TreeView_GetHotTrackColor
 TreeView_GetImages

@@ -70,6 +70,13 @@ pub fn ToRustString<'a>(s: *const i8) -> Cow<'a, str> {
     return unsafe { CStr::from_ptr(s).to_string_lossy() };
 }
 
+pub fn WindowFromPoint(point: &TPoint) -> HWND {
+    unsafe {
+         let mut ps0 = point.clone();
+         return lclapi::DWindowFromPoint(&mut ps0);
+    }
+}
+
 
 pub fn LibStringEncoding() -> TStringEncoding {
     unsafe { return lclapi::DLibStringEncoding()}
@@ -95,59 +102,44 @@ pub fn SetClipboard(aNewClipboard: &TClipboard) -> TClipboard {
     unsafe { return TClipboard::As(lclapi::DSetClipboard(aNewClipboard.Instance()))}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn SendMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> LRESULT {
     unsafe { return lclapi::DSendMessage(hWd, msg, wParam, lParam)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn PostMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> bool {
     unsafe { return lclapi::DPostMessage(hWd, msg, wParam, lParam)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn IsIconic(hWnd: HWND) -> bool {
     unsafe { return lclapi::DIsIconic(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn IsWindow(hWnd: HWND) -> bool {
     unsafe { return lclapi::DIsWindow(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn IsZoomed(hWnd: HWND) -> bool {
     unsafe { return lclapi::DIsZoomed(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn IsWindowVisible(hWnd: HWND) -> bool {
     unsafe { return lclapi::DIsWindowVisible(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn GetDC(hWnd: HWND) -> HDC {
     unsafe { return lclapi::DGetDC(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn ReleaseDC(hWnd: HWND, dc: HDC) -> i32 {
     unsafe { return lclapi::DReleaseDC(hWnd, dc)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn SetForegroundWindow(hWnd: HWND) -> bool {
     unsafe { return lclapi::DSetForegroundWindow(hWnd)}
 }
 
-#[cfg(not(target_os = "windows"))]
 pub fn RegisterClipboardFormat(aFormat: &str) -> TClipboardFormat {
     unsafe { return lclapi::DRegisterClipboardFormat(to_CString!(aFormat))}
-}
-
-#[cfg(not(target_os = "windows"))]
-pub fn WindowFromPoint(point: *mut TPoint) -> HWND {
-    unsafe { return lclapi::DWindowFromPoint(point)}
 }
 
 pub fn ShowMessage(aMsg: &str) {
@@ -299,4 +291,12 @@ pub fn ResFormLoadFromFile(aFileName: &str, aRoot: &dyn IComponent) {
 
 pub fn ResFormLoadFromStream(aStream: &dyn IStream, aRoot: &dyn IComponent) {
     unsafe { lclapi::ResFormLoadFromStream(aStream.Instance(), aRoot.Instance())}
+}
+
+pub fn ResFormRegisterFormResource(aClassName: &str, aData: usize, aLen: i32) -> bool {
+    unsafe { return lclapi::ResFormRegisterFormResource(to_CString!(aClassName), aData, aLen)}
+}
+
+pub fn ResFormLoadFromClassName(aClassName: &str, aRoot: &dyn IComponent) -> bool {
+    unsafe { return lclapi::ResFormLoadFromClassName(to_CString!(aClassName), aRoot.Instance())}
 }
