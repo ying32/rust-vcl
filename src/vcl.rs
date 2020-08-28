@@ -610,8 +610,9 @@ impl TControl {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Control_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Control_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -1310,8 +1311,9 @@ impl TWinControl {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(WinControl_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(WinControl_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -2625,8 +2627,9 @@ impl TCheckBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(CheckBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(CheckBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -3531,8 +3534,9 @@ impl TRadioButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(RadioButton_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(RadioButton_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -4434,8 +4438,9 @@ impl TGroupBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(GroupBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(GroupBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -5207,8 +5212,9 @@ impl TLabel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Label_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Label_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -6234,8 +6240,9 @@ impl TListBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ListBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ListBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -7296,8 +7303,9 @@ impl TComboBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ComboBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ComboBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -8276,8 +8284,9 @@ impl TPanel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Panel_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Panel_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -9017,8 +9026,9 @@ impl TImage {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Image_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Image_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -9723,8 +9733,9 @@ impl TLinkLabel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(LinkLabel_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(LinkLabel_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -10451,8 +10462,9 @@ impl TSpeedButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(SpeedButton_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(SpeedButton_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -11039,8 +11051,9 @@ impl TSplitter {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Splitter_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Splitter_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -11868,8 +11881,9 @@ impl TRadioGroup {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(RadioGroup_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(RadioGroup_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -12785,8 +12799,9 @@ impl TStaticText {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(StaticText_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(StaticText_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -13796,8 +13811,9 @@ impl TColorBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ColorBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ColorBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -14785,8 +14801,9 @@ impl TColorListBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ColorListBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ColorListBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -17395,8 +17412,9 @@ impl TRichEdit {
           return result;
       }
 
-	  pub fn SetCaretPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(RichEdit_SetCaretPos, self.0, aValue);
+	  pub fn SetCaretPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(RichEdit_SetCaretPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -17546,8 +17564,9 @@ impl TRichEdit {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(RichEdit_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(RichEdit_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -18472,8 +18491,9 @@ impl TTrackBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(TrackBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(TrackBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -19633,8 +19653,9 @@ impl TUpDown {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(UpDown_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(UpDown_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -20533,8 +20554,9 @@ impl TProgressBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ProgressBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ProgressBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -21612,8 +21634,9 @@ impl TDateTimePicker {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(DateTimePicker_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DateTimePicker_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -22486,8 +22509,9 @@ impl TMonthCalendar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(MonthCalendar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(MonthCalendar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -23886,8 +23910,9 @@ impl TListView {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ListView_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ListView_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -25245,8 +25270,9 @@ impl TTreeView {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(TreeView_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(TreeView_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -26190,8 +26216,9 @@ impl TStatusBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(StatusBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(StatusBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -27234,8 +27261,9 @@ impl TToolBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ToolBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ToolBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -28162,8 +28190,9 @@ impl TBitBtn {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(BitBtn_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(BitBtn_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -29522,8 +29551,9 @@ impl TMemo {
           return result;
       }
 
-	  pub fn SetCaretPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(Memo_SetCaretPos, self.0, aValue);
+	  pub fn SetCaretPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Memo_SetCaretPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -29655,8 +29685,9 @@ impl TMemo {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Memo_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Memo_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -29976,8 +30007,9 @@ impl TMemoryStream {
           return result;
       }
 
-	  pub fn SetPosition(&self, aValue: *mut i64) -> &Self  {
-          method_Call_1!(MemoryStream_SetPosition, self.0, aValue);
+	  pub fn SetPosition(&self, aValue: i64) -> &Self  {
+          let mut ps1 = aValue;
+          method_Call_1!(MemoryStream_SetPosition, self.0, &mut ps1);
           return &self;
       }
 
@@ -29987,8 +30019,9 @@ impl TMemoryStream {
           return result;
       }
 
-	  pub fn SetSize(&self, aValue: *mut i64) -> &Self  {
-          method_Call_1!(MemoryStream_SetSize, self.0, aValue);
+	  pub fn SetSize(&self, aValue: i64) -> &Self  {
+          let mut ps1 = aValue;
+          method_Call_1!(MemoryStream_SetSize, self.0, &mut ps1);
           return &self;
       }
 
@@ -31700,8 +31733,9 @@ impl TListItem {
           return result;
       }
 
-	  pub fn SetPosition(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(ListItem_SetPosition, self.0, aValue);
+	  pub fn SetPosition(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ListItem_SetPosition, self.0, &mut ps1);
           return &self;
       }
 
@@ -32731,8 +32765,9 @@ impl TPageControl {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(PageControl_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(PageControl_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -33653,8 +33688,9 @@ impl TTabSheet {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(TabSheet_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(TabSheet_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -34514,8 +34550,9 @@ impl TButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Button_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Button_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -35581,8 +35618,9 @@ impl TEdit {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Edit_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Edit_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -36083,8 +36121,9 @@ impl TMouse {
           return result;
       }
 
-	  pub fn SetCursorPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(Mouse_SetCursorPos, self.0, aValue);
+	  pub fn SetCursorPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Mouse_SetCursorPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -37346,8 +37385,9 @@ impl TSpinEdit {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(SpinEdit_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(SpinEdit_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -38112,8 +38152,9 @@ impl TMiniWebview {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(MiniWebview_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(MiniWebview_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -40511,8 +40552,9 @@ impl TToolButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ToolButton_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ToolButton_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -41764,8 +41806,9 @@ impl TPaintBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(PaintBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(PaintBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -43267,8 +43310,9 @@ impl TForm {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Form_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Form_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -44427,8 +44471,9 @@ impl TScrollBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ScrollBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ScrollBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -45499,8 +45544,9 @@ impl TMaskEdit {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(MaskEdit_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(MaskEdit_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -46154,8 +46200,9 @@ impl TShape {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Shape_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Shape_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -46715,8 +46762,9 @@ impl TBevel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Bevel_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Bevel_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -47660,8 +47708,9 @@ impl TScrollBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ScrollBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ScrollBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -48683,8 +48732,9 @@ impl TCheckListBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(CheckListBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(CheckListBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -49406,8 +49456,9 @@ impl TGauge {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Gauge_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Gauge_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -50131,8 +50182,9 @@ impl TImageButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ImageButton_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ImageButton_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -50426,8 +50478,9 @@ impl TFindDialog {
           return result;
       }
 
-	  pub fn SetPosition(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(FindDialog_SetPosition, self.0, aValue);
+	  pub fn SetPosition(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(FindDialog_SetPosition, self.0, &mut ps1);
           return &self;
       }
 
@@ -50616,8 +50669,9 @@ impl TReplaceDialog {
           return result;
       }
 
-	  pub fn SetPosition(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(ReplaceDialog_SetPosition, self.0, aValue);
+	  pub fn SetPosition(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ReplaceDialog_SetPosition, self.0, &mut ps1);
           return &self;
       }
 
@@ -51086,8 +51140,9 @@ impl TDragObject {
           return result;
       }
 
-	  pub fn SetDragPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(DragObject_SetDragPos, self.0, aValue);
+	  pub fn SetDragPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragObject_SetDragPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -51106,8 +51161,9 @@ impl TDragObject {
           return result;
       }
 
-	  pub fn SetDragTargetPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(DragObject_SetDragTargetPos, self.0, aValue);
+	  pub fn SetDragTargetPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragObject_SetDragTargetPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -51181,8 +51237,9 @@ impl TDragDockObject {
           return result;
       }
 
-	  pub fn SetDockRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(DragDockObject_SetDockRect, self.0, aValue);
+	  pub fn SetDockRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragDockObject_SetDockRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -51200,8 +51257,9 @@ impl TDragDockObject {
           return result;
       }
 
-	  pub fn SetEraseDockRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(DragDockObject_SetEraseDockRect, self.0, aValue);
+	  pub fn SetEraseDockRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragDockObject_SetEraseDockRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -51238,8 +51296,9 @@ impl TDragDockObject {
           return result;
       }
 
-	  pub fn SetDragPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(DragDockObject_SetDragPos, self.0, aValue);
+	  pub fn SetDragPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragDockObject_SetDragPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -51258,8 +51317,9 @@ impl TDragDockObject {
           return result;
       }
 
-	  pub fn SetDragTargetPos(&self, aValue: *mut TPoint) -> &Self  {
-          method_Call_1!(DragDockObject_SetDragTargetPos, self.0, aValue);
+	  pub fn SetDragTargetPos(&self, aValue: &TPoint) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DragDockObject_SetDragTargetPos, self.0, &mut ps1);
           return &self;
       }
 
@@ -52620,8 +52680,9 @@ impl TStringGrid {
           return result;
       }
 
-	  pub fn SetSelection(&self, aValue: *mut TGridRect) -> &Self  {
-          method_Call_1!(StringGrid_SetSelection, self.0, aValue);
+	  pub fn SetSelection(&self, aValue: &TGridRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(StringGrid_SetSelection, self.0, &mut ps1);
           return &self;
       }
 
@@ -52722,8 +52783,9 @@ impl TStringGrid {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(StringGrid_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(StringGrid_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -53813,8 +53875,9 @@ impl TDrawGrid {
           return result;
       }
 
-	  pub fn SetSelection(&self, aValue: *mut TGridRect) -> &Self  {
-          method_Call_1!(DrawGrid_SetSelection, self.0, aValue);
+	  pub fn SetSelection(&self, aValue: &TGridRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DrawGrid_SetSelection, self.0, &mut ps1);
           return &self;
       }
 
@@ -53915,8 +53978,9 @@ impl TDrawGrid {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(DrawGrid_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(DrawGrid_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -54970,8 +55034,9 @@ impl TValueListEditor {
           return result;
       }
 
-	  pub fn SetSelection(&self, aValue: *mut TGridRect) -> &Self  {
-          method_Call_1!(ValueListEditor_SetSelection, self.0, aValue);
+	  pub fn SetSelection(&self, aValue: &TGridRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ValueListEditor_SetSelection, self.0, &mut ps1);
           return &self;
       }
 
@@ -55072,8 +55137,9 @@ impl TValueListEditor {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ValueListEditor_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ValueListEditor_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -55991,8 +56057,9 @@ impl THeaderControl {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(HeaderControl_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(HeaderControl_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -57316,8 +57383,9 @@ impl TLabeledEdit {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(LabeledEdit_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(LabeledEdit_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -58028,8 +58096,9 @@ impl TBoundLabel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(BoundLabel_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(BoundLabel_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -58986,8 +59055,9 @@ impl TFlowPanel {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(FlowPanel_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(FlowPanel_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -59996,8 +60066,9 @@ impl TCoolBar {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(CoolBar_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(CoolBar_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -62317,8 +62388,9 @@ impl TComboBoxEx {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ComboBoxEx_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ComboBoxEx_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -63500,8 +63572,9 @@ impl TFrame {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(Frame_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(Frame_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -64428,8 +64501,9 @@ impl TXButton {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(XButton_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(XButton_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -65768,8 +65842,9 @@ impl TCheckGroup {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(CheckGroup_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(CheckGroup_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 
@@ -66687,8 +66762,9 @@ impl TToggleBox {
           return result;
       }
 
-	  pub fn SetBoundsRect(&self, aValue: *mut TRect) -> &Self  {
-          method_Call_1!(ToggleBox_SetBoundsRect, self.0, aValue);
+	  pub fn SetBoundsRect(&self, aValue: &TRect) -> &Self  {
+          let mut ps1 = aValue.clone();
+          method_Call_1!(ToggleBox_SetBoundsRect, self.0, &mut ps1);
           return &self;
       }
 

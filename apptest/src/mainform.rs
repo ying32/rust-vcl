@@ -1,6 +1,7 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
+use crate::test;
 use rust_vcl::fns::*;
 use rust_vcl::messages::*;
 use rust_vcl::types::*;
@@ -24,6 +25,7 @@ pub struct TMainForm {
     tv1: TTreeView,
     pb1: TPaintBox,
     listBox1: TListBox,
+    trayicon: TTrayIcon,
     pub form: TForm, // 固定名form, 放最后，前面引用完后，后面move到form。
 }
 
@@ -47,6 +49,7 @@ impl TMainForm {
             tv1: NewObject!(TTreeView, form),
             pb1: NewObject!(TPaintBox, form),
             listBox1: NewObject!(TListBox, form),
+            trayicon: NewObject!(TTrayIcon, form),
             form,
         };
     }
@@ -55,6 +58,8 @@ impl TMainForm {
         let sid = self.getSId();
 
         println!("size TMessage: {}", size_of::<TMessage>());
+
+        Application.SetOnMinimize(sid, Self::onAppMinimize);
 
         // TForm
         self.form
@@ -243,7 +248,45 @@ impl TMainForm {
             self.listBox1.Items().Add(&text);
         }
 
-        return self;
+        // TTrayIcon
+        self.trayicon
+            .SetVisible(true)
+            .SetHint("hello!")
+            .SetOnClick(sid, Self::onTrayIconClick);
+
+        // TMemoryStream
+        let mem = TMemoryStream::new(); // 已实现drop方法，所以Free不是必须的
+        let testArr: [i8; 6] = [1, 3, 6, 4, 5, 6];
+        // 这里语法上还得改进，需要写入一个数组首地址
+        println!(
+            "write len: {}", // sizeof(T) * testArr.len()
+            mem.Write((&testArr[0] as *const i8) as usize, testArr.len() as i32)
+        );
+        println!("stream pos: {}", mem.Position());
+        mem.SetPosition(0);
+        println!("stream pos: {}", mem.Position());
+        // read
+        let testArrRead: [i8; 6] = [0; 6];
+        println!(
+            "read len: {}",
+            mem.Read(
+                // sizeof(T) * testArr.len()
+                (&testArrRead[0] as *const i8) as usize,
+                testArrRead.len() as i32
+            )
+        );
+        println!("testArrRead: {:?}", &testArrRead);
+
+        // mem.Read();
+
+        return &self;
+    }
+
+    fn onTrayIconClick(&self, _sender: usize) {
+        println!("trayIcon Click!");
+        // 显示后位置会发生变化，需要找找原因。。。。
+        self.form.Show();
+        Application.Restore();
     }
 
     fn onFormWndProc(&self, msg: *mut TMessage) {
@@ -500,5 +543,10 @@ impl TMainForm {
 
     fn onFormDestroy(&self, _sender: usize) {
         println!("TMainForm destroy.");
+    }
+
+    fn onAppMinimize(&self, _sender: usize) {
+        println!("AppMinimize");
+        self.form.Hide();
     }
 }
