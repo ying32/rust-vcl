@@ -30091,14 +30091,14 @@ impl TMemoryStream {
           if data.len() == 0 {
               return 0
           }
-          return self.Write(&data[0] as *const T as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+          return self.Write(data.as_ptr() as usize, (std::mem::size_of::<T>() * data.len()) as i32);
       }
 
       pub fn ReadArray<T>(&self, data: &[T]) -> i32 {
         if data.len() == 0 {
             return 0
         }
-        return self.Read(&data[0] as *const T as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+        return self.Read(data.as_ptr() as usize, (std::mem::size_of::<T>() * data.len()) as i32);
       }
 
 	  pub fn Write(&self, buffer: usize, count: i32) -> i32  {
