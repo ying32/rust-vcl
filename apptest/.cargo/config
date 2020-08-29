@@ -1,0 +1,5 @@
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "link-args=/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /DYNAMICBASE:NO /MACHINE:X64 app.res"]
+
+[target.i686-pc-windows-msvc]
+rustflags = ["-C", "link-args=/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /MACHINE:X86 app.res"]

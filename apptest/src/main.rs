@@ -17,6 +17,11 @@ use mainform::TMainForm;
 // const array:[u8;4] = [1,2,3,3];
 
 fn test() {
+    // async_std::task::spawn(async {
+    //     println!("async task");
+    //     a.await;
+    // });
+
     let guid = CreateGUID();
     println!("{}-{}-{}-{:?}", guid.d1, guid.d2, guid.d3, guid.d4);
     println!("{:}", GUIDToString(&guid));

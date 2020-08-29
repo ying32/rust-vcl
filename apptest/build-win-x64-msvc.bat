@@ -1,15 +1,10 @@
 @echo off
 
-set destDir=.\target\debug
+set libPath=.\win64
+set PATH=%libPath%;%PATH%
+set LIB=%LIB%;%libPath%
 
-copy ".\win64\liblcl.lib" ".\liblcl.lib" /V
-
-cargo rustc -- -C link-args="/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /DYNAMICBASE:NO /MACHINE:X64 app.res"
-
-if %errorlevel%==0 (
-	if not exist "%destDir%\liblcl.dll" (copy ".\win64\liblcl.dll" "%destDir%\liblcl.dll") 
-	rem if not exist "%destDir%\applogo.ico" (copy ".\applogo.ico" "%destDir%\applogo.ico") 
-	if exist "%destDir%\apptest.exe" (start "" "%destDir%\apptest.exe") 
-) else (
-	pause
-)
+cargo run --target=x86_64-pc-windows-msvc
+ 
+rem cargo rustc --target=x86_64-pc-windows-msvc -- -C link-args="/MANIFEST /manifest:embed /manifestinput:app.manifest /SAFESEH:NO /DYNAMICBASE:NO /MACHINE:X64 app.res"
+ 
