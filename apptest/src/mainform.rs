@@ -1,7 +1,6 @@
 #![allow(non_snake_case)]
 #![allow(dead_code)]
 
-use crate::test;
 use rust_vcl::fns::*;
 use rust_vcl::messages::*;
 use rust_vcl::types::*;
@@ -262,9 +261,14 @@ impl TMainForm {
             "write len: {}", // sizeof(T) * testArr.len()
             mem.Write((&testArr[0] as *const i8) as usize, testArr.len() as i32)
         );
+
+        println!("write byte: {}", mem.WriteByte(29));
+
         println!("stream pos: {}", mem.Position());
         mem.SetPosition(0);
         println!("stream pos: {}", mem.Position());
+
+        println!("stream size: {}", mem.Size());
         // read
         let testArrRead: [i8; 6] = [0; 6];
         println!(
@@ -276,6 +280,16 @@ impl TMainForm {
             )
         );
         println!("testArrRead: {:?}", &testArrRead);
+        println!("read byte: {}", mem.ReadByte());
+
+        let testI32Arr: [i32; 9] = [12, 28, 34324, 43432, 23434, 43242, 4342, 434, 433];
+        mem.WriteArray(&testI32Arr);
+        println!("stream size2: {}", mem.Size());
+
+        mem.SetPosition(mem.Position() - (testI32Arr.len() * 4) as i64);
+        let testI32ReadArray: [i32; 9] = [0; 9];
+        println!("read len: {}", mem.ReadArray(&testI32ReadArray));
+        println!("array {:?}", &testI32ReadArray);
 
         // mem.Read();
 

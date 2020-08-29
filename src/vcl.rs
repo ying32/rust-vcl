@@ -216,6 +216,7 @@ impl TObject {
 
       // static class
 	  impl_Class_method!(Object_StaticClassType);
+
 }
 
 impl_IObject!(TObject);
@@ -317,6 +318,7 @@ impl TComponent {
 
       // static class
 	  impl_Class_method!(Component_StaticClassType);
+
 }
 
 impl_IObject!(TComponent);
@@ -851,6 +853,7 @@ impl TControl {
 
       // static class
 	  impl_Class_method!(Control_StaticClassType);
+
 }
 
 impl_IObject!(TControl);
@@ -1569,6 +1572,7 @@ impl TWinControl {
 
       // static class
 	  impl_Class_method!(WinControl_StaticClassType);
+
 }
 
 impl_IObject!(TWinControl);
@@ -1708,6 +1712,7 @@ impl TGraphic {
 
       // static class
 	  impl_Class_method!(Graphic_StaticClassType);
+
 }
 
 impl_IObject!(TGraphic);
@@ -1928,6 +1933,7 @@ impl TStrings {
 
       // static class
 	  impl_Class_method!(Strings_StaticClassType);
+
 }
 
 impl_IObject!(TStrings);
@@ -2858,6 +2864,7 @@ impl TCheckBox {
 
       // static class
 	  impl_Class_method!(CheckBox_StaticClassType);
+
 }
 
 impl_IObject!(TCheckBox);
@@ -3765,6 +3772,7 @@ impl TRadioButton {
 
       // static class
 	  impl_Class_method!(RadioButton_StaticClassType);
+
 }
 
 impl_IObject!(TRadioButton);
@@ -4669,6 +4677,7 @@ impl TGroupBox {
 
       // static class
 	  impl_Class_method!(GroupBox_StaticClassType);
+
 }
 
 impl_IObject!(TGroupBox);
@@ -5426,6 +5435,7 @@ impl TLabel {
 
       // static class
 	  impl_Class_method!(Label_StaticClassType);
+
 }
 
 impl_IObject!(TLabel);
@@ -6480,6 +6490,7 @@ impl TListBox {
 
       // static class
 	  impl_Class_method!(ListBox_StaticClassType);
+
 }
 
 impl_IObject!(TListBox);
@@ -7534,6 +7545,7 @@ impl TComboBox {
 
       // static class
 	  impl_Class_method!(ComboBox_StaticClassType);
+
 }
 
 impl_IObject!(TComboBox);
@@ -8515,6 +8527,7 @@ impl TPanel {
 
       // static class
 	  impl_Class_method!(Panel_StaticClassType);
+
 }
 
 impl_IObject!(TPanel);
@@ -9240,6 +9253,7 @@ impl TImage {
 
       // static class
 	  impl_Class_method!(Image_StaticClassType);
+
 }
 
 impl_IObject!(TImage);
@@ -9938,6 +9952,7 @@ impl TLinkLabel {
 
       // static class
 	  impl_Class_method!(LinkLabel_StaticClassType);
+
 }
 
 impl_IObject!(TLinkLabel);
@@ -10676,6 +10691,7 @@ impl TSpeedButton {
 
       // static class
 	  impl_Class_method!(SpeedButton_StaticClassType);
+
 }
 
 impl_IObject!(TSpeedButton);
@@ -11256,6 +11272,7 @@ impl TSplitter {
 
       // static class
 	  impl_Class_method!(Splitter_StaticClassType);
+
 }
 
 impl_IObject!(TSplitter);
@@ -12112,6 +12129,7 @@ impl TRadioGroup {
 
       // static class
 	  impl_Class_method!(RadioGroup_StaticClassType);
+
 }
 
 impl_IObject!(TRadioGroup);
@@ -13030,6 +13048,7 @@ impl TStaticText {
 
       // static class
 	  impl_Class_method!(StaticText_StaticClassType);
+
 }
 
 impl_IObject!(TStaticText);
@@ -14050,6 +14069,7 @@ impl TColorBox {
 
       // static class
 	  impl_Class_method!(ColorBox_StaticClassType);
+
 }
 
 impl_IObject!(TColorBox);
@@ -15040,6 +15060,7 @@ impl TColorListBox {
 
       // static class
 	  impl_Class_method!(ColorListBox_StaticClassType);
+
 }
 
 impl_IObject!(TColorListBox);
@@ -15254,6 +15275,7 @@ impl TTrayIcon {
 
       // static class
 	  impl_Class_method!(TrayIcon_StaticClassType);
+
 }
 
 impl_IObject!(TTrayIcon);
@@ -15440,6 +15462,7 @@ impl TOpenDialog {
 
       // static class
 	  impl_Class_method!(OpenDialog_StaticClassType);
+
 }
 
 impl_IObject!(TOpenDialog);
@@ -15626,6 +15649,7 @@ impl TSaveDialog {
 
       // static class
 	  impl_Class_method!(SaveDialog_StaticClassType);
+
 }
 
 impl_IObject!(TSaveDialog);
@@ -15763,6 +15787,7 @@ impl TColorDialog {
 
       // static class
 	  impl_Class_method!(ColorDialog_StaticClassType);
+
 }
 
 impl_IObject!(TColorDialog);
@@ -15900,6 +15925,7 @@ impl TFontDialog {
 
       // static class
 	  impl_Class_method!(FontDialog_StaticClassType);
+
 }
 
 impl_IObject!(TFontDialog);
@@ -16100,6 +16126,7 @@ impl TPrintDialog {
 
       // static class
 	  impl_Class_method!(PrintDialog_StaticClassType);
+
 }
 
 impl_IObject!(TPrintDialog);
@@ -16286,6 +16313,7 @@ impl TOpenPictureDialog {
 
       // static class
 	  impl_Class_method!(OpenPictureDialog_StaticClassType);
+
 }
 
 impl_IObject!(TOpenPictureDialog);
@@ -16472,6 +16500,7 @@ impl TSavePictureDialog {
 
       // static class
 	  impl_Class_method!(SavePictureDialog_StaticClassType);
+
 }
 
 impl_IObject!(TSavePictureDialog);
@@ -16658,6 +16687,7 @@ impl TSelectDirectoryDialog {
 
       // static class
 	  impl_Class_method!(SelectDirectoryDialog_StaticClassType);
+
 }
 
 impl_IObject!(TSelectDirectoryDialog);
@@ -17795,6 +17825,7 @@ impl TRichEdit {
 
       // static class
 	  impl_Class_method!(RichEdit_StaticClassType);
+
 }
 
 impl_IObject!(TRichEdit);
@@ -18722,6 +18753,7 @@ impl TTrackBar {
 
       // static class
 	  impl_Class_method!(TrackBar_StaticClassType);
+
 }
 
 impl_IObject!(TTrackBar);
@@ -19021,6 +19053,7 @@ impl TImageList {
 
       // static class
 	  impl_Class_method!(ImageList_StaticClassType);
+
 	  pub fn Draw1(&self, canvas: &TCanvas, x: i32, y: i32, index: i32, enabled: bool) -> &Self  {
           method_Call_1!(ImageList_Draw1, self.0, canvas.Instance(), x, y, index, enabled);
           return &self;
@@ -19875,6 +19908,7 @@ impl TUpDown {
 
       // static class
 	  impl_Class_method!(UpDown_StaticClassType);
+
 }
 
 impl_IObject!(TUpDown);
@@ -20776,6 +20810,7 @@ impl TProgressBar {
 
       // static class
 	  impl_Class_method!(ProgressBar_StaticClassType);
+
 }
 
 impl_IObject!(TProgressBar);
@@ -21865,6 +21900,7 @@ impl TDateTimePicker {
 
       // static class
 	  impl_Class_method!(DateTimePicker_StaticClassType);
+
 }
 
 impl_IObject!(TDateTimePicker);
@@ -22740,6 +22776,7 @@ impl TMonthCalendar {
 
       // static class
 	  impl_Class_method!(MonthCalendar_StaticClassType);
+
 }
 
 impl_IObject!(TMonthCalendar);
@@ -24145,6 +24182,7 @@ impl TListView {
 
       // static class
 	  impl_Class_method!(ListView_StaticClassType);
+
 }
 
 impl_IObject!(TListView);
@@ -25505,6 +25543,7 @@ impl TTreeView {
 
       // static class
 	  impl_Class_method!(TreeView_StaticClassType);
+
 }
 
 impl_IObject!(TTreeView);
@@ -26447,6 +26486,7 @@ impl TStatusBar {
 
       // static class
 	  impl_Class_method!(StatusBar_StaticClassType);
+
 }
 
 impl_IObject!(TStatusBar);
@@ -27487,6 +27527,7 @@ impl TToolBar {
 
       // static class
 	  impl_Class_method!(ToolBar_StaticClassType);
+
 }
 
 impl_IObject!(TToolBar);
@@ -28421,6 +28462,7 @@ impl TBitBtn {
 
       // static class
 	  impl_Class_method!(BitBtn_StaticClassType);
+
 }
 
 impl_IObject!(TBitBtn);
@@ -28588,6 +28630,7 @@ impl TIcon {
 
       // static class
 	  impl_Class_method!(Icon_StaticClassType);
+
 }
 
 impl_IObject!(TIcon);
@@ -28823,6 +28866,7 @@ impl TBitmap {
 
       // static class
 	  impl_Class_method!(Bitmap_StaticClassType);
+
 }
 
 impl_IObject!(TBitmap);
@@ -29916,6 +29960,7 @@ impl TMemo {
 
       // static class
 	  impl_Class_method!(Memo_StaticClassType);
+
 }
 
 impl_IObject!(TMemo);
@@ -30030,6 +30075,32 @@ impl TMemoryStream {
 
       // static class
 	  impl_Class_method!(MemoryStream_StaticClassType);
+
+
+      pub fn WriteByte(&self, value: i8) -> i32 {
+          return self.Write(&value as *const i8 as usize, 1);
+      }
+
+      pub fn ReadByte(&self) -> i8 {
+          let value: i8 = 0;
+          self.Read(&value as *const i8 as usize, 1);
+          return value;
+      }
+
+      pub fn WriteArray<T>(&self, data: &[T]) -> i32 {
+          if data.len() == 0 {
+              return 0
+          }
+          return self.Write(&data[0] as *const T as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+      }
+
+      pub fn ReadArray<T>(&self, data: &[T]) -> i32 {
+        if data.len() == 0 {
+            return 0
+        }
+        return self.Read(&data[0] as *const T as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+      }
+
 	  pub fn Write(&self, buffer: usize, count: i32) -> i32  {
           return method_Call_1!(MemoryStream_Write, self.0, buffer, count);
       }
@@ -30201,6 +30272,7 @@ impl TFont {
 
       // static class
 	  impl_Class_method!(Font_StaticClassType);
+
 }
 
 impl_IObject!(TFont);
@@ -30385,6 +30457,7 @@ impl TPopupMenu {
 
       // static class
 	  impl_Class_method!(PopupMenu_StaticClassType);
+
 }
 
 impl_IObject!(TPopupMenu);
@@ -30623,6 +30696,7 @@ impl TStringList {
 
       // static class
 	  impl_Class_method!(StringList_StaticClassType);
+
 }
 
 impl_IObject!(TStringList);
@@ -30719,6 +30793,7 @@ impl TBrush {
 
       // static class
 	  impl_Class_method!(Brush_StaticClassType);
+
 }
 
 impl_IObject!(TBrush);
@@ -30823,6 +30898,7 @@ impl TPen {
 
       // static class
 	  impl_Class_method!(Pen_StaticClassType);
+
 }
 
 impl_IObject!(TPen);
@@ -31096,6 +31172,7 @@ impl TMenuItem {
 
       // static class
 	  impl_Class_method!(MenuItem_StaticClassType);
+
 	  pub fn ShortCutText<'a>(&self) -> Cow<'a, str>  {
           return ToRustString(method_Call_1!(MenuItem_GetShortCutText, self.0));
       }
@@ -31219,6 +31296,7 @@ impl TPicture {
 
       // static class
 	  impl_Class_method!(Picture_StaticClassType);
+
 }
 
 impl_IObject!(TPicture);
@@ -31322,6 +31400,7 @@ impl TListColumns {
 
       // static class
 	  impl_Class_method!(ListColumns_StaticClassType);
+
 }
 
 impl_IObject!(TListColumns);
@@ -31430,6 +31509,7 @@ impl TListItems {
 
       // static class
 	  impl_Class_method!(ListItems_StaticClassType);
+
 }
 
 impl_IObject!(TListItems);
@@ -31568,6 +31648,7 @@ impl TTreeNodes {
 
       // static class
 	  impl_Class_method!(TreeNodes_StaticClassType);
+
 }
 
 impl_IObject!(TTreeNodes);
@@ -31789,6 +31870,7 @@ impl TListItem {
 
       // static class
 	  impl_Class_method!(ListItem_StaticClassType);
+
 }
 
 impl_IObject!(TListItem);
@@ -32034,6 +32116,7 @@ impl TTreeNode {
 
       // static class
 	  impl_Class_method!(TreeNode_StaticClassType);
+
 }
 
 impl_IObject!(TTreeNode);
@@ -33000,6 +33083,7 @@ impl TPageControl {
 
       // static class
 	  impl_Class_method!(PageControl_StaticClassType);
+
 }
 
 impl_IObject!(TPageControl);
@@ -33883,6 +33967,7 @@ impl TTabSheet {
 
       // static class
 	  impl_Class_method!(TabSheet_StaticClassType);
+
 }
 
 impl_IObject!(TTabSheet);
@@ -34781,6 +34866,7 @@ impl TButton {
 
       // static class
 	  impl_Class_method!(Button_StaticClassType);
+
 }
 
 impl_IObject!(TButton);
@@ -35849,6 +35935,7 @@ impl TEdit {
 
       // static class
 	  impl_Class_method!(Edit_StaticClassType);
+
 }
 
 impl_IObject!(TEdit);
@@ -36066,6 +36153,7 @@ impl TScreen {
 
       // static class
 	  impl_Class_method!(Screen_StaticClassType);
+
 }
 
 impl_IObject!(TScreen);
@@ -36140,6 +36228,7 @@ impl TMouse {
 
       // static class
 	  impl_Class_method!(Mouse_StaticClassType);
+
 }
 
 impl_IObject!(TMouse);
@@ -36302,6 +36391,7 @@ impl TListColumn {
 
       // static class
 	  impl_Class_method!(ListColumn_StaticClassType);
+
 }
 
 impl_IObject!(TListColumn);
@@ -36383,6 +36473,7 @@ impl TCollectionItem {
 
       // static class
 	  impl_Class_method!(CollectionItem_StaticClassType);
+
 }
 
 impl_IObject!(TCollectionItem);
@@ -36495,6 +36586,7 @@ impl TStatusPanels {
 
       // static class
 	  impl_Class_method!(StatusPanels_StaticClassType);
+
 }
 
 impl_IObject!(TStatusPanels);
@@ -36621,6 +36713,7 @@ impl TStatusPanel {
 
       // static class
 	  impl_Class_method!(StatusPanel_StaticClassType);
+
 }
 
 impl_IObject!(TStatusPanel);
@@ -37616,6 +37709,7 @@ impl TSpinEdit {
 
       // static class
 	  impl_Class_method!(SpinEdit_StaticClassType);
+
 }
 
 impl_IObject!(TSpinEdit);
@@ -38392,6 +38486,7 @@ impl TMiniWebview {
 
       // static class
 	  impl_Class_method!(MiniWebview_StaticClassType);
+
 }
 
 impl_IObject!(TMiniWebview);
@@ -38608,6 +38703,7 @@ impl TCanvas {
 
       // static class
 	  impl_Class_method!(Canvas_StaticClassType);
+
 	  pub fn BrushCopy(&self, dest: &TRect, bitmap: &TBitmap, source: &TRect, color: TColor) -> &Self  {
           let mut ps1 = dest.clone();
           let mut ps3 = source.clone();
@@ -39050,6 +39146,7 @@ impl TApplication {
 
       // static class
 	  impl_Class_method!(Application_StaticClassType);
+
 	  pub fn Initialize(&self) -> &Self  {
           method_Call_1!(Application_Initialize, self.0);
           return &self;
@@ -39214,6 +39311,7 @@ impl TMainMenu {
 
       // static class
 	  impl_Class_method!(MainMenu_StaticClassType);
+
 }
 
 impl_IObject!(TMainMenu);
@@ -39360,6 +39458,7 @@ impl TPngImage {
 
       // static class
 	  impl_Class_method!(PngImage_StaticClassType);
+
 }
 
 impl_IObject!(TPngImage);
@@ -39525,6 +39624,7 @@ impl TJPEGImage {
 
       // static class
 	  impl_Class_method!(JPEGImage_StaticClassType);
+
 }
 
 impl_IObject!(TJPEGImage);
@@ -39672,6 +39772,7 @@ impl TGIFImage {
 
       // static class
 	  impl_Class_method!(GIFImage_StaticClassType);
+
 }
 
 impl_IObject!(TGIFImage);
@@ -39797,6 +39898,7 @@ impl TActionList {
 
       // static class
 	  impl_Class_method!(ActionList_StaticClassType);
+
 }
 
 impl_IObject!(TActionList);
@@ -40006,6 +40108,7 @@ impl TAction {
 
       // static class
 	  impl_Class_method!(Action_StaticClassType);
+
 }
 
 impl_IObject!(TAction);
@@ -40757,6 +40860,7 @@ impl TToolButton {
 
       // static class
 	  impl_Class_method!(ToolButton_StaticClassType);
+
 }
 
 impl_IObject!(TToolButton);
@@ -40907,6 +41011,7 @@ impl TIniFile {
 
       // static class
 	  impl_Class_method!(IniFile_StaticClassType);
+
 }
 
 impl_IObject!(TIniFile);
@@ -41137,6 +41242,7 @@ impl TRegistry {
 
       // static class
 	  impl_Class_method!(Registry_StaticClassType);
+
 }
 
 impl_IObject!(TRegistry);
@@ -41262,6 +41368,7 @@ impl TClipboard {
 
       // static class
 	  impl_Class_method!(Clipboard_StaticClassType);
+
 	  pub fn HasFormat(&self, aFormatID: TClipboardFormat) -> bool  {
           return method_Call_1!(Clipboard_HasFormat, self.0, aFormatID);
       }
@@ -41355,6 +41462,7 @@ impl TMonitor {
 
       // static class
 	  impl_Class_method!(Monitor_StaticClassType);
+
 }
 
 impl_IObject!(TMonitor);
@@ -42020,6 +42128,7 @@ impl TPaintBox {
 
       // static class
 	  impl_Class_method!(PaintBox_StaticClassType);
+
 }
 
 impl_IObject!(TPaintBox);
@@ -42145,6 +42254,7 @@ impl TTimer {
 
       // static class
 	  impl_Class_method!(Timer_StaticClassType);
+
 }
 
 impl_IObject!(TTimer);
@@ -42253,6 +42363,7 @@ impl TList {
 
       // static class
 	  impl_Class_method!(List_StaticClassType);
+
 }
 
 impl_IObject!(TList);
@@ -43487,6 +43598,7 @@ impl TForm {
 
       // static class
 	  impl_Class_method!(Form_StaticClassType);
+
 	  pub fn Create2(&self, aInitScale: bool) -> TForm  {
           return method_Call_2!(TForm, Form_Create2, self.0, aInitScale);
       }
@@ -43610,6 +43722,7 @@ impl TParaAttributes {
 
       // static class
 	  impl_Class_method!(ParaAttributes_StaticClassType);
+
 }
 
 impl_IObject!(TParaAttributes);
@@ -43720,6 +43833,7 @@ impl TTextAttributes {
 
       // static class
 	  impl_Class_method!(TextAttributes_StaticClassType);
+
 }
 
 impl_IObject!(TTextAttributes);
@@ -43785,6 +43899,7 @@ impl TIconOptions {
 
       // static class
 	  impl_Class_method!(IconOptions_StaticClassType);
+
 }
 
 impl_IObject!(TIconOptions);
@@ -43832,6 +43947,7 @@ impl Exception {
 
       // static class
 	  impl_Class_method!(Exception_StaticClassType);
+
 }
 
 impl_IObject!(Exception);
@@ -44702,6 +44818,7 @@ impl TScrollBar {
 
       // static class
 	  impl_Class_method!(ScrollBar_StaticClassType);
+
 }
 
 impl_IObject!(TScrollBar);
@@ -45775,6 +45892,7 @@ impl TMaskEdit {
 
       // static class
 	  impl_Class_method!(MaskEdit_StaticClassType);
+
 }
 
 impl_IObject!(TMaskEdit);
@@ -46414,6 +46532,7 @@ impl TShape {
 
       // static class
 	  impl_Class_method!(Shape_StaticClassType);
+
 }
 
 impl_IObject!(TShape);
@@ -46976,6 +47095,7 @@ impl TBevel {
 
       // static class
 	  impl_Class_method!(Bevel_StaticClassType);
+
 }
 
 impl_IObject!(TBevel);
@@ -47939,6 +48059,7 @@ impl TScrollBox {
 
       // static class
 	  impl_Class_method!(ScrollBox_StaticClassType);
+
 }
 
 impl_IObject!(TScrollBox);
@@ -49008,6 +49129,7 @@ impl TCheckListBox {
 
       // static class
 	  impl_Class_method!(CheckListBox_StaticClassType);
+
 }
 
 impl_IObject!(TCheckListBox);
@@ -49670,6 +49792,7 @@ impl TGauge {
 
       // static class
 	  impl_Class_method!(Gauge_StaticClassType);
+
 }
 
 impl_IObject!(TGauge);
@@ -50396,6 +50519,7 @@ impl TImageButton {
 
       // static class
 	  impl_Class_method!(ImageButton_StaticClassType);
+
 }
 
 impl_IObject!(TImageButton);
@@ -50574,6 +50698,7 @@ impl TFindDialog {
 
       // static class
 	  impl_Class_method!(FindDialog_StaticClassType);
+
 }
 
 impl_IObject!(TFindDialog);
@@ -50765,6 +50890,7 @@ impl TReplaceDialog {
 
       // static class
 	  impl_Class_method!(ReplaceDialog_StaticClassType);
+
 }
 
 impl_IObject!(TReplaceDialog);
@@ -50884,6 +51010,7 @@ impl TPrinterSetupDialog {
 
       // static class
 	  impl_Class_method!(PrinterSetupDialog_StaticClassType);
+
 }
 
 impl_IObject!(TPrinterSetupDialog);
@@ -51070,6 +51197,7 @@ impl TPageSetupDialog {
 
       // static class
 	  impl_Class_method!(PageSetupDialog_StaticClassType);
+
 }
 
 impl_IObject!(TPageSetupDialog);
@@ -51176,6 +51304,7 @@ impl TDragObject {
 
       // static class
 	  impl_Class_method!(DragObject_StaticClassType);
+
 }
 
 impl_IObject!(TDragObject);
@@ -51332,6 +51461,7 @@ impl TDragDockObject {
 
       // static class
 	  impl_Class_method!(DragDockObject_StaticClassType);
+
 }
 
 impl_IObject!(TDragDockObject);
@@ -53072,6 +53202,7 @@ impl TStringGrid {
 
       // static class
 	  impl_Class_method!(StringGrid_StaticClassType);
+
 }
 
 impl_IObject!(TStringGrid);
@@ -54227,6 +54358,7 @@ impl TDrawGrid {
 
       // static class
 	  impl_Class_method!(DrawGrid_StaticClassType);
+
 }
 
 impl_IObject!(TDrawGrid);
@@ -55404,6 +55536,7 @@ impl TValueListEditor {
 
       // static class
 	  impl_Class_method!(ValueListEditor_StaticClassType);
+
 }
 
 impl_IObject!(TValueListEditor);
@@ -56288,6 +56421,7 @@ impl THeaderControl {
 
       // static class
 	  impl_Class_method!(HeaderControl_StaticClassType);
+
 }
 
 impl_IObject!(THeaderControl);
@@ -56433,6 +56567,7 @@ impl THeaderSection {
 
       // static class
 	  impl_Class_method!(HeaderSection_StaticClassType);
+
 }
 
 impl_IObject!(THeaderSection);
@@ -56540,6 +56675,7 @@ impl THeaderSections {
 
       // static class
 	  impl_Class_method!(HeaderSections_StaticClassType);
+
 }
 
 impl_IObject!(THeaderSections);
@@ -57614,6 +57750,7 @@ impl TLabeledEdit {
 
       // static class
 	  impl_Class_method!(LabeledEdit_StaticClassType);
+
 }
 
 impl_IObject!(TLabeledEdit);
@@ -58292,6 +58429,7 @@ impl TBoundLabel {
 
       // static class
 	  impl_Class_method!(BoundLabel_StaticClassType);
+
 }
 
 impl_IObject!(TBoundLabel);
@@ -59286,6 +59424,7 @@ impl TFlowPanel {
 
       // static class
 	  impl_Class_method!(FlowPanel_StaticClassType);
+
 }
 
 impl_IObject!(TFlowPanel);
@@ -60297,6 +60436,7 @@ impl TCoolBar {
 
       // static class
 	  impl_Class_method!(CoolBar_StaticClassType);
+
 }
 
 impl_IObject!(TCoolBar);
@@ -60406,6 +60546,7 @@ impl TCoolBands {
 
       // static class
 	  impl_Class_method!(CoolBands_StaticClassType);
+
 }
 
 impl_IObject!(TCoolBands);
@@ -60635,6 +60776,7 @@ impl TCoolBand {
 
       // static class
 	  impl_Class_method!(CoolBand_StaticClassType);
+
 }
 
 impl_IObject!(TCoolBand);
@@ -60738,6 +60880,7 @@ impl TCollection {
 
       // static class
 	  impl_Class_method!(Collection_StaticClassType);
+
 }
 
 impl_IObject!(TCollection);
@@ -60876,6 +61019,7 @@ impl TPrinter {
 
       // static class
 	  impl_Class_method!(Printer_StaticClassType);
+
 	  pub fn SetPrinter(&self, aName: &str) -> &Self  {
           method_Call_1!(Printer_SetPrinter, self.0, to_CString!(aName));
           return &self;
@@ -61139,6 +61283,7 @@ impl TTaskDialog {
 
       // static class
 	  impl_Class_method!(TaskDialog_StaticClassType);
+
 }
 
 impl_IObject!(TTaskDialog);
@@ -61249,6 +61394,7 @@ impl TTaskDialogButtons {
 
       // static class
 	  impl_Class_method!(TaskDialogButtons_StaticClassType);
+
 }
 
 impl_IObject!(TTaskDialogButtons);
@@ -61356,6 +61502,7 @@ impl TTaskDialogButtonItem {
 
       // static class
 	  impl_Class_method!(TaskDialogButtonItem_StaticClassType);
+
 }
 
 impl_IObject!(TTaskDialogButtonItem);
@@ -61464,6 +61611,7 @@ impl TTaskDialogRadioButtonItem {
 
       // static class
 	  impl_Class_method!(TaskDialogRadioButtonItem_StaticClassType);
+
 }
 
 impl_IObject!(TTaskDialogRadioButtonItem);
@@ -61572,6 +61720,7 @@ impl TTaskDialogBaseButtonItem {
 
       // static class
 	  impl_Class_method!(TaskDialogBaseButtonItem_StaticClassType);
+
 }
 
 impl_IObject!(TTaskDialogBaseButtonItem);
@@ -62619,6 +62768,7 @@ impl TComboBoxEx {
 
       // static class
 	  impl_Class_method!(ComboBoxEx_StaticClassType);
+
 }
 
 impl_IObject!(TComboBoxEx);
@@ -62717,6 +62867,7 @@ impl TComboExItems {
 
       // static class
 	  impl_Class_method!(ComboExItems_StaticClassType);
+
 }
 
 impl_IObject!(TComboExItems);
@@ -62836,6 +62987,7 @@ impl TComboExItem {
 
       // static class
 	  impl_Class_method!(ComboExItem_StaticClassType);
+
 }
 
 impl_IObject!(TComboExItem);
@@ -63803,6 +63955,7 @@ impl TFrame {
 
       // static class
 	  impl_Class_method!(Frame_StaticClassType);
+
 }
 
 impl_IObject!(TFrame);
@@ -63915,6 +64068,7 @@ impl TControlScrollBar {
 
       // static class
 	  impl_Class_method!(ControlScrollBar_StaticClassType);
+
 }
 
 impl_IObject!(TControlScrollBar);
@@ -64003,6 +64157,7 @@ impl TSizeConstraints {
 
       // static class
 	  impl_Class_method!(SizeConstraints_StaticClassType);
+
 }
 
 impl_IObject!(TSizeConstraints);
@@ -64715,6 +64870,7 @@ impl TXButton {
 
       // static class
 	  impl_Class_method!(XButton_StaticClassType);
+
 }
 
 impl_IObject!(TXButton);
@@ -64786,6 +64942,7 @@ impl TAnchorSide {
 
       // static class
 	  impl_Class_method!(AnchorSide_StaticClassType);
+
 }
 
 impl_IObject!(TAnchorSide);
@@ -64963,6 +65120,7 @@ impl TControlBorderSpacing {
 
       // static class
 	  impl_Class_method!(ControlBorderSpacing_StaticClassType);
+
 }
 
 impl_IObject!(TControlBorderSpacing);
@@ -65109,6 +65267,7 @@ impl TControlChildSizing {
 
       // static class
 	  impl_Class_method!(ControlChildSizing_StaticClassType);
+
 }
 
 impl_IObject!(TControlChildSizing);
@@ -66073,6 +66232,7 @@ impl TCheckGroup {
 
       // static class
 	  impl_Class_method!(CheckGroup_StaticClassType);
+
 }
 
 impl_IObject!(TCheckGroup);
@@ -66984,6 +67144,7 @@ impl TToggleBox {
 
       // static class
 	  impl_Class_method!(ToggleBox_StaticClassType);
+
 }
 
 impl_IObject!(TToggleBox);
@@ -67139,6 +67300,7 @@ impl TGridColumnTitle {
 
       // static class
 	  impl_Class_method!(GridColumnTitle_StaticClassType);
+
 }
 
 impl_IObject!(TGridColumnTitle);
@@ -67406,6 +67568,7 @@ impl TGridColumn {
 
       // static class
 	  impl_Class_method!(GridColumn_StaticClassType);
+
 }
 
 impl_IObject!(TGridColumn);
@@ -67530,6 +67693,7 @@ impl TGridColumns {
 
       // static class
 	  impl_Class_method!(GridColumns_StaticClassType);
+
 }
 
 impl_IObject!(TGridColumns);
