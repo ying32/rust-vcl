@@ -259,7 +259,7 @@ impl TMainForm {
         // 这里语法上还得改进，需要写入一个数组首地址
         println!(
             "write len: {}", // sizeof(T) * testArr.len()
-            mem.Write(testArr.as_ptr() as usize, testArr.len() as i32)
+            mem.Write(testArr.as_ptr(), testArr.len() as i32)
         );
 
         println!("write byte: {}", mem.WriteByte(29));
@@ -275,7 +275,7 @@ impl TMainForm {
             "read len: {}",
             mem.Read(
                 // sizeof(T) * testArr.len()
-                testArr.as_ptr() as usize,
+                testArr.as_ptr(),
                 testArrRead.len() as i32
             )
         );

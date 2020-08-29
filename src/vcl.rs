@@ -30077,13 +30077,21 @@ impl TMemoryStream {
 	  impl_Class_method!(MemoryStream_StaticClassType);
 
 
+	  pub fn Write<T>(&self, buffer: *const T, count: i32) -> i32  {
+        return method_Call_1!(MemoryStream_Write, self.0, buffer as usize, count);
+      }
+
+      pub fn Read<T>(&self, buffer: *const T, count: i32) -> i32  {
+        return method_Call_1!(MemoryStream_Read, self.0, buffer as usize, count);
+      }
+
       pub fn WriteByte(&self, value: i8) -> i32 {
-          return self.Write(&value as *const i8 as usize, 1);
+          return self.Write(&value as *const i8, 1);
       }
 
       pub fn ReadByte(&self) -> i8 {
           let value: i8 = 0;
-          self.Read(&value as *const i8 as usize, 1);
+          self.Read(&value as *const i8, 1);
           return value;
       }
 
@@ -30091,23 +30099,16 @@ impl TMemoryStream {
           if data.len() == 0 {
               return 0
           }
-          return self.Write(data.as_ptr() as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+          return self.Write(data.as_ptr(), (std::mem::size_of::<T>() * data.len()) as i32);
       }
 
       pub fn ReadArray<T>(&self, data: &[T]) -> i32 {
         if data.len() == 0 {
             return 0
         }
-        return self.Read(data.as_ptr() as usize, (std::mem::size_of::<T>() * data.len()) as i32);
+        return self.Read(data.as_ptr(), (std::mem::size_of::<T>() * data.len()) as i32);
       }
 
-	  pub fn Write(&self, buffer: usize, count: i32) -> i32  {
-          return method_Call_1!(MemoryStream_Write, self.0, buffer, count);
-      }
-
-	  pub fn Read(&self, buffer: usize, count: i32) -> i32  {
-          return method_Call_1!(MemoryStream_Read, self.0, buffer, count);
-      }
 
 }
 
