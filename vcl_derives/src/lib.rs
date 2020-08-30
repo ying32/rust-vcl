@@ -7,15 +7,15 @@ extern crate syn;
 use proc_macro::TokenStream;
 use quote::quote;
 
-#[proc_macro_derive(SelfId)]
-pub fn derive_sid(input: TokenStream) -> TokenStream {
-    let item: syn::DeriveInput = syn::parse(input).unwrap();
-    let name = &item.ident;
-    let code = quote! {
-        ImplISId!(#name);
-    };
-    code.into()
-}
+// #[proc_macro_derive(SelfId)]
+// pub fn derive_sid(input: TokenStream) -> TokenStream {
+//     let item: syn::DeriveInput = syn::parse(input).unwrap();
+//     let name = &item.ident;
+//     let code = quote! {
+//         ImplISId!(#name);
+//     };
+//     code.into()
+// }
 
 //---------------------vclForm----------------------------
 
@@ -36,7 +36,7 @@ pub fn derive_vclApp(input: TokenStream) -> TokenStream {
     let item: syn::DeriveInput = syn::parse(input).unwrap();
     let name = &item.ident;
     let code = quote! {
-        ImplISId!(#name);
+        // ImplISId!(#name);
         ImplIApplication!(#name);
         // 有需要再添加
     };

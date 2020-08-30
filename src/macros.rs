@@ -152,7 +152,7 @@ macro_rules! to_CString {
 #[macro_use]
 macro_rules! insert_Id {
     ($name1: ident, $name2: expr) => {
-        insertMap(unsafe { transmute($name1) }, $name2) //unsafe { transmute($name2) } )
+        insertMap(unsafe { transmute($name1) }, $name2 as *const T as usize)  
     };
 }
 
@@ -188,16 +188,16 @@ macro_rules! Exclude {
     };
 }
 
-#[macro_export]
-macro_rules! ImplISId {
-    ($className:ident) => {
-        impl ISId for $className {
-            fn getSId(&self) -> usize {
-                return unsafe { std::mem::transmute(self) };
-            }
-        }
-    };
-}
+// #[macro_export]
+// macro_rules! ImplISId {
+//     ($className:ident) => {
+//         impl ISId for $className {
+//             fn getSId(&self) -> usize {
+//                 return unsafe { std::mem::transmute(self) };
+//             }
+//         }
+//     };
+// }
 
 #[macro_export]
 macro_rules! ImplIApplication {
@@ -230,7 +230,7 @@ macro_rules! ImplForm {
             }
         }
 
-        ImplISId!($className);
+        // ImplISId!($className);
     };
 }
 

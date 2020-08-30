@@ -54,11 +54,10 @@ impl TMainForm {
     }
 
     pub fn init(&self) -> &Self {
-        let sid = self.getSId();
-
+     
         println!("size TMessage: {}", size_of::<TMessage>());
 
-        Application.SetOnMinimize(sid, Self::onAppMinimize);
+        Application.SetOnMinimize(self, Self::onAppMinimize);
 
         // TForm
         self.form
@@ -66,15 +65,15 @@ impl TMainForm {
             .SetHeight(556)
             .SetPosition(TPosition::poScreenCenter)
             .SetAllowDropFiles(true)
-            .SetOnDropFiles(sid, Self::onDropFile)
-            .SetOnMouseMove(sid, Self::onFormMouseMove)
+            .SetOnDropFiles(self, Self::onDropFile)
+            .SetOnMouseMove(self, Self::onFormMouseMove)
             .SetColor(clSkyblue)
             .SetKeyPreview(true)
-            .SetOnKeyDown(sid, Self::onFormKeyDown)
-            .SetOnDestroy(sid, Self::onFormDestroy)
-            .SetOnMouseDown(sid, Self::onFormMouseDown)
-            // .SetOnWndProc(sid, Self::onFormWndProc)
-            .SetOnMouseUp(sid, Self::onFormMouseUp);
+            .SetOnKeyDown(self, Self::onFormKeyDown)
+            .SetOnDestroy(self, Self::onFormDestroy)
+            .SetOnMouseDown(self, Self::onFormMouseDown)
+            // .SetOnWndProc(self, Self::onFormWndProc)
+            .SetOnMouseUp(self, Self::onFormMouseUp);
 
         // 测试自动drop
         // let ico = TIcon::new();
@@ -91,7 +90,7 @@ impl TMainForm {
             .SetLeft(10)
             .SetTop(50)
             .SetCaption("button1")
-            .SetOnClick(sid, Self::onBtnClick);
+            .SetOnClick(self, Self::onBtnClick);
 
         // TButton
         self.btn2
@@ -100,7 +99,7 @@ impl TMainForm {
             .SetTop(self.btn.Top() + self.btn.Height() + 10)
             .SetWidth(120)
             .SetCaption("InputCombo")
-            .SetOnClick(sid, Self::onBtn2Click);
+            .SetOnClick(self, Self::onBtn2Click);
 
         // TButton
         self.btn3
@@ -108,7 +107,7 @@ impl TMainForm {
             .SetLeft(10)
             .SetTop(self.btn2.Top() + self.btn2.Height() + 10)
             .SetCaption("MsgBox")
-            .SetOnClick(sid, Self::onBtn3Click);
+            .SetOnClick(self, Self::onBtn3Click);
 
         // TButton
         self.btnOpenDialog
@@ -117,7 +116,7 @@ impl TMainForm {
             .SetTop(self.btn3.Top() + self.btn3.Height() + 10)
             .SetWidth(120)
             .SetCaption("Open Dialog")
-            .SetOnClick(sid, Self::onBtnOpenDialogClick);
+            .SetOnClick(self, Self::onBtnOpenDialogClick);
 
         // TButton
         self.btnColorDialog
@@ -126,7 +125,7 @@ impl TMainForm {
             .SetTop(self.btnOpenDialog.Top() + self.btnOpenDialog.Height() + 10)
             .SetWidth(150)
             .SetCaption("Open Color Dialog")
-            .SetOnClick(sid, Self::onBtnColorDialogClick)
+            .SetOnClick(self, Self::onBtnColorDialogClick)
             .SetShowHint(true)
             .SetHint("this a TButton");
 
@@ -139,7 +138,7 @@ impl TMainForm {
                 300,
                 28,
             )
-            .SetOnChange(sid, Self::onEdit1Change)
+            .SetOnChange(self, Self::onEdit1Change)
             .SetTextHint("example: xxxx");
 
         // TMemo
@@ -170,7 +169,7 @@ impl TMainForm {
         fSubItem.SetCaption("&New");
         fSubItem.SetShortCutText("Ctrl+N");
         fSubItem.SetName("nFileNew");
-        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fSubItem.SetOnClick(self, Self::onMenuItemClick);
         //fSubItem.SetShortCut(TextToShortCut("Ctrl+N"));
         fileItem.Add(&fSubItem);
         // open
@@ -178,7 +177,7 @@ impl TMainForm {
         fSubItem.SetCaption("&Open");
         fSubItem.SetShortCutText("Ctrl+O");
         fSubItem.SetName("nFileOpen");
-        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fSubItem.SetOnClick(self, Self::onMenuItemClick);
         fileItem.Add(&fSubItem);
         // -
         fSubItem = TMenuItem::new(self);
@@ -189,7 +188,7 @@ impl TMainForm {
         fSubItem.SetCaption("&Exit");
         fSubItem.SetShortCutText("Ctrl+Q");
         fSubItem.SetName("nFileExit");
-        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fSubItem.SetOnClick(self, Self::onMenuItemClick);
         fileItem.Add(&fSubItem);
 
         self.mainMenu.Items().Add(&fileItem);
@@ -202,7 +201,7 @@ impl TMainForm {
         fSubItem.SetCaption("&Exit");
         fSubItem.SetShortCutText("Ctrl+Q");
         fSubItem.SetName("pmExit");
-        fSubItem.SetOnClick(sid, Self::onMenuItemClick);
+        fSubItem.SetOnClick(self, Self::onMenuItemClick);
         self.popupMenu.Items().Add(&fSubItem);
 
         // TTreeView
@@ -212,7 +211,7 @@ impl TMainForm {
             .SetTop(self.btnOpenForm2.Top() + self.btnOpenForm2.Height() + 10)
             .SetWidth(300)
             .SetHeight(100)
-            .SetOnClick(sid, Self::onTv1Click);
+            .SetOnClick(self, Self::onTv1Click);
 
         let node = self.tv1.Items().AddChild(&TTreeNode::Nil(), "First");
         self.tv1.Items().AddChild(&node, "Sec");
@@ -225,7 +224,7 @@ impl TMainForm {
             .SetTop(10)
             .SetWidth(150)
             .SetHeight(200)
-            .SetOnPaint(sid, Self::onPb1Paint);
+            .SetOnPaint(self, Self::onPb1Paint);
 
         // TListBox
         self.listBox1
@@ -235,8 +234,8 @@ impl TMainForm {
             .SetWidth(300)
             .SetHeight(100)
             .SetItemHeight(30)
-            .SetOnClick(sid, Self::onListBox1Click)
-            .SetOnDrawItem(sid, Self::onListBox1CustomDraw);
+            .SetOnClick(self, Self::onListBox1Click)
+            .SetOnDrawItem(self, Self::onListBox1CustomDraw);
 
         // 因为liblcl没有支持ASLR，所以MSVC编译器编译的会出现这个，使用link器参数关闭：/DYNAMICBASE:NO
         //#[cfg(not(all(target_env = "msvc", target_os = "windows", target_arch = "x86_64")))]
@@ -251,7 +250,7 @@ impl TMainForm {
         self.trayicon
             .SetVisible(true)
             .SetHint("hello!")
-            .SetOnClick(sid, Self::onTrayIconClick);
+            .SetOnClick(self, Self::onTrayIconClick);
 
         // TMemoryStream
         let mem = TMemoryStream::new(); // 非组件类已实现drop方法，所以Free不是必须的，当然，你也可以手动调用Free

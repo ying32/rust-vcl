@@ -59,7 +59,7 @@ impl TApp {
         self.mainForm
             .init()
             .btnOpenForm2
-            .SetOnClick(self.getSId(), Self::onOpenForm2);
+            .SetOnClick(self, Self::onOpenForm2);
 
         self.form2.init();
 

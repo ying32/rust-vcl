@@ -21,8 +21,7 @@ impl TForm2 {
     }
 
     pub fn init(&self) -> &Self {
-        let sid = self.getSId();
-
+     
         // TForm
         self.form
             .SetCaption("你好，Rust！ - Hello Rust!")
@@ -34,7 +33,7 @@ impl TForm2 {
         // TButton
         self.btn.SetParent(self)
             .SetCaption("msgbox")
-            .SetOnClick(sid, Self::onBtnClick)
+            .SetOnClick(self, Self::onBtnClick)
             .AnchorHorizontalCenterTo(self)
             .AnchorVerticalCenterTo(self);
 
