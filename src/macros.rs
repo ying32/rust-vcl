@@ -224,11 +224,11 @@ macro_rules! ImplForm {
         impl IWinControl for $className {}
         impl IForm for $className {}
 
-        impl Drop for $className {
-            fn drop(&mut self) {
-                println!("drop.");
-            }
-        }
+        //impl Drop for $className {
+        //    fn drop(&mut self) {
+        //        //println!("drop.");
+        //    }
+        //}
 
         // ImplISId!($className);
     };
