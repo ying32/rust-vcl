@@ -19,6 +19,7 @@ pub struct TMainForm {
     edit1: TEdit,
     memo1: TMemo,
     pub btnOpenForm2: TButton,
+    pub btnOpenForm3: TButton,
     mainMenu: TMainMenu,
     popupMenu: TPopupMenu,
     tv1: TTreeView,
@@ -42,6 +43,7 @@ impl TMainForm {
             edit1: NewObject!(TEdit, form),
             memo1: NewObject!(TMemo, form),
             btnOpenForm2: NewObject!(TButton, form),
+            btnOpenForm3: NewObject!(TButton, form),
             // menu
             mainMenu: NewObject!(TMainMenu, form),
             popupMenu: NewObject!(TPopupMenu, form),
@@ -54,7 +56,6 @@ impl TMainForm {
     }
 
     pub fn init(&self) -> &Self {
-     
         println!("size TMessage: {}", size_of::<TMessage>());
 
         Application.SetOnMinimize(self, Self::onAppMinimize);
@@ -161,6 +162,15 @@ impl TMainForm {
             .SetWidth(120)
             .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
 
+        // TButton
+        self.btnOpenForm3
+            .SetParent(self)
+            .SetLeft(self.btnOpenForm2.Left() + self.btnOpenForm2.Width() + 10)
+            .SetCaption("Open Form3")
+            .SetWidth(120)
+            .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
+
+
         // TMainMenu
         let fileItem = TMenuItem::new(self);
         fileItem.SetCaption("&File");
@@ -255,7 +265,6 @@ impl TMainForm {
         // TMemoryStream
         let mem = TMemoryStream::new(); // 非组件类已实现drop方法，所以Free不是必须的，当然，你也可以手动调用Free
         let testArr: [i8; 6] = [1, 3, 6, 4, 5, 6];
-        
         println!(
             "write len: {}", // sizeof(T) * testArr.len()
             mem.Write(testArr.as_ptr(), testArr.len() as i32)

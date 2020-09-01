@@ -6,12 +6,14 @@
 extern crate rust_vcl;
 
 mod form2;
+mod form3;
 mod mainform;
 
 use rust_vcl::fns::*;
 use rust_vcl::vcl::*;
 
 use form2::TForm2;
+use form3::TForm3;
 use mainform::TMainForm;
 
 // const array:[u8;4] = [1,2,3,3];
@@ -35,6 +37,7 @@ fn test() {
 struct TApp {
     mainForm: TMainForm,
     form2: TForm2,
+    form3: TForm3,
 }
 
 impl TApp {
@@ -48,6 +51,7 @@ impl TApp {
         return Self {
             mainForm: TMainForm::new(),
             form2: TForm2::new(),
+            form3: TForm3::new(),
         };
     }
 
@@ -56,18 +60,28 @@ impl TApp {
         //Application.SetOnException(self.getSId(), Self::onException);
 
         println!("currentthreadid={}", CurrentThreadId());
-        self.mainForm
-            .init()
-            .btnOpenForm2
+        self.mainForm.init();
+
+        self.mainForm.btnOpenForm2
             .SetOnClick(self, Self::onOpenForm2);
 
+        self.mainForm.btnOpenForm3
+        .SetOnClick(self, Self::onOpenForm3);
+
         self.form2.init();
+        self.form3.init();
 
         return self;
     }
 
     fn onOpenForm2(&self, _sender: usize) {
-        self.form2.form.Show();
+        //self.form2.form.Show();
+        self.form2.form.ShowModal();
+    }
+
+    fn onOpenForm3(&self, _sender: usize) {
+        //self.form3.form.Show();
+        self.form3.form.ShowModal();
     }
 
     fn onException(&self, _sender: usize, e: usize) {

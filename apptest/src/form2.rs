@@ -25,7 +25,7 @@ impl TForm2 {
         // TForm
         self.form
             .SetCaption("你好，Rust！ - Hello Rust!")
-            .SetWidth(200)
+            .SetWidth(500)
             .SetHeight(300)
             .EnabledMaximize(false)
             .SetPosition(TPosition::poScreenCenter);
