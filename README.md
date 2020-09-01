@@ -10,6 +10,10 @@
 | Linux       | 待测试 |       |
 | macOS       | 待测试 |       |
 
+#### 未实现的功能
+
+* `ThreadSync`
+
 ----
 
 rust-vcl的代码由 [Rust模板](https://github.com/ying32/liblcl/tree/master/Tools/genBind/rust/tpl) 自动生成，由于个人精力有限，相关的文档及例子，请参考 [govcl](https://github.com/ying32/govcl) 的。
@@ -27,6 +31,10 @@ rust-vcl的代码由 [Rust模板](https://github.com/ying32/liblcl/tree/master/T
 | Windows x64 | Tested | Win10 |
 | Linux       | To be tested |       |
 | macOS       | To be tested |       |
+
+#### Unimplemented features
+
+* `ThreadSync`
 
 ----
 
