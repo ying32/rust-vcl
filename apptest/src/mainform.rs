@@ -170,7 +170,6 @@ impl TMainForm {
             .SetWidth(120)
             .SetTop(self.edit1.Top() + self.edit1.Height() + 10);
 
-
         // TMainMenu
         let fileItem = TMenuItem::new(self);
         fileItem.SetCaption("&File");
@@ -533,6 +532,32 @@ impl TMainForm {
             let color = self.dlgColor.Color();
             println!("color={}", color);
             self.form.SetColor(color);
+        }
+    }
+
+    fn onGetCellHint(
+        &self,
+        _sender: usize,
+        _ACol: i32,
+        _ARow: i32,
+        hintText: *mut *const std::os::raw::c_char,
+    ) {
+        unsafe {
+            *hintText = toCString("fff"); //??????
+        }
+    }
+
+    fn onGetCheckboxState(
+        &self,
+        _sender: usize,
+        _ACol: i32,
+        _ARow: i32,
+        _value: *mut TCheckBoxState,
+    ) {
+        unsafe {
+            let state = TCheckBoxState::cbChecked;
+
+            //*value = state;
         }
     }
 

@@ -70,6 +70,11 @@ pub fn ToRustString<'a>(s: *const i8) -> Cow<'a, str> {
     return unsafe { CStr::from_ptr(s).to_string_lossy() };
 }
 
+#[inline]
+pub fn toCString(s: &str) -> *const i8 {
+    return CString::new(s).unwrap().as_ptr();
+}
+
 pub fn WindowFromPoint(point: &TPoint) -> HWND {
     unsafe {
          let mut ps0 = point.clone();
