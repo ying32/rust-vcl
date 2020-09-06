@@ -18,7 +18,26 @@ use mainform::TMainForm;
 
 // const array:[u8;4] = [1,2,3,3];
 
+struct abc1;
+
+// impl abc1 {
+//     fn new() -> Self {
+//         abc1 {}
+//     }
+
+// }
+
+// impl From<usize> for abc1 {
+//     fn from(val: usize) -> Self {
+//         println!("usize: {}", val);
+//         abc1{}
+//     }
+// }
+
 fn test() {
+    // let abcdef = abc1::new();
+    // abc1::from(111);
+
     // async_std::task::spawn(async {
     //     println!("async task");
     //     a.await;
@@ -62,11 +81,13 @@ impl TApp {
         println!("currentthreadid={}", CurrentThreadId());
         self.mainForm.init();
 
-        self.mainForm.btnOpenForm2
+        self.mainForm
+            .btnOpenForm2
             .SetOnClick(self, Self::onOpenForm2);
 
-        self.mainForm.btnOpenForm3
-        .SetOnClick(self, Self::onOpenForm3);
+        self.mainForm
+            .btnOpenForm3
+            .SetOnClick(self, Self::onOpenForm3);
 
         self.form2.init();
         self.form3.init();
@@ -85,7 +106,7 @@ impl TApp {
     }
 
     fn onException(&self, _sender: usize, e: usize) {
-        let exception = Exception::As(e);
+        let exception = Exception::from(e);
         println!("exception: {:}", exception.Message());
     }
 }

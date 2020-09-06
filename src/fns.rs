@@ -104,7 +104,7 @@ pub fn ShortCutToText<'a>(aVal: TShortCut) -> Cow<'a, str> {
 }
 
 pub fn SetClipboard(aNewClipboard: &TClipboard) -> TClipboard {
-    unsafe { return TClipboard::As(lclapi::DSetClipboard(aNewClipboard.Instance()))}
+    unsafe { return TClipboard::from(lclapi::DSetClipboard(aNewClipboard.Instance()))}
 }
 
 pub fn SendMessage(hWd: HWND, msg: u32, wParam: WPARAM, lParam: LPARAM) -> LRESULT {
@@ -239,31 +239,31 @@ pub fn InitGoDll(aMainThreadId: TThreadID) {
 }
 
 pub fn FindControl(aHandle: HWND) -> TWinControl {
-    unsafe { return TWinControl::As(lclapi::DFindControl(aHandle))}
+    unsafe { return TWinControl::from(lclapi::DFindControl(aHandle))}
 }
 
 pub fn FindLCLControl(aScreenPos: &TPoint) -> TControl {
     let mut ps0 = aScreenPos.clone();
-    unsafe { return TControl::As(lclapi::DFindLCLControl(&mut ps0))}
+    unsafe { return TControl::from(lclapi::DFindLCLControl(&mut ps0))}
 }
 
 pub fn FindOwnerControl(handle: HWND) -> TWinControl {
-    unsafe { return TWinControl::As(lclapi::DFindOwnerControl(handle))}
+    unsafe { return TWinControl::from(lclapi::DFindOwnerControl(handle))}
 }
 
 pub fn FindControlAtPosition(aPosition: &TPoint, allowDisabled: bool) -> TControl {
     let mut ps0 = aPosition.clone();
-    unsafe { return TControl::As(lclapi::DFindControlAtPosition(&mut ps0, allowDisabled))}
+    unsafe { return TControl::from(lclapi::DFindControlAtPosition(&mut ps0, allowDisabled))}
 }
 
 pub fn FindLCLWindow(aScreenPos: &TPoint, allowDisabled: bool) -> TWinControl {
     let mut ps0 = aScreenPos.clone();
-    unsafe { return TWinControl::As(lclapi::DFindLCLWindow(&mut ps0, allowDisabled))}
+    unsafe { return TWinControl::from(lclapi::DFindLCLWindow(&mut ps0, allowDisabled))}
 }
 
 pub fn FindDragTarget(aPosition: &TPoint, allowDisabled: bool) -> TControl {
     let mut ps0 = aPosition.clone();
-    unsafe { return TControl::As(lclapi::DFindDragTarget(&mut ps0, allowDisabled))}
+    unsafe { return TControl::from(lclapi::DFindDragTarget(&mut ps0, allowDisabled))}
 }
 
 #[cfg(target_os = "linux")]

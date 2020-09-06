@@ -33,10 +33,10 @@ impl TForm3 {
         // say hello 按钮
         let comp = self.form.FindComponent("Button1");
         if !comp.IsNil() {
-            let btn = TButton::from(&comp);
+            let btn = TButton::into(&comp);
             btn.SetOnClick(self, Self::onBtnClick);
         }
-     
+
         return self;
     }
 

@@ -117,17 +117,18 @@ macro_rules! impl_Object_methods {
     ($class: ident) => {
         // usize to Object
         #[inline]
-        pub fn As(inst: usize) -> Self {
+        pub fn from(inst: usize) -> Self {
             $class { 0: inst, 1: false }
         }
 
-        pub fn from(obj: &dyn IObject) -> Self {
+        #[inline]
+        pub fn into(obj: &dyn IObject) -> Self {
             $class {
                 0: obj.Instance(),
                 1: false,
             }
         }
-
+        
         // Nil Object
         #[inline]
         pub fn Nil() -> Self {
@@ -141,6 +142,37 @@ macro_rules! impl_Object_methods {
         }
     };
 }
+
+ 
+// #[macro_use]
+// macro_rules! impl_Object_Convert {
+//     ($class: ident) => {
+
+        // impl $class {
+        //     //#[inline]
+        //     fn from(inst: usize) -> Self {
+        //         $class { 0: inst, 1: false }
+        //     }
+        // }
+
+        // impl IFromObject<usize, usize> for $class {
+        //     //#[inline]
+        //     fn from(inst: usize) -> Self {
+        //         $class { 0: inst, 1: false }
+        //     }
+        // }
+
+        // impl IFromObject<$class, &dyn IObject> for $class {
+        //     //#[inline]
+        //     fn from(obj: &dyn IObject) -> Self {
+        //         $class {
+        //             0: obj.Instance(),
+        //             1: false,
+        //         }
+        //     }
+        // }
+//     };
+// }
 
 #[macro_use]
 macro_rules! to_CString {
@@ -188,17 +220,6 @@ macro_rules! Exclude {
     };
 }
 
-// #[macro_export]
-// macro_rules! ImplISId {
-//     ($className:ident) => {
-//         impl ISId for $className {
-//             fn getSId(&self) -> usize {
-//                 return unsafe { std::mem::transmute(self) };
-//             }
-//         }
-//     };
-// }
-
 #[macro_export]
 macro_rules! ImplIApplication {
     ($className:ident) => {
@@ -223,23 +244,9 @@ macro_rules! ImplForm {
         impl IControl for $className {}
         impl IWinControl for $className {}
         impl IForm for $className {}
-
-        //impl Drop for $className {
-        //    fn drop(&mut self) {
-        //        //println!("drop.");
-        //    }
-        //}
-
-        // ImplISId!($className);
     };
 }
 
-// #[macro_export]
-// macro_rules! getSId {
-//     ($var: expr) => {
-//         unsafe { transmute($var) }
-//     };
-// }
 
 #[macro_export]
 macro_rules! NewObject {

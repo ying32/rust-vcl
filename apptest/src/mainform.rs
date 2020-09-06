@@ -439,7 +439,7 @@ impl TMainForm {
     }
 
     fn onMenuItemClick(&self, sender: usize) {
-        let item = TMenuItem::As(sender);
+        let item = TMenuItem::from(sender);
         let name = item.Name();
         if name == "nFileNew" {
             self.memo1.Clear();
@@ -458,7 +458,7 @@ impl TMainForm {
     fn onBtnClick(&self, sender: usize) {
         ShowMessage("Hello, Rust! 你好，世界！");
         ShowMessageFmt!("Hello 1={}, 2={}", 1, "2");
-        let btn = TButton::As(sender);
+        let btn = TButton::from(sender);
         println!("caption: {:?}", btn.Caption());
 
         let result = SelectDirectory(Include!(0, TSelectDirOpt::sdPrompt), 0);

@@ -25,9 +25,7 @@ pub trait IStrings: IObject {}
 pub trait IStream: IObject {}
 pub trait IForm: IWinControl {}
 pub trait IGraphic: IObject {}
-pub trait ISId{
-    fn getSId(&self) -> usize;
-}
+
 pub trait IApplication {
     fn run(&self);
 }
@@ -220,6 +218,7 @@ impl TObject {
 }
 
 impl_IObject!(TObject);
+//impl_Object_Convert!(TObject);
 impl_Drop_method!(TObject);
 
 impl TComponent {
@@ -322,6 +321,7 @@ impl TComponent {
 }
 
 impl_IObject!(TComponent);
+//impl_Object_Convert!(TComponent);
 impl_IComponent!(TComponent);
 
 impl TControl {
@@ -857,6 +857,7 @@ impl TControl {
 }
 
 impl_IObject!(TControl);
+//impl_Object_Convert!(TControl);
 impl_IComponent!(TControl);
 impl_IControl!(TControl);
 
@@ -1576,6 +1577,7 @@ impl TWinControl {
 }
 
 impl_IObject!(TWinControl);
+//impl_Object_Convert!(TWinControl);
 impl_IComponent!(TWinControl);
 impl_IControl!(TWinControl);
 impl_IWinControl!(TWinControl);
@@ -1716,6 +1718,7 @@ impl TGraphic {
 }
 
 impl_IObject!(TGraphic);
+//impl_Object_Convert!(TGraphic);
 impl IGraphic for TGraphic {}
 impl_Drop_method!(TGraphic);
 
@@ -1937,6 +1940,7 @@ impl TStrings {
 }
 
 impl_IObject!(TStrings);
+//impl_Object_Convert!(TStrings);
 impl_IStrings!(TStrings);
 impl_Drop_method!(TStrings);
 
@@ -1944,6 +1948,7 @@ impl TStream {
 }
 
 impl_IObject!(TStream);
+//impl_Object_Convert!(TStream);
 impl_IStream!(TStream);
 
 impl TCheckBox {
@@ -2868,6 +2873,7 @@ impl TCheckBox {
 }
 
 impl_IObject!(TCheckBox);
+//impl_Object_Convert!(TCheckBox);
 impl_IComponent!(TCheckBox);
 impl_IControl!(TCheckBox);
 impl_IWinControl!(TCheckBox);
@@ -3776,6 +3782,7 @@ impl TRadioButton {
 }
 
 impl_IObject!(TRadioButton);
+//impl_Object_Convert!(TRadioButton);
 impl_IComponent!(TRadioButton);
 impl_IControl!(TRadioButton);
 impl_IWinControl!(TRadioButton);
@@ -4681,6 +4688,7 @@ impl TGroupBox {
 }
 
 impl_IObject!(TGroupBox);
+//impl_Object_Convert!(TGroupBox);
 impl_IComponent!(TGroupBox);
 impl_IControl!(TGroupBox);
 impl_IWinControl!(TGroupBox);
@@ -5439,6 +5447,7 @@ impl TLabel {
 }
 
 impl_IObject!(TLabel);
+//impl_Object_Convert!(TLabel);
 impl_IComponent!(TLabel);
 impl_IControl!(TLabel);
 
@@ -6494,6 +6503,7 @@ impl TListBox {
 }
 
 impl_IObject!(TListBox);
+//impl_Object_Convert!(TListBox);
 impl_IComponent!(TListBox);
 impl_IControl!(TListBox);
 impl_IWinControl!(TListBox);
@@ -7549,6 +7559,7 @@ impl TComboBox {
 }
 
 impl_IObject!(TComboBox);
+//impl_Object_Convert!(TComboBox);
 impl_IComponent!(TComboBox);
 impl_IControl!(TComboBox);
 impl_IWinControl!(TComboBox);
@@ -8531,6 +8542,7 @@ impl TPanel {
 }
 
 impl_IObject!(TPanel);
+//impl_Object_Convert!(TPanel);
 impl_IComponent!(TPanel);
 impl_IControl!(TPanel);
 impl_IWinControl!(TPanel);
@@ -9257,6 +9269,7 @@ impl TImage {
 }
 
 impl_IObject!(TImage);
+//impl_Object_Convert!(TImage);
 impl_IComponent!(TImage);
 impl_IControl!(TImage);
 
@@ -9956,6 +9969,7 @@ impl TLinkLabel {
 }
 
 impl_IObject!(TLinkLabel);
+//impl_Object_Convert!(TLinkLabel);
 impl_IComponent!(TLinkLabel);
 impl_IControl!(TLinkLabel);
 impl_IWinControl!(TLinkLabel);
@@ -10695,6 +10709,7 @@ impl TSpeedButton {
 }
 
 impl_IObject!(TSpeedButton);
+//impl_Object_Convert!(TSpeedButton);
 impl_IComponent!(TSpeedButton);
 impl_IControl!(TSpeedButton);
 
@@ -11276,6 +11291,7 @@ impl TSplitter {
 }
 
 impl_IObject!(TSplitter);
+//impl_Object_Convert!(TSplitter);
 impl_IComponent!(TSplitter);
 impl_IControl!(TSplitter);
 
@@ -12133,6 +12149,7 @@ impl TRadioGroup {
 }
 
 impl_IObject!(TRadioGroup);
+//impl_Object_Convert!(TRadioGroup);
 impl_IComponent!(TRadioGroup);
 impl_IControl!(TRadioGroup);
 impl_IWinControl!(TRadioGroup);
@@ -13052,6 +13069,7 @@ impl TStaticText {
 }
 
 impl_IObject!(TStaticText);
+//impl_Object_Convert!(TStaticText);
 impl_IComponent!(TStaticText);
 impl_IControl!(TStaticText);
 impl_IWinControl!(TStaticText);
@@ -14073,6 +14091,7 @@ impl TColorBox {
 }
 
 impl_IObject!(TColorBox);
+//impl_Object_Convert!(TColorBox);
 impl_IComponent!(TColorBox);
 impl_IControl!(TColorBox);
 impl_IWinControl!(TColorBox);
@@ -15064,6 +15083,7 @@ impl TColorListBox {
 }
 
 impl_IObject!(TColorListBox);
+//impl_Object_Convert!(TColorListBox);
 impl_IComponent!(TColorListBox);
 impl_IControl!(TColorListBox);
 impl_IWinControl!(TColorListBox);
@@ -15279,6 +15299,7 @@ impl TTrayIcon {
 }
 
 impl_IObject!(TTrayIcon);
+//impl_Object_Convert!(TTrayIcon);
 impl_IComponent!(TTrayIcon);
 
 impl TOpenDialog {
@@ -15466,6 +15487,7 @@ impl TOpenDialog {
 }
 
 impl_IObject!(TOpenDialog);
+//impl_Object_Convert!(TOpenDialog);
 impl_IComponent!(TOpenDialog);
 
 impl TSaveDialog {
@@ -15653,6 +15675,7 @@ impl TSaveDialog {
 }
 
 impl_IObject!(TSaveDialog);
+//impl_Object_Convert!(TSaveDialog);
 impl_IComponent!(TSaveDialog);
 
 impl TColorDialog {
@@ -15791,6 +15814,7 @@ impl TColorDialog {
 }
 
 impl_IObject!(TColorDialog);
+//impl_Object_Convert!(TColorDialog);
 impl_IComponent!(TColorDialog);
 
 impl TFontDialog {
@@ -15929,6 +15953,7 @@ impl TFontDialog {
 }
 
 impl_IObject!(TFontDialog);
+//impl_Object_Convert!(TFontDialog);
 impl_IComponent!(TFontDialog);
 
 impl TPrintDialog {
@@ -16130,6 +16155,7 @@ impl TPrintDialog {
 }
 
 impl_IObject!(TPrintDialog);
+//impl_Object_Convert!(TPrintDialog);
 impl_IComponent!(TPrintDialog);
 
 impl TOpenPictureDialog {
@@ -16317,6 +16343,7 @@ impl TOpenPictureDialog {
 }
 
 impl_IObject!(TOpenPictureDialog);
+//impl_Object_Convert!(TOpenPictureDialog);
 impl_IComponent!(TOpenPictureDialog);
 
 impl TSavePictureDialog {
@@ -16504,6 +16531,7 @@ impl TSavePictureDialog {
 }
 
 impl_IObject!(TSavePictureDialog);
+//impl_Object_Convert!(TSavePictureDialog);
 impl_IComponent!(TSavePictureDialog);
 
 impl TSelectDirectoryDialog {
@@ -16691,6 +16719,7 @@ impl TSelectDirectoryDialog {
 }
 
 impl_IObject!(TSelectDirectoryDialog);
+//impl_Object_Convert!(TSelectDirectoryDialog);
 impl_IComponent!(TSelectDirectoryDialog);
 
 impl TRichEdit {
@@ -17829,6 +17858,7 @@ impl TRichEdit {
 }
 
 impl_IObject!(TRichEdit);
+//impl_Object_Convert!(TRichEdit);
 impl_IComponent!(TRichEdit);
 impl_IControl!(TRichEdit);
 impl_IWinControl!(TRichEdit);
@@ -18757,6 +18787,7 @@ impl TTrackBar {
 }
 
 impl_IObject!(TTrackBar);
+//impl_Object_Convert!(TTrackBar);
 impl_IComponent!(TTrackBar);
 impl_IControl!(TTrackBar);
 impl_IWinControl!(TTrackBar);
@@ -19072,6 +19103,7 @@ impl TImageList {
 }
 
 impl_IObject!(TImageList);
+//impl_Object_Convert!(TImageList);
 impl_IComponent!(TImageList);
 
 impl TUpDown {
@@ -19912,6 +19944,7 @@ impl TUpDown {
 }
 
 impl_IObject!(TUpDown);
+//impl_Object_Convert!(TUpDown);
 impl_IComponent!(TUpDown);
 impl_IControl!(TUpDown);
 impl_IWinControl!(TUpDown);
@@ -20814,6 +20847,7 @@ impl TProgressBar {
 }
 
 impl_IObject!(TProgressBar);
+//impl_Object_Convert!(TProgressBar);
 impl_IComponent!(TProgressBar);
 impl_IControl!(TProgressBar);
 impl_IWinControl!(TProgressBar);
@@ -21904,6 +21938,7 @@ impl TDateTimePicker {
 }
 
 impl_IObject!(TDateTimePicker);
+//impl_Object_Convert!(TDateTimePicker);
 impl_IComponent!(TDateTimePicker);
 impl_IControl!(TDateTimePicker);
 impl_IWinControl!(TDateTimePicker);
@@ -22780,6 +22815,7 @@ impl TMonthCalendar {
 }
 
 impl_IObject!(TMonthCalendar);
+//impl_Object_Convert!(TMonthCalendar);
 impl_IComponent!(TMonthCalendar);
 impl_IControl!(TMonthCalendar);
 impl_IWinControl!(TMonthCalendar);
@@ -24186,6 +24222,7 @@ impl TListView {
 }
 
 impl_IObject!(TListView);
+//impl_Object_Convert!(TListView);
 impl_IComponent!(TListView);
 impl_IControl!(TListView);
 impl_IWinControl!(TListView);
@@ -25547,6 +25584,7 @@ impl TTreeView {
 }
 
 impl_IObject!(TTreeView);
+//impl_Object_Convert!(TTreeView);
 impl_IComponent!(TTreeView);
 impl_IControl!(TTreeView);
 impl_IWinControl!(TTreeView);
@@ -26490,6 +26528,7 @@ impl TStatusBar {
 }
 
 impl_IObject!(TStatusBar);
+//impl_Object_Convert!(TStatusBar);
 impl_IComponent!(TStatusBar);
 impl_IControl!(TStatusBar);
 impl_IWinControl!(TStatusBar);
@@ -27531,6 +27570,7 @@ impl TToolBar {
 }
 
 impl_IObject!(TToolBar);
+//impl_Object_Convert!(TToolBar);
 impl_IComponent!(TToolBar);
 impl_IControl!(TToolBar);
 impl_IWinControl!(TToolBar);
@@ -28466,6 +28506,7 @@ impl TBitBtn {
 }
 
 impl_IObject!(TBitBtn);
+//impl_Object_Convert!(TBitBtn);
 impl_IComponent!(TBitBtn);
 impl_IControl!(TBitBtn);
 impl_IWinControl!(TBitBtn);
@@ -28634,6 +28675,7 @@ impl TIcon {
 }
 
 impl_IObject!(TIcon);
+//impl_Object_Convert!(TIcon);
 impl IGraphic for TIcon {}
 impl_Drop_method!(TIcon);
 
@@ -28870,6 +28912,7 @@ impl TBitmap {
 }
 
 impl_IObject!(TBitmap);
+//impl_Object_Convert!(TBitmap);
 impl IGraphic for TBitmap {}
 impl_Drop_method!(TBitmap);
 
@@ -29964,6 +30007,7 @@ impl TMemo {
 }
 
 impl_IObject!(TMemo);
+//impl_Object_Convert!(TMemo);
 impl_IComponent!(TMemo);
 impl_IControl!(TMemo);
 impl_IWinControl!(TMemo);
@@ -30113,6 +30157,7 @@ impl TMemoryStream {
 }
 
 impl_IObject!(TMemoryStream);
+//impl_Object_Convert!(TMemoryStream);
 impl_IStream!(TMemoryStream);
 impl_Drop_method!(TMemoryStream);
 
@@ -30277,6 +30322,7 @@ impl TFont {
 }
 
 impl_IObject!(TFont);
+//impl_Object_Convert!(TFont);
 impl_Drop_method!(TFont);
 
 impl TPopupMenu {
@@ -30462,6 +30508,7 @@ impl TPopupMenu {
 }
 
 impl_IObject!(TPopupMenu);
+//impl_Object_Convert!(TPopupMenu);
 impl_IComponent!(TPopupMenu);
 
 impl TStringList {
@@ -30701,6 +30748,7 @@ impl TStringList {
 }
 
 impl_IObject!(TStringList);
+//impl_Object_Convert!(TStringList);
 impl_IStrings!(TStringList);
 impl_Drop_method!(TStringList);
 
@@ -30798,6 +30846,7 @@ impl TBrush {
 }
 
 impl_IObject!(TBrush);
+//impl_Object_Convert!(TBrush);
 impl_Drop_method!(TBrush);
 
 impl TPen {
@@ -30903,6 +30952,7 @@ impl TPen {
 }
 
 impl_IObject!(TPen);
+//impl_Object_Convert!(TPen);
 impl_Drop_method!(TPen);
 
 impl TMenuItem {
@@ -31186,6 +31236,7 @@ impl TMenuItem {
 }
 
 impl_IObject!(TMenuItem);
+//impl_Object_Convert!(TMenuItem);
 impl_IComponent!(TMenuItem);
 
 impl TPicture {
@@ -31301,6 +31352,7 @@ impl TPicture {
 }
 
 impl_IObject!(TPicture);
+//impl_Object_Convert!(TPicture);
 impl_Drop_method!(TPicture);
 
 impl TListColumns {
@@ -31405,6 +31457,7 @@ impl TListColumns {
 }
 
 impl_IObject!(TListColumns);
+//impl_Object_Convert!(TListColumns);
 impl_Drop_method!(TListColumns);
 
 impl TListItems {
@@ -31514,6 +31567,7 @@ impl TListItems {
 }
 
 impl_IObject!(TListItems);
+//impl_Object_Convert!(TListItems);
 impl_Drop_method!(TListItems);
 
 impl TTreeNodes {
@@ -31653,6 +31707,7 @@ impl TTreeNodes {
 }
 
 impl_IObject!(TTreeNodes);
+//impl_Object_Convert!(TTreeNodes);
 impl_Drop_method!(TTreeNodes);
 
 impl TListItem {
@@ -31875,6 +31930,7 @@ impl TListItem {
 }
 
 impl_IObject!(TListItem);
+//impl_Object_Convert!(TListItem);
 impl_Drop_method!(TListItem);
 
 impl TTreeNode {
@@ -32121,6 +32177,7 @@ impl TTreeNode {
 }
 
 impl_IObject!(TTreeNode);
+//impl_Object_Convert!(TTreeNode);
 impl_Drop_method!(TTreeNode);
 
 impl TPageControl {
@@ -33088,6 +33145,7 @@ impl TPageControl {
 }
 
 impl_IObject!(TPageControl);
+//impl_Object_Convert!(TPageControl);
 impl_IComponent!(TPageControl);
 impl_IControl!(TPageControl);
 impl_IWinControl!(TPageControl);
@@ -33972,6 +34030,7 @@ impl TTabSheet {
 }
 
 impl_IObject!(TTabSheet);
+//impl_Object_Convert!(TTabSheet);
 impl_IComponent!(TTabSheet);
 impl_IControl!(TTabSheet);
 impl_IWinControl!(TTabSheet);
@@ -34871,6 +34930,7 @@ impl TButton {
 }
 
 impl_IObject!(TButton);
+//impl_Object_Convert!(TButton);
 impl_IComponent!(TButton);
 impl_IControl!(TButton);
 impl_IWinControl!(TButton);
@@ -35940,6 +36000,7 @@ impl TEdit {
 }
 
 impl_IObject!(TEdit);
+//impl_Object_Convert!(TEdit);
 impl_IComponent!(TEdit);
 impl_IControl!(TEdit);
 impl_IWinControl!(TEdit);
@@ -36158,6 +36219,7 @@ impl TScreen {
 }
 
 impl_IObject!(TScreen);
+//impl_Object_Convert!(TScreen);
 impl_IComponent!(TScreen);
 
 impl TMouse {
@@ -36233,6 +36295,7 @@ impl TMouse {
 }
 
 impl_IObject!(TMouse);
+//impl_Object_Convert!(TMouse);
 impl_Drop_method!(TMouse);
 
 impl TListColumn {
@@ -36396,6 +36459,7 @@ impl TListColumn {
 }
 
 impl_IObject!(TListColumn);
+//impl_Object_Convert!(TListColumn);
 impl_Drop_method!(TListColumn);
 
 impl TCollectionItem {
@@ -36478,6 +36542,7 @@ impl TCollectionItem {
 }
 
 impl_IObject!(TCollectionItem);
+//impl_Object_Convert!(TCollectionItem);
 impl_Drop_method!(TCollectionItem);
 
 impl TStatusPanels {
@@ -36591,6 +36656,7 @@ impl TStatusPanels {
 }
 
 impl_IObject!(TStatusPanels);
+//impl_Object_Convert!(TStatusPanels);
 impl_Drop_method!(TStatusPanels);
 
 impl TStatusPanel {
@@ -36718,6 +36784,7 @@ impl TStatusPanel {
 }
 
 impl_IObject!(TStatusPanel);
+//impl_Object_Convert!(TStatusPanel);
 impl_Drop_method!(TStatusPanel);
 
 impl TSpinEdit {
@@ -37714,6 +37781,7 @@ impl TSpinEdit {
 }
 
 impl_IObject!(TSpinEdit);
+//impl_Object_Convert!(TSpinEdit);
 impl_IComponent!(TSpinEdit);
 impl_IControl!(TSpinEdit);
 impl_IWinControl!(TSpinEdit);
@@ -38491,6 +38559,7 @@ impl TMiniWebview {
 }
 
 impl_IObject!(TMiniWebview);
+//impl_Object_Convert!(TMiniWebview);
 impl_IComponent!(TMiniWebview);
 impl_IControl!(TMiniWebview);
 impl_IWinControl!(TMiniWebview);
@@ -38775,6 +38844,7 @@ impl TCanvas {
 }
 
 impl_IObject!(TCanvas);
+//impl_Object_Convert!(TCanvas);
 impl_Drop_method!(TCanvas);
 
 impl TApplication {
@@ -39165,6 +39235,7 @@ impl TApplication {
 }
 
 impl_IObject!(TApplication);
+//impl_Object_Convert!(TApplication);
 impl_IComponent!(TApplication);
 
 impl TMainMenu {
@@ -39316,6 +39387,7 @@ impl TMainMenu {
 }
 
 impl_IObject!(TMainMenu);
+//impl_Object_Convert!(TMainMenu);
 impl_IComponent!(TMainMenu);
 
 impl TPngImage {
@@ -39463,6 +39535,7 @@ impl TPngImage {
 }
 
 impl_IObject!(TPngImage);
+//impl_Object_Convert!(TPngImage);
 impl IGraphic for TPngImage {}
 impl_Drop_method!(TPngImage);
 
@@ -39629,6 +39702,7 @@ impl TJPEGImage {
 }
 
 impl_IObject!(TJPEGImage);
+//impl_Object_Convert!(TJPEGImage);
 impl IGraphic for TJPEGImage {}
 impl_Drop_method!(TJPEGImage);
 
@@ -39777,6 +39851,7 @@ impl TGIFImage {
 }
 
 impl_IObject!(TGIFImage);
+//impl_Object_Convert!(TGIFImage);
 impl IGraphic for TGIFImage {}
 impl_Drop_method!(TGIFImage);
 
@@ -39903,6 +39978,7 @@ impl TActionList {
 }
 
 impl_IObject!(TActionList);
+//impl_Object_Convert!(TActionList);
 impl_IComponent!(TActionList);
 
 impl TAction {
@@ -40113,6 +40189,7 @@ impl TAction {
 }
 
 impl_IObject!(TAction);
+//impl_Object_Convert!(TAction);
 impl_IComponent!(TAction);
 
 impl TToolButton {
@@ -40865,6 +40942,7 @@ impl TToolButton {
 }
 
 impl_IObject!(TToolButton);
+//impl_Object_Convert!(TToolButton);
 impl_IComponent!(TToolButton);
 impl_IControl!(TToolButton);
 
@@ -41016,6 +41094,7 @@ impl TIniFile {
 }
 
 impl_IObject!(TIniFile);
+//impl_Object_Convert!(TIniFile);
 impl_Drop_method!(TIniFile);
 
 impl TRegistry {
@@ -41247,6 +41326,7 @@ impl TRegistry {
 }
 
 impl_IObject!(TRegistry);
+//impl_Object_Convert!(TRegistry);
 impl_Drop_method!(TRegistry);
 
 impl TClipboard {
@@ -41377,6 +41457,7 @@ impl TClipboard {
 }
 
 impl_IObject!(TClipboard);
+//impl_Object_Convert!(TClipboard);
 impl_Drop_method!(TClipboard);
 
 impl TMonitor {
@@ -41467,6 +41548,7 @@ impl TMonitor {
 }
 
 impl_IObject!(TMonitor);
+//impl_Object_Convert!(TMonitor);
 impl_Drop_method!(TMonitor);
 
 impl TPaintBox {
@@ -42133,6 +42215,7 @@ impl TPaintBox {
 }
 
 impl_IObject!(TPaintBox);
+//impl_Object_Convert!(TPaintBox);
 impl_IComponent!(TPaintBox);
 impl_IControl!(TPaintBox);
 
@@ -42259,6 +42342,7 @@ impl TTimer {
 }
 
 impl_IObject!(TTimer);
+//impl_Object_Convert!(TTimer);
 impl_IComponent!(TTimer);
 
 impl TList {
@@ -42368,6 +42452,7 @@ impl TList {
 }
 
 impl_IObject!(TList);
+//impl_Object_Convert!(TList);
 impl_Drop_method!(TList);
 
 impl TForm {
@@ -43612,6 +43697,7 @@ impl TForm {
 }
 
 impl_IObject!(TForm);
+//impl_Object_Convert!(TForm);
 impl_IComponent!(TForm);
 impl_IControl!(TForm);
 impl_IWinControl!(TForm);
@@ -43727,6 +43813,7 @@ impl TParaAttributes {
 }
 
 impl_IObject!(TParaAttributes);
+//impl_Object_Convert!(TParaAttributes);
 
 impl TTextAttributes {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -43838,6 +43925,7 @@ impl TTextAttributes {
 }
 
 impl_IObject!(TTextAttributes);
+//impl_Object_Convert!(TTextAttributes);
 
 impl TIconOptions {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -43904,6 +43992,7 @@ impl TIconOptions {
 }
 
 impl_IObject!(TIconOptions);
+//impl_Object_Convert!(TIconOptions);
 
 impl Exception {
 	  pub fn ToString<'a>(&self) -> Cow<'a, str> {
@@ -43952,6 +44041,7 @@ impl Exception {
 }
 
 impl_IObject!(Exception);
+//impl_Object_Convert!(Exception);
 
 impl TScrollBar {
       pub fn new(aOwner: &dyn IComponent) -> Self {
@@ -44823,6 +44913,7 @@ impl TScrollBar {
 }
 
 impl_IObject!(TScrollBar);
+//impl_Object_Convert!(TScrollBar);
 impl_IComponent!(TScrollBar);
 impl_IControl!(TScrollBar);
 impl_IWinControl!(TScrollBar);
@@ -45897,6 +45988,7 @@ impl TMaskEdit {
 }
 
 impl_IObject!(TMaskEdit);
+//impl_Object_Convert!(TMaskEdit);
 impl_IComponent!(TMaskEdit);
 impl_IControl!(TMaskEdit);
 impl_IWinControl!(TMaskEdit);
@@ -46537,6 +46629,7 @@ impl TShape {
 }
 
 impl_IObject!(TShape);
+//impl_Object_Convert!(TShape);
 impl_IComponent!(TShape);
 impl_IControl!(TShape);
 
@@ -47100,6 +47193,7 @@ impl TBevel {
 }
 
 impl_IObject!(TBevel);
+//impl_Object_Convert!(TBevel);
 impl_IComponent!(TBevel);
 impl_IControl!(TBevel);
 
@@ -48064,6 +48158,7 @@ impl TScrollBox {
 }
 
 impl_IObject!(TScrollBox);
+//impl_Object_Convert!(TScrollBox);
 impl_IComponent!(TScrollBox);
 impl_IControl!(TScrollBox);
 impl_IWinControl!(TScrollBox);
@@ -49134,6 +49229,7 @@ impl TCheckListBox {
 }
 
 impl_IObject!(TCheckListBox);
+//impl_Object_Convert!(TCheckListBox);
 impl_IComponent!(TCheckListBox);
 impl_IControl!(TCheckListBox);
 impl_IWinControl!(TCheckListBox);
@@ -49797,6 +49893,7 @@ impl TGauge {
 }
 
 impl_IObject!(TGauge);
+//impl_Object_Convert!(TGauge);
 impl_IComponent!(TGauge);
 impl_IControl!(TGauge);
 
@@ -50524,6 +50621,7 @@ impl TImageButton {
 }
 
 impl_IObject!(TImageButton);
+//impl_Object_Convert!(TImageButton);
 impl_IComponent!(TImageButton);
 impl_IControl!(TImageButton);
 
@@ -50703,6 +50801,7 @@ impl TFindDialog {
 }
 
 impl_IObject!(TFindDialog);
+//impl_Object_Convert!(TFindDialog);
 impl_IComponent!(TFindDialog);
 
 impl TReplaceDialog {
@@ -50895,6 +50994,7 @@ impl TReplaceDialog {
 }
 
 impl_IObject!(TReplaceDialog);
+//impl_Object_Convert!(TReplaceDialog);
 impl_IComponent!(TReplaceDialog);
 
 impl TPrinterSetupDialog {
@@ -51015,6 +51115,7 @@ impl TPrinterSetupDialog {
 }
 
 impl_IObject!(TPrinterSetupDialog);
+//impl_Object_Convert!(TPrinterSetupDialog);
 impl_IComponent!(TPrinterSetupDialog);
 
 impl TPageSetupDialog {
@@ -51202,6 +51303,7 @@ impl TPageSetupDialog {
 }
 
 impl_IObject!(TPageSetupDialog);
+//impl_Object_Convert!(TPageSetupDialog);
 impl_IComponent!(TPageSetupDialog);
 
 impl TDragObject {
@@ -51309,6 +51411,7 @@ impl TDragObject {
 }
 
 impl_IObject!(TDragObject);
+//impl_Object_Convert!(TDragObject);
 impl_Drop_method!(TDragObject);
 
 impl TDragDockObject {
@@ -51466,6 +51569,7 @@ impl TDragDockObject {
 }
 
 impl_IObject!(TDragDockObject);
+//impl_Object_Convert!(TDragDockObject);
 impl_Drop_method!(TDragDockObject);
 
 impl TStringGrid {
@@ -53207,6 +53311,7 @@ impl TStringGrid {
 }
 
 impl_IObject!(TStringGrid);
+//impl_Object_Convert!(TStringGrid);
 impl_IComponent!(TStringGrid);
 impl_IControl!(TStringGrid);
 impl_IWinControl!(TStringGrid);
@@ -54363,6 +54468,7 @@ impl TDrawGrid {
 }
 
 impl_IObject!(TDrawGrid);
+//impl_Object_Convert!(TDrawGrid);
 impl_IComponent!(TDrawGrid);
 impl_IControl!(TDrawGrid);
 impl_IWinControl!(TDrawGrid);
@@ -55541,6 +55647,7 @@ impl TValueListEditor {
 }
 
 impl_IObject!(TValueListEditor);
+//impl_Object_Convert!(TValueListEditor);
 impl_IComponent!(TValueListEditor);
 impl_IControl!(TValueListEditor);
 impl_IWinControl!(TValueListEditor);
@@ -56426,6 +56533,7 @@ impl THeaderControl {
 }
 
 impl_IObject!(THeaderControl);
+//impl_Object_Convert!(THeaderControl);
 impl_IComponent!(THeaderControl);
 impl_IControl!(THeaderControl);
 impl_IWinControl!(THeaderControl);
@@ -56572,6 +56680,7 @@ impl THeaderSection {
 }
 
 impl_IObject!(THeaderSection);
+//impl_Object_Convert!(THeaderSection);
 impl_Drop_method!(THeaderSection);
 
 impl THeaderSections {
@@ -56680,6 +56789,7 @@ impl THeaderSections {
 }
 
 impl_IObject!(THeaderSections);
+//impl_Object_Convert!(THeaderSections);
 impl_Drop_method!(THeaderSections);
 
 impl TLabeledEdit {
@@ -57755,6 +57865,7 @@ impl TLabeledEdit {
 }
 
 impl_IObject!(TLabeledEdit);
+//impl_Object_Convert!(TLabeledEdit);
 impl_IComponent!(TLabeledEdit);
 impl_IControl!(TLabeledEdit);
 impl_IWinControl!(TLabeledEdit);
@@ -58434,6 +58545,7 @@ impl TBoundLabel {
 }
 
 impl_IObject!(TBoundLabel);
+//impl_Object_Convert!(TBoundLabel);
 impl_IComponent!(TBoundLabel);
 impl_IControl!(TBoundLabel);
 
@@ -59429,6 +59541,7 @@ impl TFlowPanel {
 }
 
 impl_IObject!(TFlowPanel);
+//impl_Object_Convert!(TFlowPanel);
 impl_IComponent!(TFlowPanel);
 impl_IControl!(TFlowPanel);
 impl_IWinControl!(TFlowPanel);
@@ -60441,6 +60554,7 @@ impl TCoolBar {
 }
 
 impl_IObject!(TCoolBar);
+//impl_Object_Convert!(TCoolBar);
 impl_IComponent!(TCoolBar);
 impl_IControl!(TCoolBar);
 impl_IWinControl!(TCoolBar);
@@ -60551,6 +60665,7 @@ impl TCoolBands {
 }
 
 impl_IObject!(TCoolBands);
+//impl_Object_Convert!(TCoolBands);
 impl_Drop_method!(TCoolBands);
 
 impl TCoolBand {
@@ -60781,6 +60896,7 @@ impl TCoolBand {
 }
 
 impl_IObject!(TCoolBand);
+//impl_Object_Convert!(TCoolBand);
 impl_Drop_method!(TCoolBand);
 
 impl TCollection {
@@ -60885,6 +61001,7 @@ impl TCollection {
 }
 
 impl_IObject!(TCollection);
+//impl_Object_Convert!(TCollection);
 impl_Drop_method!(TCollection);
 
 impl TPrinter {
@@ -61029,6 +61146,7 @@ impl TPrinter {
 }
 
 impl_IObject!(TPrinter);
+//impl_Object_Convert!(TPrinter);
 impl_Drop_method!(TPrinter);
 
 impl TTaskDialog {
@@ -61288,6 +61406,7 @@ impl TTaskDialog {
 }
 
 impl_IObject!(TTaskDialog);
+//impl_Object_Convert!(TTaskDialog);
 impl_IComponent!(TTaskDialog);
 
 impl TTaskDialogButtons {
@@ -61399,6 +61518,7 @@ impl TTaskDialogButtons {
 }
 
 impl_IObject!(TTaskDialogButtons);
+//impl_Object_Convert!(TTaskDialogButtons);
 
 impl TTaskDialogButtonItem {
       pub fn new(aOwner: &TCollection) -> Self {
@@ -61507,6 +61627,7 @@ impl TTaskDialogButtonItem {
 }
 
 impl_IObject!(TTaskDialogButtonItem);
+//impl_Object_Convert!(TTaskDialogButtonItem);
 impl_Drop_method!(TTaskDialogButtonItem);
 
 impl TTaskDialogRadioButtonItem {
@@ -61616,6 +61737,7 @@ impl TTaskDialogRadioButtonItem {
 }
 
 impl_IObject!(TTaskDialogRadioButtonItem);
+//impl_Object_Convert!(TTaskDialogRadioButtonItem);
 impl_Drop_method!(TTaskDialogRadioButtonItem);
 
 impl TTaskDialogBaseButtonItem {
@@ -61725,6 +61847,7 @@ impl TTaskDialogBaseButtonItem {
 }
 
 impl_IObject!(TTaskDialogBaseButtonItem);
+//impl_Object_Convert!(TTaskDialogBaseButtonItem);
 impl_Drop_method!(TTaskDialogBaseButtonItem);
 
 impl TComboBoxEx {
@@ -62773,6 +62896,7 @@ impl TComboBoxEx {
 }
 
 impl_IObject!(TComboBoxEx);
+//impl_Object_Convert!(TComboBoxEx);
 impl_IComponent!(TComboBoxEx);
 impl_IControl!(TComboBoxEx);
 impl_IWinControl!(TComboBoxEx);
@@ -62872,6 +62996,7 @@ impl TComboExItems {
 }
 
 impl_IObject!(TComboExItems);
+//impl_Object_Convert!(TComboExItems);
 
 impl TComboExItem {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -62992,6 +63117,7 @@ impl TComboExItem {
 }
 
 impl_IObject!(TComboExItem);
+//impl_Object_Convert!(TComboExItem);
 
 impl TFrame {
       pub fn new(aOwner: &dyn IComponent) -> Self {
@@ -63960,6 +64086,7 @@ impl TFrame {
 }
 
 impl_IObject!(TFrame);
+//impl_Object_Convert!(TFrame);
 impl_IComponent!(TFrame);
 impl_IControl!(TFrame);
 impl_IWinControl!(TFrame);
@@ -64073,6 +64200,7 @@ impl TControlScrollBar {
 }
 
 impl_IObject!(TControlScrollBar);
+//impl_Object_Convert!(TControlScrollBar);
 
 impl TSizeConstraints {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -64162,6 +64290,7 @@ impl TSizeConstraints {
 }
 
 impl_IObject!(TSizeConstraints);
+//impl_Object_Convert!(TSizeConstraints);
 
 impl TXButton {
       pub fn new(aOwner: &dyn IComponent) -> Self {
@@ -64875,6 +65004,7 @@ impl TXButton {
 }
 
 impl_IObject!(TXButton);
+//impl_Object_Convert!(TXButton);
 impl_IComponent!(TXButton);
 impl_IControl!(TXButton);
 
@@ -64947,6 +65077,7 @@ impl TAnchorSide {
 }
 
 impl_IObject!(TAnchorSide);
+//impl_Object_Convert!(TAnchorSide);
 
 impl TControlBorderSpacing {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -65125,6 +65256,7 @@ impl TControlBorderSpacing {
 }
 
 impl_IObject!(TControlBorderSpacing);
+//impl_Object_Convert!(TControlBorderSpacing);
 
 impl TControlChildSizing {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -65272,6 +65404,7 @@ impl TControlChildSizing {
 }
 
 impl_IObject!(TControlChildSizing);
+//impl_Object_Convert!(TControlChildSizing);
 
 impl TCheckGroup {
       pub fn new(aOwner: &dyn IComponent) -> Self {
@@ -66237,6 +66370,7 @@ impl TCheckGroup {
 }
 
 impl_IObject!(TCheckGroup);
+//impl_Object_Convert!(TCheckGroup);
 impl_IComponent!(TCheckGroup);
 impl_IControl!(TCheckGroup);
 impl_IWinControl!(TCheckGroup);
@@ -67149,6 +67283,7 @@ impl TToggleBox {
 }
 
 impl_IObject!(TToggleBox);
+//impl_Object_Convert!(TToggleBox);
 impl_IComponent!(TToggleBox);
 impl_IControl!(TToggleBox);
 impl_IWinControl!(TToggleBox);
@@ -67305,6 +67440,7 @@ impl TGridColumnTitle {
 }
 
 impl_IObject!(TGridColumnTitle);
+//impl_Object_Convert!(TGridColumnTitle);
 
 impl TGridColumn {
 	  pub fn Assign(&self, source: &dyn IObject) -> &Self  {
@@ -67573,6 +67709,7 @@ impl TGridColumn {
 }
 
 impl_IObject!(TGridColumn);
+//impl_Object_Convert!(TGridColumn);
 
 impl TGridColumns {
 	  pub fn Add(&self) -> TGridColumn  {
@@ -67698,6 +67835,7 @@ impl TGridColumns {
 }
 
 impl_IObject!(TGridColumns);
+//impl_Object_Convert!(TGridColumns);
 
 
 pub struct TNull(usize, bool);
@@ -67720,8 +67858,8 @@ fn getApplication() -> TApplication {
 
 lazy_static! {
     pub static ref Application: TApplication = getApplication();
-    pub static ref Screen: TScreen = TScreen::As(unsafe { Screen_Instance() });
-    pub static ref Mouse: TMouse = TMouse::As(unsafe { Mouse_Instance() });
-    pub static ref Clipboard: TClipboard = TClipboard::As(unsafe { Clipboard_Instance() });
-    pub static ref Printer: TPrinter = TPrinter::As(unsafe { Printer_Instance() });
+    pub static ref Screen: TScreen = TScreen::from(unsafe { Screen_Instance() });
+    pub static ref Mouse: TMouse = TMouse::from(unsafe { Mouse_Instance() });
+    pub static ref Clipboard: TClipboard = TClipboard::from(unsafe { Clipboard_Instance() });
+    pub static ref Printer: TPrinter = TPrinter::from(unsafe { Printer_Instance() });
 }
